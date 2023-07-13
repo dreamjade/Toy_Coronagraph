@@ -5,14 +5,19 @@ class Target(object):
     def __init__(self):
         pass
 
-
-class FinalImage(Target):
+class Coronagraph(object, charge=2):
+    """
+    A vortex coronagraph model
+    """
+    def __init__(self, charge):
+        self.charge = charge
+    
+class Image(Target, Coronagraph):
     """
     Simulate the image of a target go through the coronagraph
 
     Args:
-        height (float): a height in meters
-        dt (float): timestep of the simulation in seconds
+        charge (int): the charge number of the vortex coronagraph
     """
     def __init__(self, height, dt=0.1):
         """
