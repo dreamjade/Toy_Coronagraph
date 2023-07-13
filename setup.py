@@ -1,4 +1,28 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, Extension
+import re
+
+# auto-updating version code stolen from RadVel
+def get_property(prop, project):
+    result = re.search(
+        r'{}\s*=\s*[\'"]([^\'"]*)[\'"]'.format(prop),
+        open(project + "/__init__.py").read(),
+    )
+    return result.group(1)
+
+def get_extensions():
+    extensions = []
+    if USE_C_KEPLER_MODULE:
+        extensions = cythonize(
+            [
+                Extension(
+                    "orbitize._kepler",
+                    ["orbitize/_kepler.pyx"],
+                    include_dirs=[numpy.get_include()],
+                )
+            ]
+        )
+    return extensions
+
 setup(
     name="toycoronagraph",
     version=get_property("__version__", "toycoronagraph"),
@@ -23,6 +47,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3.9",
     ],
-    #install_requires=get_requires(),
+    install_requires=get_requires(),
     keywords="Toy Coronagraph"
 )
