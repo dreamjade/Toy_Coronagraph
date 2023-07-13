@@ -8,10 +8,10 @@ setup(
     author_email="",
     license="MIT",
     packages=find_packages(),
-    package_data={"": ["kernels/*.cu"]},
-    ext_modules=get_extensions(),
-    include_dirs=[numpy.get_include()],
-    include_package_data=True,
+    #package_data={"": ["kernels/*.cu"]},
+    #ext_modules=get_extensions(),
+    #include_dirs=[numpy.get_include()],
+    #include_package_data=True,
     zip_safe=False,
     classifiers=[
         #   3 - Alpha
@@ -23,6 +23,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3.9",
     ],
-    keywords="Toy Coronagraph",
-    install_requires=get_requires(),
+    #install_requires=get_requires(),
+    keywords="Toy Coronagraph"
 )
