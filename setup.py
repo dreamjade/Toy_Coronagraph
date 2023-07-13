@@ -9,19 +9,11 @@ def get_property(prop, project):
     )
     return result.group(1)
 
-def get_extensions():
-    extensions = []
-    if USE_C_KEPLER_MODULE:
-        extensions = cythonize(
-            [
-                Extension(
-                    "orbitize._kepler",
-                    ["orbitize/_kepler.pyx"],
-                    include_dirs=[numpy.get_include()],
-                )
-            ]
-        )
-    return extensions
+def get_requires():
+    reqs = []
+    for line in open("requirements.txt", "r").readlines():
+        reqs.append(line)
+    return reqs
 
 setup(
     name="toycoronagraph",
