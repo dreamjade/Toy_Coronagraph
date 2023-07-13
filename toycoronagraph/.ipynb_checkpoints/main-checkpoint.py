@@ -5,7 +5,7 @@ class Target(object):
     def __init__(self):
         pass
 
-class Coronagraph(object, charge=2):
+class Coronagraph(object):
     """
     A vortex coronagraph model
     """
