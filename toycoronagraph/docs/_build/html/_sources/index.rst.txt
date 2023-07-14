@@ -10,7 +10,7 @@ Welcome to Toy_Coronagraph's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   main.rst
 
 Indices and tables
 ==================
