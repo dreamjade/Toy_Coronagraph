@@ -43,7 +43,7 @@ class Target(object):
 
         pre_img = sst_jy.astype(np.float64)
         final_img_charge = cir_psf(pre_img, img_pixel, psf_range, img_pixel, 
-                                    "psfs_c"+str(charge)+"10.npy")
+                                    "psfs_c"+str(charge)+".npy")
         fig=plt.figure(dpi=plot_dpi)
         ax2=plt.subplot(111)
         im2=ax2.imshow(final_img_charge,
