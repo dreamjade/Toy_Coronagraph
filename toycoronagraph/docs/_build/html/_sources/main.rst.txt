@@ -1,9 +1,10 @@
 .. _toycoronagraph:
 
-Toy Coronagraph
+Main
 =====================
 
 Function to perform toy coronagraph
 
-.. automodule:: psf
+.. autoclass:: main
    :members:
+   :special-members:

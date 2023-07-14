@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import hcipy
 from .psf import psf_calculation, cir_psf
 from astropy.io import fits
+from toycoronagraph import DATADIR
 import os
-
 class Target(object):
     """
     A circular symmetric target, which could be a dust ring, a debris disk, or ice remains
@@ -25,12 +25,15 @@ class Target(object):
         plot_origin(): Plots the original target image.
         plot_final(): Plots the target image after processing with the vortex coronagraph.
     """
-    def __init__(self, file_name="example", px=512, py=512):
+    def __init__(self, file_name=None, px=512, py=512):
         """
         Constructor for the Target class.
         """
-        self.file_name = file_name
-        inc = fits.open(file_name+".fits")
+        if file_name == None:
+            self.file_name = DATADIR+"example"
+        else:
+            self.file_name = file_name
+        inc = fits.open(self.file_name+".fits")
         self.px=px
         self.py=py
         self.psf_scale=1e-6/2.4*206264.806*32/512 ##arcsecs/pixel
@@ -56,7 +59,7 @@ class Target(object):
         ax.set_xlabel('x [arcsec]')
         cb=plt.colorbar(im,orientation='vertical')
         cb.set_label("$Jy$")
-        #fig.savefig(self.file_name+".png", format='png', bbox_inches='tight')
+        fig.savefig("origin.png", format='png', bbox_inches='tight')
         plt.show()
         
     def plot_final(self, charge, img_pixel = 512, psf_range = 16, rot_number = 360, plot_dpi=300):
@@ -73,7 +76,7 @@ class Target(object):
         Returns:
             The final image.
         """
-        psf_filename = "psfs_c"+str(charge)+".npy"
+        psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
         if not os.path.exists(psf_filename):
             psf_calculation(charge, img_pixel, psf_range)
         final_img_charge = cir_psf(self.pre_img, img_pixel, psf_range, img_pixel, psf_filename)
@@ -86,8 +89,5 @@ class Target(object):
         ax2.set_xlabel('x [arcsec]')
         cb=plt.colorbar(im2,orientation='vertical')
         cb.set_label("$Jy$")
-        #fig.savefig(self.file_name+"_charge"+str(charge)+"_final.png", format='png', bbox_inches='tight')
+        fig.savefig("charge"+str(charge)+"_final.png", format='png', bbox_inches='tight')
         plt.show()
-
-if __name__ == "__main__":
-    main()
