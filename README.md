@@ -1,3 +1,6 @@
+<a href="https://pypi.org/project/toycoronagraph/"><img src="https://img.shields.io/pypi/v/lrgs.svg" alt="PyPI" /></a>
+<a href="https://github.com/dreamjade/Toy_Coronagraph/blob/main/LICENSE"><img src="https://img.shields.io/cran/l/lrgs.svg" alt="MIT License" /></a>
+
 # Toy Coronagraph
 
 The toycoronagraph package is a Python library for simulating coronagraphs. It is designed to be simple and easy to use, while still providing a powerful and flexible framework for simulating a variety of coronagraph designs.
@@ -22,6 +25,4 @@ The toycoronagraph package is open source and available on GitHub. It is a valua
 * Designing new coronagraph designs
 * Testing the performance of coronagraph hardware
 * Studying the physics of light scattering
-
-Pypi Release: https://pypi.org/project/toycoronagraph/
 
