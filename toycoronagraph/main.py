@@ -8,12 +8,31 @@ import os
 class Target(object):
     """
     A circular symmetric target, which could be a dust ring, a debris disk, or ice remains
+
+    Args:
+        file_name: The name of the FITS file containing the target image.
+
+    Attributes:
+        px: The number of pixels in the x-direction.
+        py: The number of pixels in the y-direction.
+        psf_scale: The scale of the PSF in arcseconds per pixel.
+        xpix: The x-coordinates of the pixels in arcseconds.
+        ypix: The y-coordinates of the pixels in arcseconds.
+        data_jy: The target image in units of Jy.
+        pre_img: The target image in units of float64.
+
+    Methods:
+        plot_origin(): Plots the original target image.
+        plot_final(): Plots the target image after processing with the vortex coronagraph.
     """
-    def __init__(self, file_name="example"):
+    def __init__(self, file_name="example", px=512, py=512):
+        """
+        Constructor for the Target class.
+        """
         self.file_name = file_name
         inc = fits.open(file_name+".fits")
-        self.px=512
-        self.py=512
+        self.px=px
+        self.py=py
         self.psf_scale=1e-6/2.4*206264.806*32/512 ##arcsecs/pixel
         self.xpix=(np.arange (-self.px/2, self.px/2, 1))*self.psf_scale
         self.ypix=(np.arange (-self.px/2, self.px/2, 1))*self.psf_scale
@@ -25,6 +44,9 @@ class Target(object):
         self.pre_img = self.data_jy.astype(np.float64)
         
     def plot_origin(self):
+        """
+        Plots the original target image.
+        """
         fig=plt.figure(dpi=300)
         ax=plt.subplot(111)
         im=ax.imshow(self.pre_img,
@@ -38,6 +60,19 @@ class Target(object):
         plt.show()
         
     def plot_final(self, charge=6, img_pixel = 512, psf_range = 16, rot_number = 360, plot_dpi=300):
+        """
+        Plots the target image after processing with the vortex coronagraph.
+
+        Args:
+            charge: The vortex charge.
+            img_pixel: The number of pixels in the image.
+            psf_range: The range of the PSF in pixels.
+            rot_number: The number of rotations.
+            plot_dpi: The DPI of the plot.
+
+        Returns:
+            The final image.
+        """
         psf_filename = "psfs_c"+str(charge)+".npy"
         if not os.path.exists(psf_filename):
             psf_calculation(charge, img_pixel, psf_range)
