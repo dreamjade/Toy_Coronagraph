@@ -2,6 +2,7 @@ import numpy as np
 import multiprocessing as mp
 !set NUMEXPR_MAX_THREADS = 64
 from hcipy import *
+from skimage.transform import rotate
 
 def Wavefront_pos(x,y,pupil_grid):
     aperture = evaluate_supersampled(make_circular_aperture(1), pupil_grid, 4)
@@ -33,22 +34,13 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     np.save('psfs_c'+str(charge)+'.npy', psfs)
     return psfs
 
-def cir_psf(pre_img, img_pixel=512, psf_range=16, rot_number=360, psfs_name=None):
+def cir_psf(pre_img, img_pixel=512, psf_range=16, rot_number=360, psfs_name="psfs_c2.npy"):
     chunk_img = np.zeros([img_pixel, img_pixel])
-    if psfs_name==None:
-        for i in range(img_pixel//2+1):
-            x = 2*i*psf_range / img_pixel
-            weight = pre_img[255+i][255]
-            if weight != 0:
-                wf = Wavefront(Wavefront_pos(x, 0))
-                img = prop(lyot_stop(coro(wf))).intensity
-                chunk_img += 2*np.pi*i*weight*img.to_dict()["values"].reshape(img_pixel, img_pixel)/rot_number
-    else:
-        psfs = np.load(psfs_name)
-        for i in range(img_pixel//2+1):
-            weight = pre_img[255+i][255]
-            if weight != 0:
-                chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
+    psfs = np.load(psfs_name)
+    for i in range(img_pixel//2+1):
+        weight = pre_img[255+i][255]
+        if weight != 0:
+            chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
     final_img = np.zeros([img_pixel, img_pixel])
     for i in range(rot_number):
         final_img += rotate(chunk_img, angle=360*i/rot_number)
