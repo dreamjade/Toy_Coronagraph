@@ -1,6 +1,5 @@
 import numpy as np
 import multiprocessing as mp
-!set NUMEXPR_MAX_THREADS = 64
 from hcipy import *
 from skimage.transform import rotate
 
@@ -63,7 +62,7 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     chunk_size = img_pixel // (2*num_cores)
     psfs = np.empty((img_pixel//2+1, img_pixel, img_pixel))
     pool = mp.Pool(processes=num_cores)
-    results = [pool.apply_async(psf_chunk, args=(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro) for i in range(img_pixel//2+1)]
+    results = [pool.apply_async(psf_chunk, args=(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro)) for i in range(img_pixel//2+1)]
     pool.close()
     pool.join()
     for result in results:

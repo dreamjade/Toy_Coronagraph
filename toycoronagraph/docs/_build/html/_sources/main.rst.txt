@@ -5,5 +5,5 @@ Toy Coronagraph
 
 Function to perform toy coronagraph
 
-.. automodule:: main
+.. automodule:: psf
    :members:
