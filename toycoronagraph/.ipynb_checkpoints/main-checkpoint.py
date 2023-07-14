@@ -1,73 +1,60 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import hcipy
+from .psf import psf_calculation, cir_psf
+from astropy.io import fits
+
 class Target(object):
     """
     A circular symmetric target, which could be a dust ring, a debris disk, or ice remains
     """
-    def __init__(self):
-        pass
+    def __init__(self, file_name="example"):
+        self.file_name = file_name
+        inc = fits.open(file_name+".fits")
+        px=512
+        py=512
+        psf_scale=1e-6/2.4*206264.806*32/512 ##arcsecs/pixel
+        xpix=(np.arange (-px/2, px/2, 1))*psf_scale
+        ypix=(np.arange (-px/2, px/2, 1))*psf_scale
+        sq_as_per_pix=psf_scale**2
+        c=2.99792*10**14
+        wave_length=1.0 #in microns#
+        jy=10**26
+        sst=np.reshape(inc[0].data[5,0],(px,py))
+        self.data_jy=(sst/c)*(wave_length**2)*jy
+        
+    def plot_origin(self):
+        fig=plt.figure(dpi=300)
+        ax=plt.subplot(111)
+        im=ax.imshow(sst_jy.astype(np.float64),
+                       cmap='gnuplot',extent=[np.min(ypix),np.max(ypix),np.min(xpix),np.max(xpix)])
+        ax.invert_yaxis()
+        ax.set_ylabel('y [arcsec]')
+        ax.set_xlabel('x [arcsec]')
+        cb=plt.colorbar(im,orientation='vertical')
+        cb.set_label("$Jy$")
+        #fig.savefig(self.file_name+".png", format='png', bbox_inches='tight')
+        plt.show()
+        
+    def plot_final(self, charge, plot_dpi=300):
+        img_pixel = 512
+        psf_range = 16
+        rot_number = 360
 
-class Coronagraph(object):
-    """
-    A vortex coronagraph model
-    """
-    def __init__(self, charge):
-        self.charge = charge
-    
-class Image(Target, Coronagraph):
-    """
-    Simulate the image of a target go through the coronagraph
+        pre_img = sst_jy.astype(np.float64)
+        final_img_charge = cir_psf(pre_img, img_pixel, psf_range, img_pixel, 
+                                    "psfs_c"+str(charge)+"10.npy")
+        fig=plt.figure(dpi=plot_dpi)
+        ax2=plt.subplot(111)
+        im2=ax2.imshow(final_img_charge,
+                   cmap='gnuplot',extent=[np.min(ypix),np.max(ypix),np.min(xpix),np.max(xpix)])
+        ax2.invert_yaxis()
+        ax2.set_ylabel('y [arcsec]')
+        ax2.set_xlabel('x [arcsec]')
+        cb=plt.colorbar(im2,orientation='vertical')
+        cb.set_label("$Jy$")
+        #fig.savefig(self.file_name+"_charge"+str(charge)+"_final.png", format='png', bbox_inches='tight')
+        plt.show()
 
-    Args:
-        charge (int): the charge number of the vortex coronagraph
-    """
-    def __init__(self, height, dt=0.1):
-        """
-        Function that is run to initialize the class.
-
-        The input `self` is required for functions that belong to an object,
-        meaning that you want to make the function access and/or depend on the 
-        attributes of the object (e.g., self.time, and self.velocity below)
-        """
-        # let's initalize it's parent class (empty for now because it is a blank class)
-        super().__init__()
-
-        # note that we are not using the astropy.units class here as we haven't talked about it yet! But it could be useful!
-        self.height = height # current height [meters]
-        self.velocity = 0 # current velocity [meters/second]
-        self.time = 0 # time elapsed [seconds]
-        self.dt = dt # timestep of the simulation [seconds]
-        self.g = -9.8 # gravitational acceleration (Don't change) [meters/second^2]
-
-
-    def get_num_steps_run(self):
-        """
-        Function that returns the number of timesteps that have run by comparing self.time with self.dt
-
-        Returns:
-            num_steps (int): number of time steps already completed in the simulation
-        """
-        num_steps = int(self.time / self.dt)
-        return num_steps
-
-    ##### Activity ######
-    """
-    Add functionality to advance the particle's height by one time step at a time. (hint: implement the function below).
-    Then use this code to calculate how long it takes for the particle to fall down from a height of 10 meters.
-
-    Some useful equations for how to calculate the particle's new state at the next time step.
-    Pseudo code below:
-    acceleration = g
-    new_velocity = current_velocity + acceleration * dt
-    new_height = current_height + new_velocity * dt
-
-    Add inputs and outputs. 
-    """
-    def simulate_timestep(self):
-        """
-        Advance the simulation time by a single timestep (self.dt). 
-        Update the simulation with the new time, height, and velocity
-
-        Returns:
-            height (float): the current height in meters
-        """
-        ## HINT: Modify code here
-        return 0. # currently does nothing
+if __name__ == "__main__":
+    main()
