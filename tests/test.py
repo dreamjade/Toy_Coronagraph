@@ -1,4 +1,4 @@
-import toycoronagraph as toy
+import toycoronagraph.main as toy
 
 #load the example target image (example.fits) in Toy_Coronagraph/toycoronagraph/example_data/ folder
 toy_target = toy.Target()
