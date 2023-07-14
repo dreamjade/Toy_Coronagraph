@@ -37,7 +37,7 @@ class Target(object):
         #fig.savefig(self.file_name+".png", format='png', bbox_inches='tight')
         plt.show()
         
-    def plot_final(self, charge, img_pixel = 512, psf_range = 16, rot_number = 360, plot_dpi=300):
+    def plot_final(self, charge=6, img_pixel = 512, psf_range = 16, rot_number = 360, plot_dpi=300):
         psf_filename = "psfs_c"+str(charge)+".npy"
         if not os.path.exists(psf_filename):
             psf_calculation(charge, img_pixel, psf_range)
