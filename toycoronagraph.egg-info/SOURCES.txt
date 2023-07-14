@@ -7,4 +7,5 @@ toycoronagraph.egg-info/PKG-INFO
 toycoronagraph.egg-info/SOURCES.txt
 toycoronagraph.egg-info/dependency_links.txt
 toycoronagraph.egg-info/not-zip-safe
+toycoronagraph.egg-info/requires.txt
 toycoronagraph.egg-info/top_level.txt
