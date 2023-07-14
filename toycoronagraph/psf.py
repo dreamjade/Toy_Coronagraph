@@ -57,7 +57,7 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     focal_grid = make_focal_grid(16, 16)
     prop = FraunhoferPropagator(pupil_grid, focal_grid)
     lyot_mask = evaluate_supersampled(make_circular_aperture(0.5), pupil_grid, 4)
-    coro = VortexCoronagraph(pupil_grid, charge=10)
+    coro = VortexCoronagraph(pupil_grid, charge)
     lyot_stop = Apodizer(lyot_mask)
     
     chunk_size = img_pixel // (2*num_cores)
