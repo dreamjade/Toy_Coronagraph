@@ -1,3 +1,7 @@
 astropy>=4
 numpy
 matplotlib
+scikit-image
+pysynphot
+hcipy
+multiprocessing
