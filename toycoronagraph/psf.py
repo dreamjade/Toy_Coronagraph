@@ -5,16 +5,54 @@ from hcipy import *
 from skimage.transform import rotate
 
 def Wavefront_pos(x,y,pupil_grid):
+    """
+    Calculates the wavefront at a given position.
+
+    Args:
+        x: The x-coordinate of the position.
+        y: The y-coordinate of the position.
+        pupil_grid: The pupil grid.
+
+    Returns:
+        The wavefront at the given position.
+    """
     aperture = evaluate_supersampled(make_circular_aperture(1), pupil_grid, 4)
     return aperture * np.exp(2j * np.pi * (pupil_grid.x * x + pupil_grid.y * y))
 
 def psf_chunk(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro):
+    """
+    Calculates a single PSF chunk.
+
+    Args:
+        i: The index of the chunk.
+        img_pixel: The number of pixels in the image.
+        psf_range: The range of the PSF in pixels.
+        pupil_grid: The pupil grid.
+        prop: The FraunhoferPropagator.
+        lyot_stop: The Apodizer.
+        coro: The VortexCoronagraph.
+
+    Returns:
+        The index of the chunk and the PSF chunk.
+    """
     x = 2*i*psf_range / img_pixel
     wf = Wavefront(Wavefront_pos(x, 0,pupil_grid))
     img = prop(lyot_stop(coro(wf))).intensity
     return i, img.to_dict()["values"].reshape(img_pixel, img_pixel)
 
 def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
+    """
+    Calculates the PSFs of a vortex coronagraph for a given charge.
+
+    Args:
+        charge: The vortex charge.
+        img_pixel: The number of pixels in the image.
+        psf_range: The range of the PSF in pixels.
+        num_cores: The number of cores to use.
+
+    Returns:
+        The PSFs.
+    """
     pupil_grid = make_pupil_grid(1024, 1.5)
     focal_grid = make_focal_grid(16, 16)
     prop = FraunhoferPropagator(pupil_grid, focal_grid)
@@ -35,6 +73,19 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     return psfs
 
 def cir_psf(pre_img, img_pixel=512, psf_range=16, rot_number=360, psfs_name="psfs_c2.npy"):
+    """
+    Calculates the final image of a circular symmetric pre-image through circular symmetric PSF
+
+    Args:
+        pre_img: The pre-image.
+        img_pixel: The number of pixels in the image.
+        psf_range: The range of the PSF in pixels.
+        rot_number: The number of rotations.
+        psfs_name: The name of the PSF file.
+
+    Returns:
+        The final image through the coronagraph.
+    """
     chunk_img = np.zeros([img_pixel, img_pixel])
     psfs = np.load(psfs_name)
     for i in range(img_pixel//2+1):
