@@ -5,4 +5,5 @@ Main
 
 Function to perform toy coronagraph
 
-.. module:: toycoronagraph
+.. automodule:: main
+   :members:

@@ -44,7 +44,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Main</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Main</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main.Target"><code class="docutils literal notranslate"><span class="pre">Target</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.px"><code class="docutils literal notranslate"><span class="pre">Target.px</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.py"><code class="docutils literal notranslate"><span class="pre">Target.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.psf_scale"><code class="docutils literal notranslate"><span class="pre">Target.psf_scale</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.xpix"><code class="docutils literal notranslate"><span class="pre">Target.xpix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.ypix"><code class="docutils literal notranslate"><span class="pre">Target.ypix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.data_jy"><code class="docutils literal notranslate"><span class="pre">Target.data_jy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.pre_img"><code class="docutils literal notranslate"><span class="pre">Target.pre_img</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.plot_origin"><code class="docutils literal notranslate"><span class="pre">Target.plot_origin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.plot_final"><code class="docutils literal notranslate"><span class="pre">Target.plot_final()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Target.plot_final()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Target.plot_origin()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="psf.html">Toy Coronagraph PSF</a></li>
 </ul>
 
@@ -75,7 +91,98 @@
   <div class="section" id="main">
 <span id="id1"></span><h1>Main<a class="headerlink" href="#main" title="Permalink to this heading"></a></h1>
 <p>Function to perform toy coronagraph</p>
-<span class="target" id="module-toycoronagraph"></span></div>
+<span class="target" id="module-main"></span><dl class="py class">
+<dt class="sig sig-object py" id="main.Target">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">px</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">py</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target" title="Permalink to this definition"></a></dt>
+<dd><p>A circular symmetric target, which could be a dust ring, a debris disk, or ice remains</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_name</strong> – The name of the FITS file containing the target image.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.px">
+<span class="sig-name descname"><span class="pre">px</span></span><a class="headerlink" href="#main.Target.px" title="Permalink to this definition"></a></dt>
+<dd><p>The number of pixels in the x-direction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.py">
+<span class="sig-name descname"><span class="pre">py</span></span><a class="headerlink" href="#main.Target.py" title="Permalink to this definition"></a></dt>
+<dd><p>The number of pixels in the y-direction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.psf_scale">
+<span class="sig-name descname"><span class="pre">psf_scale</span></span><a class="headerlink" href="#main.Target.psf_scale" title="Permalink to this definition"></a></dt>
+<dd><p>The scale of the PSF in arcseconds per pixel.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.xpix">
+<span class="sig-name descname"><span class="pre">xpix</span></span><a class="headerlink" href="#main.Target.xpix" title="Permalink to this definition"></a></dt>
+<dd><p>The x-coordinates of the pixels in arcseconds.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.ypix">
+<span class="sig-name descname"><span class="pre">ypix</span></span><a class="headerlink" href="#main.Target.ypix" title="Permalink to this definition"></a></dt>
+<dd><p>The y-coordinates of the pixels in arcseconds.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.data_jy">
+<span class="sig-name descname"><span class="pre">data_jy</span></span><a class="headerlink" href="#main.Target.data_jy" title="Permalink to this definition"></a></dt>
+<dd><p>The target image in units of Jy.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.pre_img">
+<span class="sig-name descname"><span class="pre">pre_img</span></span><a class="headerlink" href="#main.Target.pre_img" title="Permalink to this definition"></a></dt>
+<dd><p>The target image in units of float64.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.plot_origin">
+<span class="sig-name descname"><span class="pre">plot_origin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_origin" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the original target image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.plot_final">
+<span class="sig-name descname"><span class="pre">plot_final</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_final" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the target image after processing with the vortex coronagraph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">plot_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">360</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the target image after processing with the vortex coronagraph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charge</strong> – The vortex charge.</p></li>
+<li><p><strong>img_pixel</strong> – The number of pixels in the image.</p></li>
+<li><p><strong>psf_range</strong> – The range of the PSF in pixels.</p></li>
+<li><p><strong>rot_number</strong> – The number of rotations.</p></li>
+<li><p><strong>plot_dpi</strong> – The DPI of the plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The final image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">plot_origin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the original target image.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 
 
            </div>
