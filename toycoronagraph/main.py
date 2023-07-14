@@ -79,6 +79,7 @@ class Target(object):
         psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
         if not os.path.exists(psf_filename):
             psf_calculation(charge, img_pixel, psf_range)
+            psf_filename = "psfs_c"+str(charge)+".npy"
         final_img_charge = cir_psf(self.pre_img, img_pixel, psf_range, img_pixel, psf_filename)
         fig=plt.figure(dpi=plot_dpi)
         ax2=plt.subplot(111)
