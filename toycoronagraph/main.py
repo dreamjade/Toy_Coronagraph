@@ -21,10 +21,6 @@ class Target(object):
         ypix: The y-coordinates of the pixels in arcseconds.
         data_jy: The target image in units of Jy.
         pre_img: The target image in units of float64.
-
-    Methods:
-        plot_origin(): Plots the original target image.
-        plot_final(): Plots the target image after processing with the vortex coronagraph.
     """
     def __init__(self, file_name=None, px=512, py=512):
         """

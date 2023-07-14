@@ -53,12 +53,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#main.Target.ypix"><code class="docutils literal notranslate"><span class="pre">Target.ypix</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#main.Target.data_jy"><code class="docutils literal notranslate"><span class="pre">Target.data_jy</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#main.Target.pre_img"><code class="docutils literal notranslate"><span class="pre">Target.pre_img</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#main.Target.plot_origin"><code class="docutils literal notranslate"><span class="pre">Target.plot_origin()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#main.Target.plot_final"><code class="docutils literal notranslate"><span class="pre">Target.plot_final()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#main.Target.__init__"><code class="docutils literal notranslate"><span class="pre">Target.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#main.Target.__weakref__"><code class="docutils literal notranslate"><span class="pre">Target.__weakref__</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Target.plot_final()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Target.plot_origin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.plot_final"><code class="docutils literal notranslate"><span class="pre">Target.plot_final()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.Target.plot_origin"><code class="docutils literal notranslate"><span class="pre">Target.plot_origin()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -145,18 +143,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.Target.plot_origin">
-<span class="sig-name descname"><span class="pre">plot_origin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_origin" title="Permalink to this definition"></a></dt>
-<dd><p>Plots the original target image.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="main.Target.plot_final">
-<span class="sig-name descname"><span class="pre">plot_final</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_final" title="Permalink to this definition"></a></dt>
-<dd><p>Plots the target image after processing with the vortex coronagraph.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="main.Target.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">px</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">py</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Constructor for the Target class.</p>
@@ -169,8 +155,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">plot_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">360</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="main.Target.plot_final">
+<span class="sig-name descname"><span class="pre">plot_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">360</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_final" title="Permalink to this definition"></a></dt>
 <dd><p>Plots the target image after processing with the vortex coronagraph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -189,8 +175,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">plot_origin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="main.Target.plot_origin">
+<span class="sig-name descname"><span class="pre">plot_origin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_origin" title="Permalink to this definition"></a></dt>
 <dd><p>Plots the original target image.</p>
 </dd></dl>
 
