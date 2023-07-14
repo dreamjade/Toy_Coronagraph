@@ -59,7 +59,7 @@ class Target(object):
         #fig.savefig(self.file_name+".png", format='png', bbox_inches='tight')
         plt.show()
         
-    def plot_final(self, charge=6, img_pixel = 512, psf_range = 16, rot_number = 360, plot_dpi=300):
+    def plot_final(self, charge, img_pixel = 512, psf_range = 16, rot_number = 360, plot_dpi=300):
         """
         Plots the target image after processing with the vortex coronagraph.
 
