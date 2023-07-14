@@ -1,10 +1,8 @@
-.. _toycoronagraph:
+.. _main:
 
 Main
 =====================
 
 Function to perform toy coronagraph
 
-.. autoclass:: main
-   :members:
-   :special-members:
+.. module:: toycoronagraph

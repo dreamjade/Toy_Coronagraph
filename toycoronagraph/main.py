@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import hcipy
-from .psf import psf_calculation, cir_psf
+#from .psf import psf_calculation, cir_psf
+from toycoronagraph.psf import psf_calculation, cir_psf
 from astropy.io import fits
 from toycoronagraph import DATADIR
 import os
