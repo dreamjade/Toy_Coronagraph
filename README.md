@@ -34,6 +34,6 @@ The toycoronagraph package is open source and available on GitHub. It is a valua
 
 ### Example
 
-example target           |  Final image (Charge=2)  |  Final image (Charge=2)
+example target           |  Final image (Charge=2)  |  Final image (Charge=6)
 :-------------------------:|:-------------------------:|:-------------------------:
 ![origin](./origin.png) | ![charge2_final](./charge2_final.png) | ![charge6_final](./charge6_final.png)
