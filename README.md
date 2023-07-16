@@ -32,3 +32,8 @@ The toycoronagraph package is open source and available on GitHub. It is a valua
 * Testing the performance of coronagraph hardware
 * Studying the physics of light scattering
 
+### Example
+
+example target           |  Final image (Charge=2)
+:-------------------------:|:-------------------------:
+![Mixture model](./origin.png) | ![Dirichlet process model](./charge2_final.png)
