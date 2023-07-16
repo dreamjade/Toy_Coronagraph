@@ -3,7 +3,13 @@
 
 # Toy Coronagraph
 
-The toycoronagraph package is a Python library for simulating coronagraphs. It is designed to be simple and easy to use, while still providing a powerful and flexible framework for simulating a variety of coronagraph designs.
+The toycoronagraph package is implemented in Python
+
+Language | Branch | Note
+---------- | -------- | ------
+Python | [`python`](https://github.com/abmantz/lrgs/tree/python) | [On PyPI](https://pypi.python.org/pypi/toycoronagraph) (though not always the most recent [version](https://github.com/dreamjade/Toy_Coronagraph/blob/main/toycoronagraph/__init__.py))
+
+for simulating coronagraphs. It is designed to be simple and easy to use, while still providing a powerful and flexible framework for simulating a variety of coronagraph designs. 
 
 The package includes a number of pre-defined coronagraph designs, as well as a library of functions for creating custom coronagraphs. It also includes a number of tools for visualizing the results of simulations, such as ray tracing plots and intensity maps.
 
