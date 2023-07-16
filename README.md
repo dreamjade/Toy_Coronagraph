@@ -1,13 +1,13 @@
 <a href="https://pypi.org/project/toycoronagraph/"><img src="https://img.shields.io/pypi/v/lrgs.svg" alt="PyPI" /></a>
-<a href="https://github.com/dreamjade/Toy_Coronagraph/blob/main/LICENSE"><img src="https://img.shields.io/cran/l/lrgs.svg" alt="MIT License" /></a>
+<a href="./blob/main/LICENSE"><img src="https://img.shields.io/cran/l/lrgs.svg" alt="MIT License" /></a>
 
 # Toy Coronagraph
 
 The toycoronagraph package is implemented in Python
 
-Language | Branch | Note
+Language | Release | Note
 ---------- | -------- | ------
-Python | [`python`](https://github.com/abmantz/lrgs/tree/python) | [On PyPI](https://pypi.python.org/pypi/toycoronagraph) (though not always the most recent [version](https://github.com/dreamjade/Toy_Coronagraph/blob/main/toycoronagraph/__init__.py))
+Python | [On PyPI](https://pypi.python.org/pypi/toycoronagraph) | though not always the most recent [version](./blob/main/toycoronagraph/__init__.py)
 
 for simulating coronagraphs. It is designed to be simple and easy to use, while still providing a powerful and flexible framework for simulating a variety of coronagraph designs. 
 
@@ -37,3 +37,6 @@ The toycoronagraph package is open source and available on GitHub. It is a valua
 example target           |  Final image (Charge=2)  |  Final image (Charge=6)
 :-------------------------:|:-------------------------:|:-------------------------:
 ![origin](./origin.png) | ![charge2_final](./charge2_final.png) | ![charge6_final](./charge6_final.png)
+
+### Example usage (Python)
+[This py file](./tests/test.py) illustrates how the Python package is used.
