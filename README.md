@@ -7,7 +7,7 @@ The toycoronagraph package is implemented in Python
 
 Language | Release | Note
 ---------- | -------- | ------
-Python | [On PyPI](https://pypi.python.org/pypi/toycoronagraph) | though not always the most recent [version](./blob/main/toycoronagraph/__init__.py)
+Python | [On PyPI](https://pypi.python.org/pypi/toycoronagraph) | though not always the most recent [version](./toycoronagraph/__init__.py)
 
 for simulating coronagraphs. It is designed to be simple and easy to use, while still providing a powerful and flexible framework for simulating a variety of coronagraph designs. 
 
