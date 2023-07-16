@@ -6,6 +6,26 @@ from toycoronagraph.psf import psf_calculation, cir_psf
 from astropy.io import fits
 from toycoronagraph import DATADIR
 import os
+
+def is_positive_even_integer(number):
+  """
+  Checks if the input number is a positive even integer.
+
+  Args:
+    number: The number to check.
+
+  Returns:
+    True if the number is a positive even integer, False otherwise.
+  """
+
+  if not isinstance(number, int) or number <= 0:
+    return False
+
+  if number % 2 == 0:
+    return True
+
+  return False
+
 class Target(object):
     """
     A circular symmetric target, which could be a dust ring, a debris disk, or ice remains
@@ -59,7 +79,7 @@ class Target(object):
         fig.savefig("origin.png", format='png', bbox_inches='tight')
         plt.show()
         
-    def plot_final(self, charge, img_pixel = 512, psf_range = 16, rot_number = 360, plot_dpi=300):
+    def plot_final(self, charge, coronagraph_type='vortex', img_pixel=512, psf_range=16, rot_number=360, plot_dpi=300):
         """
         Plots the target image after processing with the vortex coronagraph.
 
@@ -73,10 +93,18 @@ class Target(object):
         Returns:
             The final image.
         """
+        #check charge number
+        if coronagraph_type=='vortex':
+            if not is_positive_even_integer(charge):
+                print("charge number is not compatible with coronagraph type, auto set to 2")
+                charge = 2
+                
+        #find psf files
         psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
         if not os.path.exists(psf_filename):
             psf_calculation(charge, img_pixel, psf_range)
             psf_filename = "psfs_c"+str(charge)+".npy"
+        
         final_img_charge = cir_psf(self.pre_img, img_pixel, psf_range, img_pixel, psf_filename)
         fig=plt.figure(dpi=plot_dpi)
         ax2=plt.subplot(111)
