@@ -14,7 +14,7 @@ copyright = '2023, dreamjade'
 author = 'dreamjade'
 root_doc = 'index'
 
-release = '1.0'
+release = '1.2.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
