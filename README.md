@@ -1,5 +1,5 @@
-[![Version](https://img.shields.io/badge/Version-1.2.2-orange.svg?style=flat-square)]()
 [![DOI](https://zenodo.org/badge/665310914.svg)](https://zenodo.org/badge/latestdoi/665310914)
+[![Version](https://img.shields.io/badge/Version-1.2.2-orange.svg?style=flat-square)]()
 <a href="https://pypi.org/project/toycoronagraph/"><img src="https://img.shields.io/pypi/v/lrgs.svg" alt="PyPI" /></a>
 [![Documentation Status](https://readthedocs.org/projects/toy-coronagraph/badge/?version=stable)](https://toy-coronagraph.readthedocs.io/en/stable)
 <a href="./LICENSE"><img src="https://img.shields.io/cran/l/lrgs.svg" alt="MIT License" /></a>
