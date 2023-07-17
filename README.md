@@ -55,3 +55,4 @@ toy_target.plot_origin()
 charge = 2
 toy_target.plot_final(charge)
 ```
+More instructions could be found in [docs](https://dreamjade.github.io/Toy_Coronagraph/).
