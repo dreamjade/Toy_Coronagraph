@@ -42,13 +42,13 @@ def is_planet_pos_allowed(pos, mode):
     if mode == "cartesian":
         if len(pos)!=2:
             return False
-        if not isinstance(pos[0], (float, int)) or not isinstance(pos[1], (float, int)):
+        if not isinstance(pos[0], (float, int, np.float64, np.int64)) or not isinstance(pos[1], (float, int, np.float64, np.int64)):
             return False
         return True
     elif mode == "polar":
         if len(pos)!=2:
             return False
-        if not isinstance(pos[0], (float, int)) or not isinstance(pos[1], (float, int)) or pos[0]<=0:
+        if not isinstance(pos[0], (float, int, np.float64, np.int64)) or not isinstance(pos[1], (float, int, np.float64, np.int64)) or pos[0]<=0:
             return False
         return True 
     
@@ -160,7 +160,7 @@ class Target(object):
             psf_filename = "psfs_c"+str(charge)+".npy"
         
         #draw final image of the disk
-        final_img_charge = cir_psf(self.pre_img, self.planets, add_planet, img_pixel, psf_range, img_pixel, psf_filename)
+        final_img_charge = cir_psf(self.pre_img, self.planets, self.planets_brightness, add_planet, img_pixel, psf_range, img_pixel, psf_filename)
         
         #show the final results
         fig=plt.figure(dpi=plot_dpi)
@@ -172,5 +172,10 @@ class Target(object):
         ax2.set_xlabel('x [arcsec]')
         cb=plt.colorbar(im2,orientation='vertical')
         cb.set_label("$Jy$")
-        fig.savefig("charge"+str(charge)+"_final.png", format='png', bbox_inches='tight')
+        
+        #save the final image
+        final_image_name = "charge"+str(charge)
+        if add_planet and self.planets != []:
+            final_image_name += "_with_planets"
+        fig.savefig(final_image_name+"_final.png", format='png', bbox_inches='tight')
         plt.show()

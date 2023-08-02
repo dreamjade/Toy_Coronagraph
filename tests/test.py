@@ -10,3 +10,10 @@ toy_target.plot_origin()
 charge = 2
 toy_target.plot_final(charge)
 
+#now add a planet
+toy_target.add_planet(pos=[100,0], brightness=0.001)
+
+#plot the final image with planets
+#plot_final(self, charge, coronagraph_type='vortex', add_planet=True, img_pixel=512, psf_range=16, rot_number=360, plot_dpi=300)
+charge = 2
+toy_target.plot_final(charge)

@@ -68,10 +68,12 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     for result in results:
         i, psf = result.get()
         psfs[i] = psf
+    
+    #save psfs into npy file
     np.save('psfs_c'+str(charge)+'.npy', psfs)
     return psfs
 
-def cir_psf(pre_img, img_pixel=512, psf_range=16, rot_number=360, psfs_name="psfs_c2.npy"):
+def cir_psf(pre_img, planets_pos, planet_brightness, add_planet, img_pixel=512, psf_range=16, rot_number=360, psfs_name="psfs_c2.npy"):
     """
     Calculates the final image of a circular symmetric pre-image through circular symmetric PSF
 
@@ -94,4 +96,10 @@ def cir_psf(pre_img, img_pixel=512, psf_range=16, rot_number=360, psfs_name="psf
     final_img = np.zeros([img_pixel, img_pixel])
     for i in range(rot_number):
         final_img += rotate(chunk_img, angle=360*i/rot_number)
+        
+    #add planets
+    if add_planet:
+        for i in range(len(planets_pos)):
+            final_img += rotate(planet_brightness[i]*psfs[int(planets_pos[i][0])], angle=360*planets_pos[i][1]/2/np.pi)
+            
     return final_img
