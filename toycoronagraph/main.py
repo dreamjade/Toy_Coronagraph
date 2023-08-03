@@ -156,8 +156,9 @@ class Target(object):
         #find psf files
         psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
         if not os.path.exists(psf_filename):
-            psf_calculation(charge, img_pixel, psf_range)
             psf_filename = "psfs_c"+str(charge)+".npy"
+            if not os.path.exists(psf_filename):
+                psf_calculation(charge, img_pixel, psf_range)
         
         #draw final image of the disk
         final_img_charge = cir_psf(self.pre_img, self.planets, self.planets_brightness, add_planet, img_pixel, psf_range, img_pixel, psf_filename)
