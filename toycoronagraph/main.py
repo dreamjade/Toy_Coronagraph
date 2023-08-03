@@ -110,6 +110,29 @@ class Target(object):
         fig.savefig("origin.png", format='png', bbox_inches='tight')
         plt.show()
         
+    def plot_planets(self):
+        """
+        Plots all planets location on the target image.
+
+        Args:
+            target: The target object.
+        """
+        fig=plt.figure(dpi=300)
+        ax=plt.subplot(111)
+        im=ax.imshow(self.pre_img,
+                       cmap='gnuplot',extent=[np.min(self.ypix),np.max(self.ypix),np.min(self.xpix),np.max(self.xpix)])
+        ax.invert_yaxis()
+        ax.set_ylabel('y [arcsec]')
+        ax.set_xlabel('x [arcsec]')
+        cb=plt.colorbar(im,orientation='vertical')
+        cb.set_label("$Jy$")
+        for p, b in zip(self.planets, self.planets_brightness):
+            circle = plt.Circle((p[0], p[1]), 0.2, color='red', fill=False)
+            ax.add_artist(circle)
+            ax.annotate(str(b), (p[0], p[1]), color='red')
+        fig.savefig("planets.png", format='png', bbox_inches='tight')
+        plt.show()
+        
     def add_planet(self, pos, brightness, mode="polar"):
         pos = np.array(pos)
         
@@ -132,7 +155,35 @@ class Target(object):
                 self.planets_brightness.append(brightness)
         else:
             print("no "+str(mode)+" mode")
-        
+
+    def list_planets(self):
+        """
+        Lists all planets in order and show the order number.
+
+        Args:
+            target: The target object.
+        """
+        if len(self.planets)==0:
+            print("There is no planet, but you can add planet via Target.add_planet(pos, brightness)")
+        order = 1
+        for p, b in zip(self.planets, self.planets_brightness):
+            print("Planet {:d}: ({}, {}), brightness: {:.2e}".format(order, p[0], p[1], b))
+            order += 1
+
+    def delete_planet(self, order):
+        """
+        Deletes the planets from self.planet and self.planet_brightness with given order number.
+
+        Args:
+            target: The target object.
+            order: The order number of the planet to be deleted.
+        """
+        if not isinstance(order, int) or order < 1 or order > len(self.planets):
+            print("Input order number is not existed, please try again or use Target.list_planets() to list all planets")
+        else:
+            del self.planets[order-1]
+            del self.planets_brightness[order-1]
+
     def plot_final(self, charge, coronagraph_type='vortex', add_planet=True, img_pixel=512, psf_range=16, rot_number=360, plot_dpi=300):
         """
         Plots the target image after processing with the vortex coronagraph.
