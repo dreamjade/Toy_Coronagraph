@@ -1,14 +1,13 @@
 def t_period_convert(t):
-    if not isinstance(t, (float, int, np.int64, np.float64)) or t < 0:
+    if not isinstance(t, (float, int, np.int64, np.float64)) or t <= 0:
         print("time/period must be a positive number, auto set to initial position")
-        return 0.0
+        return 1.0
     else:
-        if not np.isclose(t, 0):
-            integer_t = int(t)
-            if np.isclose(t, integer_t):
-                return 1.0
-            else:
-                return t-integer_t
+        integer_t = int(t)
+        if np.isclose(t, integer_t):
+            return 1.0
+        else:
+            return t-integer_t
 
 def planet_position(a, e, pa = 0, inc = 0, t = 0):
     # Convert inputs from degree to rad
@@ -53,6 +52,3 @@ def planet_position(a, e, pa = 0, inc = 0, t = 0):
     # Mark the focus.
     plt.scatter([0], [0], color='red', marker='x')
     plt.scatter([planet_x], [planet_y], color='blue', marker='x')
-
-planet_position(100, 0.9, 0, 0, 0.8)
-plt.show()
