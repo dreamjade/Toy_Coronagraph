@@ -29,7 +29,7 @@ def is_positive_even_integer(number):
         True if the number is a positive even integer, False otherwise.
     """
 
-    if not isinstance(number, int) or number <= 0:
+    if not isinstance(number, (int, np.int64)) or number <= 0:
         return False
     if number % 2 != 0:
         return False
