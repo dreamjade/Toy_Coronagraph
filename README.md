@@ -44,7 +44,7 @@ example target           |  Final image (Charge=2)  |  Final image (Charge=6)
 #### with planet
 Final image (Charge=2)  |  Final image (Charge=4)
 :-------------------------:|:-------------------------:
-![charge2_final](./charge=2_with_planets_final.png) | ![charge6_final](./charge4_with_planets_final.png)
+![charge2_final](./charge2_with_planets_final.png) | ![charge6_final](./charge4_with_planets_final.png)
 
 ### Example usage (Python)
 This [py file](./tests/test.py) illustrates how the Python package is used.
