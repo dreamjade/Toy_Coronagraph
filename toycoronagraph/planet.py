@@ -1,3 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
 def t_period_convert(t):
     if not isinstance(t, (float, int, np.int64, np.float64)) or t == 0:
         print("time/period must be a positive number, auto set to initial position")
