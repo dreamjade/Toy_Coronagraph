@@ -1,8 +1,14 @@
 def t_period_convert(t):
-    if not isinstance(t, (float, int, np.int64, np.float64)) or t <= 0:
+    if not isinstance(t, (float, int, np.int64, np.float64)) or t == 0:
         print("time/period must be a positive number, auto set to initial position")
         return 1.0
-    else:
+    elif t > 0:
+        integer_t = int(t)
+        if np.isclose(t, integer_t):
+            return 1.0
+        else:
+            return t-integer_t
+    else t < 0:
         integer_t = int(t)
         if np.isclose(t, integer_t):
             return 1.0
@@ -43,12 +49,20 @@ def planet_position(a, e, pa = 0, inc = 0, t = 0):
     planet_r = a * (1 - e**2) / (1 + e * np.cos(target_theta))
     planet_x = planet_r * np.cos(target_theta-pa)
     planet_y = planet_r * np.sin(target_theta-pa)*np.cos(inc)
-    plt.plot(x, y)
+
+    return x,y,planet_x, planet_y
+
+def orbit_plot(positions):
+    orbit_x, orbit_y, planet_x, planet_y = positions
     
     # Make the unit length of x and y axis show the same pixel in the final picture.
+    fig=plt.figure(dpi=300)
     axs = plt.gca()
     axs.set_aspect('equal', 'box')
-
-    # Mark the focus.
-    plt.scatter([0], [0], color='red', marker='x')
-    plt.scatter([planet_x], [planet_y], color='blue', marker='x')
+    
+    # Plot
+    plt.plot(orbit_x, orbit_y, color='orange', linestyle = '--', alpha = 0.5) # Plot the orbit.
+    plt.scatter([0], [0], color='darkorange', marker='x') #Mark the focus.
+    plt.scatter([planet_x], [planet_y], color='black', marker='o') #Mark the planet. 
+    fig.savefig("oribit.png", format='png', bbox_inches='tight')
+    plt.show()
