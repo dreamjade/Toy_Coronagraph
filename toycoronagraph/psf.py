@@ -100,6 +100,6 @@ def cir_psf(pre_img, planets_pos, planet_brightness, add_planet, img_pixel=512, 
     #add planets
     if add_planet:
         for i in range(len(planets_pos)):
-            final_img += rotate(planet_brightness[i]*psfs[int(planets_pos[i][0])], angle=360*planets_pos[i][1]/2/np.pi)
+            final_img += rotate(planet_brightness[i]*psfs[int(planets_pos[i][0])], angle=-planets_pos[i][1]*180.0/np.pi)
             
     return final_img

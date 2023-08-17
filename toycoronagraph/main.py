@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import hcipy
 #from .psf import psf_calculation, cir_psf
 from toycoronagraph.psf import psf_calculation, cir_psf
-from toycoronagraph.planet import planet_position
+from toycoronagraph.planet import planet_position, orbit_plot
 from toycoronagraph.tool import convert_to_polar, is_positive_even_integer, is_planet_pos_allowed
 from astropy.io import fits
 from toycoronagraph import DATADIR
@@ -107,6 +107,7 @@ class Target(object):
             elif not isinstance(brightness, (float, int)) or brightness<=0:
                 print("Brightness is invalid")
             else:
+                pos[1] = pos[1]*np.pi/180.0#from degree to rad
                 self.planets.append(pos)
                 self.planets_brightness.append(brightness)
                 self.orbits.append(None)
@@ -134,7 +135,7 @@ class Target(object):
             print("There is no planet, but you can add planet via Target.add_planet(pos, brightness)")
         order = 1
         for p, b, o in zip(self.planets, self.planets_brightness, self.orbits):
-            if o==None:
+            if o is None:
                 print("Static Planet {:d}: ({}, {}), brightness: {:.2e}".format(order, p[0], p[1], b))
             else:
                 print("Moving Planet {:d}: ({}, {}), brightness: {:.2e}".format(order, p[0], p[1], b))
@@ -155,7 +156,7 @@ class Target(object):
             del self.planets_brightness[order-1]
             del self.orbits[order-1]
 
-    def planet_move(self, time, order==1, mode=="culmulated", plot_pos==False):
+    def planet_move(self, time, order=1, mode="culmulated", plot_pos=False):
         if mode == "culmulated":
             self.orbits[order-1][4] += time
         elif mode == "specific":

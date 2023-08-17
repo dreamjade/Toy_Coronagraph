@@ -47,7 +47,7 @@ def planet_position(a, e, pa, inc, t, mode="polar"):
     # Find the planet's location
     planet_r = a * (1 - e**2) / (1 + e * np.cos(target_theta))
     if mode == "polar":
-        return planet_r, np.atan2(np.sin(target_theta+pa)*np.cos(inc), np.cos(target_theta+pa))
+        return planet_r, np.arctan2(np.sin(target_theta+pa)*np.cos(inc), np.cos(target_theta+pa))
     elif mode == "cartesian":
         return planet_r * np.cos(target_theta+pa), planet_r * np.sin(target_theta+pa)*np.cos(inc)
     else:
