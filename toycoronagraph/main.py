@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import hcipy
 #from .psf import psf_calculation, cir_psf
 from toycoronagraph.psf import psf_calculation, cir_psf
-from toycoronagraph.planet import planet_position, orbit_plot
+from toycoronagraph.planet import planet_position
 from toycoronagraph.tool import convert_to_polar, is_positive_even_integer, is_planet_pos_allowed
 from astropy.io import fits
 from toycoronagraph import DATADIR
@@ -46,6 +46,7 @@ class Target(object):
         self.data_jy = (sst/c)*(wave_length**2)*jy
         self.pre_img = self.data_jy.astype(np.float64)
         self.planets = []
+        self.orbits = []
         self.planets_brightness = []
         
     def plot_origin(self):
@@ -87,13 +88,20 @@ class Target(object):
         fig.savefig("planets.png", format='png', bbox_inches='tight')
         plt.show()
         
-    def add_planet(self, pos, brightness, mode="polar"):
+    def add_planet(self, pos, brightness, mode="moving"):
         pos = np.array(pos)
 
-        if mode=="moving":
-            
-        
-        elif mode=="polar":
+        if mode == "moving":
+            if not is_planet_pos_allowed(pos, mode):
+                print("Planet position is not allowed")
+            elif not isinstance(brightness, (float, int)) or brightness<=0:
+                print("Brightness is invalid")
+            else:
+                self.planets.append(planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar"))
+                self.planets_brightness.append(brightness)
+                self.orbits.append(pos)
+                
+        elif mode == "polar":
             if not is_planet_pos_allowed(pos, mode):
                 print("Planet position is not allowed")
             elif not isinstance(brightness, (float, int)) or brightness<=0:
@@ -101,8 +109,9 @@ class Target(object):
             else:
                 self.planets.append(pos)
                 self.planets_brightness.append(brightness)
+                self.orbits.append(None)
             
-        elif mode=="cartesian":
+        elif mode == "cartesian":
             if not is_planet_pos_allowed(pos, mode):
                 print("planet position is not allowed")
             elif not isinstance(brightness, (float, int)) or brightness<=0:
@@ -110,6 +119,7 @@ class Target(object):
             else:
                 self.planets.append(convert_to_polar(pos))
                 self.planets_brightness.append(brightness)
+                self.orbits.append(None)
         else:
             print("no "+str(mode)+" mode")
 
@@ -140,6 +150,7 @@ class Target(object):
         else:
             del self.planets[order-1]
             del self.planets_brightness[order-1]
+            del self.orbits[order-1]
 
     def plot_final(self, charge, coronagraph_type='vortex', add_planet=True, img_pixel=512, psf_range=16, rot_number=360, plot_dpi=300):
         """

@@ -11,14 +11,14 @@ def t_period_convert(t):
             return 1.0
         else:
             return t-integer_t
-    else t < 0:
+    else: #t<0
         integer_t = int(t)
         if np.isclose(t, integer_t):
             return 1.0
         else:
-            return t-integer_t
+            return t+(1-integer_t)
 
-def planet_position(a, e, pa = 0, inc = 0, t = 0):
+def planet_position(a, e, pa, inc, t, mode="polar"):
     # Convert inputs from degree to rad
     pa = pa*2*np.pi/360.0
     inc = inc*2*np.pi/360.0
@@ -43,21 +43,36 @@ def planet_position(a, e, pa = 0, inc = 0, t = 0):
         theta_w1 = 1/(target_cr2 - cr2[near_pos-1])
         theta_w2 = 1/(target_cr2 - cr2[near_pos])
         target_theta = (theta[near_pos-1]*theta_w1 + theta[near_pos]*theta_w2)/(theta_w1+theta_w2)
-    
-    # Find the projections
-    x = r * np.cos(theta-pa)
-    y = r * np.sin(theta-pa)*np.cos(inc)
 
     # Find the planet's location
     planet_r = a * (1 - e**2) / (1 + e * np.cos(target_theta))
-    planet_x = planet_r * np.cos(target_theta-pa)
-    planet_y = planet_r * np.sin(target_theta-pa)*np.cos(inc)
+    if mode == "polar":
+        return planet_r, np.atan2(np.sin(target_theta+pa)*np.cos(inc), np.cos(target_theta+pa))
+    elif mode == "cartesian":
+        return planet_r * np.cos(target_theta+pa), planet_r * np.sin(target_theta+pa)*np.cos(inc)
+    else:
+        print("Function planet_position got unknown mode")    
 
-    return x,y,planet_x, planet_y
+def orbit_plot(a, e, pa, inc, planet_pos, mode="polar"):
+    # Convert position inputs to Cartesian coordinate system
+    if mode == "polar":
+        planet_pos = planet_pos[0]*np.cos(planet_pos[1]), planet_pos[0]*np.sin(planet_pos[1])
+    elif mode == "cartesian":
+        pass
+    else:
+        print("Function planet_position got unknown mode")  
+    # Convert angle inputs from degree to rad
+    pa = pa*2*np.pi/360.0
+    inc = inc*2*np.pi/360.0
 
-def orbit_plot(positions):
-    orbit_x, orbit_y, planet_x, planet_y = positions
-    
+    # Calculate the orbit
+    theta = np.linspace(0, 2 * np.pi, 1000)
+    r = a * (1 - e**2) / (1 + e * np.cos(theta))
+
+    # Find the projections
+    orbit_x = r * np.cos(theta+pa)
+    orbit_y = r * np.sin(theta+pa)*np.cos(inc)
+
     # Make the unit length of x and y axis show the same pixel in the final picture.
     fig=plt.figure(dpi=300)
     axs = plt.gca()
@@ -66,6 +81,6 @@ def orbit_plot(positions):
     # Plot
     plt.plot(orbit_x, orbit_y, color='orange', linestyle = '--', alpha = 0.5) # Plot the orbit.
     plt.scatter([0], [0], color='darkorange', marker='x') #Mark the focus.
-    plt.scatter([planet_x], [planet_y], color='black', marker='o') #Mark the planet. 
+    plt.scatter([planet_pos[0]], [planet_pos[1]], color='black', marker='o') #Mark the planet. 
     fig.savefig("oribit.png", format='png', bbox_inches='tight')
     plt.show()

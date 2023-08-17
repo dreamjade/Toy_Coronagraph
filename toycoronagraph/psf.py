@@ -2,6 +2,7 @@ import numpy as np
 import multiprocessing as mp
 from hcipy import *
 from skimage.transform import rotate
+from toycoronagraph.planet import orbit_plot
 
 def Wavefront_pos(x,y,pupil_grid):
     """

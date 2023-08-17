@@ -23,7 +23,8 @@ def is_positive_even_integer(number):
         True if the number is a positive even integer, False otherwise.
     """
 
-    if not isinstance(number, (int, np.int64)) or number <= 0:
+    if (not isinstance(number, (int, np.int64)) 
+        or number <= 0):
         return False
     if number % 2 != 0:
         return False
@@ -33,16 +34,33 @@ def is_planet_pos_allowed(pos, mode):
     """
     Checks if the input planet position is on the plane.
     """
-    if mode == "cartesian":
+    if mode == "moving":
+        if len(pos)!=5:
+            print("The motion of a planet is described by five parameters: the semi-major axis, the eccentricity, the position angle, the inclination, and the time in units of the period.")
+            return False
+        if (not isinstance(pos[0], (float, int, np.float64, np.int64))
+            or pos[0]<=0
+            or not isinstance(pos[1], (float, int, np.float64, np.int64))
+            or pos[1]<0
+            or pos[1]>=1
+            or not isinstance(pos[2], (float, int, np.float64, np.int64))
+            or not isinstance(pos[3], (float, int, np.float64, np.int64))
+            or not isinstance(pos[4], (float, int, np.float64, np.int64))):
+            return False
+        return True
+    elif mode == "cartesian":
         if len(pos)!=2:
             return False
-        if not isinstance(pos[0], (float, int, np.float64, np.int64)) or not isinstance(pos[1], (float, int, np.float64, np.int64)):
+        if (not isinstance(pos[0], (float, int, np.float64, np.int64)) 
+            or not isinstance(pos[1], (float, int, np.float64, np.int64))):
             return False
         return True
     elif mode == "polar":
         if len(pos)!=2:
             return False
-        if not isinstance(pos[0], (float, int, np.float64, np.int64)) or not isinstance(pos[1], (float, int, np.float64, np.int64)) or pos[0]<=0:
+        if (not isinstance(pos[0], (float, int, np.float64, np.int64)) 
+            or not isinstance(pos[1], (float, int, np.float64, np.int64)) 
+            or pos[0]<=0):
             return False
         return True 
     
