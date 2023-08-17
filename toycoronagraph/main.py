@@ -99,7 +99,7 @@ class Target(object):
             else:
                 self.planets.append(planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar"))
                 self.planets_brightness.append(brightness)
-                self.orbits.append(pos)
+                self.orbits.append(pos) #pos = np.array(a, e, pa, inc, t)
                 
         elif mode == "polar":
             if not is_planet_pos_allowed(pos, mode):
@@ -133,8 +133,11 @@ class Target(object):
         if len(self.planets)==0:
             print("There is no planet, but you can add planet via Target.add_planet(pos, brightness)")
         order = 1
-        for p, b in zip(self.planets, self.planets_brightness):
-            print("Planet {:d}: ({}, {}), brightness: {:.2e}".format(order, p[0], p[1], b))
+        for p, b, o in zip(self.planets, self.planets_brightness, self.orbits):
+            if o==None:
+                print("Static Planet {:d}: ({}, {}), brightness: {:.2e}".format(order, p[0], p[1], b))
+            else:
+                print("Moving Planet {:d}: ({}, {}), brightness: {:.2e}".format(order, p[0], p[1], b))
             order += 1
 
     def delete_planet(self, order):
@@ -152,6 +155,22 @@ class Target(object):
             del self.planets_brightness[order-1]
             del self.orbits[order-1]
 
+    def planet_move(self, time, order==1, mode=="culmulated", plot_pos==False):
+        if mode == "culmulated":
+            self.orbits[order-1][4] += time
+        elif mode == "specific":
+            self.orbits[order-1][4] = time
+        pos = self.orbits[order-1]
+        self.planets[order-1] = planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar")
+        if plot_pos:
+            orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order))
+        else:
+            print("Planet has moved to new position")
+
+    def plot_orbit(self, order):
+        pos = self.orbits[order-1]
+        orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order))
+        
     def plot_final(self, charge, coronagraph_type='vortex', add_planet=True, img_pixel=512, psf_range=16, rot_number=360, plot_dpi=300):
         """
         Plots the target image after processing with the vortex coronagraph.

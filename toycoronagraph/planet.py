@@ -53,7 +53,7 @@ def planet_position(a, e, pa, inc, t, mode="polar"):
     else:
         print("Function planet_position got unknown mode")    
 
-def orbit_plot(a, e, pa, inc, planet_pos, mode="polar"):
+def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name=''):
     # Convert position inputs to Cartesian coordinate system
     if mode == "polar":
         planet_pos = planet_pos[0]*np.cos(planet_pos[1]), planet_pos[0]*np.sin(planet_pos[1])
@@ -82,5 +82,5 @@ def orbit_plot(a, e, pa, inc, planet_pos, mode="polar"):
     plt.plot(orbit_x, orbit_y, color='orange', linestyle = '--', alpha = 0.5) # Plot the orbit.
     plt.scatter([0], [0], color='darkorange', marker='x') #Mark the focus.
     plt.scatter([planet_pos[0]], [planet_pos[1]], color='black', marker='o') #Mark the planet. 
-    fig.savefig("oribit.png", format='png', bbox_inches='tight')
+    fig.savefig("oribit"+name+".png", format='png', bbox_inches='tight')
     plt.show()
