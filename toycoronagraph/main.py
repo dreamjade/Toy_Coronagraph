@@ -1,76 +1,74 @@
 import numpy as np
 import matplotlib.pyplot as plt
+# plt.rcParams['text.usetex'] = True
 import hcipy
-#from .psf import psf_calculation, cir_psf
 from toycoronagraph.psf import psf_calculation, cir_psf
 from toycoronagraph.planet import planet_position, orbit_plot
 from toycoronagraph.tool import convert_to_polar, is_positive_even_integer, is_planet_pos_allowed
+from toycoronagraph.para import example_para
+import importlib.util
 from astropy.io import fits
 from toycoronagraph import DATADIR
 import os
+para_spec = importlib.util.find_spec("toycoronagraph_para")
+if para_spec is None:
+    example_para()
+    print("There is no toycoronagraph_para.py file, create an example one")
+import toycoronagraph_para as par
+import importlib
 
 class Target(object):
-    """
+    """A circular symmetric target
+    
     A circular symmetric target, which could be a dust ring, a debris disk, or ice remains
 
-    Args:
-        file_name: The name of the FITS file containing the target image.
-
     Attributes:
-        px: The number of pixels in the x-direction.
-        py: The number of pixels in the y-direction.
-        psf_scale: The scale of the PSF in arcseconds per pixel.
-        xpix: The x-coordinates of the pixels in arcseconds.
-        ypix: The y-coordinates of the pixels in arcseconds.
-        data_jy: The target image in units of Jy.
-        pre_img: The target image in units of float64.
+        file_name (str): The name of the FITS file containing the target data.
+        px (int): The number of pixels in the x-direction.
+        py (int): The number of pixels in the y-direction.
+        psf_scale (float): The scale of the PSF in arcseconds per pixel.
+        xpix (np.ndarray): The x-coordinates of the pixels in arcseconds.
+        ypix (np.ndarray): The y-coordinates of the pixels in arcseconds.
+        pre_img (np.ndarray): The pre-processed image.
+        planets (list): A list of the planets in the system.
+        orbits (list): A list of the orbits of the planets.
+        planets_brightness (list): A list of the brightnesses of the planets.        
     """
     def __init__(self, file_name=None, px=512, py=512):
+        """Initializes the instance based on the target fits file
+
+        Args:
+            file_name (str, optional): The name of the FITS file containing the target data. 
+            If None, the default file `DATADIR/example.fit` will be used.
+            px (int, optional): The number of pixels in the x-direction. Defaults to 512.
+            py (int, optional): The number of pixels in the y-direction. Defaults to 512.
         """
-        Constructor for the Target class.
-        """
+        importlib.reload(par)
+        
         if file_name == None:
             self.file_name = DATADIR+"example"
         else:
             self.file_name = file_name
-        inc = fits.open(self.file_name+".fits")
-        self.px = px
-        self.py = py
-        self.psf_scale = 1e-6/2.4*206264.806*32/512 ##arcsecs/pixel
-        self.xpix = (np.arange (-self.px/2, self.px/2, 1))*self.psf_scale
-        self.ypix = (np.arange (-self.px/2, self.px/2, 1))*self.psf_scale
-        c=2.99792*10**14
-        wave_length = 1.0 #in microns#
-        jy=10**26
-        sst=np.reshape(inc[0].data[5,0],(self.px,self.py))
-        self.data_jy = (sst/c)*(wave_length**2)*jy
-        self.pre_img = self.data_jy.astype(np.float64)
+        fits_read = fits.open(self.file_name+".fits")
+        origin = np.reshape(fits_read[0].data[5,0],(par.px,par.py)) # vF_v(W/m^2/pixel)
+        F_v = origin*par.F_transfer # F_v(Jy/arcsec^2)
+        
+        self.xpix = (np.arange (-par.px/2, par.px/2, 1))*par.psf_scale
+        self.ypix = (np.arange (-par.py/2, par.py/2, 1))*par.psf_scale
+        
+        self.pre_img = F_v.astype(np.float64)
         self.planets = []
         self.orbits = []
         self.planets_brightness = []
         
-    def plot_origin(self):
-        """
-        Plots the original target image.
-        """
-        fig=plt.figure(dpi=300)
-        ax=plt.subplot(111)
-        im=ax.imshow(self.pre_img,
-                       cmap='gnuplot',extent=[np.min(self.ypix),np.max(self.ypix),np.min(self.xpix),np.max(self.xpix)])
-        ax.invert_yaxis()
-        ax.set_ylabel('y [arcsec]')
-        ax.set_xlabel('x [arcsec]')
-        cb=plt.colorbar(im,orientation='vertical')
-        cb.set_label("$Jy$")
-        fig.savefig("origin.png", format='png', bbox_inches='tight')
-        plt.show()
-        
-    def plot_planets(self):
-        """
-        Plots all planets location on the target image.
-
+    def plot_origin(self, plot_planets = True):
+        """Plots the original target image.
+    
         Args:
-            target: The target object.
+            None.
+
+        Returns:
+            origin.png
         """
         fig=plt.figure(dpi=300)
         ax=plt.subplot(111)
@@ -79,13 +77,16 @@ class Target(object):
         ax.invert_yaxis()
         ax.set_ylabel('y [arcsec]')
         ax.set_xlabel('x [arcsec]')
-        cb=plt.colorbar(im,orientation='vertical')
-        cb.set_label("$Jy$")
-        for p, b in zip(self.planets, self.planets_brightness):
-            circle = plt.Circle((p[0], p[1]), 0.2, color='red', fill=False)
-            ax.add_artist(circle)
-            ax.annotate(str(b), (p[0], p[1]), color='red')
-        fig.savefig("planets.png", format='png', bbox_inches='tight')
+        colorbar=plt.colorbar(im,orientation='vertical')
+        colorbar.set_label(r"Jy/arcsec^2")
+        if plot_planets:
+            for p, b in zip(self.planets, self.planets_brightness):
+                circle = plt.Circle((p[0], p[1]), 0.2, color='red', fill=False)
+                ax.add_artist(circle)
+                ax.annotate(str(b), (p[0], p[1]), color='red')
+            fig.savefig("origin_with_planets.png", format='png', bbox_inches='tight')
+        else:
+            fig.savefig("origin.png", format='png', bbox_inches='tight')
         plt.show()
         
     def add_planet(self, pos, brightness, mode="moving"):
@@ -204,14 +205,14 @@ class Target(object):
         
         #show the final results
         fig=plt.figure(dpi=plot_dpi)
-        ax2=plt.subplot(111)
-        im2=ax2.imshow(final_img_charge,
+        ax=plt.subplot(111)
+        im=ax.imshow(final_img_charge,
                    cmap='gnuplot',extent=[np.min(self.ypix),np.max(self.ypix),np.min(self.xpix),np.max(self.xpix)])
-        ax2.invert_yaxis()
-        ax2.set_ylabel('y [arcsec]')
-        ax2.set_xlabel('x [arcsec]')
-        cb=plt.colorbar(im2,orientation='vertical')
-        cb.set_label("$Jy$")
+        ax.invert_yaxis()
+        ax.set_ylabel('y [arcsec]')
+        ax.set_xlabel('x [arcsec]')
+        colorbar=plt.colorbar(im,orientation='vertical')
+        colorbar.set_label(r"Jy/arcsec^2")
         
         #save the final image
         final_image_name = "charge"+str(charge)
