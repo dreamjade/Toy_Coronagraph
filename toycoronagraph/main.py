@@ -201,7 +201,7 @@ class Target(object):
                 psf_calculation(charge, img_pixel, psf_range)
         
         #draw final image of the disk
-        final_img_charge = cir_psf(self.pre_img, self.planets, self.planets_brightness, add_planet, img_pixel, psf_range, img_pixel, psf_filename)
+        final_img_charge = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, add_planet, img_pixel, psf_range, img_pixel, psf_filename)
         
         #show the final results
         fig=plt.figure(dpi=plot_dpi)
