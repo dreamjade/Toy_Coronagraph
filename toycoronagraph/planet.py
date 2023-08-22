@@ -53,7 +53,7 @@ def planet_position(a, e, pa, inc, t, mode="polar"):
     else:
         print("Function planet_position got unknown mode")    
 
-def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name=''):
+def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name='', plot_dpi=300):
     # Convert position inputs to Cartesian coordinate system
     if mode == "polar":
         planet_pos = planet_pos[0]*np.cos(planet_pos[1]), planet_pos[0]*np.sin(planet_pos[1])
@@ -74,7 +74,7 @@ def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name=''):
     orbit_y = r * np.sin(theta+pa)*np.cos(inc)
 
     # Make the unit length of x and y axis show the same pixel in the final picture.
-    fig=plt.figure(dpi=300)
+    fig=plt.figure(dpi=plot_dpi)
     axs = plt.gca()
     axs.set_aspect('equal', 'box')
     

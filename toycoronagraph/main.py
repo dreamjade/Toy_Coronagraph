@@ -61,7 +61,7 @@ class Target(object):
         self.orbits = []
         self.planets_brightness = []
         
-    def plot_origin(self, plot_planets = True):
+    def plot_origin(self, plot_planets = True, plot_dpi=300):
         """Plots the original target image.
     
         Args:
@@ -70,7 +70,7 @@ class Target(object):
         Returns:
             origin.png
         """
-        fig=plt.figure(dpi=300)
+        fig=plt.figure(dpi=plot_dpi)
         ax=plt.subplot(111)
         im=ax.imshow(self.pre_img,
                        cmap='gnuplot',extent=[np.min(self.ypix),np.max(self.ypix),np.min(self.xpix),np.max(self.xpix)])
@@ -156,10 +156,10 @@ class Target(object):
             del self.planets[order-1]
             del self.planets_brightness[order-1]
             del self.orbits[order-1]
-            print("Successfully remove the planet, here is the latest planet list:")
+            print("Successfully remove planet #"+str(order)+", here is the latest planet list:")
             self.list_planets()
 
-    def planet_move(self, time, order=1, mode="culmulated", plot_pos=False):
+    def planet_move(self, time, order=1, mode="culmulated", plot_pos=False, plot_dpi=300):
         if mode == "culmulated":
             self.orbits[order-1][4] += time
         elif mode == "specific":
@@ -167,22 +167,20 @@ class Target(object):
         pos = self.orbits[order-1]
         self.planets[order-1] = planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar")
         if plot_pos:
-            orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order))
+            orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi=300)
         else:
             print("Planet has moved to new position")
 
-    def plot_orbit(self, order):
+    def plot_orbit(self, order, plot_dpi=300):
         pos = self.orbits[order-1]
-        orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order))
+        orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi=300)
         
-    def plot_final(self, charge, coronagraph_type='vortex', add_planet=True, img_pixel=512, psf_range=16, rot_number=360, plot_dpi=300):
+    def plot_final(self, charge, add_planet=True, rot_number=par.px, plot_dpi=300):
         """
         Plots the target image after processing with the vortex coronagraph.
 
         Args:
             charge: The vortex charge.
-            img_pixel: The number of pixels in the image.
-            psf_range: The range of the PSF in pixels.
             rot_number: The number of rotations.
             plot_dpi: The DPI of the plot.
 
@@ -190,7 +188,7 @@ class Target(object):
             The final image.
         """
         #check charge number
-        if coronagraph_type=='vortex':
+        if par.coronagraph_type=='vortex':
             if not is_positive_even_integer(charge):
                 print("charge number is not compatible with coronagraph type, auto set to 2")
                 charge = 2
@@ -200,10 +198,10 @@ class Target(object):
         if not os.path.exists(psf_filename):
             psf_filename = "psfs_c"+str(charge)+".npy"
             if not os.path.exists(psf_filename):
-                psf_calculation(charge, img_pixel, psf_range)
+                psf_calculation(charge, par.px, par.psf_range)
         
         #draw final image of the disk
-        final_img_charge = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, add_planet, img_pixel, psf_range, img_pixel, psf_filename)
+        final_img_charge = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, add_planet, par.px, par.psf_range, rot_number, psf_filename)
         
         #show the final results
         fig=plt.figure(dpi=plot_dpi)
