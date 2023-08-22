@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 # plt.rcParams['text.usetex'] = True
 import hcipy
 from toycoronagraph.psf import psf_calculation, cir_psf
-from toycoronagraph.planet import planet_position, orbit_plot
+from toycoronagraph.planet import planet_position, orbit_position, orbit_plot
 from toycoronagraph.tool import convert_to_polar, is_positive_even_integer, is_planet_pos_allowed
 from toycoronagraph.para import example_para
 import importlib.util
@@ -61,7 +61,7 @@ class Target(object):
         self.orbits = []
         self.planets_brightness = []
         
-    def plot_origin(self, plot_planets = True, plot_dpi=300):
+    def plot_origin(self, plot_planets = True, plot_dpi=300, boundary=True):
         """Plots the original target image.
     
         Args:
@@ -70,20 +70,42 @@ class Target(object):
         Returns:
             origin.png
         """
-        fig=plt.figure(dpi=plot_dpi)
-        ax=plt.subplot(111)
-        im=ax.imshow(self.pre_img,
+        fig = plt.figure(dpi=plot_dpi)
+        axs = plt.gca()
+        img = axs.imshow(self.pre_img,
                        cmap='gnuplot',extent=[np.min(self.ypix),np.max(self.ypix),np.min(self.xpix),np.max(self.xpix)])
-        ax.invert_yaxis()
-        ax.set_ylabel('y [arcsec]')
-        ax.set_xlabel('x [arcsec]')
-        colorbar=plt.colorbar(im,orientation='vertical')
+        x_range = par.px*par.psf_scale/2
+        y_range = par.py*par.psf_scale/2
+        if boundary:
+            axs.set_xlim(-x_range, x_range)
+            axs.set_ylim(y_range, -y_range)
+        else:
+            axs.invert_yaxis()
+        axs.set_ylabel('y [arcsec]')
+        axs.set_xlabel('x [arcsec]')
+        colorbar=plt.colorbar(img,orientation='vertical')
         colorbar.set_label(r"Jy/arcsec^2")
-        if plot_planets:
-            for p, b in zip(self.planets, self.planets_brightness):
-                circle = plt.Circle((p[0], p[1]), 0.2, color='red', fill=False)
-                ax.add_artist(circle)
-                ax.annotate(str(b), (p[0], p[1]), color='red')
+        if plot_planets and self.planets !=[]:
+            circle_size = 0.02*min(x_range, y_range)
+            colors = [u'#1f77b4', u'#ff7f0e', u'#2ca02c', u'#d62728', u'#9467bd', u'#8c564b', u'#e377c2', u'#bcbd22', u'#17becf']
+            for p, b, orbit, order in zip(self.planets, self.planets_brightness, self.orbits, range(len(self.planets))):
+                x,y = p[0]*np.cos(p[1]),p[0]*np.sin(p[1])
+                color = colors[order%9]
+                if abs(x) > x_range or abs(y) > y_range:
+                    print("Planet #"+str(order+1)+" is outside the range of the plot")
+                    color = u'#7f7f7f'
+                    if not boundary:
+                        circle = plt.Circle((x,y), radius=circle_size, color=color)
+                        axs.add_artist(circle)
+                        axs.annotate(str(b), (x,y), color=color)
+                        
+                else:
+                    circle = plt.Circle((x,y), radius=circle_size, color=color)
+                    axs.add_artist(circle)
+                    axs.annotate(str(b), (x,y), color=color)
+                if orbit is not None:
+                    orbit_x, orbit_y = orbit_position(orbit[0], orbit[1], orbit[2], orbit[3])
+                    plt.plot(orbit_x, orbit_y, color=color, linestyle = '--', alpha = 0.5) # Plot the orbit.
             fig.savefig("origin_with_planets.png", format='png', bbox_inches='tight')
         else:
             fig.savefig("origin.png", format='png', bbox_inches='tight')
@@ -204,14 +226,14 @@ class Target(object):
         final_img_charge = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, add_planet, par.px, par.psf_range, rot_number, psf_filename)
         
         #show the final results
-        fig=plt.figure(dpi=plot_dpi)
-        ax=plt.subplot(111)
-        im=ax.imshow(final_img_charge,
+        fig = plt.figure(dpi=plot_dpi)
+        axs = plt.gca()
+        img = axs.imshow(final_img_charge,
                    cmap='gnuplot',extent=[np.min(self.ypix),np.max(self.ypix),np.min(self.xpix),np.max(self.xpix)])
-        ax.invert_yaxis()
-        ax.set_ylabel('y [arcsec]')
-        ax.set_xlabel('x [arcsec]')
-        colorbar=plt.colorbar(im,orientation='vertical')
+        axs.invert_yaxis()
+        axs.set_ylabel('y [arcsec]')
+        axs.set_xlabel('x [arcsec]')
+        colorbar=plt.colorbar(img,orientation='vertical')
         colorbar.set_label(r"Jy/arcsec^2")
         
         #save the final image

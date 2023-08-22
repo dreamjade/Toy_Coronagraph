@@ -1,6 +1,6 @@
 import os
 
-__version__ = "1.5.0"
+__version__ = "1.5.1"
 
 # set Python env variable to keep track of example data dir
 toycoronagraph_dir = os.path.dirname(__file__)

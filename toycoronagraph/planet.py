@@ -46,12 +46,27 @@ def planet_position(a, e, pa, inc, t, mode="polar"):
 
     # Find the planet's location
     planet_r = a * (1 - e**2) / (1 + e * np.cos(target_theta))
+    project_x, project_y = np.cos(target_theta+pa), np.sin(target_theta+pa)*np.cos(inc)
     if mode == "polar":
-        return planet_r, np.arctan2(np.sin(target_theta+pa)*np.cos(inc), np.cos(target_theta+pa))
+        return planet_r*abs(project_x+1j*project_y), np.arctan2(project_y, project_x)
     elif mode == "cartesian":
-        return planet_r * np.cos(target_theta+pa), planet_r * np.sin(target_theta+pa)*np.cos(inc)
+        return planet_r*project_x, planet_r*project_y
     else:
-        print("Function planet_position got unknown mode")    
+        print("Function planet_position got unknown mode")
+
+def orbit_position(a, e, pa, inc):
+    # Convert angle inputs from degree to rad
+    pa = pa*2*np.pi/360.0
+    inc = inc*2*np.pi/360.0
+
+    # Calculate the orbit
+    theta = np.linspace(0, 2 * np.pi, 1000)
+    r = a * (1 - e**2) / (1 + e * np.cos(theta))
+
+    # Find the projections
+    orbit_x = r * np.cos(theta+pa)
+    orbit_y = r * np.sin(theta+pa)*np.cos(inc)
+    return orbit_x, orbit_y
 
 def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name='', plot_dpi=300):
     # Convert position inputs to Cartesian coordinate system
@@ -60,7 +75,7 @@ def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name='', plot_dpi=300):
     elif mode == "cartesian":
         pass
     else:
-        print("Function planet_position got unknown mode")  
+        print("Function orbit_plot got unknown mode")  
     # Convert angle inputs from degree to rad
     pa = pa*2*np.pi/360.0
     inc = inc*2*np.pi/360.0
@@ -74,9 +89,12 @@ def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name='', plot_dpi=300):
     orbit_y = r * np.sin(theta+pa)*np.cos(inc)
 
     # Make the unit length of x and y axis show the same pixel in the final picture.
-    fig=plt.figure(dpi=plot_dpi)
+    fig = plt.figure(dpi=plot_dpi)
     axs = plt.gca()
     axs.set_aspect('equal', 'box')
+    axs.invert_yaxis()
+    axs.set_ylabel('y [arcsec]')
+    axs.set_xlabel('x [arcsec]')
     
     # Plot
     plt.plot(orbit_x, orbit_y, color='orange', linestyle = '--', alpha = 0.5) # Plot the orbit.
