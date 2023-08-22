@@ -156,6 +156,8 @@ class Target(object):
             del self.planets[order-1]
             del self.planets_brightness[order-1]
             del self.orbits[order-1]
+            print("Successfully remove the planet, here is the latest planet list:")
+            self.list_planets()
 
     def planet_move(self, time, order=1, mode="culmulated", plot_pos=False):
         if mode == "culmulated":

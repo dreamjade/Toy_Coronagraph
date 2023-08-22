@@ -100,6 +100,10 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, add_planet, img_
     #add planets
     if add_planet:
         for i in range(len(planets_pos)):
-            final_img += rotate(planet_brightness[i]*psfs[int(planets_pos[i][0]/psf_scale/2)], angle=-planets_pos[i][1]*180.0/np.pi)
+            psfs_number = int(planets_pos[i][0]/psf_scale)
+            if psfs_number<img_pixel/2:
+                final_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=-planets_pos[i][1]*180.0/np.pi)
+            else:
+                print("Planet #"+str(i+1)+" is outside the range of the plot")
             
     return final_img
