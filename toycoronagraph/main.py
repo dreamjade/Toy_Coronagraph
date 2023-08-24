@@ -55,10 +55,10 @@ class Target(object):
         importlib.reload(par)
 
         # Load the fits file
-        if par.file_name == None:
+        if par.fits_filename == None:
             self.file_name = DATADIR+"example"
         else:
-            self.file_name = par.file_name
+            self.file_name = par.fits_filename
         fits_read = fits.open(self.file_name+".fits")
         
         # Extract data from the FITS file and perform necessary calculations
