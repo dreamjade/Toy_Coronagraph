@@ -1,16 +1,30 @@
 import os
 
 def create_py_file(file_name, data):
-    """Creates a .py file with the given name and data.
+    """
+    Creates a .py file with the given name and data.
+
     Args:
-        file_name: The name of the .py file.
-    data: The data to be included in the .py file.
+        file_name (str): The name of the .py file.
+        data (str): The data to be included in the .py file.
+
+    Returns:
+        *.py
     """
 
     with open(file_name, "w") as f:
         f.write(data)
 
 def example_para():
+    """
+    Create an example parameter file named 'toycoronagraph_para.py'.
+
+    The example parameter file includes settings related to the toy coronagraph simulation.
+
+    Returns:
+        None
+    """
+    # Define the name of the parameter file and the data to be written
     file_name = "toycoronagraph_para.py"
     data = \
 '''
@@ -35,4 +49,5 @@ F_transfer = jy*wavelength/light_speed/psf_scale**2
 coronagraph_type='vortex'
 psf_range=16
 '''
+    # Create the parameter file using the defined name and data
     create_py_file(file_name, data)

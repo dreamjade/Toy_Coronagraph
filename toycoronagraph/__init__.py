@@ -1,7 +1,10 @@
 import os
 
-__version__ = "1.5.1"
+# Define the version of the module
+__version__ = "1.5.2"
 
-# set Python env variable to keep track of example data dir
+# Set Python environment variable to keep track of example data directory
 toycoronagraph_dir = os.path.dirname(__file__)
+
+# Create the full path to the example data directory using the module's location
 DATADIR = os.path.join(toycoronagraph_dir, "example_data/")

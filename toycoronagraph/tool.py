@@ -1,12 +1,14 @@
 import numpy as np
 
 def convert_to_polar(pos_car):
-    """Converts cartesian coordinates to polar coordinates.
+    """
+    Converts cartesian coordinates to polar coordinates.
+
     Args:
-        A numpy array of the x-coordinate and y-coordinate of the point.
+        pos_car (numpy.ndarray): A numpy array containing the x-coordinate and y-coordinate of the point.
 
     Returns:
-        A numpy array of the radius and angle of the point.
+        numpy.ndarray: A numpy array containing the radius and angle of the point.
     """
     r = np.sqrt(pos_car[0]**2 + pos_car[1]**2)
     theta = np.arctan2(pos_car[1], pos_car[0])
@@ -17,12 +19,11 @@ def is_positive_even_integer(number):
     Checks if the input number is a positive even integer.
 
     Args:
-        number: The number to check.
+        number (int): The number to check.
 
     Returns:
-        True if the number is a positive even integer, False otherwise.
+        bool: True if the number is a positive even integer, False otherwise.
     """
-
     if (not isinstance(number, (int, np.int64)) 
         or number <= 0):
         return False
@@ -32,7 +33,14 @@ def is_positive_even_integer(number):
 
 def is_planet_pos_allowed(pos, mode):
     """
-    Checks if the input planet position is on the plane.
+    Checks if the input planet position is valid based on the specified mode.
+
+    Args:
+        pos (list or numpy.ndarray): The planet position.
+        mode (str): The mode to determine the validity of the position.
+
+    Returns:
+        bool: True if the planet position is valid, False otherwise.
     """
     if mode == "moving":
         if len(pos)!=5:
