@@ -1,7 +1,7 @@
 [![Version](https://img.shields.io/badge/Version-1.5.2-red.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/blob/main/toycoronagraph/__init__.py)
 <a href="https://pypi.org/project/toycoronagraph/"><img src="https://img.shields.io/pypi/v/lrgs.svg" alt="PyPI" /></a>
-[![Test](https://img.shields.io/badge/tests-1.5.2-yellow.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/tests)
-[![Documentation Status](https://img.shields.io/badge/docs-1.5.2-green.svg?style=flat-square)](https://dreamjade.github.io/Toy_Coronagraph/)
+[![Test](https://img.shields.io/badge/Tests-1.5.2-yellow.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/tests)
+[![Documentation Status](https://img.shields.io/badge/Docs-1.5.2-green.svg?style=flat-square)](https://dreamjade.github.io/Toy_Coronagraph/)
 <a href="./LICENSE"><img src="https://img.shields.io/cran/l/lrgs.svg" alt="MIT License" /></a>
 [![DOI](https://zenodo.org/badge/665310914.svg)](https://zenodo.org/badge/latestdoi/665310914)
 
