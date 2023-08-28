@@ -11,7 +11,10 @@ Welcome to Toy_Coronagraph's documentation!
    :caption: Contents:
 
    main.rst
+   para.rst
+   planet.rst
    psf.rst
+   tool.rst
 
 Indices and tables
 ==================
