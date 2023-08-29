@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: toycoronagraph
-Version: 1.2.2
+Version: 1.5.2
 Summary: Toy!!
 Home-page: https://github.com/dreamjade/Toy_Coronagraph
 Author: dreamjade
@@ -11,5 +11,5 @@ Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Science/Research
 Classifier: Topic :: Scientific/Engineering :: Astronomy
 Classifier: License :: OSI Approved :: MIT License
-Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.11
 License-File: LICENSE

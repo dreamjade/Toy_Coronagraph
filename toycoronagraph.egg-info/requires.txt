@@ -4,3 +4,4 @@ matplotlib
 scikit-image
 pysynphot
 hcipy
+scikit-image
