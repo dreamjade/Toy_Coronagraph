@@ -10,7 +10,7 @@ toycoronagraph/example_data/*.npy
 __pycache__/
 toycoronagraph/docs/
 toycoronagraph/__pycache__/
-toycoronagraph.egg-info/
+toycoronagraph.egg-info/
 
 # Distribution / packaging
 build/
