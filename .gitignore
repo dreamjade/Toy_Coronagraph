@@ -6,6 +6,7 @@ toycoronagraph_para.py
 *.npy
 
 # Byte-compiled / optimized / DLL files
+__pycache__/
 toycoronagraph/docs/
 toycoronagraph/__pycache__/
 toycoronagraph.egg-info/
@@ -17,3 +18,4 @@ dist/
 # jupyternotebook
 .ipynb_checkpoints/
 toycoronagraph/.ipynb_checkpoints/
+tests/.ipynb_checkpoints/
