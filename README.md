@@ -41,17 +41,17 @@ The toycoronagraph package is open source and available on GitHub. It is a valua
 
 example target           |  Final image (Charge=2)  |  Final image (Charge=6)
 :-------------------------:|:-------------------------:|:-------------------------:
-![origin](./origin.png) | ![charge2_final](./charge2_final.png) | ![charge6_final](./charge6_final.png)
+![origin](./static/origin.png) | ![charge2_final](./static/charge2_final.png) | ![charge6_final](./static/charge6_final.png)
 
 #### with planet
 Final image (Charge=2)  |  Final image (Charge=4)
 :-------------------------:|:-------------------------:
-![charge2_final](./charge2_with_planets_final.png) | ![charge6_final](./charge4_with_planets_final.png)
+![charge2_final](./static/charge2_with_planets_final.png) | ![charge6_final](./static/charge4_with_planets_final.png)
 
 #### planet moving
 Frame definition
 :-------------------------:
-![frame](./frame.svg)
+![frame](./static/frame.svg)
 
 ### Example usage (Python)
 This [py file](./tests/test.py) illustrates how the Python package is used.
