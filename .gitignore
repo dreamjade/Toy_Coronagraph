@@ -4,12 +4,13 @@ toycoronagraph_para.py
 
 # example psfs data
 *.npy
+toycoronagraph/example_data/*.npy
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 toycoronagraph/docs/
 toycoronagraph/__pycache__/
-toycoronagraph.egg-info/
+toycoronagraph.egg-info/
 
 # Distribution / packaging
 build/
@@ -19,3 +20,5 @@ dist/
 .ipynb_checkpoints/
 toycoronagraph/.ipynb_checkpoints/
 tests/.ipynb_checkpoints/
+toycoronagraph/example_data/.ipynb_checkpoints/
+
