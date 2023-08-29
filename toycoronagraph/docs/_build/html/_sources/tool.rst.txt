@@ -1,6 +1,6 @@
 .. _toycoronagraph:
 
-Toy Coronagraph Tool
+Tool
 =====================
 
 Function to check the validation of the input

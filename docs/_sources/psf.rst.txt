@@ -1,6 +1,6 @@
 .. _toycoronagraph:
 
-Toy Coronagraph PSF
+PSF
 =====================
 
 Function to calculate PSF

@@ -1,6 +1,6 @@
 .. _toycoronagraph:
 
-Toy Coronagraph Planet
+Planet
 =====================
 
 Function to calculate planet's orbit and location

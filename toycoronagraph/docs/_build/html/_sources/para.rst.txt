@@ -1,6 +1,6 @@
 .. _toycoronagraph:
 
-Toy Coronagraph Para
+Para
 =====================
 
 Function to create parameter configuration python file
