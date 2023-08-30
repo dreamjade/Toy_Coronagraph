@@ -132,3 +132,26 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, add_planet, img_
                 print("Planet #"+str(i+1)+" is outside the range of the plot")
             
     return final_img
+
+def cir_core_throughput_vectorized(psfs):
+    thresholds = 0.5 * np.max(psfs, axis=(1, 2)).reshape(-1, 1, 1)
+    #core = (psfs > thresholds).astype(int)
+    #core_flux = core * psfs
+    core_flux = np.where(psfs > thresholds , psfs, 0)
+    core_throughput = np.sum(core_flux, axis=(1, 2))
+    return core_throughput
+        
+def cir_core_throughput_fun(psfs):
+    psf_len = len(psfs)
+    core_throughput = np.empty(psf_len)
+    for i in range(psf_len):
+        psf_i = psfs[i]
+        threshold = 0.5*psf_i.max()
+        core_flux = np.where(psf_i > threshold , psf_i, 0)
+        core_throughput[i] = np.sum(core_flux)
+    return core_throughput
+
+def cir_iwa(psfs):
+    core_throughput = cir_core_throughput_fun(psfs)
+    iwa = np.searchsorted(core_throughput, 0.5*core_throughput.max())
+    return iwa

@@ -315,14 +315,14 @@ class Target(object):
                 psf_calculation(charge, par.px, par.psf_range)
         
         # Generate the final image of the disk using cir_psf function
-        final_img_charge = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, add_planet, par.px, par.psf_range, rot_number, psf_filename)
+        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, add_planet, par.px, par.psf_range, rot_number, psf_filename)
         
         # Create a new figure and axes for plotting
         fig = plt.figure(dpi=plot_dpi)
         axs = plt.gca()
 
         # Plot the final image
-        img = axs.imshow(final_img_charge, cmap='gnuplot', 
+        img = axs.imshow(final_img, cmap='gnuplot', 
                          extent=[np.min(self.ypix), np.max(self.ypix), np.min(self.xpix), np.max(self.xpix)])
         axs.invert_yaxis()
         axs.set_ylabel('y [arcsec]')
