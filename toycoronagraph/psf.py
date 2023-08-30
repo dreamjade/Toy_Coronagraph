@@ -1,5 +1,8 @@
 import numpy as np
-import multiprocessing as mp
+import importlib.util
+mp_spec = importlib.util.find_spec("multiprocessing")
+if mp_spec is not None:
+    import multiprocessing as mp
 from hcipy import *
 from skimage.transform import rotate
 
@@ -72,16 +75,31 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     coro = VortexCoronagraph(pupil_grid, charge)
     lyot_stop = Apodizer(lyot_mask)
 
-    # Calculate PSFs in parallel using multiprocessing
-    chunk_size = img_pixel // (2*num_cores)
     psfs = np.empty((img_pixel//2+1, img_pixel, img_pixel))
-    pool = mp.Pool(processes=num_cores)
-    results = [pool.apply_async(psf_chunk, args=(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro)) for i in range(img_pixel//2+1)]
-    pool.close()
-    pool.join()
-    for result in results:
-        i, psf = result.get()
-        psfs[i] = psf
+    # Check the existence of multiprocessing module
+    if mp_spec is not None:
+        # Calculate PSFs in parallel using multiprocessing
+        pool = mp.Pool(processes=num_cores)
+        results = [pool.apply_async(psf_chunk, args=(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro)) for i in range(img_pixel//2+1)]
+        pool.close()
+        pool.join()
+        for result in results:
+            i, psf = result.get()
+            psfs[i] = psf
+    else:
+        for i in range(img_pixel//2+1):
+            # Calculate the x-coordinate based on the chunk index and PSF range
+            x = 2*i*psf_range / img_pixel
+        
+            # Calculate the wavefront at the specified position
+            wf = Wavefront(Wavefront_pos(x, 0,pupil_grid))
+            
+            # Propagate the wavefront through the system and calculate the intensity
+            img = prop(lyot_stop(coro(wf))).intensity
+
+            #save results to psfs
+            psfs[i] = img.to_dict()["values"].reshape(img_pixel, img_pixel)
+        
     
     # Gather results and save PSFs to a file
     np.save('psfs_c'+str(charge)+'.npy', psfs)
