@@ -58,20 +58,20 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
 
     Args:
         charge (int): Charge of the vortex coronagraph.
-        img_pixel (int): Number of pixels in the image.
-        psf_range (float): Range of the PSF.
+        img_pixel (int): Number of pixels on one edge of the image.
+        psf_range (float): Range of the PSF in lambda/D.
         num_cores (int): Number of CPU cores to use for multiprocessing.
 
     Returns:
         np.ndarray: Array of calculated PSFs.
     """
     # Create grids and propagator
-    pupil_grid = make_pupil_grid(1024, 1.5)
-    focal_grid = make_focal_grid(16, 16)
+    pupil_grid = make_pupil_grid(img_pixel*2, 1.5)
+    focal_grid = make_focal_grid(img_pixel/2/psf_range, psf_range)
     prop = FraunhoferPropagator(pupil_grid, focal_grid)
 
     # Create Lyot mask and coronagraph
-    lyot_mask = evaluate_supersampled(make_circular_aperture(0.5), pupil_grid, 4)
+    lyot_mask = evaluate_supersampled(make_circular_aperture(0.95), pupil_grid, 4)
     coro = VortexCoronagraph(pupil_grid, charge)
     lyot_stop = Apodizer(lyot_mask)
 
@@ -100,7 +100,6 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
             #save results to psfs
             psfs[i] = img.to_dict()["values"].reshape(img_pixel, img_pixel)
         
-    
     # Gather results and save PSFs to a file
     np.save('psfs_c'+str(charge)+'.npy', psfs)
     return psfs
