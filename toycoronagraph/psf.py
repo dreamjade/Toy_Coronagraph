@@ -67,7 +67,8 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     """
     # Create grids and propagator
     pupil_grid = make_pupil_grid(img_pixel*2, 1.5)
-    focal_grid = make_focal_grid(img_pixel/2/psf_range, psf_range)
+    focal_grid_resolution = img_pixel/2/psf_range
+    focal_grid = make_focal_grid(focal_grid_resolution, psf_range)
     prop = FraunhoferPropagator(pupil_grid, focal_grid)
 
     # Create Lyot mask and coronagraph
@@ -75,6 +76,9 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     coro = VortexCoronagraph(pupil_grid, charge)
     lyot_stop = Apodizer(lyot_mask)
 
+    # Normalization factor
+    normal_factor = np.pi*focal_grid_resolution**2
+    
     psfs = np.empty((img_pixel//2+1, img_pixel, img_pixel))
     # Check the existence of multiprocessing module
     if mp_spec is not None:
@@ -85,7 +89,7 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
         pool.join()
         for result in results:
             i, psf = result.get()
-            psfs[i] = psf
+            psfs[i] = psf/normal_factor
     else:
         for i in range(img_pixel//2+1):
             # Calculate the x-coordinate based on the chunk index and PSF range
@@ -98,7 +102,7 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
             img = prop(lyot_stop(coro(wf))).intensity
 
             #save results to psfs
-            psfs[i] = img.to_dict()["values"].reshape(img_pixel, img_pixel)
+            psfs[i] = img.to_dict()["values"].reshape(img_pixel, img_pixel)/normal_factor
         
     # Gather results and save PSFs to a file
     np.save('psfs_c'+str(charge)+'.npy', psfs)
