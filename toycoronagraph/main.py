@@ -312,7 +312,7 @@ class Target(object):
         if not os.path.exists(psf_filename):
             psf_filename = "psfs_c"+str(charge)+".npy"
             if not os.path.exists(psf_filename):
-                psf_calculation(charge, par.px, par.psf_range, par.num)
+                psf_calculation(charge, par.px, par.psf_range, par.num_cores)
         
         # Generate the final image of the disk using cir_psf function
         final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, add_planet, par.px, par.psf_range, rot_number, psf_filename)
