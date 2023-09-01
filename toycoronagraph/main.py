@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # plt.rcParams['text.usetex'] = True
 import hcipy
-from toycoronagraph.psf import psf_calculation, cir_psf
+from toycoronagraph.psf import psf_calculation, cir_psf, cir_psf_contrast
 from toycoronagraph.planet import planet_position, orbit_position, orbit_plot
 from toycoronagraph.tool import convert_to_polar, is_positive_even_integer, is_planet_pos_allowed
 from toycoronagraph.para import example_para
@@ -35,7 +35,7 @@ class Target(object):
         pre_img (np.ndarray): The pre-processed image.
         planets (list): A list of the planets in the system.
         orbits (list): A list of the orbits of the planets.
-        planets_brightness (list): A list of the brightnesses of the planets.       
+        planets_brightness (list): A list of the brightnesses of the planets in Jy/arcsec^2.
 
     Methods:
         __init__(): Initialize the Target object.
@@ -128,11 +128,11 @@ class Target(object):
                     if not boundary:
                         circle = plt.Circle((x,y), radius=circle_size, color=color)
                         axs.add_artist(circle)
-                        axs.annotate(str(b), (x,y), color=color)  
+                        axs.annotate(str(b*par.psf_scale**2), (x,y), color=color)  
                 else:
                     circle = plt.Circle((x,y), radius=circle_size, color=color)
                     axs.add_artist(circle)
-                    axs.annotate(str(b), (x,y), color=color)
+                    axs.annotate(str(b*par.psf_scale**2), (x,y), color=color)
                     
                 if orbit is not None:
                     orbit_x, orbit_y = orbit_position(orbit[0], orbit[1], orbit[2], orbit[3])
@@ -153,7 +153,7 @@ class Target(object):
 
         Args:
             pos (array-like): Planet position information (depends on mode). For "moving" mode, pos = [a, e, pa, inc, t]; for "polar" mode, pos =[r, theta(in degree)]; for "cartesian" mode, pos =[x,y].
-            brightness (float): Planet brightness.
+            brightness (float): Planet brightness in Jy.
             mode (str): Mode for specifying planet position coordinates ("moving", "polar", "cartesian").
 
         Returns:
@@ -169,7 +169,7 @@ class Target(object):
                 print("Brightness is invalid")
             else:
                 self.planets.append(planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar"))
-                self.planets_brightness.append(brightness)
+                self.planets_brightness.append(brightness/par.psf_scale**2)
                 self.orbits.append(pos) #pos = np.array(a, e, pa, inc, t)
                 
         elif mode == "polar":
@@ -182,7 +182,7 @@ class Target(object):
                 # Convert polar mode angle from degree to radian
                 pos[1] = pos[1]*np.pi/180.0
                 self.planets.append(pos)
-                self.planets_brightness.append(brightness)
+                self.planets_brightness.append(brightness/par.psf_scale**2)
                 self.orbits.append(None)
             
         elif mode == "cartesian":
@@ -193,7 +193,7 @@ class Target(object):
                 print("Brightness is invalid")
             else:
                 self.planets.append(convert_to_polar(pos))
-                self.planets_brightness.append(brightness)
+                self.planets_brightness.append(brightness/par.psf_scale**2)
                 self.orbits.append(None)
         else:
             print("no "+str(mode)+" mode")
@@ -212,9 +212,9 @@ class Target(object):
         order = 1
         for p, b, o in zip(self.planets, self.planets_brightness, self.orbits):
             if o is None:
-                print("Static Planet {:d}: ({}, {}), brightness: {:.2e}".format(order, p[0], p[1], b))
+                print("Static Planet {:d}: ({}, {}) arcsec, brightness: {:.2e} Jy".format(order, p[0]*np.cos(p[1]), p[0]*np.sin(p[1]), b*par.psf_scale**2))
             else:
-                print("Moving Planet {:d}: ({}, {}), brightness: {:.2e}".format(order, p[0], p[1], b))
+                print("Moving Planet {:d}: ({}, {}) arcsec, brightness: {:.2e} Jy".format(order, p[0]*np.cos(p[1]), p[0]*np.sin(p[1]), b*par.psf_scale**2))
             order += 1
 
     def delete_planet(self, order):
@@ -285,7 +285,31 @@ class Target(object):
         pos = self.orbits[order-1]
         orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi=300)
         
-    def plot_final(self, charge, iwa_ignore=False, add_planet=True, rot_number=par.rot_number, plot_dpi=300):
+    def plot_contrast(self, charge, order=1, plot_dpi=300):
+        # Check if planet inside the plot
+        planet_pos = self.planets[order-1]
+        planet_psfs_number = int(planet_pos[0]/par.psf_scale)
+        if planet_psfs_number>=par.px/2:
+            print("Planet is outside the range of the plot")
+        else:
+            # Check and adjust the charge number if using a vortex coronagraph
+            if par.coronagraph_type=='vortex':
+                if not is_positive_even_integer(charge):
+                    print("charge number is not compatible with coronagraph type, auto set to 2")
+                    charge = 2
+                    
+            # Define the path to the PSF file based on charge number
+            psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
+    
+            # If the PSF file doesn't exist, calculate it
+            if not os.path.exists(psf_filename):
+                psf_filename = "psfs_c"+str(charge)+".npy"
+                if not os.path.exists(psf_filename):
+                    psf_calculation(charge, par.px, par.psf_range, par.num_cores)
+            
+            print(cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.px, par.psf_range, par.rot_number, psf_filename))
+        
+    def plot_final(self, charge, iwa_ignore=False, add_planet=True, plot_dpi=300):
         """Final image
         
         Plots the target image after processing with the vortex coronagraph.
@@ -315,7 +339,7 @@ class Target(object):
                 psf_calculation(charge, par.px, par.psf_range, par.num_cores)
         
         # Generate the final image of the disk using cir_psf function
-        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.px, par.psf_range, rot_number, psf_filename)
+        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.px, par.psf_range, par.rot_number, psf_filename)
         
         # Create a new figure and axes for plotting
         fig = plt.figure(dpi=plot_dpi)

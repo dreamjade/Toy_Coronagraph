@@ -39,7 +39,7 @@ wavelength = 1.0e-6 # meter
 D = 2.4 # aperture size in meter
 rad_to_arcsecond = 206264.806247
 visual_range = 32 # in lambda/D
-psf_scale = wavelength/D*rad_to_arcsecond*visual_range/px
+psf_scale = wavelength/D*rad_to_arcsecond*visual_range/px # arcsec per pixel
 
 # example fits file has unit W/m^2/pixel
 # vF_v(W/m^2/pixel) to F_v(Jy/arcsec^2)

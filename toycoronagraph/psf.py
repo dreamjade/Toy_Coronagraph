@@ -77,7 +77,7 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     lyot_stop = Apodizer(lyot_mask)
 
     # Normalization factor
-    normal_factor = np.pi*focal_grid_resolution**2
+    normal_factor = np.pi*(focal_grid_resolution/2)**2
     
     psfs = np.empty((img_pixel//2+1, img_pixel, img_pixel))
     # Check the existence of multiprocessing module
@@ -107,8 +107,63 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     # Gather results and save PSFs to a file
     np.save('psfs_c'+str(charge)+'.npy', psfs)
     return psfs
+    
+def cir_psf_planet(planets_pos, planet_brightness, img_pixel, psf_scale):
+    planet_img = np.zeros([img_pixel, img_pixel])
+    for i in range(len(planets_pos)):
+        psfs_number = int(planets_pos[i][0]/psf_scale)
+        if psfs_number<img_pixel/2:
+            planet_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=-planets_pos[i][1]*180.0/np.pi)
+        else:
+            print("Planet #"+str(i+1)+" is outside the range of the plot")
+    return planet_img
+    
+def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightness, psf_scale, img_pixel, psf_range, rot_number, psfs_name):
+    # Initialize an empty image chunk
+    chunk_img = np.zeros([img_pixel, img_pixel])
+    chunk_img_iwa = np.zeros([img_pixel, img_pixel]) # Ignore dust inside IWA
 
-def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_planet, img_pixel, psf_range, rot_number, psfs_name="psfs_c2.npy"):
+    # Load PSFs from the specified file
+    psfs = np.load(psfs_name)
+    
+    # IWA
+    iwa = cir_iwa(psfs)
+    
+    # Generate the chunk image along x-axis
+    for i in range(iwa):
+        weight = pre_img[255+i][255]
+        if weight != 0:
+            chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
+                
+    for i in range(iwa, img_pixel//2+1):
+        weight = pre_img[255+i][255]
+        if weight != 0:
+            part_img = 2*np.pi*i*weight*psfs[i]/rot_number
+            chunk_img += part_img
+            chunk_img_iwa += part_img
+                
+    # Initialize the disk image
+    disk_img = np.zeros([img_pixel, img_pixel])
+    disk_img_iwa = np.zeros([img_pixel, img_pixel])
+
+    # Rotate and accumulate the chunk image to create the final image
+    for i in range(rot_number):
+        disk_img += rotate(chunk_img, angle=360*i/rot_number)
+        disk_img_iwa += rotate(chunk_img_iwa, angle=360*i/rot_number)
+        
+    # The planet image
+    planet_img = rotate(planet_brightness*psfs[planet_psfs_number], angle=-planet_angle*180.0/np.pi)
+    threshold = 0.5*planet_img.max()
+    planet_filter = np.where(planet_img > threshold , 1, 0)
+
+    # Brightness
+    planet_b = np.sum(np.multiply(planet_filter, planet_img))*psf_scale**2
+    dust_b = np.sum(np.multiply(planet_filter, disk_img))*psf_scale**2
+    dust_b_iwa = np.sum(np.multiply(planet_filter, disk_img_iwa))*psf_scale**2
+              
+    return planet_b, dust_b, dust_b_iwa
+
+def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_planet, img_pixel, psf_range, rot_number, psfs_name):
     """Circular symmetric PSF processing calculation
     Calculates the final image of a circular symmetric pre-image through circular symmetric PSF with added planets.
 
