@@ -32,6 +32,7 @@ fits_filename = None # use example fits file
 px = 512 # The number of pixels in the x-direction.
 py = 512 # The number of pixels in the y-direction.
 num_cores = 16 # The number of cores used in parallel calculation.
+rot_number = px # The number of rotations for generating the circular symmetry final image.
 
 #calculate psf scale in arcsecs per pixel
 wavelength = 1.0e-6 # meter

@@ -285,7 +285,7 @@ class Target(object):
         pos = self.orbits[order-1]
         orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi=300)
         
-    def plot_final(self, charge, add_planet=True, rot_number=par.px, plot_dpi=300):
+    def plot_final(self, charge, iwa_ignore=False, add_planet=True, rot_number=par.rot_number, plot_dpi=300):
         """Final image
         
         Plots the target image after processing with the vortex coronagraph.
@@ -315,7 +315,7 @@ class Target(object):
                 psf_calculation(charge, par.px, par.psf_range, par.num_cores)
         
         # Generate the final image of the disk using cir_psf function
-        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, add_planet, par.px, par.psf_range, rot_number, psf_filename)
+        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.px, par.psf_range, rot_number, psf_filename)
         
         # Create a new figure and axes for plotting
         fig = plt.figure(dpi=plot_dpi)
@@ -336,6 +336,9 @@ class Target(object):
         final_image_name = "charge"+str(charge)
         if add_planet and self.planets != []:
             final_image_name += "_with_planets"
+
+        if iwa_ignore:
+            final_image_name += "_iwa_ignore"
         
         # Save the final image
         fig.savefig(final_image_name+"_final.png", format='png', bbox_inches='tight')
