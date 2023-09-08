@@ -135,7 +135,7 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
         psfs_name (str): Name of the file containing PSFs.
 
     Returns:
-        brightness (tuple): target brightness, background brightness, background brightness (ignored dust inside IWA) in Jy.
+        brightness (tuple): planet brightness, background brightness, background brightness (ignored dust inside IWA) in Jy.
     """
     # Initialize an empty image chunk
     chunk_img = np.zeros([img_pixel, img_pixel])
