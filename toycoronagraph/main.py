@@ -285,7 +285,19 @@ class Target(object):
         pos = self.orbits[order-1]
         orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi=300)
         
-    def plot_contrast(self, charge, order=1, plot_dpi=300):
+    def contrast(self, charge, order=1):
+        """Contrast
+        
+        Find the planet brightness and background brightness in the final image.
+
+        Args:
+            charge (int): Charge number (for vortex coronagraph).
+            order (int): The order number of the planet, using self.list_planets() to look up the order.
+            plot_dpi (int): Dots per inch (DPI) for the plot.
+
+        Returns:
+            brightness (tuple): target brightness, background brightness, background brightness (ignored dust inside IWA) in Jy.
+        """
         # Check if planet inside the plot
         planet_pos = self.planets[order-1]
         planet_psfs_number = int(planet_pos[0]/par.psf_scale)
@@ -318,7 +330,7 @@ class Target(object):
             charge (int): Charge number (for vortex coronagraph).
             add_planet (bool): Whether to include planets in the plot.
             rot_number (int): Rotation number for creating the circular PSF.
-            plot_dpi (int): Dots per inch (DPI) for the plot.
+            plot_dpi (int): Dots per inch (DPI) for the final plot.
 
         Returns:
             *_final.png

@@ -119,6 +119,24 @@ def cir_psf_planet(planets_pos, planet_brightness, img_pixel, psf_scale):
     return planet_img
     
 def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightness, psf_scale, img_pixel, psf_range, rot_number, psfs_name):
+    """Contrast
+        
+    Find the planet brightness and background brightness in the final image.
+
+    Args:
+        pre_img (np.ndarray): The input image.
+        planet_psfs_number (int): According to the distance between the planet and the origin, choose the nearest psf.
+        planet_angle (float): The angle between the x-axis and the line of the planet and the origin.
+        planet_brightness (list): List of planet brightness values.
+        psf_scale (float): Scale of the PSF.
+        img_pixel (int): Number of pixels in the image.
+        psf_range (float): Range of the PSF.
+        rot_number (int): Number of rotations for generating the circular PSF.
+        psfs_name (str): Name of the file containing PSFs.
+
+    Returns:
+        brightness (tuple): target brightness, background brightness, background brightness (ignored dust inside IWA) in Jy.
+    """
     # Initialize an empty image chunk
     chunk_img = np.zeros([img_pixel, img_pixel])
     chunk_img_iwa = np.zeros([img_pixel, img_pixel]) # Ignore dust inside IWA
@@ -129,7 +147,7 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
     # IWA
     iwa = cir_iwa(psfs)
     
-    # Generate the chunk image along x-axis
+    # Generate the chunk image along the x-axis
     for i in range(iwa):
         weight = pre_img[255+i][255]
         if weight != 0:
@@ -165,6 +183,7 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
 
 def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_planet, img_pixel, psf_range, rot_number, psfs_name):
     """Circular symmetric PSF processing calculation
+    
     Calculates the final image of a circular symmetric pre-image through circular symmetric PSF with added planets.
 
     Args:
