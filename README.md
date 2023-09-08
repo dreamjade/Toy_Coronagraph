@@ -53,7 +53,7 @@ Pre-image  |  Final image (Charge=6)
 
 Final image (Charge=6)  |  Final image but ignored dust inside IWA (Charge=6)
 :-------------------------:|:-------------------------:
-![Pre_image](./static/origin_with_planets.png) | ![charge6_final](./static/charge6_with_planets_iwa_ignore_final.png)
+![Pre_image](./static/charge6_with_planets_final.png) | ![charge6_final](./static/charge6_with_planets_iwa_ignore_final.png)
 
 #### Moving planet on an elliptic orbit
 Frame definition
