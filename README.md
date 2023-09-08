@@ -7,6 +7,9 @@
 [![Test](https://img.shields.io/badge/Dependencies-v1.5.3-purple.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/requirements.txt)
 
 # Toy Coronagraph
+<p align="center">
+<img src="./static/planetary-system.svg" width="200" title="Toy Coronagraph logo">
+</p>
 
 The toycoronagraph package is implemented in Python
 
