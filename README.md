@@ -8,7 +8,7 @@
 
 # Toy Coronagraph
 <p align="center">
-<img src="./static/planetary-system.svg" width="200" title="Toy Coronagraph logo">
+<img src="./static/planetary-system.svg" width="600" title="Toy Coronagraph logo">
 </p>
 
 The toycoronagraph package is implemented in Python
