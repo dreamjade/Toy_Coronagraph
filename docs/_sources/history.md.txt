@@ -4,3 +4,19 @@
 published on Aug 28, 2023.
 
 **able to add moving planets**
+
+### 1.5.3
+published on Sep 8, 2023.
+
+**normalization of psfs**
+
+**Users can now set the number of cores to use for parallel computing**
+
+**inside iwa ignored function**
+
+**planet brightness unit definition**
+
+**print  planet brightness dust brightness**
+
+**turn on/off dust inside IWA**
+

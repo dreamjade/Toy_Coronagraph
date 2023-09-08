@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planet &mdash; Toy_Coronagraph 1.5.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -11,11 +10,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=73275c37"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -82,16 +82,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="planet">
-<span id="toycoronagraph"></span><h1>Planet<a class="headerlink" href="#planet" title="Link to this heading"></a></h1>
+  <div class="section" id="planet">
+<span id="toycoronagraph"></span><h1>Planet<a class="headerlink" href="#planet" title="Permalink to this heading"></a></h1>
 <p>Function to calculate planet’s orbit and location</p>
-<dl class="py function" id="module-planet">
+<span class="target" id="module-planet"></span><dl class="py function">
 <dt class="sig sig-object py" id="planet.orbit_plot">
-<span class="sig-prename descclassname"><span class="pre">planet.</span></span><span class="sig-name descname"><span class="pre">orbit_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'polar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#planet.orbit_plot" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">planet.</span></span><span class="sig-name descname"><span class="pre">orbit_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'polar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#planet.orbit_plot" title="Permalink to this definition"></a></dt>
 <dd><p>Orbit plot
 Plot the orbit of a planet around a star.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – Semi-major axis of the orbit.</p></li>
 <li><p><strong>e</strong> (<em>float</em>) – Eccentricity of the orbit.</p></li>
@@ -104,7 +104,7 @@ Plot the orbit of a planet around a star.</p>
 <li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>orbit_*.png</p>
 </dd>
 </dl>
@@ -112,11 +112,11 @@ Plot the orbit of a planet around a star.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="planet.orbit_position">
-<span class="sig-prename descclassname"><span class="pre">planet.</span></span><span class="sig-name descname"><span class="pre">orbit_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#planet.orbit_position" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">planet.</span></span><span class="sig-name descname"><span class="pre">orbit_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#planet.orbit_position" title="Permalink to this definition"></a></dt>
 <dd><p>Orbit_position
 Calculate the Cartesian positions of points along an elliptical orbit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – Semi-major axis of the orbit.</p></li>
 <li><p><strong>e</strong> (<em>float</em>) – Eccentricity of the orbit.</p></li>
@@ -125,10 +125,10 @@ Calculate the Cartesian positions of points along an elliptical orbit.</p>
 <li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Arrays of x and y positions along the orbit.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -136,11 +136,11 @@ Calculate the Cartesian positions of points along an elliptical orbit.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="planet.planet_position">
-<span class="sig-prename descclassname"><span class="pre">planet.</span></span><span class="sig-name descname"><span class="pre">planet_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'polar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#planet.planet_position" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">planet.</span></span><span class="sig-name descname"><span class="pre">planet_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'polar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#planet.planet_position" title="Permalink to this definition"></a></dt>
 <dd><p>Planet position
 Calculate the position of a planet in an elliptical orbit at a given time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – Semi-major axis of the orbit.</p></li>
 <li><p><strong>e</strong> (<em>float</em>) – Eccentricity of the orbit.</p></li>
@@ -151,10 +151,10 @@ Calculate the position of a planet in an elliptical orbit at a given time.</p>
 <li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Planet’s position in the specified mode.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -162,23 +162,23 @@ Calculate the position of a planet in an elliptical orbit at a given time.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="planet.t_period_convert">
-<span class="sig-prename descclassname"><span class="pre">planet.</span></span><span class="sig-name descname"><span class="pre">t_period_convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#planet.t_period_convert" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">planet.</span></span><span class="sig-name descname"><span class="pre">t_period_convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#planet.t_period_convert" title="Permalink to this definition"></a></dt>
 <dd><p>Time/Period ratio reduction
 Convert a time value to its fractional part in the interval [0, 1].</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>t</strong> (<em>float</em>) – The input time value.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The fractional part of the input time.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
 
-</section>
+</div>
 
 
            </div>
