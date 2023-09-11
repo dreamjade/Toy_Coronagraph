@@ -26,5 +26,7 @@ toycoronagraph/example_data/.ipynb_checkpoints/
 # ongoing
 plan.txt
 
-# unittest
-tests/unittest.py
+# test
+tests/*
+!tests/test.ipynb
+!tests/test.py
