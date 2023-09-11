@@ -52,7 +52,7 @@ def psf_chunk(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro):
     # Reshape and return the calculated PSF chunk
     return i, img.to_dict()["values"].reshape(img_pixel, img_pixel)
 
-def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
+def psf_calculation(charge, img_pixel, psf_range, lyot_mask_size, num_cores):
     """Calculate PSFs
     Calculates the PSFs of a vortex coronagraph for a given charge along the positive x-axis, and saves them to a file.
 
@@ -71,7 +71,7 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     focal_grid = make_focal_grid(focal_grid_resolution, psf_range)
     prop = FraunhoferPropagator(pupil_grid, focal_grid)
 
-    # Create Lyot mask and coronagraph
+    # Create a Lyot mask and coronagraph
     lyot_mask = evaluate_supersampled(make_circular_aperture(0.95), pupil_grid, 4)
     coro = VortexCoronagraph(pupil_grid, charge)
     lyot_stop = Apodizer(lyot_mask)
@@ -80,7 +80,8 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     normal_factor = np.pi*(focal_grid_resolution/2)**2
     
     psfs = np.empty((img_pixel//2+1, img_pixel, img_pixel))
-    # Check the existence of multiprocessing module
+    # Check the existence of the multiprocessing module
+    
     if mp_spec is not None:
         # Calculate PSFs in parallel using multiprocessing
         pool = mp.Pool(processes=num_cores)
@@ -101,7 +102,7 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
             # Propagate the wavefront through the system and calculate the intensity
             img = prop(lyot_stop(coro(wf))).intensity
 
-            #save results to psfs
+            # Save results to psfs
             psfs[i] = img.to_dict()["values"].reshape(img_pixel, img_pixel)/normal_factor
         
     # Gather results and save PSFs to a file
@@ -201,7 +202,7 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
     if iwa_ignore:
         iwa = cir_iwa(psfs)
     
-    # Generate the chunk image along x-axis
+    # Generate the chunk image along the x-axis
     for i in range(iwa, img_pixel//2+1):
         weight = pre_img[255+i][255]
         if weight != 0:

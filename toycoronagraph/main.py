@@ -73,7 +73,7 @@ class Target(object):
         self.orbits = []
         self.planets_brightness = []
         
-    def plot_origin(self, plot_planets=True, plot_dpi=300, boundary=True):
+    def plot_origin(self, plot_planets=True, res=1000, plot_dpi=300, boundary=True, flip=True):
         """Plot original target
         
         Plot the original image with or without planets.
@@ -98,18 +98,21 @@ class Target(object):
         x_range = par.px*par.psf_scale/2
         y_range = par.py*par.psf_scale/2
         
-        if boundary:
+        if boundary and flip:
             # Set axis limits
             axs.set_xlim(-x_range, x_range)
             axs.set_ylim(y_range, -y_range)
-        else:
+        elif flip:
             axs.invert_yaxis()
+        elif boundary:
+            axs.set_xlim(-x_range, x_range)
+            axs.set_ylim(-y_range, y_range)
 
         # Set axis labels
         axs.set_ylabel('y [arcsec]')
         axs.set_xlabel('x [arcsec]')
 
-        # Add colorbar
+        # Add color bar
         colorbar=plt.colorbar(img,orientation='vertical')
         colorbar.set_label(r"Jy/arcsec^2")
 
@@ -135,7 +138,7 @@ class Target(object):
                     axs.annotate(str(b*par.psf_scale**2), (x,y), color=color)
                     
                 if orbit is not None:
-                    orbit_x, orbit_y = orbit_position(orbit[0], orbit[1], orbit[2], orbit[3])
+                    orbit_x, orbit_y = orbit_position(orbit[0], orbit[1], orbit[2], orbit[3], res)
                     plt.plot(orbit_x, orbit_y, color=color, linestyle = '--', alpha = 0.5) # Plot the orbit.
                     
             # Save the figure
@@ -168,7 +171,7 @@ class Target(object):
             elif not isinstance(brightness, (float, int)) or brightness<=0:
                 print("Brightness is invalid")
             else:
-                self.planets.append(planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar"))
+                self.planets.append(planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar",res=1000))
                 self.planets_brightness.append(brightness/par.psf_scale**2)
                 self.orbits.append(pos) #pos = np.array(a, e, pa, inc, t)
                 
@@ -206,21 +209,22 @@ class Target(object):
         Returns:
             None
         """
-        # Check if the input order is valid
+        # Check if the planet list is empty
         if len(self.planets)==0:
             print("There is no planet, but you can add planet via Target.add_planet(pos, brightness)")
-        order = 1
-        for p, b, o in zip(self.planets, self.planets_brightness, self.orbits):
-            if o is None:
-                print("Static Planet {:d}: ({}, {}) arcsec, brightness: {:.2e} Jy".format(order, p[0]*np.cos(p[1]), p[0]*np.sin(p[1]), b*par.psf_scale**2))
-            else:
-                print("Moving Planet {:d}: ({}, {}) arcsec, brightness: {:.2e} Jy".format(order, p[0]*np.cos(p[1]), p[0]*np.sin(p[1]), b*par.psf_scale**2))
-            order += 1
+        else:
+            order = 1
+            for p, b, o in zip(self.planets, self.planets_brightness, self.orbits):
+                if o is None:
+                    print("Static Planet {:d}: ({}, {}) arcsec, brightness: {:.2e} Jy".format(order, p[0]*np.cos(p[1]), p[0]*np.sin(p[1]), b*par.psf_scale**2))
+                else:
+                    print("Moving Planet {:d}: ({}, {}) arcsec, brightness: {:.2e} Jy".format(order, p[0]*np.cos(p[1]), p[0]*np.sin(p[1]), b*par.psf_scale**2))
+                order += 1
 
-    def delete_planet(self, order):
+    def delete_planet(self, order=1):
         """Delete planet
         
-        Deletes a planet from self.planet, self.orbit and self.planet_brightness with given order number.
+        Deletes a planet from self.planet, self.orbit, and self.planet_brightness with a given order number.
 
         Args:
             order (int): The order number of the planet to be deleted.
@@ -239,38 +243,44 @@ class Target(object):
             print("Successfully remove planet #"+str(order)+", here is the latest planet list:")
             self.list_planets()
 
-    def planet_move(self, time, order=1, mode="culmulated", plot_pos=False, plot_dpi=300):
+    def planet_move(self, time, order=1, mode="cumulate", plot_pos=False, plot_dpi=300, res=1000, flip=True):
         """Planet moving
         
         Move a planet's position.
 
         Args:
-            time (float): Time by which the planet should move.
+            time (float): The time by which the planet should move.
             order (int): The order number of the planet.
             mode (str): Mode for specifying movement ("culmulated", "specific"). The former will be added to the original time, while the latter will set up a new time regardless of the original time.
-            plot_pos (bool): Whether to plot the new planet position on its orbit.
+            plot_pos (bool): Whether to plot the new planet's position in its orbit.
             plot_dpi (int): Dots per inch (DPI) for the plot.
 
         Returns:
             None
         """
-        if mode == "culmulated":
-            # Update the time of the planet's orbit by adding to the current time
-            self.orbits[order-1][4] += time
-        elif mode == "specific":
-            # Set a new time for the planet's orbit
-            self.orbits[order-1][4] = time
-
-        # Get the updated position of the planet based on the updated time
-        pos = self.orbits[order-1]
-        self.planets[order-1] = planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar")
-        if plot_pos:
-            # Plot the new planet position on its orbit
-            orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi=300)
+        # Check if the input order is valid
+        if not isinstance(order, int) or order < 1 or order > len(self.planets):
+            print("Input order number is not existed, please try again or use Target.list_planets() to list all planets")
+        elif len(self.orbits[order-1]) != 5:
+            print("A static planet is unable to move")
         else:
-            print("Planet has moved to new position")
+            if mode == "cumulate":
+                # Update the time of the planet's orbit by adding to the current time
+                self.orbits[order-1][4] += time
+            elif mode == "specific":
+                # Set a new time for the planet's orbit
+                self.orbits[order-1][4] = time
+    
+            # Get the updated position of the planet based on the updated time
+            pos = self.orbits[order-1]
+            self.planets[order-1] = planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar",res=1000)
+            if plot_pos:
+                # Plot the new planet position on its orbit
+                orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi, res, flip)
+            else:
+                print("Planet has moved to new position")
 
-    def plot_orbit(self, order, plot_dpi=300):
+    def plot_orbit(self, order=1, plot_dpi=300, res=1000, flip=True):
         """Orbit plot
         
         Plot the orbit of a planet.
@@ -283,7 +293,7 @@ class Target(object):
             orbit_*.png
         """
         pos = self.orbits[order-1]
-        orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi=300)
+        orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi, res, flip)
         
     def contrast(self, charge, order=1):
         """Contrast
@@ -298,30 +308,34 @@ class Target(object):
         Returns:
             brightness (tuple): target brightness, background brightness, background brightness (ignored dust inside IWA) in Jy.
         """
-        # Check if planet inside the plot
-        planet_pos = self.planets[order-1]
-        planet_psfs_number = int(planet_pos[0]/par.psf_scale)
-        if planet_psfs_number>=par.px/2:
-            print("Planet is outside the range of the plot")
+        # Check if the input order is valid
+        if not isinstance(order, int) or order < 1 or order > len(self.planets):
+            print("Input order number is not existed, please try again or use Target.list_planets() to list all planets")
         else:
-            # Check and adjust the charge number if using a vortex coronagraph
-            if par.coronagraph_type=='vortex':
-                if not is_positive_even_integer(charge):
-                    print("charge number is not compatible with coronagraph type, auto set to 2")
-                    charge = 2
-                    
-            # Define the path to the PSF file based on charge number
-            psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
-    
-            # If the PSF file doesn't exist, calculate it
-            if not os.path.exists(psf_filename):
-                psf_filename = "psfs_c"+str(charge)+".npy"
-                if not os.path.exists(psf_filename):
-                    psf_calculation(charge, par.px, par.psf_range, par.num_cores)
-            
-            print(cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.px, par.psf_range, par.rot_number, psf_filename))
+            # Check if the planet inside the plot
+            planet_pos = self.planets[order-1]
+            planet_psfs_number = int(planet_pos[0]/par.psf_scale)
+            if planet_psfs_number>=par.px/2:
+                print("Planet is outside the range of the plot")
+            else:
+                # Check and adjust the charge number if using a vortex coronagraph
+                if par.coronagraph_type=='vortex':
+                    if not is_positive_even_integer(charge):
+                        print("charge number is not compatible with coronagraph type, auto set to 2")
+                        charge = 2
+                        
+                # Define the path to the PSF file based on charge number
+                psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
         
-    def plot_final(self, charge, iwa_ignore=False, add_planet=True, plot_dpi=300):
+                # If the PSF file doesn't exist, calculate it
+                if not os.path.exists(psf_filename):
+                    psf_filename = "psfs_c"+str(charge)+".npy"
+                    if not os.path.exists(psf_filename):
+                        psf_calculation(charge, par.px, par.psf_range, par.lyot_mask_size, par.num_cores)
+                
+                print(cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.px, par.psf_range, par.rot_number, psf_filename))
+        
+    def plot_final(self, charge, iwa_ignore=False, add_planet=True, plot_dpi=300, flip=True):
         """Final image
         
         Plots the target image after processing with the vortex coronagraph.
@@ -348,9 +362,9 @@ class Target(object):
         if not os.path.exists(psf_filename):
             psf_filename = "psfs_c"+str(charge)+".npy"
             if not os.path.exists(psf_filename):
-                psf_calculation(charge, par.px, par.psf_range, par.num_cores)
+                psf_calculation(charge, par.px, par.psf_range, par.lyot_mask_size, par.num_cores)
         
-        # Generate the final image of the disk using cir_psf function
+        # Generate the final image of the disk using the cir_psf function
         final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.px, par.psf_range, par.rot_number, psf_filename)
         
         # Create a new figure and axes for plotting
@@ -360,11 +374,13 @@ class Target(object):
         # Plot the final image
         img = axs.imshow(final_img, cmap='gnuplot', 
                          extent=[np.min(self.ypix), np.max(self.ypix), np.min(self.xpix), np.max(self.xpix)])
-        axs.invert_yaxis()
+        if flip:
+            axs.invert_yaxis()
+            
         axs.set_ylabel('y [arcsec]')
         axs.set_xlabel('x [arcsec]')
 
-        # Add colorbar
+        # Add color bar
         colorbar=plt.colorbar(img,orientation='vertical')
         colorbar.set_label(r"Jy/arcsec^2")
         

@@ -36,7 +36,7 @@ def t_period_convert(t):
         else:
             return t+(1-integer_t)
 
-def planet_position(a, e, pa, inc, t, mode="polar", res=1000):
+def planet_position(a, e, pa, inc, t, mode, res):
     """Planet position
     Calculate the position of a planet in an elliptical orbit at a given time.
 
@@ -87,7 +87,7 @@ def planet_position(a, e, pa, inc, t, mode="polar", res=1000):
     else:
         print("Function planet_position got unknown mode")
 
-def orbit_position(a, e, pa, inc, res=1000):
+def orbit_position(a, e, pa, inc, res):
     """Orbit_position
     Calculate the Cartesian positions of points along an elliptical orbit.
 
@@ -114,7 +114,7 @@ def orbit_position(a, e, pa, inc, res=1000):
     orbit_y = r * np.sin(theta+pa)*np.cos(inc)
     return orbit_x, orbit_y
 
-def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name='', plot_dpi=300, res=1000):
+def orbit_plot(a, e, pa, inc, planet_pos, mode, name='', plot_dpi, res, flip):
     """Orbit plot
     Plot the orbit of a planet around a star.
 
@@ -158,7 +158,10 @@ def orbit_plot(a, e, pa, inc, planet_pos, mode="polar", name='', plot_dpi=300, r
 
     # Set aspect ratio and axis labels, and invert the y-axis
     axs.set_aspect('equal', 'box')
-    axs.invert_yaxis()
+    
+    if flip:
+        axs.invert_yaxis()
+        
     axs.set_ylabel('y [arcsec]')
     axs.set_xlabel('x [arcsec]')
     
