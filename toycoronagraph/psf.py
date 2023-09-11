@@ -108,16 +108,6 @@ def psf_calculation(charge, img_pixel=512, psf_range=16, num_cores = 16):
     np.save('psfs_c'+str(charge)+'.npy', psfs)
     return psfs
     
-def cir_psf_planet(planets_pos, planet_brightness, img_pixel, psf_scale):
-    planet_img = np.zeros([img_pixel, img_pixel])
-    for i in range(len(planets_pos)):
-        psfs_number = int(planets_pos[i][0]/psf_scale)
-        if psfs_number<img_pixel/2:
-            planet_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=-planets_pos[i][1]*180.0/np.pi)
-        else:
-            print("Planet #"+str(i+1)+" is outside the range of the plot")
-    return planet_img
-    
 def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightness, psf_scale, img_pixel, psf_range, rot_number, psfs_name):
     """Contrast
         
@@ -170,7 +160,7 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
         disk_img_iwa += rotate(chunk_img_iwa, angle=360*i/rot_number)
         
     # The planet image
-    planet_img = rotate(planet_brightness*psfs[planet_psfs_number], angle=-planet_angle*180.0/np.pi)
+    planet_img = rotate(planet_brightness*psfs[planet_psfs_number], angle=planet_angle*180.0/np.pi)
     threshold = 0.5*planet_img.max()
     planet_filter = np.where(planet_img > threshold , 1, 0)
 
@@ -229,7 +219,7 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
         for i in range(len(planets_pos)):
             psfs_number = int(planets_pos[i][0]/psf_scale)
             if psfs_number<img_pixel/2:
-                final_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=-planets_pos[i][1]*180.0/np.pi)
+                final_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=planets_pos[i][1]*180.0/np.pi)
             else:
                 print("Planet #"+str(i+1)+" is outside the range of the plot")
             
