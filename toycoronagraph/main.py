@@ -23,12 +23,11 @@ import importlib
 class Target(object):
     """A circular symmetric target
     
-    A circular symmetric target, which could be a dust ring, a debris disk, or ice remains
+    A circular symmetric target, which could be a dust ring, a debris disk, or ice remains.
 
     Attributes:
         file_name (str): The name of the FITS file containing the target data.
-        px (int): Number of pixels along the x-axis.
-        py (int): Number of pixels along the y-axis.
+        taregt_pixel (int): Number of pixels along the edge of the target image.
         psf_scale (float): The scale of the PSF in arcseconds per pixel.
         xpix (np.ndarray): The x-coordinates of the pixels in arcseconds.
         ypix (np.ndarray): The y-coordinates of the pixels in arcseconds.
@@ -43,13 +42,10 @@ class Target(object):
     def __init__(self):
         """ Initialization
         
-        Initializes the instance based on the target fits file
+        Initializes the instance based on the target fits file.
 
         Args:
-            file_name (str, optional): The name of the FITS file containing the target data. 
-            If None, the default file `DATADIR/example.fit` will be used.
-            px (int, optional): The number of pixels in the x-direction. Defaults to 512.
-            py (int, optional): The number of pixels in the y-direction. Defaults to 512.
+            None
         """
         # Reload the module 'par' to get the latest parameters
         importlib.reload(par)
@@ -62,11 +58,11 @@ class Target(object):
         fits_read = fits.open(self.file_name+".fits")
         
         # Extract data from the FITS file and perform necessary calculations
-        origin = np.reshape(fits_read[0].data[5,0],(par.px,par.py)) # vF_v(W/m^2/pixel)
+        origin = np.reshape(fits_read[0].data[5,0],(par.taregt_pixel,par.taregt_pixel)) # vF_v(W/m^2/pixel)
         F_v = origin*par.F_transfer # F_v(Jy/arcsec^2)
         
-        self.xpix = (np.arange (-par.px/2, par.px/2, 1))*par.psf_scale
-        self.ypix = (np.arange (-par.py/2, par.py/2, 1))*par.psf_scale
+        self.xpix = (np.arange (-par.taregt_pixel/2, par.taregt_pixel/2, 1))*par.psf_scale
+        self.ypix = (np.arange (-par.taregt_pixel/2, par.taregt_pixel/2, 1))*par.psf_scale
         
         self.pre_img = F_v.astype(np.float64)
         self.planets = []
@@ -95,8 +91,8 @@ class Target(object):
                        cmap='gnuplot',extent=[np.min(self.ypix),np.max(self.ypix),np.min(self.xpix),np.max(self.xpix)])
 
         # Calculate boundary limits based on pixel scale
-        x_range = par.px*par.psf_scale/2
-        y_range = par.py*par.psf_scale/2
+        x_range = par.taregt_pixel*par.psf_scale/2
+        y_range = par.taregt_pixel*par.psf_scale/2
         
         if boundary and flip:
             # Set axis limits
@@ -315,7 +311,7 @@ class Target(object):
             # Check if the planet inside the plot
             planet_pos = self.planets[order-1]
             planet_psfs_number = int(planet_pos[0]/par.psf_scale)
-            if planet_psfs_number>=par.px/2:
+            if planet_psfs_number>=par.taregt_pixel/2:
                 print("Planet is outside the range of the plot")
             else:
                 # Check and adjust the charge number if using a vortex coronagraph
@@ -331,9 +327,9 @@ class Target(object):
                 if not os.path.exists(psf_filename):
                     psf_filename = "psfs_c"+str(charge)+".npy"
                     if not os.path.exists(psf_filename):
-                        psf_calculation(charge, par.px, par.psf_range, par.lyot_mask_size, par.num_cores)
+                        psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
                 
-                print(cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.px, par.psf_range, par.rot_number, psf_filename))
+                print(cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.taregt_pixel, par.psf_range, par.rot_number, psf_filename))
         
     def plot_final(self, charge, iwa_ignore=False, add_planet=True, plot_dpi=300, flip=True):
         """Final image
@@ -362,10 +358,10 @@ class Target(object):
         if not os.path.exists(psf_filename):
             psf_filename = "psfs_c"+str(charge)+".npy"
             if not os.path.exists(psf_filename):
-                psf_calculation(charge, par.px, par.psf_range, par.lyot_mask_size, par.num_cores)
+                psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
         
         # Generate the final image of the disk using the cir_psf function
-        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.px, par.psf_range, par.rot_number, psf_filename)
+        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.taregt_pixel, par.psf_range, par.rot_number, psf_filename)
         
         # Create a new figure and axes for plotting
         fig = plt.figure(dpi=plot_dpi)

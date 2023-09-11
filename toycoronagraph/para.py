@@ -28,9 +28,8 @@ def example_para():
     file_name = "toycoronagraph_para.py"
     data = \
 '''
-fits_filename = None # use example fits file
-px = 512 # The number of pixels in the x-direction.
-py = 512 # The number of pixels in the y-direction.
+fits_filename = None # The address of the FITS file containing the target data. If None, the default file `DATADIR/example.fit` will be used.
+taregt_pixel = 512 # The pixel number of the target image in the x-direction and y-direction
 num_cores = 16 # The number of cores used in parallel calculation.
 rot_number = px # The number of rotations for generating the circular symmetry final image.
 
