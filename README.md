@@ -63,7 +63,7 @@ Frame definition
 :-------------------------:
 ![frame](./static/frame.svg)
 
-Plot the orbit
+Plot the orbit (time = 0.2 period, starting from the perihelion and moving clockwise in the figure)
 :-------------------------:
 ![frame](./static/oribit_planet1.png)
 
