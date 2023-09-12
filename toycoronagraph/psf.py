@@ -5,6 +5,7 @@ if mp_spec is not None:
     import multiprocessing as mp
 from hcipy import *
 from skimage.transform import rotate
+import matplotlib.pyplot as plt
 
 def Wavefront_pos(x,y,pupil_grid):
     """
@@ -248,3 +249,26 @@ def cir_iwa(psfs):
     core_throughput = cir_core_throughput_fun(psfs)
     iwa = np.searchsorted(core_throughput, 0.5*core_throughput.max())
     return iwa
+
+def cir_core_throughput_plot(psfs, plot_dpi=300):
+    core_throughput = cir_core_throughput_fun(psfs)
+    iwa = np.searchsorted(core_throughput, 0.5*core_throughput.max())
+    # Create a new figure with a specified DPI
+    fig = plt.figure(dpi=plot_dpi)
+    axs = plt.gca()
+
+    # Set axis labels
+    axs.set_ylabel('Core Throughput')
+    axs.set_xlabel('distance [pixel]')
+    
+    # Plot the core throughput
+    plt.plot(range(len(core_throughput)), core_throughput, color='orange')
+
+    # Mark the IWA with a black verticle line
+    plt.axvline(iwa, color='black', linestyle='--')
+    
+    # Save the figure with the specified name
+    fig.savefig("Core_throughput.png", format='png', bbox_inches='tight')
+
+    # Display the plot
+    plt.show()
