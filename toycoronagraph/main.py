@@ -10,7 +10,7 @@ import importlib.util
 from astropy.io import fits
 from toycoronagraph import DATADIR
 import os
-
+import importlib
 # Find the parameters of the toycoronagraph at toycoronagraph_para.py
 para_spec = importlib.util.find_spec("toycoronagraph_para")
 if para_spec is None:
@@ -18,7 +18,6 @@ if para_spec is None:
     example_para()
     print("There is no toycoronagraph_para.py file, create an example one")
 import toycoronagraph_para as par
-import importlib
 
 class Target(object):
     """A circular symmetric target
@@ -272,7 +271,7 @@ class Target(object):
             self.planets[order-1] = planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar",res=1000)
             if plot_pos:
                 # Plot the new planet position on its orbit
-                orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi, res, flip)
+                orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], plot_dpi, res, flip, "polar", '_planet'+str(order))
             else:
                 print("Planet has moved to new position")
 
@@ -289,9 +288,9 @@ class Target(object):
             orbit_*.png
         """
         pos = self.orbits[order-1]
-        orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], mode="polar", name='_planet'+str(order), plot_dpi, res, flip)
-        
-    def contrast(self, charge, order=1):
+        orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], plot_dpi, res, flip, "polar", '_planet'+str(order))
+
+    def contrast(self, charge=2, order=1, plot_dpi=300, res=1000, exozodi_limit=10, plot_contrast=True):
         """Contrast
         
         Find the planet brightness and background brightness in the final image.
@@ -302,7 +301,7 @@ class Target(object):
             plot_dpi (int): Dots per inch (DPI) for the plot.
 
         Returns:
-            brightness (tuple): target brightness, background brightness, background brightness (ignored dust inside IWA) in Jy.
+            plot or print planet brightness, background brightness, and background brightness (ignored dust inside IWA) in Jy.
         """
         # Check if the input order is valid
         if not isinstance(order, int) or order < 1 or order > len(self.planets):
@@ -317,8 +316,9 @@ class Target(object):
                 # Check and adjust the charge number if using a vortex coronagraph
                 if par.coronagraph_type=='vortex':
                     if not is_positive_even_integer(charge):
-                        print("charge number is not compatible with coronagraph type, auto set to 2")
+                        print("Charge number is not compatible with vortex coronagraph type, auto set to 2")
                         charge = 2
+                    print("This is a charge-" + str(charge) + " vortex coronagraph.")
                         
                 # Define the path to the PSF file based on charge number
                 psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
@@ -328,9 +328,24 @@ class Target(object):
                     psf_filename = "psfs_c"+str(charge)+".npy"
                     if not os.path.exists(psf_filename):
                         psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
-                
-                print(cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.taregt_pixel, par.psf_range, par.rot_number, psf_filename))
-        
+
+                planet_b, dust_b, dust_b_iwa = cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.taregt_pixel, par.psf_range, par.rot_number, psf_filename)
+                if plot_contrast:
+                    # Create a new figure and axes for plotting
+                    fig = plt.figure(dpi=plot_dpi)
+                    axs = plt.gca()                       
+                    axs.set_ylabel('dust to planet brightness ratio')
+                    axs.set_xlabel('exozodi to target dust ratio')
+                    exozodi_ratio = np.linspace(0, exozodi_limit, res)
+                    dp_ratio = (dust_b / planet_b) * exozodi_ratio
+                    dp_ratio_iwa = (dust_b_iwa / planet_b) * exozodi_ratio
+                    plt.plot(exozodi_ratio, dp_ratio, label="complete")
+                    plt.plot(exozodi_ratio, dp_ratio_iwa, label="IWA ignored")
+                    plt.legend()
+                    plt.show()
+                else:
+                    print (planet_b, dust_b, dust_b_iwa)
+    
     def plot_final(self, charge, iwa_ignore=False, add_planet=True, plot_dpi=300, flip=True):
         """Final image
         

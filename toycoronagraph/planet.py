@@ -114,7 +114,7 @@ def orbit_position(a, e, pa, inc, res):
     orbit_y = r * np.sin(theta+pa)*np.cos(inc)
     return orbit_x, orbit_y
 
-def orbit_plot(a, e, pa, inc, planet_pos, mode, name='', plot_dpi, res, flip):
+def orbit_plot(a, e, pa, inc, planet_pos, plot_dpi, res, flip, mode, name=''):
     """Orbit plot
     Plot the orbit of a planet around a star.
 

@@ -31,14 +31,14 @@ def example_para():
 fits_filename = None # The address of the FITS file containing the target data. If None, the default file `DATADIR/example.fit` will be used.
 taregt_pixel = 512 # The pixel number of the target image in the x-direction and y-direction
 num_cores = 16 # The number of cores used in parallel calculation.
-rot_number = px # The number of rotations for generating the circular symmetry final image.
+rot_number = taregt_pixel # The number of rotations for generating the circular symmetry final image.
 
 # Calculate the psf scale in arcsecs per pixel
 wavelength = 1.0e-6 # meter
 D = 2.4 # aperture size in meter
 rad_to_arcsecond = 206264.806247
 visual_range = 32 # in lambda/D
-psf_scale = wavelength/D*rad_to_arcsecond*visual_range/px # arcsec per pixel
+psf_scale = wavelength/D*rad_to_arcsecond*visual_range/taregt_pixel # arcsec per pixel
 
 # Example .fits file has unit W/m^2/pixel
 # vF_v(W/m^2/pixel) to F_v(Jy/arcsec^2)
