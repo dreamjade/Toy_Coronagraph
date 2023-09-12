@@ -1,10 +1,10 @@
-[![Version](https://img.shields.io/badge/Version-v1.5.3-red.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/blob/main/toycoronagraph/__init__.py)
+[![Version](https://img.shields.io/badge/Version-v1.5.4-red.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/blob/main/toycoronagraph/__init__.py)
 <a href="https://pypi.org/project/toycoronagraph/"><img src="https://img.shields.io/pypi/v/lrgs.svg" alt="PyPI" /></a>
-[![Test](https://img.shields.io/badge/Tests-v1.5.3-yellow.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/tests)
-[![Documentation Status](https://img.shields.io/badge/Docs-v1.5.3-green.svg?style=flat-square)](https://dreamjade.github.io/Toy_Coronagraph/index.html)
+[![Test](https://img.shields.io/badge/Tests-v1.5.4-yellow.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/tests)
+[![Documentation Status](https://img.shields.io/badge/Docs-v1.5.4-green.svg?style=flat-square)](https://dreamjade.github.io/Toy_Coronagraph/index.html)
 <a href="./LICENSE"><img src="https://img.shields.io/cran/l/lrgs.svg" alt="MIT License" /></a>
 [![DOI](https://zenodo.org/badge/665310914.svg)](https://zenodo.org/badge/latestdoi/665310914)
-[![Test](https://img.shields.io/badge/Dependencies-v1.5.3-purple.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/requirements.txt)
+[![Dependencies](https://img.shields.io/badge/Dependencies-v1.5.4-purple.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/requirements.txt)
 
 # Toy Coronagraph
 <p align="center">
@@ -132,7 +132,7 @@ toy_target.plot_final(charge=6)
 # Print a specific planet brightness, background brightness, and background brightness (ignored dust inside IWA) in the final image through vortex coronagraph with charge = 6
 toy_target.contrast(charge=6, order=1)
 '''
-(1.1044442178760744e-05, 1.7104037862959554e-05, 1.6625126181290586e-05)
+This is a charge-6 vortex coronagraph.
 '''
 ```
 More instructions could be found in [docs](https://dreamjade.github.io/Toy_Coronagraph/index.html).

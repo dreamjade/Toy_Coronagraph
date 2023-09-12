@@ -20,3 +20,16 @@ published on Sep 8, 2023.
 
 **turn on/off dust inside IWA**
 
+**auto check multithreading module before using it in psf.py**
+
+### v1.5.4
+published on Sep 12, 2023.
+
+**flip or not flip y-axis**
+
+**you could choose lyot_mask_size in toycoronagraph_para.py**
+
+**check planet order inputs are positive integers**
+
+### v1.6.0
+Ongoing

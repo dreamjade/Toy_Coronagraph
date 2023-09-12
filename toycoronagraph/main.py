@@ -339,7 +339,7 @@ class Target(object):
                     exozodi_ratio = np.linspace(0, exozodi_limit, res)
                     dp_ratio = (dust_b / planet_b) * exozodi_ratio
                     dp_ratio_iwa = (dust_b_iwa / planet_b) * exozodi_ratio
-                    plt.plot(exozodi_ratio, dp_ratio, label="complete")
+                    plt.plot(exozodi_ratio, dp_ratio, label="Complete")
                     plt.plot(exozodi_ratio, dp_ratio_iwa, label="IWA ignored")
                     plt.legend()
                     plt.show()
