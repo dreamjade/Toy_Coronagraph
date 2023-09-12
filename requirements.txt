@@ -5,3 +5,4 @@ scikit-image
 pysynphot
 hcipy
 scikit-image
+opencv-python
