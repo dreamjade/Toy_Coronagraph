@@ -68,8 +68,10 @@ Plot the orbit (time = 0.2 period, starting from the perihelion and moving clock
 ![frame](./static/oribit_planet1.png)
 
 User could even make a video now
-:-------------------------:
-![video](./static/planet_video.mp4)
+
+```HTML
+<video src="./static/planet_video.mp4)" controls="controls" width="500" height="300"></video>
+```
 
 
 ### Example usage (Python)
