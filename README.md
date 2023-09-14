@@ -138,6 +138,11 @@ toy_target.contrast(charge=6, order=1)
 '''
 This is a charge-6 vortex coronagraph.
 '''
+# Plot the core_throughput and inner working angle (in pixel)
+import toycoronagraph.psf as psf
+import numpy as np
+psfs = np.load("psfs_c2.npy")
+psf.cir_core_throughput_plot(psfs)
 
 # Make moving planet movie
 import toycoronagraph.main as toy
