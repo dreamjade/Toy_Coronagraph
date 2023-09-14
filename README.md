@@ -1,10 +1,10 @@
 [![Version](https://img.shields.io/badge/Version-v1.5.4-red.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/blob/main/toycoronagraph/__init__.py)
 <a href="https://pypi.org/project/toycoronagraph/"><img src="https://img.shields.io/pypi/v/lrgs.svg" alt="PyPI" /></a>
-[![Test](https://img.shields.io/badge/Tests-v1.5.4-yellow.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/tests)
-[![Documentation Status](https://img.shields.io/badge/Docs-v1.5.4-green.svg?style=flat-square)](https://dreamjade.github.io/Toy_Coronagraph/index.html)
+[![Test](https://img.shields.io/badge/Tests-v1.6.0-yellow.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/tests)
+[![Documentation Status](https://img.shields.io/badge/Docs-v1.6.0-green.svg?style=flat-square)](https://dreamjade.github.io/Toy_Coronagraph/index.html)
 <a href="./LICENSE"><img src="https://img.shields.io/cran/l/lrgs.svg" alt="MIT License" /></a>
 [![DOI](https://zenodo.org/badge/665310914.svg)](https://zenodo.org/badge/latestdoi/665310914)
-[![Dependencies](https://img.shields.io/badge/Dependencies-v1.5.4-purple.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/requirements.txt)
+[![Dependencies](https://img.shields.io/badge/Dependencies-v1.6.0-purple.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/requirements.txt)
 
 # Toy Coronagraph
 <p align="center">
@@ -134,5 +134,14 @@ toy_target.contrast(charge=6, order=1)
 '''
 This is a charge-6 vortex coronagraph.
 '''
+
+# Make moving planet movie
+import toycoronagraph.main as toy
+# Load the example target image (example.fits) in Toy_Coronagraph/toycoronagraph/example_data/ folder
+toy_target = toy.Target()
+# You could also add a moving planet on an elliptic orbit, where pos=(length of the semi-major axis, eccentricity, position angle, inclination angle, time/period))
+toy_target.add_planet(pos=[0.5,0.6,60,0,0.1], brightness=0.00003, mode="moving")
+toy_target.planet_video(charge=6)
+# The video will be save to planet_video.mp4
 ```
 More instructions could be found in [docs](https://dreamjade.github.io/Toy_Coronagraph/index.html).

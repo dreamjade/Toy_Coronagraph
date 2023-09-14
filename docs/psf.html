@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PSF &#8212; Toy_Coronagraph 1.5.4 documentation</title>
+    <title>PSF &#8212; Toy_Coronagraph 1.6.0 documentation</title>
   
   
   
@@ -34,7 +34,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="_static/documentation_options.js?v=aaaccd68"></script>
+    <script src="_static/documentation_options.js?v=cf6e66ff"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'psf';</script>
@@ -103,7 +103,7 @@
   
   
   
-    <p class="title logo__title">Toy_Coronagraph 1.5.4 documentation</p>
+    <p class="title logo__title">Toy_Coronagraph 1.6.0 documentation</p>
   
 </a></div>
     
@@ -397,7 +397,7 @@ document.write(`
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psf.cir_psf">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_planet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_planet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf" title="Link to this definition">#</a></dt>
 <dd><p>Circular symmetric PSF processing calculation</p>
 <p>Calculates the final image of a circular symmetric pre-image through circular symmetric PSF with added planets.</p>
 <dl class="field-list simple">
@@ -409,7 +409,6 @@ document.write(`
 <li><p><strong>psf_scale</strong> (<em>float</em>) – Scale of the PSF.</p></li>
 <li><p><strong>add_planet</strong> (<em>bool</em>) – Whether to add planets to the PSF.</p></li>
 <li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels in the image.</p></li>
-<li><p><strong>psf_range</strong> (<em>float</em>) – Range of the PSF.</p></li>
 <li><p><strong>rot_number</strong> (<em>int</em>) – Number of rotations for generating the circular PSF.</p></li>
 <li><p><strong>psfs_name</strong> (<em>str</em>) – Name of the file containing PSFs.</p></li>
 </ul>
@@ -425,7 +424,7 @@ document.write(`
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psf.cir_psf_contrast">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf_contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_psfs_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf_contrast" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf_contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_psfs_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf_contrast" title="Link to this definition">#</a></dt>
 <dd><p>Contrast</p>
 <p>Find the planet brightness and background brightness in the final image.</p>
 <dl class="field-list simple">
@@ -437,7 +436,6 @@ document.write(`
 <li><p><strong>planet_brightness</strong> (<em>list</em>) – List of planet brightness values.</p></li>
 <li><p><strong>psf_scale</strong> (<em>float</em>) – Scale of the PSF.</p></li>
 <li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels in the image.</p></li>
-<li><p><strong>psf_range</strong> (<em>float</em>) – Range of the PSF.</p></li>
 <li><p><strong>rot_number</strong> (<em>int</em>) – Number of rotations for generating the circular PSF.</p></li>
 <li><p><strong>psfs_name</strong> (<em>str</em>) – Name of the file containing PSFs.</p></li>
 </ul>
@@ -450,6 +448,11 @@ document.write(`
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psf.cir_psf_planets">
+<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf_planets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf_planets" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psf.psf_calculation">
@@ -551,6 +554,7 @@ Calculates the PSFs of a vortex coronagraph for a given charge along the positiv
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.Wavefront_pos"><code class="docutils literal notranslate"><span class="pre">Wavefront_pos()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf"><code class="docutils literal notranslate"><span class="pre">cir_psf()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf_contrast"><code class="docutils literal notranslate"><span class="pre">cir_psf_contrast()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf_planets"><code class="docutils literal notranslate"><span class="pre">cir_psf_planets()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.psf_calculation"><code class="docutils literal notranslate"><span class="pre">psf_calculation()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.psf_chunk"><code class="docutils literal notranslate"><span class="pre">psf_chunk()</span></code></a></li>
 </ul>

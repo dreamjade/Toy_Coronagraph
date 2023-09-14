@@ -12,11 +12,11 @@ published on Sep 8, 2023.
 
 **Users can now set the number of cores to use for parallel computing**
 
-**inside iwa ignored function**
+**feature allow user to ignore dust inside IWA**
 
-**planet brightness unit definition**
+**show the planet brightness unit**
 
-**print  planet brightness dust brightness**
+**print planet brightness and dust brightness**
 
 **turn on/off dust inside IWA**
 
@@ -32,4 +32,10 @@ published on Sep 12, 2023.
 **check planet order inputs are positive integers**
 
 ### v1.6.0
-Ongoing
+published on Sep 14, 2023.
+
+**core_throughput plot**
+
+**video of planet moving**
+
+**optimate the parameter number**

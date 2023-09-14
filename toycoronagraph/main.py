@@ -302,7 +302,7 @@ class Target(object):
         else:
             total_frames = length*fps
             target_img = cir_psf(self.pre_img, [], [], par.psf_scale, iwa_ignore, False, par.taregt_pixel, par.rot_number, psf_filename)
-            fig,[ax,cax] = plt.subplots(1,2, gridspec_kw={"width_ratios":[50,1]})
+            fig,[ax,cax] = plt.subplots(1,2, width_ratios=[50,1], figsize=(10, 8))
             # Set the colormap and norm to correspond to the data for which
             # the colorbar will be used.
             cmap = matplotlib.cm.gnuplot #matplotlib.cm.winter
@@ -313,7 +313,7 @@ class Target(object):
             colorbar.set_label(r"Jy/arcsec^2") 
             art = ax.scatter([],[],c=[])
             initial_img = cir_psf_planets([self.planets[order-1]], [planet_brightness], par.psf_scale, par.taregt_pixel, psf_filename)
-            img = ax.imshow(target_img+initial_img, extent=[np.min(self.ypix), np.max(self.ypix), np.min(self.xpix), np.max(self.xpix)], cmap=cmap, vmin=0, vmax=np.max(target_img)+planet_brightness*np.max(np.load(psf_filename)))
+            img = ax.imshow(target_img+initial_img, extent=[np.min(self.ypix), np.max(self.ypix), np.min(self.xpix), np.max(self.xpix)], cmap=cmap, norm=norm)
             ax.set_ylabel('y [arcsec]')
             ax.set_xlabel('x [arcsec]')
             def animate(num):
