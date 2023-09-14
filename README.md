@@ -69,9 +69,8 @@ Plot the orbit (time = 0.2 period, starting from the perihelion and moving clock
 
 User could even make a video now
 
-```HTML
-<video src="./static/planet_video.mp4)" controls="controls" width="500" height="300"></video>
-```
+:-------------------------:
+![video](./static/planet_video.gif)
 
 
 ### Example usage (Python)
