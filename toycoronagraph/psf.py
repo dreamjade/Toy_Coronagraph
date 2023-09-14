@@ -110,7 +110,7 @@ def psf_calculation(charge, img_pixel, psf_range, lyot_mask_size, num_cores):
     np.save('psfs_c'+str(charge)+'.npy', psfs)
     return psfs
     
-def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightness, psf_scale, img_pixel, psf_range, rot_number, psfs_name):
+def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightness, psf_scale, img_pixel, rot_number, psfs_name):
     """Contrast
         
     Find the planet brightness and background brightness in the final image.
@@ -122,7 +122,6 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
         planet_brightness (list): List of planet brightness values.
         psf_scale (float): Scale of the PSF.
         img_pixel (int): Number of pixels in the image.
-        psf_range (float): Range of the PSF.
         rot_number (int): Number of rotations for generating the circular PSF.
         psfs_name (str): Name of the file containing PSFs.
 
@@ -173,7 +172,7 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
               
     return planet_b, dust_b, dust_b_iwa
 
-def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_planet, img_pixel, psf_range, rot_number, psfs_name):
+def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_planet, img_pixel, rot_number, psfs_name):
     """Circular symmetric PSF processing calculation
     
     Calculates the final image of a circular symmetric pre-image through circular symmetric PSF with added planets.
@@ -185,16 +184,12 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
         psf_scale (float): Scale of the PSF.
         add_planet (bool): Whether to add planets to the PSF.
         img_pixel (int): Number of pixels in the image.
-        psf_range (float): Range of the PSF.
         rot_number (int): Number of rotations for generating the circular PSF.
         psfs_name (str): Name of the file containing PSFs.
 
     Returns:
         np.ndarray: Final image.
     """
-    # Initialize an empty image chunk
-    chunk_img = np.zeros([img_pixel, img_pixel])
-
     # Load PSFs from the specified file
     psfs = np.load(psfs_name)
     
@@ -203,14 +198,17 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
     if iwa_ignore:
         iwa = cir_iwa(psfs)
     
+    # Initialize the final image
+    final_img = np.zeros([img_pixel, img_pixel])
+    
+    # Initialize an empty image chunk
+    chunk_img = np.zeros([img_pixel, img_pixel])
+    
     # Generate the chunk image along the x-axis
     for i in range(iwa, img_pixel//2+1):
         weight = pre_img[255+i][255]
         if weight != 0:
             chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
-
-    # Initialize the final image
-    final_img = np.zeros([img_pixel, img_pixel])
 
     # Rotate and accumulate the chunk image to create the final image
     for i in range(rot_number):
@@ -226,7 +224,22 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
                 print("Planet #"+str(i+1)+" is outside the range of the plot")
             
     return final_img
+    
+def cir_psf_planets(planets_pos, planet_brightness, psf_scale, img_pixel, psfs_name):
+    """
+    """
+    # Load PSFs from the specified file
+    psfs = np.load(psfs_name)
+    
+    # Initialize the final image
+    planet_img = np.zeros([img_pixel, img_pixel])
 
+    for i in range(len(planets_pos)):
+        psfs_number = int(planets_pos[i][0]/psf_scale)
+        if psfs_number<img_pixel/2:
+            planet_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=planets_pos[i][1]*180.0/np.pi)
+    return planet_img
+    
 def cir_core_throughput_vectorized(psfs):
     thresholds = 0.5 * np.max(psfs, axis=(1, 2)).reshape(-1, 1, 1)
     #core = (psfs > thresholds).astype(int)

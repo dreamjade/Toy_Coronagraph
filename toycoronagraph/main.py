@@ -1,8 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import matplotlib
 # plt.rcParams['text.usetex'] = True
 import hcipy
-from toycoronagraph.psf import psf_calculation, cir_psf, cir_psf_contrast
+from toycoronagraph.psf import psf_calculation, cir_psf, cir_psf_planets, cir_psf_contrast
 from toycoronagraph.planet import planet_position, orbit_position, orbit_plot
 from toycoronagraph.tool import convert_to_polar, is_positive_even_integer, is_planet_pos_allowed
 from toycoronagraph.para import example_para
@@ -18,6 +20,7 @@ if para_spec is None:
     example_para()
     print("There is no toycoronagraph_para.py file, create an example one")
 import toycoronagraph_para as par
+import cv2
 
 class Target(object):
     """A circular symmetric target
@@ -222,7 +225,7 @@ class Target(object):
         Deletes a planet from self.planet, self.orbit, and self.planet_brightness with a given order number.
 
         Args:
-            order (int): The order number of the planet to be deleted.
+            order (int): The order number of the planet to be deleted. Defaults to 1.
 
         Returns:
             None
@@ -238,7 +241,7 @@ class Target(object):
             print("Successfully remove planet #"+str(order)+", here is the latest planet list:")
             self.list_planets()
 
-    def planet_move(self, time, order=1, mode="cumulate", plot_pos=False, plot_dpi=300, res=1000, flip=True):
+    def planet_move(self, time, order=1, mode="cumulate", plot_pos=False, plot_dpi=300, res=1000, flip=True, message=True):
         """Planet moving
         
         Move a planet's position.
@@ -272,9 +275,59 @@ class Target(object):
             if plot_pos:
                 # Plot the new planet position on its orbit
                 orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], plot_dpi, res, flip, "polar", '_planet'+str(order))
-            else:
+            elif message:
                 print("Planet has moved to new position")
 
+    def planet_video(self, charge, order=1, plot_orbit=True, iwa_ignore=False, plot_dpi=300, length=3, fps=20, flip=True):
+        # Check and adjust the charge number if using a vortex coronagraph
+        if par.coronagraph_type=='vortex':
+            if not is_positive_even_integer(charge):
+                print("charge number is not compatible with coronagraph type, auto set to 2")
+                charge = 2
+                
+        # Define the path to the PSF file based on charge number
+        psf_filename = DATADIR+"psfs_c"+str(charge)+".npy"
+
+        # If the PSF file doesn't exist, calculate it
+        if not os.path.exists(psf_filename):
+            psf_filename = "psfs_c"+str(charge)+".npy"
+            if not os.path.exists(psf_filename):
+                psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
+                
+        # Check if the input order is valid
+        if not isinstance(order, int) or order < 1 or order > len(self.planets):
+            print("Input order number is not existed, please try again or use Target.list_planets() to list all planets")
+        elif len(self.orbits[order-1]) != 5:
+            print("A static planet is unable to move")
+        else:
+            total_frames = length*fps
+            target_img = cir_psf(self.pre_img, [], [], par.psf_scale, iwa_ignore, False, par.taregt_pixel, par.rot_number, psf_filename)
+            fig,[ax,cax] = plt.subplots(1,2, gridspec_kw={"width_ratios":[50,1]})
+            # Set the colormap and norm to correspond to the data for which
+            # the colorbar will be used.
+            cmap = matplotlib.cm.gnuplot #matplotlib.cm.winter
+            planet_brightness = self.planets_brightness[order-1]
+            t0 = self.orbits[order-1][-1]
+            norm = matplotlib.colors.Normalize(vmin=0, vmax=np.max(target_img)+planet_brightness*np.max(np.load(psf_filename)))
+            colorbar = matplotlib.colorbar.ColorbarBase(cax, cmap=cmap,norm=norm, orientation='vertical')
+            colorbar.set_label(r"Jy/arcsec^2") 
+            art = ax.scatter([],[],c=[])
+            initial_img = cir_psf_planets([self.planets[order-1]], [planet_brightness], par.psf_scale, par.taregt_pixel, psf_filename)
+            img = ax.imshow(target_img+initial_img, extent=[np.min(self.ypix), np.max(self.ypix), np.min(self.xpix), np.max(self.xpix)], cmap=cmap, vmin=0, vmax=np.max(target_img)+planet_brightness*np.max(np.load(psf_filename)))
+            ax.set_ylabel('y [arcsec]')
+            ax.set_xlabel('x [arcsec]')
+            def animate(num):
+                if num % fps == 0:
+                    print("{:.0%}".format(num/total_frames))
+                self.planet_move(t0+num/total_frames, order=order, mode="specific", res=total_frames*10, flip=True, message=False)
+                planet_pos = self.planets[order-1]
+                currrent_img = target_img+cir_psf_planets([planet_pos], [planet_brightness], par.psf_scale, par.taregt_pixel, psf_filename)
+                img.set_array(currrent_img)
+                #art.set_color(cmap(norm(currrent_img)))
+                return [img]
+            anim= animation.FuncAnimation(fig, animate, interval=1000/fps, frames=total_frames)
+            anim.save('planet_video.mp4', fps=fps, extra_args=['-vcodec', 'libx264'])
+            
     def plot_orbit(self, order=1, plot_dpi=300, res=1000, flip=True):
         """Orbit plot
         
@@ -329,7 +382,7 @@ class Target(object):
                     if not os.path.exists(psf_filename):
                         psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
 
-                planet_b, dust_b, dust_b_iwa = cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.taregt_pixel, par.psf_range, par.rot_number, psf_filename)
+                planet_b, dust_b, dust_b_iwa = cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.taregt_pixel, par.rot_number, psf_filename)
                 if plot_contrast:
                     # Create a new figure and axes for plotting
                     fig = plt.figure(dpi=plot_dpi)
@@ -376,7 +429,7 @@ class Target(object):
                 psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
         
         # Generate the final image of the disk using the cir_psf function
-        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.taregt_pixel, par.psf_range, par.rot_number, psf_filename)
+        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.taregt_pixel, par.rot_number, psf_filename)
         
         # Create a new figure and axes for plotting
         fig = plt.figure(dpi=plot_dpi)
