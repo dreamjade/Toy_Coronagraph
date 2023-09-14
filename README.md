@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/Version-v1.5.4-red.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/blob/main/toycoronagraph/__init__.py)
+[![Version](https://img.shields.io/badge/Version-v1.6.0-red.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/blob/main/toycoronagraph/__init__.py)
 <a href="https://pypi.org/project/toycoronagraph/"><img src="https://img.shields.io/pypi/v/lrgs.svg" alt="PyPI" /></a>
 [![Test](https://img.shields.io/badge/Tests-v1.6.0-yellow.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/tests)
 [![Documentation Status](https://img.shields.io/badge/Docs-v1.6.0-green.svg?style=flat-square)](https://dreamjade.github.io/Toy_Coronagraph/index.html)
@@ -66,6 +66,10 @@ Frame definition
 Plot the orbit (time = 0.2 period, starting from the perihelion and moving clockwise in the figure)
 :-------------------------:
 ![frame](./static/oribit_planet1.png)
+
+User could even make a video now
+:-------------------------:
+![video](./static/planet_video.mp4)
 
 
 ### Example usage (Python)
