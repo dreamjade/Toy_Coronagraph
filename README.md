@@ -68,7 +68,6 @@ Plot the orbit (time = 0.2 period, starting from the perihelion and moving clock
 ![frame](./static/oribit_planet1.png)
 
 User could even make a video now
-
 :-------------------------:
 ![video](./static/planet_video.gif)
 
