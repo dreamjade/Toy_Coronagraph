@@ -39,3 +39,8 @@ published on Sep 14, 2023.
 **video of planet moving**
 
 **optimate the parameter number**
+
+### v1.6.1
+published on Sep 15, 2023.
+
+**complete python docstrings for all new features**

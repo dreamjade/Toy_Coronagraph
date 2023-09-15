@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PSF &#8212; Toy_Coronagraph 1.6.0 documentation</title>
+    <title>PSF &#8212; Toy_Coronagraph 1.6.1 documentation</title>
   
   
   
@@ -34,7 +34,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="_static/documentation_options.js?v=cf6e66ff"></script>
+    <script src="_static/documentation_options.js?v=662e1299"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'psf';</script>
@@ -103,7 +103,7 @@
   
   
   
-    <p class="title logo__title">Toy_Coronagraph 1.6.0 documentation</p>
+    <p class="title logo__title">Toy_Coronagraph 1.6.1 documentation</p>
   
 </a></div>
     
@@ -396,6 +396,40 @@ document.write(`
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="psf.cir_core_throughput_plot">
+<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_core_throughput_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_core_throughput_plot" title="Link to this definition">#</a></dt>
+<dd><p>Plot the core throughput of a series of circular symmetric PSFs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – The normalized PSFs.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Core_throughput.png</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psf.cir_iwa">
+<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_iwa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_iwa" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the inner working angle (IWA) of a series of circular symmetric PSFs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – The normalized PSFs.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The IWA of the PSFs, in units of pixel.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="psf.cir_psf">
 <span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_planet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf" title="Link to this definition">#</a></dt>
 <dd><p>Circular symmetric PSF processing calculation</p>
@@ -452,7 +486,59 @@ document.write(`
 <dl class="py function">
 <dt class="sig sig-object py" id="psf.cir_psf_planets">
 <span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf_planets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf_planets" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Add one or more planets to an image through a series of circular symmetric PSFs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>planets_pos</strong> (<em>list</em>) – A list of planet positions, in units of arcsec.</p></li>
+<li><p><strong>planet_brightness</strong> (<em>list</em>) – A list of planet brightnesses, in units of Jy.</p></li>
+<li><p><strong>psf_scale</strong> (<em>float</em>) – The scale of the PSF, in units of arcsec.</p></li>
+<li><p><strong>img_pixel</strong> (<em>int</em>) – The number of pixels in the image.</p></li>
+<li><p><strong>psfs_name</strong> (<em>str</em>) – The file name of the PSFs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The image of planets.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psf.core_throughput_fun">
+<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">core_throughput_fun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.core_throughput_fun" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the core throughput of a series of PSFs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – The normalized PSFs.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The core throughput of the psfs</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psf.core_throughput_vectorized">
+<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">core_throughput_vectorized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.core_throughput_vectorized" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the core throughput of a series of PSFs in a vectorized way.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – The normalized PSFs.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The core throughput of the psfs</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psf.psf_calculation">
@@ -552,9 +638,13 @@ Calculates the PSFs of a vortex coronagraph for a given charge along the positiv
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.Wavefront_pos"><code class="docutils literal notranslate"><span class="pre">Wavefront_pos()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_core_throughput_plot"><code class="docutils literal notranslate"><span class="pre">cir_core_throughput_plot()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_iwa"><code class="docutils literal notranslate"><span class="pre">cir_iwa()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf"><code class="docutils literal notranslate"><span class="pre">cir_psf()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf_contrast"><code class="docutils literal notranslate"><span class="pre">cir_psf_contrast()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf_planets"><code class="docutils literal notranslate"><span class="pre">cir_psf_planets()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.core_throughput_fun"><code class="docutils literal notranslate"><span class="pre">core_throughput_fun()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.core_throughput_vectorized"><code class="docutils literal notranslate"><span class="pre">core_throughput_vectorized()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.psf_calculation"><code class="docutils literal notranslate"><span class="pre">psf_calculation()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.psf_chunk"><code class="docutils literal notranslate"><span class="pre">psf_chunk()</span></code></a></li>
 </ul>
