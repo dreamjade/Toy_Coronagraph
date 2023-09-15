@@ -278,7 +278,24 @@ class Target(object):
             elif message:
                 print("Planet has moved to new position")
 
-    def planet_video(self, charge, order=1, plot_orbit=True, iwa_ignore=False, plot_dpi=300, length=3, fps=20, flip=True):
+    def planet_video(self, charge, order=1, iwa_ignore=False, plot_dpi=300, length=3, fps=20, flip=True):
+        """Planet Video
+           
+        Create a movie of the planet moving in its orbit.
+        
+        Args:
+            charge (int): Charge number (for vortex coronagraph).
+            order (int): The order number of the planet, using self.list_planets() to look up the order.
+            iwa_ignore (bool): Whether to ignore the dust inside IWA.
+            plot_dpi (int): Dots per inch (DPI) for the plot.
+            length (int): The length of the movie in seconds.
+            fps (int): The frames per second of the movie.
+            flip (bool): Whether to flip the x-axis of the plot.
+
+        Returns:
+            planet_video_*.mp4        
+        """
+        
         # Check and adjust the charge number if using a vortex coronagraph
         if par.coronagraph_type=='vortex':
             if not is_positive_even_integer(charge):
@@ -326,7 +343,8 @@ class Target(object):
                 #art.set_color(cmap(norm(currrent_img)))
                 return [img]
             anim= animation.FuncAnimation(fig, animate, interval=1000/fps, frames=total_frames)
-            anim.save('planet_video.mp4', fps=fps, extra_args=['-vcodec', 'libx264'])
+            anim_name = 'planet_video_iwa_ignore.mp4' if iwa_ignore else 'planet_video.mp4'
+            anim.save(anim_name, fps=fps, extra_args=['-vcodec', 'libx264'])
             
     def plot_orbit(self, order=1, plot_dpi=300, res=1000, flip=True):
         """Orbit plot
@@ -343,7 +361,7 @@ class Target(object):
         pos = self.orbits[order-1]
         orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], plot_dpi, res, flip, "polar", '_planet'+str(order))
 
-    def contrast(self, charge=2, order=1, plot_dpi=300, res=1000, exozodi_limit=10, plot_contrast=True):
+    def contrast(self, charge=2, order=1, plot_contrast=True, plot_dpi=300, exozodi_limit=10, res=100):
         """Contrast
         
         Find the planet brightness and background brightness in the final image.
@@ -351,7 +369,10 @@ class Target(object):
         Args:
             charge (int): Charge number (for vortex coronagraph).
             order (int): The order number of the planet, using self.list_planets() to look up the order.
+            plot_contrast (bool): Whether to plot the dust to planet brightness ratio.
             plot_dpi (int): Dots per inch (DPI) for the plot.
+            exozodi_limit (float): The maximum exozodi to target dust ratio.
+            res (int): The number of points in the exozodi ratio range.
 
         Returns:
             plot or print planet brightness, background brightness, and background brightness (ignored dust inside IWA) in Jy.

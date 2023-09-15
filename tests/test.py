@@ -59,5 +59,19 @@ toy_target.plot_final(charge=6)
 # Print a specific planet brightness, background brightness, and background brightness (ignored dust inside IWA) in the final image through vortex coronagraph with charge = 6
 toy_target.contrast(charge=6, order=1)
 '''
-(1.1044442178760744e-05, 1.7104037862959554e-05, 1.6625126181290586e-05)
+This is a charge-6 vortex coronagraph.
 '''
+
+# Plot the core_throughput and inner working angle (in pixel)
+import toycoronagraph.psf as psf
+import numpy as np
+psfs = np.load("psfs_c2.npy")
+psf.cir_core_throughput_plot(psfs)
+
+# Make the planet movie
+toy_target.planet_video(charge=6)
+# The video will be save to planet_video.mp4
+
+# Make the planet movie again, but ignore the dust inside IWA
+toy_target.planet_video(charge=6, iwa_ignore=True)
+# The video will be save to planet_video_iwa_ignore.mp4

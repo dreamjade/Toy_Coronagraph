@@ -227,6 +227,17 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
     
 def cir_psf_planets(planets_pos, planet_brightness, psf_scale, img_pixel, psfs_name):
     """
+    Add one or more planets to an image through a series of circular symmetric PSFs.
+
+    Args:
+        planets_pos (list): A list of planet positions, in units of arcsec.
+        planet_brightness (list): A list of planet brightnesses, in units of Jy.
+        psf_scale (float): The scale of the PSF, in units of arcsec.
+        img_pixel (int): The number of pixels in the image.
+        psfs_name (str): The file name of the PSFs.
+
+    Returns:
+        np.ndarray: The image of planets.
     """
     # Load PSFs from the specified file
     psfs = np.load(psfs_name)
@@ -240,7 +251,16 @@ def cir_psf_planets(planets_pos, planet_brightness, psf_scale, img_pixel, psfs_n
             planet_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=planets_pos[i][1]*180.0/np.pi)
     return planet_img
     
-def cir_core_throughput_vectorized(psfs):
+def core_throughput_vectorized(psfs):
+    """
+    Calculate the core throughput of a series of PSFs in a vectorized way.
+
+    Args:
+        psfs (numpy.ndarray): The normalized PSFs.
+
+    Returns:
+        numpy.ndarray: The core throughput of the psfs
+    """
     thresholds = 0.5 * np.max(psfs, axis=(1, 2)).reshape(-1, 1, 1)
     #core = (psfs > thresholds).astype(int)
     #core_flux = core * psfs
@@ -248,7 +268,16 @@ def cir_core_throughput_vectorized(psfs):
     core_throughput = np.sum(core_flux, axis=(1, 2))
     return core_throughput
         
-def cir_core_throughput_fun(psfs):
+def core_throughput_fun(psfs):
+    """
+    Calculate the core throughput of a series of PSFs.
+
+    Args:
+        psfs (numpy.ndarray): The normalized PSFs.
+
+    Returns:
+        numpy.ndarray: The core throughput of the psfs
+    """
     psf_len = len(psfs)
     core_throughput = np.empty(psf_len)
     for i in range(psf_len):
@@ -259,12 +288,31 @@ def cir_core_throughput_fun(psfs):
     return core_throughput
 
 def cir_iwa(psfs):
-    core_throughput = cir_core_throughput_fun(psfs)
+    """
+    Calculate the inner working angle (IWA) of a series of circular symmetric PSFs.
+
+    Args:
+        psfs (numpy.ndarray): The normalized PSFs.
+
+    Returns:
+        int: The IWA of the PSFs, in units of pixel.
+    """
+    core_throughput = core_throughput_fun(psfs)
     iwa = np.searchsorted(core_throughput, 0.5*core_throughput.max())
     return iwa
 
 def cir_core_throughput_plot(psfs, plot_dpi=300):
-    core_throughput = cir_core_throughput_fun(psfs)
+    """
+    Plot the core throughput of a series of circular symmetric PSFs.
+
+    Args:
+        psfs (numpy.ndarray): The normalized PSFs.
+        plot_dpi (int): Dots per inch (DPI) for the plot.
+
+    Return:
+        Core_throughput.png
+    """
+    core_throughput = core_throughput_fun(psfs)
     iwa = np.searchsorted(core_throughput, 0.5*core_throughput.max())
     # Create a new figure with a specified DPI
     fig = plt.figure(dpi=plot_dpi)
