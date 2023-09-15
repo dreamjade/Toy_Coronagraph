@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def t_period_convert(t):
-    """Time/Period ratio reduction
+    """
     Convert a time value to its fractional part in the interval [0, 1].
 
     Args:
@@ -37,7 +37,7 @@ def t_period_convert(t):
             return t+(1-integer_t)
 
 def planet_position(a, e, pa, inc, t, mode, res):
-    """Planet position
+    """
     Calculate the position of a planet in an elliptical orbit at a given time.
 
     Args:
@@ -88,7 +88,7 @@ def planet_position(a, e, pa, inc, t, mode, res):
         print("Function planet_position got unknown mode")
 
 def orbit_position(a, e, pa, inc, res):
-    """Orbit_position
+    """
     Calculate the Cartesian positions of points along an elliptical orbit.
 
     Args:
@@ -115,7 +115,7 @@ def orbit_position(a, e, pa, inc, res):
     return orbit_x, orbit_y
 
 def orbit_plot(a, e, pa, inc, planet_pos, plot_dpi, res, flip, mode, name=''):
-    """Orbit plot
+    """
     Plot the orbit of a planet around a star.
 
     Args:

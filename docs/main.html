@@ -374,6 +374,305 @@ document.write(`
   <section id="main">
 <span id="id1"></span><h1>Main<a class="headerlink" href="#main" title="Link to this heading">#</a></h1>
 <p>Function to perform toy coronagraph</p>
+<dl class="py class" id="module-main">
+<dt class="sig sig-object py" id="main.Target">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Target</span></span><a class="headerlink" href="#main.Target" title="Link to this definition">#</a></dt>
+<dd><p>A circular symmetric target</p>
+<p>A circular symmetric target, which could be a dust ring, a debris disk, or ice remains.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.file_name">
+<span class="sig-name descname"><span class="pre">file_name</span></span><a class="headerlink" href="#main.Target.file_name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the FITS file containing the target data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.taregt_pixel">
+<span class="sig-name descname"><span class="pre">taregt_pixel</span></span><a class="headerlink" href="#main.Target.taregt_pixel" title="Link to this definition">#</a></dt>
+<dd><p>Number of pixels along the edge of the target image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.psf_scale">
+<span class="sig-name descname"><span class="pre">psf_scale</span></span><a class="headerlink" href="#main.Target.psf_scale" title="Link to this definition">#</a></dt>
+<dd><p>The scale of the PSF in arcseconds per pixel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.xpix">
+<span class="sig-name descname"><span class="pre">xpix</span></span><a class="headerlink" href="#main.Target.xpix" title="Link to this definition">#</a></dt>
+<dd><p>The x-coordinates of the pixels in arcseconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.ypix">
+<span class="sig-name descname"><span class="pre">ypix</span></span><a class="headerlink" href="#main.Target.ypix" title="Link to this definition">#</a></dt>
+<dd><p>The y-coordinates of the pixels in arcseconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.pre_img">
+<span class="sig-name descname"><span class="pre">pre_img</span></span><a class="headerlink" href="#main.Target.pre_img" title="Link to this definition">#</a></dt>
+<dd><p>The pre-processed image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.planets">
+<span class="sig-name descname"><span class="pre">planets</span></span><a class="headerlink" href="#main.Target.planets" title="Link to this definition">#</a></dt>
+<dd><p>A list of the planets in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.orbits">
+<span class="sig-name descname"><span class="pre">orbits</span></span><a class="headerlink" href="#main.Target.orbits" title="Link to this definition">#</a></dt>
+<dd><p>A list of the orbits of the planets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.planets_brightness">
+<span class="sig-name descname"><span class="pre">planets_brightness</span></span><a class="headerlink" href="#main.Target.planets_brightness" title="Link to this definition">#</a></dt>
+<dd><p>A list of the brightnesses of the planets in Jy/arcsec^2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Initialize the Target object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd><p>Initialization</p>
+<p>Initializes the instance based on the target fits file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Target.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#main.Target.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.add_planet">
+<span class="sig-name descname"><span class="pre">add_planet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'moving'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.add_planet" title="Link to this definition">#</a></dt>
+<dd><p>Add a planet</p>
+<p>Add a planet to the Target object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<em>array-like</em>) – Planet position information (depends on mode). For “moving” mode, pos = [a, e, pa, inc, t]; for “polar” mode, pos =[r, theta(in degree)]; for “cartesian” mode, pos =[x,y].</p></li>
+<li><p><strong>brightness</strong> (<em>float</em>) – Planet brightness in Jy.</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – Mode for specifying planet position coordinates (“moving”, “polar”, “cartesian”).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.contrast">
+<span class="sig-name descname"><span class="pre">contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exozodi_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.contrast" title="Link to this definition">#</a></dt>
+<dd><p>Contrast</p>
+<p>Find the planet brightness and background brightness in the final image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charge</strong> (<em>int</em>) – Charge number (for vortex coronagraph).</p></li>
+<li><p><strong>order</strong> (<em>int</em>) – The order number of the planet, using self.list_planets() to look up the order.</p></li>
+<li><p><strong>plot_contrast</strong> (<em>bool</em>) – Whether to plot the dust to planet brightness ratio.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+<li><p><strong>exozodi_limit</strong> (<em>float</em>) – The maximum exozodi to target dust ratio.</p></li>
+<li><p><strong>res</strong> (<em>int</em>) – The number of points in the exozodi ratio range.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>plot or print planet brightness, background brightness, and background brightness (ignored dust inside IWA) in Jy.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.delete_planet">
+<span class="sig-name descname"><span class="pre">delete_planet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.delete_planet" title="Link to this definition">#</a></dt>
+<dd><p>Delete planet</p>
+<p>Deletes a planet from self.planet, self.orbit, and self.planet_brightness with a given order number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>order</strong> (<em>int</em>) – The order number of the planet to be deleted. Defaults to 1.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.list_planets">
+<span class="sig-name descname"><span class="pre">list_planets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.list_planets" title="Link to this definition">#</a></dt>
+<dd><p>List planets</p>
+<p>List the planets present in the Target object with their order numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.planet_move">
+<span class="sig-name descname"><span class="pre">planet_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cumulate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.planet_move" title="Link to this definition">#</a></dt>
+<dd><p>Planet moving</p>
+<p>Move a planet’s position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>float</em>) – The time by which the planet should move.</p></li>
+<li><p><strong>order</strong> (<em>int</em>) – The order number of the planet.</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – Mode for specifying movement (“culmulated”, “specific”). The former will be added to the original time, while the latter will set up a new time regardless of the original time.</p></li>
+<li><p><strong>plot_pos</strong> (<em>bool</em>) – Whether to plot the new planet’s position in its orbit.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.planet_video">
+<span class="sig-name descname"><span class="pre">planet_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.planet_video" title="Link to this definition">#</a></dt>
+<dd><p>Planet Video</p>
+<p>Create a movie of the planet moving in its orbit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charge</strong> (<em>int</em>) – Charge number (for vortex coronagraph).</p></li>
+<li><p><strong>order</strong> (<em>int</em>) – The order number of the planet, using self.list_planets() to look up the order.</p></li>
+<li><p><strong>iwa_ignore</strong> (<em>bool</em>) – Whether to ignore the dust inside IWA.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+<li><p><strong>length</strong> (<em>int</em>) – The length of the movie in seconds.</p></li>
+<li><p><strong>fps</strong> (<em>int</em>) – The frames per second of the movie.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the x-axis of the plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>planet_video_*.mp4</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.plot_final">
+<span class="sig-name descname"><span class="pre">plot_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_planet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_final" title="Link to this definition">#</a></dt>
+<dd><p>Final image</p>
+<p>Plots the target image after processing with the vortex coronagraph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charge</strong> (<em>int</em>) – Charge number (for vortex coronagraph).</p></li>
+<li><p><strong>add_planet</strong> (<em>bool</em>) – Whether to include planets in the plot.</p></li>
+<li><p><strong>rot_number</strong> (<em>int</em>) – Rotation number for creating the circular PSF.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the final plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a href="#id2"><span class="problematic" id="id3">*</span></a>_final.png</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.plot_orbit">
+<span class="sig-name descname"><span class="pre">plot_orbit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_orbit" title="Link to this definition">#</a></dt>
+<dd><p>Orbit plot</p>
+<p>Plot the orbit of a planet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<em>int</em>) – The order number of the planet, using self.list_planets() to look up the order.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>orbit_*.png</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Target.plot_origin">
+<span class="sig-name descname"><span class="pre">plot_origin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_planets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_origin" title="Link to this definition">#</a></dt>
+<dd><p>Plot original target</p>
+<p>Plot the original image with or without planets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plot_planets</strong> (<em>bool</em>) – Whether to plot planets or not.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+<li><p><strong>boundary</strong> (<em>bool</em>) – Whether to show the boundary limits.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>origin_*.png</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -416,6 +715,39 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target"><code class="docutils literal notranslate"><span class="pre">Target</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.file_name"><code class="docutils literal notranslate"><span class="pre">Target.file_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.taregt_pixel"><code class="docutils literal notranslate"><span class="pre">Target.taregt_pixel</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.psf_scale"><code class="docutils literal notranslate"><span class="pre">Target.psf_scale</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.xpix"><code class="docutils literal notranslate"><span class="pre">Target.xpix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.ypix"><code class="docutils literal notranslate"><span class="pre">Target.ypix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.pre_img"><code class="docutils literal notranslate"><span class="pre">Target.pre_img</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.planets"><code class="docutils literal notranslate"><span class="pre">Target.planets</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.orbits"><code class="docutils literal notranslate"><span class="pre">Target.orbits</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.planets_brightness"><code class="docutils literal notranslate"><span class="pre">Target.planets_brightness</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.__init__"><code class="docutils literal notranslate"><span class="pre">Target.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Target.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.__weakref__"><code class="docutils literal notranslate"><span class="pre">Target.__weakref__</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.add_planet"><code class="docutils literal notranslate"><span class="pre">Target.add_planet()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.contrast"><code class="docutils literal notranslate"><span class="pre">Target.contrast()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.delete_planet"><code class="docutils literal notranslate"><span class="pre">Target.delete_planet()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.list_planets"><code class="docutils literal notranslate"><span class="pre">Target.list_planets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.planet_move"><code class="docutils literal notranslate"><span class="pre">Target.planet_move()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.planet_video"><code class="docutils literal notranslate"><span class="pre">Target.planet_video()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.plot_final"><code class="docutils literal notranslate"><span class="pre">Target.plot_final()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.plot_orbit"><code class="docutils literal notranslate"><span class="pre">Target.plot_orbit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.plot_origin"><code class="docutils literal notranslate"><span class="pre">Target.plot_origin()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">

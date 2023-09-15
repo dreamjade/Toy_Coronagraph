@@ -54,7 +54,7 @@ def psf_chunk(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro):
     return i, img.to_dict()["values"].reshape(img_pixel, img_pixel)
 
 def psf_calculation(charge, img_pixel, psf_range, lyot_mask_size, num_cores):
-    """Calculate PSFs
+    """
     Calculates the PSFs of a vortex coronagraph for a given charge along the positive x-axis, and saves them to a file.
 
     Args:
@@ -111,8 +111,7 @@ def psf_calculation(charge, img_pixel, psf_range, lyot_mask_size, num_cores):
     return psfs
     
 def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightness, psf_scale, img_pixel, rot_number, psfs_name):
-    """Contrast
-        
+    """
     Find the planet brightness and background brightness in the final image.
 
     Args:
@@ -173,8 +172,7 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
     return planet_b, dust_b, dust_b_iwa
 
 def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_planet, img_pixel, rot_number, psfs_name):
-    """Circular symmetric PSF processing calculation
-    
+    """
     Calculates the final image of a circular symmetric pre-image through circular symmetric PSF with added planets.
 
     Args:

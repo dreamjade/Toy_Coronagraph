@@ -10,7 +10,6 @@ toycoronagraph/example_data/*.npy
 __pycache__/
 toycoronagraph/docs/
 toycoronagraph/__pycache__/
-toycoronagraph/toycoronagraph_para.py
 toycoronagraph.egg-info/
 
 # Distribution / packaging
@@ -30,3 +29,6 @@ plan.txt
 tests/*
 !tests/test.ipynb
 !tests/test.py
+
+# docs
+toycoronagraph/toycoronagraph_para.py
