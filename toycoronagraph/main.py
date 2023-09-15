@@ -78,8 +78,10 @@ class Target(object):
 
         Args:
             plot_planets (bool): Whether to plot planets or not.
+            res (int): Number of points used for orbit calculations.
             plot_dpi (int): Dots per inch (DPI) for the plot.
             boundary (bool): Whether to show the boundary limits.
+            flip (bool): Whether to flip the y-axis of the plot.
 
         Returns:
             origin_*.png
@@ -147,7 +149,7 @@ class Target(object):
         # Show the plot
         plt.show()
         
-    def add_planet(self, pos, brightness, mode="moving"):
+    def add_planet(self, pos, brightness, mode="moving", res=1000):
         """Add a planet
         
         Add a planet to the Target object.
@@ -156,6 +158,7 @@ class Target(object):
             pos (array-like): Planet position information (depends on mode). For "moving" mode, pos = [a, e, pa, inc, t]; for "polar" mode, pos =[r, theta(in degree)]; for "cartesian" mode, pos =[x,y].
             brightness (float): Planet brightness in Jy.
             mode (str): Mode for specifying planet position coordinates ("moving", "polar", "cartesian").
+            res (int): Number of points used for orbit calculations.
 
         Returns:
             None
@@ -169,7 +172,7 @@ class Target(object):
             elif not isinstance(brightness, (float, int)) or brightness<=0:
                 print("Brightness is invalid")
             else:
-                self.planets.append(planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar",res=1000))
+                self.planets.append(planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar",res=res))
                 self.planets_brightness.append(brightness/par.psf_scale**2)
                 self.orbits.append(pos) #pos = np.array(a, e, pa, inc, t)
                 
@@ -252,6 +255,10 @@ class Target(object):
             mode (str): Mode for specifying movement ("culmulated", "specific"). The former will be added to the original time, while the latter will set up a new time regardless of the original time.
             plot_pos (bool): Whether to plot the new planet's position in its orbit.
             plot_dpi (int): Dots per inch (DPI) for the plot.
+            res (int): Number of points used for orbit calculations.
+            flip (bool): Whether to flip the y-axis of the plot.
+            message (bool): Whether to show the notification once job done.
+            
 
         Returns:
             None
@@ -290,7 +297,7 @@ class Target(object):
             plot_dpi (int): Dots per inch (DPI) for the plot.
             length (int): The length of the movie in seconds.
             fps (int): The frames per second of the movie.
-            flip (bool): Whether to flip the x-axis of the plot.
+            flip (bool): Whether to flip the y-axis of the plot.
 
         Returns:
             planet_video_*.mp4        
@@ -354,6 +361,8 @@ class Target(object):
         Args:
             order (int): The order number of the planet, using self.list_planets() to look up the order.
             plot_dpi (int): Dots per inch (DPI) for the plot.
+            res (int): Number of points used for orbit calculations.
+            flip (bool): Whether to flip the y-axis of the plot.
 
         Returns:
             orbit_*.png
@@ -430,6 +439,7 @@ class Target(object):
             add_planet (bool): Whether to include planets in the plot.
             rot_number (int): Rotation number for creating the circular PSF.
             plot_dpi (int): Dots per inch (DPI) for the final plot.
+            flip (bool): Whether to flip the y-axis of the plot.
 
         Returns:
             *_final.png

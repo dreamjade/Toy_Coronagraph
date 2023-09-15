@@ -504,7 +504,7 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Target.add_planet">
-<span class="sig-name descname"><span class="pre">add_planet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'moving'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.add_planet" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_planet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'moving'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.add_planet" title="Link to this definition">#</a></dt>
 <dd><p>Add a planet</p>
 <p>Add a planet to the Target object.</p>
 <dl class="field-list simple">
@@ -513,6 +513,7 @@ document.write(`
 <li><p><strong>pos</strong> (<em>array-like</em>) – Planet position information (depends on mode). For “moving” mode, pos = [a, e, pa, inc, t]; for “polar” mode, pos =[r, theta(in degree)]; for “cartesian” mode, pos =[x,y].</p></li>
 <li><p><strong>brightness</strong> (<em>float</em>) – Planet brightness in Jy.</p></li>
 <li><p><strong>mode</strong> (<em>str</em>) – Mode for specifying planet position coordinates (“moving”, “polar”, “cartesian”).</p></li>
+<li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -583,6 +584,9 @@ document.write(`
 <li><p><strong>mode</strong> (<em>str</em>) – Mode for specifying movement (“culmulated”, “specific”). The former will be added to the original time, while the latter will set up a new time regardless of the original time.</p></li>
 <li><p><strong>plot_pos</strong> (<em>bool</em>) – Whether to plot the new planet’s position in its orbit.</p></li>
 <li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+<li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
+<li><p><strong>message</strong> (<em>bool</em>) – Whether to show the notification once job done.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -605,7 +609,7 @@ document.write(`
 <li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
 <li><p><strong>length</strong> (<em>int</em>) – The length of the movie in seconds.</p></li>
 <li><p><strong>fps</strong> (<em>int</em>) – The frames per second of the movie.</p></li>
-<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the x-axis of the plot.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -626,6 +630,7 @@ document.write(`
 <li><p><strong>add_planet</strong> (<em>bool</em>) – Whether to include planets in the plot.</p></li>
 <li><p><strong>rot_number</strong> (<em>int</em>) – Rotation number for creating the circular PSF.</p></li>
 <li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the final plot.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -644,6 +649,8 @@ document.write(`
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>order</strong> (<em>int</em>) – The order number of the planet, using self.list_planets() to look up the order.</p></li>
 <li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+<li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -661,8 +668,10 @@ document.write(`
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>plot_planets</strong> (<em>bool</em>) – Whether to plot planets or not.</p></li>
+<li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
 <li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
 <li><p><strong>boundary</strong> (<em>bool</em>) – Whether to show the boundary limits.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
