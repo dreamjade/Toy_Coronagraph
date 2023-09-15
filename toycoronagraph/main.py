@@ -205,7 +205,7 @@ class Target(object):
         List the planets present in the Target object with their order numbers.
 
         Returns:
-            None
+            print the list of planets with their orders.
         """
         # Check if the planet list is empty
         if len(self.planets)==0:

@@ -22,7 +22,7 @@ def example_para():
     The example parameter file includes settings related to the toy coronagraph simulation.
 
     Returns:
-        None
+        toycoronagraph_para.py
     """
     # Define the name of the parameter file and the data to be written
     file_name = "toycoronagraph_para.py"
