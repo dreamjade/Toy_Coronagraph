@@ -45,7 +45,7 @@ def psf_chunk(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro):
     x = 2*i*psf_range / img_pixel
 
     # Calculate the wavefront at the specified position
-    wf = Wavefront(Wavefront_pos(x, 0,pupil_grid))
+    wf = Wavefront(Wavefront_pos(x, 0, pupil_grid))
 
     # Propagate the wavefront through the system and calculate the intensity
     img = prop(lyot_stop(coro(wf))).intensity
@@ -98,7 +98,7 @@ def psf_calculation(charge, img_pixel, psf_range, lyot_mask_size, num_cores):
             x = 2*i*psf_range / img_pixel
         
             # Calculate the wavefront at the specified position
-            wf = Wavefront(Wavefront_pos(x, 0,pupil_grid))
+            wf = Wavefront(Wavefront_pos(x, 0, pupil_grid))
             
             # Propagate the wavefront through the system and calculate the intensity
             img = prop(lyot_stop(coro(wf))).intensity
@@ -192,7 +192,7 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
     psfs = np.load(psfs_name)
     
     # IWA
-    iwa = 0
+    iwa = 1
     if iwa_ignore:
         iwa = cir_iwa(psfs)
     

@@ -1,7 +1,7 @@
 import os
 
 # Define the version of the module
-__version__ = "1.6.1"
+__version__ = "1.6.2"
 
 # Set Python environment variable to keep track of example data directory
 toycoronagraph_dir = os.path.dirname(__file__)

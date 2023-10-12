@@ -24,6 +24,7 @@ setup(
     author_email="",
     license="MIT",
     packages=find_packages(),
+    include_package_data=True,
     #package_data={"": ["kernels/*.cu"]},
     #ext_modules=get_extensions(),
     #include_dirs=[numpy.get_include()],
