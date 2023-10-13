@@ -29,7 +29,7 @@ class Target(object):
 
     Attributes:
         file_name (str): The name of the FITS file containing the target data.
-        taregt_pixel (int): Number of pixels along the edge of the target image.
+        target_pixel (int): Number of pixels along the edge of the target image.
         psf_scale (float): The scale of the PSF in arcseconds per pixel.
         xpix (np.ndarray): The x-coordinates of the pixels in arcseconds.
         ypix (np.ndarray): The y-coordinates of the pixels in arcseconds.
@@ -60,11 +60,11 @@ class Target(object):
         fits_read = fits.open(self.file_name+".fits")
         
         # Extract data from the FITS file and perform necessary calculations
-        origin = np.reshape(fits_read[0].data[5,0],(par.taregt_pixel,par.taregt_pixel)) # vF_v(W/m^2/pixel)
+        origin = np.reshape(fits_read[0].data[5,0],(par.target_pixel,par.target_pixel)) # vF_v(W/m^2/pixel)
         F_v = origin*par.F_transfer # F_v(Jy/arcsec^2)
         
-        self.xpix = (np.arange (-par.taregt_pixel/2, par.taregt_pixel/2, 1))*par.psf_scale
-        self.ypix = (np.arange (-par.taregt_pixel/2, par.taregt_pixel/2, 1))*par.psf_scale
+        self.xpix = (np.arange (-par.target_pixel/2, par.target_pixel/2, 1))*par.psf_scale
+        self.ypix = (np.arange (-par.target_pixel/2, par.target_pixel/2, 1))*par.psf_scale
         
         self.pre_img = F_v.astype(np.float64)
         self.planets = []
@@ -95,8 +95,8 @@ class Target(object):
                        cmap='gnuplot',extent=[np.min(self.ypix),np.max(self.ypix),np.min(self.xpix),np.max(self.xpix)])
 
         # Calculate boundary limits based on pixel scale
-        x_range = par.taregt_pixel*par.psf_scale/2
-        y_range = par.taregt_pixel*par.psf_scale/2
+        x_range = par.target_pixel*par.psf_scale/2
+        y_range = par.target_pixel*par.psf_scale/2
         
         if boundary and flip:
             # Set axis limits
@@ -316,7 +316,7 @@ class Target(object):
         if not os.path.exists(psf_filename):
             psf_filename = "psfs_c"+str(charge)+".npy"
             if not os.path.exists(psf_filename):
-                psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
+                psf_calculation(charge, par.target_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
                 
         # Check if the input order is valid
         if not isinstance(order, int) or order < 1 or order > len(self.planets):
@@ -325,7 +325,7 @@ class Target(object):
             print("A static planet is unable to move")
         else:
             total_frames = length*fps
-            target_img = cir_psf(self.pre_img, [], [], par.psf_scale, iwa_ignore, False, par.taregt_pixel, par.rot_number, psf_filename)
+            target_img = cir_psf(self.pre_img, [], [], par.psf_scale, iwa_ignore, False, par.target_pixel, par.rot_number, psf_filename)
             fig,[ax,cax] = plt.subplots(1,2, width_ratios=[50,1], figsize=(10, 8))
             # Set the colormap and norm to correspond to the data for which
             # the colorbar will be used.
@@ -336,7 +336,7 @@ class Target(object):
             colorbar = matplotlib.colorbar.ColorbarBase(cax, cmap=cmap,norm=norm, orientation='vertical')
             colorbar.set_label(r"Jy/arcsec^2") 
             art = ax.scatter([],[],c=[])
-            initial_img = cir_psf_planets([self.planets[order-1]], [planet_brightness], par.psf_scale, par.taregt_pixel, psf_filename)
+            initial_img = cir_psf_planets([self.planets[order-1]], [planet_brightness], par.psf_scale, par.target_pixel, psf_filename)
             img = ax.imshow(target_img+initial_img, extent=[np.min(self.ypix), np.max(self.ypix), np.min(self.xpix), np.max(self.xpix)], cmap=cmap, norm=norm)
             ax.set_ylabel('y [arcsec]')
             ax.set_xlabel('x [arcsec]')
@@ -345,7 +345,7 @@ class Target(object):
                     print("{:.0%}".format(num/total_frames))
                 self.planet_move(t0+num/total_frames, order=order, mode="specific", res=total_frames*10, flip=True, message=False)
                 planet_pos = self.planets[order-1]
-                currrent_img = target_img+cir_psf_planets([planet_pos], [planet_brightness], par.psf_scale, par.taregt_pixel, psf_filename)
+                currrent_img = target_img+cir_psf_planets([planet_pos], [planet_brightness], par.psf_scale, par.target_pixel, psf_filename)
                 img.set_array(currrent_img)
                 #art.set_color(cmap(norm(currrent_img)))
                 return [img]
@@ -393,7 +393,7 @@ class Target(object):
             # Check if the planet inside the plot
             planet_pos = self.planets[order-1]
             planet_psfs_number = int(planet_pos[0]/par.psf_scale)
-            if planet_psfs_number>=par.taregt_pixel/2:
+            if planet_psfs_number>=par.target_pixel/2:
                 print("Planet is outside the range of the plot")
             else:
                 # Check and adjust the charge number if using a vortex coronagraph
@@ -410,9 +410,9 @@ class Target(object):
                 if not os.path.exists(psf_filename):
                     psf_filename = "psfs_c"+str(charge)+".npy"
                     if not os.path.exists(psf_filename):
-                        psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
+                        psf_calculation(charge, par.target_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
 
-                planet_b, dust_b, dust_b_iwa = cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.taregt_pixel, par.rot_number, psf_filename)
+                planet_b, dust_b, dust_b_iwa = cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.target_pixel, par.rot_number, psf_filename)
                 if plot_contrast:
                     # Create a new figure and axes for plotting
                     fig = plt.figure(dpi=plot_dpi)
@@ -457,10 +457,10 @@ class Target(object):
         if not os.path.exists(psf_filename):
             psf_filename = "psfs_c"+str(charge)+".npy"
             if not os.path.exists(psf_filename):
-                psf_calculation(charge, par.taregt_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
+                psf_calculation(charge, par.target_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
         
         # Generate the final image of the disk using the cir_psf function
-        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.taregt_pixel, par.rot_number, psf_filename)
+        final_img = cir_psf(self.pre_img, self.planets, self.planets_brightness, par.psf_scale, iwa_ignore, add_planet, par.target_pixel, par.rot_number, psf_filename)
         
         # Create a new figure and axes for plotting
         fig = plt.figure(dpi=plot_dpi)

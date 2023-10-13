@@ -1,4 +1,6 @@
 import numpy as np
+from skimage.transform import warp, SimilarityTransform
+from scipy.spatial import distance
 
 def convert_to_polar(pos_car):
     """
@@ -74,3 +76,25 @@ def is_planet_pos_allowed(pos, mode):
     
     else:
         print("unknown add planet mode")
+
+def intermediate_image(positions, images, pos):
+    """
+    Find an intermediate image between images using optical flow methods.
+    """
+    pos = np.array(pos).reshape(1, -1)
+    positions = np.array(positions).reshape(-1, np.size(pos))
+    distances = distance.cdist(positions, pos, 'euclidean').flatten()
+    rel_pos = positions-pos
+    if np.size(pos)==1:
+        rel_pos = np.concatenate((rel_pos, np.zeros(rel_pos.shape)), axis=1)
+    total_weight = 0
+    final_image = np.zeros(np.shape(images[0]))
+    for i in range(len(distances)):
+        d=distances[i]
+        if d==0:
+            return images[i]
+        else:
+            weight = 1/d
+            final_image = final_image + weight*warp(images[i], SimilarityTransform(translation=rel_pos[i]))
+            total_weight = total_weight + weight
+    return final_image/total_weight

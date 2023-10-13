@@ -29,16 +29,16 @@ def example_para():
     data = \
 '''
 fits_filename = None # The address of the FITS file containing the target data. If None, the default file `DATADIR/example.fit` will be used.
-taregt_pixel = 512 # The pixel number of the target image in the x-direction and y-direction
+target_pixel = 512 # The pixel number of the target image in the x-direction and y-direction
 num_cores = 16 # The number of cores used in parallel calculation.
-rot_number = taregt_pixel # The number of rotations for generating the circular symmetry final image.
+rot_number = target_pixel # The number of rotations for generating the circular symmetry final image.
 
 # Calculate the psf scale in arcsecs per pixel
 wavelength = 1.0e-6 # meter
 D = 2.4 # aperture size in meter
 rad_to_arcsecond = 206264.806247
 visual_range = 32 # in lambda/D
-psf_scale = wavelength/D*rad_to_arcsecond*visual_range/taregt_pixel # arcsec per pixel
+psf_scale = wavelength/D*rad_to_arcsecond*visual_range/target_pixel # arcsec per pixel
 
 # Example .fits file has unit W/m^2/pixel
 # vF_v(W/m^2/pixel) to F_v(Jy/arcsec^2)
@@ -49,7 +49,7 @@ F_transfer = jy*wavelength/light_speed/psf_scale**2
 # Coronagraph setting
 coronagraph_type='vortex'
 lyot_mask_size = 0.95
-psf_range=16
+psf_range=visual_range/2
 '''
     # Create the parameter file using the defined name and data
     create_py_file(file_name, data)

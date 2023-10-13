@@ -5,6 +5,7 @@ if mp_spec is not None:
     import multiprocessing as mp
 from hcipy import *
 from skimage.transform import rotate
+from toycoronagraph.tool import intermediate_image
 import matplotlib.pyplot as plt
 
 def Wavefront_pos(x,y,pupil_grid):
@@ -42,7 +43,10 @@ def psf_chunk(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro):
         tuple: Index and the calculated PSF chunk as a 2D numpy array.
     """
     # Calculate the x-coordinate based on the chunk index and PSF range
-    x = 2*i*psf_range / img_pixel
+    if img_pixel%2:
+        x = 2*i*psf_range / img_pixel
+    else:
+        x = (2*i+1)*psf_range / img_pixel
 
     # Calculate the wavefront at the specified position
     wf = Wavefront(Wavefront_pos(x, 0, pupil_grid))
@@ -80,22 +84,25 @@ def psf_calculation(charge, img_pixel, psf_range, lyot_mask_size, num_cores):
     # Normalization factor
     normal_factor = np.pi*(focal_grid_resolution/2)**2
     
-    psfs = np.empty((img_pixel//2+1, img_pixel, img_pixel))
+    psfs = np.empty(((img_pixel+1)//2, img_pixel, img_pixel))
     # Check the existence of the multiprocessing module
     
     if mp_spec is not None:
         # Calculate PSFs in parallel using multiprocessing
         pool = mp.Pool(processes=num_cores)
-        results = [pool.apply_async(psf_chunk, args=(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro)) for i in range(img_pixel//2+1)]
+        results = [pool.apply_async(psf_chunk, args=(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro)) for i in range((img_pixel+1)//2)]
         pool.close()
         pool.join()
         for result in results:
             i, psf = result.get()
             psfs[i] = psf/normal_factor
     else:
-        for i in range(img_pixel//2+1):
+        for i in range((img_pixel+1)//2):
             # Calculate the x-coordinate based on the chunk index and PSF range
-            x = 2*i*psf_range / img_pixel
+            if img_pixel%2:
+                x = 2*i*psf_range / img_pixel
+            else:
+                x = (2*i+1)*psf_range / img_pixel
         
             # Calculate the wavefront at the specified position
             wf = Wavefront(Wavefront_pos(x, 0, pupil_grid))
@@ -143,7 +150,7 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
         if weight != 0:
             chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
                 
-    for i in range(iwa, img_pixel//2+1):
+    for i in range(iwa, (img_pixel+1)//2):
         weight = pre_img[255+i][255]
         if weight != 0:
             part_img = 2*np.pi*i*weight*psfs[i]/rot_number
@@ -192,7 +199,7 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
     psfs = np.load(psfs_name)
     
     # IWA
-    iwa = 1
+    iwa = 0
     if iwa_ignore:
         iwa = cir_iwa(psfs)
     
@@ -203,7 +210,7 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
     chunk_img = np.zeros([img_pixel, img_pixel])
     
     # Generate the chunk image along the x-axis
-    for i in range(iwa, img_pixel//2+1):
+    for i in range(iwa, (img_pixel+1)//2):
         weight = pre_img[255+i][255]
         if weight != 0:
             chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
