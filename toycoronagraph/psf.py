@@ -43,10 +43,10 @@ def psf_chunk(i, img_pixel, psf_range, pupil_grid, prop, lyot_stop, coro):
         tuple: Index and the calculated PSF chunk as a 2D numpy array.
     """
     # Calculate the x-coordinate based on the chunk index and PSF range
-    if img_pixel%2:
-        x = 2*i*psf_range / img_pixel
+    if img_pixel%2==0:
+        x = 2*(i**2+0.25)**0.5*psf_range / img_pixel
     else:
-        x = (2*i+1)*psf_range / img_pixel
+        x = 2*i*psf_range / img_pixel
 
     # Calculate the wavefront at the specified position
     wf = Wavefront(Wavefront_pos(x, 0, pupil_grid))
@@ -99,10 +99,10 @@ def psf_calculation(charge, img_pixel, psf_range, lyot_mask_size, num_cores):
     else:
         for i in range((img_pixel+1)//2):
             # Calculate the x-coordinate based on the chunk index and PSF range
-            if img_pixel%2:
-                x = 2*i*psf_range / img_pixel
+            if img_pixel%2==0:
+                x = 2*(i**2+0.25)**0.5*psf_range / img_pixel
             else:
-                x = (2*i+1)*psf_range / img_pixel
+                x = 2*i*psf_range / img_pixel
         
             # Calculate the wavefront at the specified position
             wf = Wavefront(Wavefront_pos(x, 0, pupil_grid))
@@ -145,17 +145,33 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
     iwa = cir_iwa(psfs)
     
     # Generate the chunk image along the x-axis
-    for i in range(iwa):
-        weight = pre_img[255+i][255]
-        if weight != 0:
-            chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
-                
-    for i in range(iwa, (img_pixel+1)//2):
-        weight = pre_img[255+i][255]
-        if weight != 0:
-            part_img = 2*np.pi*i*weight*psfs[i]/rot_number
-            chunk_img += part_img
-            chunk_img_iwa += part_img
+    if img_pixel%2==0:
+        current_r = 0
+        for i in range(iwa):
+            weight = pre_img[img_pixel//2+i][img_pixel//2]
+            new_r = (i**2+0.25)**0.5
+            if weight != 0:    
+                chunk_img +=  2*np.pi*new_r*(new_r-current_r)*weight*psfs[i]/rot_number
+            current_r = new_r
+        for i in range(iwa, (img_pixel+1)//2):
+            weight = pre_img[img_pixel//2+i][img_pixel//2]
+            new_r = (i**2+0.25)**0.5
+            if weight != 0:    
+                part_img = 2*np.pi*new_r*(new_r-current_r)*weight*psfs[i]/rot_number
+                chunk_img += part_img
+                chunk_img_iwa += part_img
+            current_r = new_r
+    else:
+        for i in range(iwa):
+            weight = pre_img[img_pixel//2+i][img_pixel//2]
+            if weight != 0:
+                chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
+        for i in range(iwa, (img_pixel+1)//2):
+            weight = pre_img[img_pixel//2+i][img_pixel//2]
+            if weight != 0:
+                part_img = 2*np.pi*i*weight*psfs[i]/rot_number
+                chunk_img += part_img
+                chunk_img_iwa += part_img
                 
     # Initialize the disk image
     disk_img = np.zeros([img_pixel, img_pixel])
@@ -210,10 +226,19 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
     chunk_img = np.zeros([img_pixel, img_pixel])
     
     # Generate the chunk image along the x-axis
-    for i in range(iwa, (img_pixel+1)//2):
-        weight = pre_img[255+i][255]
-        if weight != 0:
-            chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
+    if img_pixel%2==0:
+        current_r = (iwa if iwa==0 else ((iwa-1)**2+0.25)**0.5)
+        for i in range(iwa, (img_pixel+1)//2):
+            weight = pre_img[img_pixel//2+i][img_pixel//2]
+            new_r = (i**2+0.25)**0.5
+            if weight != 0:
+                chunk_img += 2*np.pi*new_r*(new_r-current_r)*weight*psfs[i]/rot_number
+            current_r = new_r
+    else:
+        for i in range(iwa, (img_pixel+1)//2):
+            weight = pre_img[img_pixel//2+i][img_pixel//2]
+            if weight != 0:
+                chunk_img += 2*np.pi*i*weight*psfs[i]/rot_number
 
     # Rotate and accumulate the chunk image to create the final image
     for i in range(rot_number):
