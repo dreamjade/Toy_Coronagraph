@@ -21,6 +21,7 @@ if para_spec is None:
     print("There is no toycoronagraph_para.py file, create an example one")
 import toycoronagraph_para as par
 import cv2
+import tqdm
 
 class Target(object):
     """A circular symmetric target
@@ -278,7 +279,7 @@ class Target(object):
     
             # Get the updated position of the planet based on the updated time
             pos = self.orbits[order-1]
-            self.planets[order-1] = planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar",res=1000)
+            self.planets[order-1] = planet_position(pos[0],pos[1],pos[2],pos[3],pos[4],mode="polar",res=res)
             if plot_pos:
                 # Plot the new planet position on its orbit
                 orbit_plot(pos[0],pos[1],pos[2],pos[3], self.planets[order-1], plot_dpi, res, flip, "polar", '_planet'+str(order))
@@ -327,8 +328,7 @@ class Target(object):
             total_frames = length*fps
             target_img = cir_psf(self.pre_img, [], [], par.psf_scale, iwa_ignore, False, par.target_pixel, par.rot_number, psf_filename)
             fig,[ax,cax] = plt.subplots(1,2, width_ratios=[50,1], figsize=(10, 8))
-            # Set the colormap and norm to correspond to the data for which
-            # the colorbar will be used.
+            # Set the colormap and norm to correspond to the data for which the colorbar will be used.
             cmap = matplotlib.cm.gnuplot #matplotlib.cm.winter
             planet_brightness = self.planets_brightness[order-1]
             t0 = self.orbits[order-1][-1]
@@ -336,20 +336,19 @@ class Target(object):
             colorbar = matplotlib.colorbar.ColorbarBase(cax, cmap=cmap,norm=norm, orientation='vertical')
             colorbar.set_label(r"Jy/arcsec^2") 
             art = ax.scatter([],[],c=[])
-            initial_img = cir_psf_planets([self.planets[order-1]], [planet_brightness], par.psf_scale, par.target_pixel, psf_filename)
-            img = ax.imshow(target_img+initial_img, extent=[np.min(self.ypix), np.max(self.ypix), np.min(self.xpix), np.max(self.xpix)], cmap=cmap, norm=norm)
+            initial_planet_pos = self.planets[order-1]
+            initial_planet_img = cir_psf_planets([initial_planet_pos], [planet_brightness], par.psf_scale, par.target_pixel, psf_filename)
+            img = ax.imshow(target_img+initial_planet_img, extent=[np.min(self.ypix), np.max(self.ypix), np.min(self.xpix), np.max(self.xpix)], cmap=cmap, norm=norm)
             ax.set_ylabel('y [arcsec]')
             ax.set_xlabel('x [arcsec]')
             def animate(num):
-                if num % fps == 0:
-                    print("{:.0%}".format(num/total_frames))
-                self.planet_move(t0+num/total_frames, order=order, mode="specific", res=total_frames*10, flip=True, message=False)
-                planet_pos = self.planets[order-1]
-                currrent_img = target_img+cir_psf_planets([planet_pos], [planet_brightness], par.psf_scale, par.target_pixel, psf_filename)
+                self.planet_move(t0+num/total_frames, order=order, mode="specific", res=total_frames*10, message=False)
+                currrent_planet_pos = self.planets[order-1]
+                currrent_img = target_img+cir_psf_planets([currrent_planet_pos], [planet_brightness], par.psf_scale, par.target_pixel, psf_filename)
                 img.set_array(currrent_img)
                 #art.set_color(cmap(norm(currrent_img)))
                 return [img]
-            anim= animation.FuncAnimation(fig, animate, interval=1000/fps, frames=total_frames)
+            anim= animation.FuncAnimation(fig, animate, interval=1000/fps, frames=tqdm.tqdm(range(total_frames), position=0, leave=True))
             anim_name = 'planet_video_iwa_ignore.mp4' if iwa_ignore else 'planet_video.mp4'
             anim.save(anim_name, fps=fps, extra_args=['-vcodec', 'libx264'])
             
@@ -392,8 +391,9 @@ class Target(object):
         else:
             # Check if the planet inside the plot
             planet_pos = self.planets[order-1]
-            planet_psfs_number = int(planet_pos[0]/par.psf_scale)
-            if planet_psfs_number>=par.target_pixel/2:
+            planet_r = planet_pos[0]/par.psf_scale
+            planet_psfs_number = int(planet_r)
+            if planet_psfs_number>=(par.target_pixel+1)//2:
                 print("Planet is outside the range of the plot")
             else:
                 # Check and adjust the charge number if using a vortex coronagraph
@@ -412,7 +412,7 @@ class Target(object):
                     if not os.path.exists(psf_filename):
                         psf_calculation(charge, par.target_pixel, par.psf_range, par.lyot_mask_size, par.num_cores)
 
-                planet_b, dust_b, dust_b_iwa = cir_psf_contrast(self.pre_img, planet_psfs_number, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.target_pixel, par.rot_number, psf_filename)
+                planet_b, dust_b, dust_b_iwa = cir_psf_contrast(self.pre_img, planet_r, planet_pos[1], self.planets_brightness[order-1], par.psf_scale, par.target_pixel, par.rot_number, psf_filename)
                 if plot_contrast:
                     # Create a new figure and axes for plotting
                     fig = plt.figure(dpi=plot_dpi)
@@ -426,8 +426,9 @@ class Target(object):
                     plt.plot(exozodi_ratio, dp_ratio_iwa, label="IWA ignored")
                     plt.legend()
                     plt.show()
-                else:
-                    print (planet_b, dust_b, dust_b_iwa)
+                print("Planet brightness: %.2e Jy" % planet_b)
+                print("Dust brightness: %.2e Jy" % dust_b)
+                print("Dust brightness but ignore dust inside IWA: %.2e Jy" % dust_b_iwa)
     
     def plot_final(self, charge, iwa_ignore=False, add_planet=True, plot_dpi=300, flip=True):
         """Final image

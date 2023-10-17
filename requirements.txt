@@ -6,3 +6,4 @@ numpy
 pysynphot
 scikit-image
 scipy
+tqdm

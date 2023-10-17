@@ -74,7 +74,7 @@ def planet_position(a, e, pa, inc, t, mode, res):
         target_theta = theta[near_pos]
     else:
         theta_w1 = 1/(target_cr2 - cr2[near_pos-1])
-        theta_w2 = 1/(target_cr2 - cr2[near_pos])
+        theta_w2 = 1/(cr2[near_pos] - target_cr2)
         target_theta = (theta[near_pos-1]*theta_w1 + theta[near_pos]*theta_w2)/(theta_w1+theta_w2)
 
     # Find the planet's location

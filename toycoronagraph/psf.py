@@ -5,7 +5,7 @@ if mp_spec is not None:
     import multiprocessing as mp
 from hcipy import *
 from skimage.transform import rotate
-from toycoronagraph.tool import intermediate_image
+from toycoronagraph.tool import frame_interpolation
 import matplotlib.pyplot as plt
 
 def Wavefront_pos(x,y,pupil_grid):
@@ -117,13 +117,13 @@ def psf_calculation(charge, img_pixel, psf_range, lyot_mask_size, num_cores):
     np.save('psfs_c'+str(charge)+'.npy', psfs)
     return psfs
     
-def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightness, psf_scale, img_pixel, rot_number, psfs_name):
+def cir_psf_contrast(pre_img, r, planet_angle, planet_brightness, psf_scale, img_pixel, rot_number, psfs_name):
     """
     Find the planet brightness and background brightness in the final image.
 
     Args:
         pre_img (np.ndarray): The input image.
-        planet_psfs_number (int): According to the distance between the planet and the origin, choose the nearest psf.
+        r (float): the distance between the planet and the origin, in pixel unit.
         planet_angle (float): The angle between the x-axis and the line of the planet and the origin.
         planet_brightness (list): List of planet brightness values.
         psf_scale (float): Scale of the PSF.
@@ -183,7 +183,13 @@ def cir_psf_contrast(pre_img, planet_psfs_number, planet_angle, planet_brightnes
         disk_img_iwa += rotate(chunk_img_iwa, angle=360*i/rot_number)
         
     # The planet image
-    planet_img = rotate(planet_brightness*psfs[planet_psfs_number], angle=planet_angle*180.0/np.pi)
+    psfs_number = int(r)
+    if img_pixel%2==0:
+        psf_positions = [(psfs_number**2+0.25)**0.5, ((psfs_number+1)**2+0.25)**0.5]
+    else:
+        psf_positions = [psfs_number, psfs_number+1]
+    inter_psf = frame_interpolation(psf_positions, [psfs[psfs_number], psfs[psfs_number+1]], r)
+    planet_img = rotate(planet_brightness*inter_psf, angle=planet_angle*180.0/np.pi)
     threshold = 0.5*planet_img.max()
     planet_filter = np.where(planet_img > threshold , 1, 0)
 
@@ -243,13 +249,19 @@ def cir_psf(pre_img, planets_pos, planet_brightness, psf_scale, iwa_ignore, add_
     # Rotate and accumulate the chunk image to create the final image
     for i in range(rot_number):
         final_img += rotate(chunk_img, angle=360*i/rot_number)
-        
+
     # Add planets if requested
     if add_planet:
         for i in range(len(planets_pos)):
-            psfs_number = int(planets_pos[i][0]/psf_scale)
-            if psfs_number<img_pixel/2:
-                final_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=planets_pos[i][1]*180.0/np.pi)
+            r = planets_pos[i][0]/psf_scale
+            psfs_number = int(r)
+            if psfs_number<(img_pixel+1)//2:
+                if img_pixel%2==0:
+                    psf_positions = [(psfs_number**2+0.25)**0.5, ((psfs_number+1)**2+0.25)**0.5]
+                else:
+                    psf_positions = [psfs_number, psfs_number+1]
+                inter_psf = frame_interpolation(psf_positions, [psfs[psfs_number], psfs[psfs_number+1]], r)
+                final_img += rotate(planet_brightness[i]*inter_psf, angle=planets_pos[i][1]*180.0/np.pi)
             else:
                 print("Planet #"+str(i+1)+" is outside the range of the plot")
             
@@ -276,9 +288,15 @@ def cir_psf_planets(planets_pos, planet_brightness, psf_scale, img_pixel, psfs_n
     planet_img = np.zeros([img_pixel, img_pixel])
 
     for i in range(len(planets_pos)):
-        psfs_number = int(planets_pos[i][0]/psf_scale)
-        if psfs_number<img_pixel/2:
-            planet_img += rotate(planet_brightness[i]*psfs[psfs_number], angle=planets_pos[i][1]*180.0/np.pi)
+        r = planets_pos[i][0]/psf_scale
+        psfs_number = int(r)
+        if psfs_number<(img_pixel+1)//2:
+            if img_pixel%2==0:
+                psf_positions = [(psfs_number**2+0.25)**0.5, ((psfs_number+1)**2+0.25)**0.5]
+            else:
+                psf_positions = [psfs_number, psfs_number+1]
+            inter_psf = frame_interpolation(psf_positions, [psfs[psfs_number], psfs[psfs_number+1]], r)
+            planet_img += rotate(planet_brightness[i]*inter_psf, angle=planets_pos[i][1]*180.0/np.pi)
     return planet_img
     
 def core_throughput_vectorized(psfs):

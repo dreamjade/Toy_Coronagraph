@@ -77,7 +77,7 @@ def is_planet_pos_allowed(pos, mode):
     else:
         print("unknown add planet mode")
 
-def intermediate_image(positions, images, pos):
+def frame_interpolation(positions, images, pos):
     """
     Find an intermediate image between images using optical flow methods.
     """
