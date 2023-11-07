@@ -4,6 +4,7 @@
 [![Documentation Status](https://img.shields.io/badge/Docs-v1.6.1-green.svg?style=flat-square)](https://dreamjade.github.io/Toy_Coronagraph/index.html)
 <a href="./LICENSE"><img src="https://img.shields.io/cran/l/lrgs.svg" alt="MIT License" /></a>
 [![DOI](https://zenodo.org/badge/665310914.svg)](https://zenodo.org/badge/latestdoi/665310914)
+[![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)](https://github.com/dreamjade/Toy_Coronagraph.git)
 [![Dependencies](https://img.shields.io/badge/Dependencies-v1.6.1-purple.svg?style=flat-square)](https://github.com/dreamjade/Toy_Coronagraph/tree/main/requirements.txt)
 
 # Toy Coronagraph
