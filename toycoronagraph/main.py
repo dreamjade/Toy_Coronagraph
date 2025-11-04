@@ -20,7 +20,6 @@ if para_spec is None:
     example_para()
     print("There is no toycoronagraph_para.py file, create an example one")
 import toycoronagraph_para as par
-import cv2
 import tqdm
 
 class Target(object):
@@ -115,7 +114,10 @@ class Target(object):
 
         # Add color bar
         colorbar=plt.colorbar(img,orientation='vertical')
-        colorbar.set_label(r"Jy/arcsec^2")
+        if par.unit != "none":
+            colorbar.set_label(par.unit)
+        else:
+            colorbar.set_label(f"Jy/arcsec^2")
 
         # Iterate through planets, their brightness, orbits, and orders to add them into the plot
         if plot_planets and self.planets !=[]:
@@ -478,7 +480,11 @@ class Target(object):
 
         # Add color bar
         colorbar=plt.colorbar(img,orientation='vertical')
-        colorbar.set_label(r"Jy/arcsec^2")
+        
+        if par.unit != "none":
+            colorbar.set_label(par.unit)
+        else:
+            colorbar.set_label(f"Jy/arcsec^2")
         
         # Create a name for the final image
         final_image_name = "charge"+str(charge)
