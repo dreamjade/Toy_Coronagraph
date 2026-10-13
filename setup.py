@@ -9,6 +9,23 @@ def get_property(prop, project):
     )
     return result.group(1)
 
+REPO = "https://github.com/dreamjade/Toy_Coronagraph"
+
+def get_long_description():
+    """
+    README.md for the PyPI page. PyPI cannot follow the README's relative links, so they point to GitHub:
+    images (./static/...) to their raw files, other files to their GitHub pages, and #section links to the
+    README's sections on GitHub.
+    """
+    def absolute(match):
+        before, path = match.groups()
+        base = "https://raw.githubusercontent.com/dreamjade/Toy_Coronagraph/main/" if path.startswith("static/") \
+            else REPO + "/blob/main/"
+        return before + base + path
+    text = open("README.md", encoding="utf-8").read()
+    text = re.sub(r'(\]\(|src="|href=")\./([^)"]+)', absolute, text)
+    return text.replace("](#", "](%s#" % REPO)
+
 def get_requires():
     """The requirements in requirements.txt (blank lines and # comments left out)."""
     lines = (line.split("#")[0].strip() for line in open("requirements.txt"))
@@ -17,8 +34,11 @@ def get_requires():
 setup(
     name="toycoronagraph",
     version=get_property("__version__", "toycoronagraph"),
-    description="Toy!!",
-    url="https://github.com/dreamjade/Toy_Coronagraph",
+    description="Simulated coronagraphic images: scenes of dust disks, stellar winds, CMEs and planets through "
+                "vortex coronagraphs and the Lazuli telescope",
+    long_description=get_long_description(),
+    long_description_content_type="text/markdown",
+    url=REPO,
     author="dreamjade",
     author_email="",
     license="MIT",
