@@ -1,25 +1,28 @@
-.. Toy_Coronagraph documentation master file, created by
-   sphinx-quickstart on Fri Jul 14 06:11:52 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Toy_Coronagraph
+===============
 
-Welcome to Toy_Coronagraph's documentation!
-===========================================
+A Python package simulating coronagraphic images: a target (a debris disk image, an MCFOST model, a stellar
+wind, a coronal mass ejection, planets, or your own source module) through one or more coronagraphs (vortex
+coronagraphs computed with hcipy, or the Lazuli telescope computed with prysm).
+
+Install it with ``pip install toycoronagraph``. The `README <https://github.com/dreamjade/Toy_Coronagraph#readme>`_
+is the tutorial; ``tests/test.ipynb`` runs every feature. These pages are the reference, made from the docstrings.
+
+There are two ways in:
+
+* **Scenes** (:doc:`scene`, :doc:`observe`): several inputs on one grid, through several coronagraphs, with one
+  result per input and coronagraph, saved as FITS files.
+* **Target** (:doc:`main`): the original interface, one target image through one vortex coronagraph, with
+  planets and planet videos.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
-   main
-   para
-   planet
-   psf
-   tool
+   scenes
+   optics_psfs
+   parameters
+   target
    history
-
-Indices and tables
-==================
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`

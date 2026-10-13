@@ -1,70 +1,75 @@
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Toy_Coronagraph 1.6.1 documentation</title>
+    <title>Index &#8212; Toy_Coronagraph 2.0.0</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
 
-    <script src="_static/documentation_options.js?v=662e1299"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=79f5c508"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
+  <body data-default-mode="">
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
   
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -72,7 +77,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -80,18 +84,27 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -100,75 +113,55 @@
   
   
   
-    <p class="title logo__title">Toy_Coronagraph 1.6.1 documentation</p>
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
   
 </a></div>
     
   </div>
   
-  
   <div class="col-lg-9 navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+        <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="main.html">
-                        Main
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="para.html">
-                        Para
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="planet.html">
-                        Planet
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="psf.html">
-                        PSF
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tool.html">
-                        Tool
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="history.html">
-                        Version History
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -179,26 +172,44 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
-`);
-</script></div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -206,25 +217,30 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
   
 </div>
 
-    </nav>
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -233,66 +249,49 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="main.html">
-                        Main
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="para.html">
-                        Para
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="planet.html">
-                        Planet
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="psf.html">
-                        PSF
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tool.html">
-                        Tool
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="history.html">
-                        Version History
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -301,15 +300,34 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
-`);
-</script></div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -317,64 +335,99 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article"></div>
+              <div class="bd-header-article d-print-none"></div>
               
               
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
 
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#_"><strong>_</strong></a>
- | <a href="#A"><strong>A</strong></a>
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
- | <a href="#X"><strong>X</strong></a>
- | <a href="#Y"><strong>Y</strong></a>
  
 </div>
-<h2 id="_">_</h2>
+<h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#id0">__init__() (main.Target method)</a>, <a href="main.html#main.Target.__init__">[1]</a>
+      <li><a href="scene.html#toycoronagraph.scene.Scene.add">add() (toycoronagraph.scene.Scene method)</a>
+</li>
+      <li><a href="main.html#toycoronagraph.main.Target.add_planet">add_planet() (toycoronagraph.main.Target method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.__weakref__">__weakref__ (main.Target attribute)</a>
+      <li><a href="tool.html#toycoronagraph.tool.arcsec_to_pixel">arcsec_to_pixel() (in module toycoronagraph.tool)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Grid.axis">axis() (toycoronagraph.scene.Grid method)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.axis_products">axis_products() (in module toycoronagraph.psf)</a>
 </li>
   </ul></td>
 </tr></table>
 
-<h2 id="A">A</h2>
+<h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.add_planet">add_planet() (main.Target method)</a>
+      <li><a href="optics.html#toycoronagraph.optics.Optics.backend">backend() (toycoronagraph.optics.Optics method)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.bandlimited_weights">bandlimited_weights() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.blackbody_flux_jy">blackbody_flux_jy() (in module toycoronagraph.params)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.blank_panel">blank_panel() (in module toycoronagraph.scene)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="spatial.html#toycoronagraph.spatial.blend_map">blend_map() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.LazuliSource.block">block() (toycoronagraph.lazuli.LazuliSource method)</a>
+
+      <ul>
+        <li><a href="optics.html#toycoronagraph.optics.PupilPlaneSource.block">(toycoronagraph.optics.PupilPlaneSource method)</a>
+</li>
+      </ul></li>
+      <li><a href="scene.html#toycoronagraph.scene.Scene.build">build() (toycoronagraph.scene.Scene method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -382,27 +435,75 @@ document.write(`
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="psf.html#psf.cir_core_throughput_plot">cir_core_throughput_plot() (in module psf)</a>
+      <li><a href="optics.html#toycoronagraph.optics.Optics.centre">centre (toycoronagraph.optics.Optics property)</a>
 </li>
-      <li><a href="psf.html#psf.cir_iwa">cir_iwa() (in module psf)</a>
+      <li><a href="params.html#toycoronagraph.params.Params.check">check() (toycoronagraph.params.Params method)</a>
 </li>
-      <li><a href="psf.html#psf.cir_psf">cir_psf() (in module psf)</a>
+      <li><a href="main.html#toycoronagraph.main.Target.check_symmetry">check_symmetry() (toycoronagraph.main.Target method)</a>
 </li>
-      <li><a href="psf.html#psf.cir_psf_contrast">cir_psf_contrast() (in module psf)</a>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph.choose">choose() (toycoronagraph.observe.Coronagraph method)</a>
 </li>
-      <li><a href="psf.html#psf.cir_psf_planets">cir_psf_planets() (in module psf)</a>
+      <li><a href="units.html#toycoronagraph.units.choose_internal">choose_internal() (in module toycoronagraph.units)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.choose_kernel_size">choose_kernel_size() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="selection.html#toycoronagraph.selection.choose_method">choose_method() (in module toycoronagraph.selection)</a>
+
+      <ul>
+        <li><a href="main.html#toycoronagraph.main.Target.choose_method">(toycoronagraph.main.Target method)</a>
+</li>
+      </ul></li>
+      <li><a href="psf.html#toycoronagraph.psf.cir_core_throughput_plot">cir_core_throughput_plot() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.cir_iwa">cir_iwa() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.cir_psf">cir_psf() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.cir_psf_contrast">cir_psf_contrast() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.cir_psf_planets">cir_psf_planets() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.Cme">Cme (class in toycoronagraph.sources.cme)</a>
+</li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.cme_contrast">cme_contrast() (in module toycoronagraph.sources.cme)</a>
+</li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.cme_mass_fraction">cme_mass_fraction() (in module toycoronagraph.sources.cme)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.contrast">contrast() (main.Target method)</a>
+      <li><a href="params.html#toycoronagraph.params.Component">Component (class in toycoronagraph.params)</a>
 </li>
-      <li><a href="tool.html#tool.convert_to_polar">convert_to_polar() (in module tool)</a>
+      <li><a href="main.html#toycoronagraph.main.Target.contrast">contrast() (toycoronagraph.main.Target method)</a>
+
+      <ul>
+        <li><a href="observe.html#toycoronagraph.observe.Result.contrast">(toycoronagraph.observe.Result method)</a>
 </li>
-      <li><a href="psf.html#psf.core_throughput_fun">core_throughput_fun() (in module psf)</a>
+      </ul></li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.contrast_of">contrast_of() (in module toycoronagraph.sources.cme)</a>
 </li>
-      <li><a href="psf.html#psf.core_throughput_vectorized">core_throughput_vectorized() (in module psf)</a>
+      <li><a href="observe.html#toycoronagraph.observe.Result.contributions">contributions() (toycoronagraph.observe.Result method)</a>
 </li>
-      <li><a href="para.html#para.create_py_file">create_py_file() (in module para)</a>
+      <li><a href="params.html#toycoronagraph.params.convert">convert() (in module toycoronagraph.params)</a>
+</li>
+      <li><a href="units.html#toycoronagraph.units.convert_image">convert_image() (in module toycoronagraph.units)</a>
+</li>
+      <li><a href="tool.html#toycoronagraph.tool.convert_to_polar">convert_to_polar() (in module toycoronagraph.tool)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.convolve_with_blended_psfs">convolve_with_blended_psfs() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.convolve_with_spatial_psfs">convolve_with_spatial_psfs() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Grid.coordinates">coordinates() (toycoronagraph.scene.Grid method)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.core_throughput_fun">core_throughput_fun() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph">Coronagraph (class in toycoronagraph.observe)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.coronagraph_for">coronagraph_for() (in module toycoronagraph.observe)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.coronagraph_problems">coronagraph_problems() (in module toycoronagraph.params)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.coronagraph_throughput">coronagraph_throughput() (in module toycoronagraph.psf)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -410,7 +511,17 @@ document.write(`
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.delete_planet">delete_planet() (main.Target method)</a>
+      <li><a href="main.html#toycoronagraph.main.Target.delete_planet">delete_planet() (toycoronagraph.main.Target method)</a>
+</li>
+      <li><a href="params_docs.html#toycoronagraph.params_docs.describe">describe() (in module toycoronagraph.params_docs)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="params.html#toycoronagraph.params.Param.describe_type">describe_type() (toycoronagraph.params.Param method)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.detector_pixel_scale">detector_pixel_scale() (in module toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.display_setting">display_setting() (in module toycoronagraph.scene)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -418,7 +529,21 @@ document.write(`
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="para.html#para.example_para">example_para() (in module para)</a>
+      <li><a href="params.html#toycoronagraph.params.Params.enabled">enabled() (toycoronagraph.params.Params method)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.equal_error_grid">equal_error_grid() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.exact_point_sources">exact_point_sources() (in module toycoronagraph.psf)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="config.html#toycoronagraph.config.example_text">example_text() (in module toycoronagraph.config)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.LazuliBackend.executor">executor() (toycoronagraph.lazuli.LazuliBackend method)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.extended_frame_size">extended_frame_size() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Grid.extent">extent (toycoronagraph.scene.Grid property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -426,7 +551,87 @@ document.write(`
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.file_name">file_name (main.Target attribute)</a>
+      <li><a href="params.html#toycoronagraph.params.Params.families">families() (toycoronagraph.params.Params method)</a>
+</li>
+      <li><a href="units.html#toycoronagraph.units.family">family() (in module toycoronagraph.units)</a>
+</li>
+      <li><a href="sources.images.html#toycoronagraph.sources.images.SceneFits.family_of">family_of() (toycoronagraph.sources.images.SceneFits method)</a>
+
+      <ul>
+        <li><a href="sources.planets.html#toycoronagraph.sources.planets.Planet.family_of">(toycoronagraph.sources.planets.Planet method)</a>
+</li>
+        <li><a href="sources.html#toycoronagraph.sources.Source.family_of">(toycoronagraph.sources.Source method)</a>
+</li>
+      </ul></li>
+      <li><a href="optics.html#toycoronagraph.optics.PupilPlaneSource.field">field() (toycoronagraph.optics.PupilPlaneSource method)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Result.final">final() (toycoronagraph.observe.Result method)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.finish">finish() (in module toycoronagraph.scene)</a>
+</li>
+      <li><a href="sources.images.html#toycoronagraph.sources.images.fits_path">fits_path() (in module toycoronagraph.sources.images)</a>
+</li>
+      <li><a href="sources.images.html#toycoronagraph.sources.images.FitsImage">FitsImage (class in toycoronagraph.sources.images)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Star.flux_at">flux_at() (toycoronagraph.scene.Star method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="units.html#toycoronagraph.units.flux_per_pixel">flux_per_pixel() (in module toycoronagraph.units)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.LazuliSource.frame">frame() (toycoronagraph.lazuli.LazuliSource method)</a>
+
+      <ul>
+        <li><a href="optics.html#toycoronagraph.optics.PupilPlaneSource.frame">(toycoronagraph.optics.PupilPlaneSource method)</a>
+</li>
+      </ul></li>
+      <li><a href="tool.html#toycoronagraph.tool.frame_interpolation">frame_interpolation() (in module toycoronagraph.tool)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.from_data">from_data() (in module toycoronagraph.params)</a>
+</li>
+      <li><a href="config.html#toycoronagraph.config.from_dict">from_dict() (in module toycoronagraph.config)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Scene.from_file">from_file() (toycoronagraph.scene.Scene class method)</a>
+</li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.Cme.from_object">from_object() (toycoronagraph.sources.cme.Cme class method)</a>
+</li>
+      <li><a href="config.html#toycoronagraph.config.from_params">from_params() (in module toycoronagraph.config)</a>
+
+      <ul>
+        <li><a href="scene.html#toycoronagraph.scene.Scene.from_params">(toycoronagraph.scene.Scene class method)</a>
+</li>
+      </ul></li>
+      <li><a href="optics.html#toycoronagraph.optics.Optics.from_settings">from_settings() (toycoronagraph.optics.Optics class method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph.get">get() (toycoronagraph.observe.Coronagraph class method)</a>
+
+      <ul>
+        <li><a href="params.html#toycoronagraph.params.Params.get">(toycoronagraph.params.Params method)</a>
+</li>
+      </ul></li>
+      <li><a href="optics.html#toycoronagraph.optics.get_backend">get_backend() (in module toycoronagraph.optics)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.get_psf">get_psf() (in module toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="sources.html#toycoronagraph.sources.get_source">get_source() (in module toycoronagraph.sources)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Grid">Grid (class in toycoronagraph.scene)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="units.html#toycoronagraph.units.header_unit">header_unit() (in module toycoronagraph.units)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -434,11 +639,53 @@ document.write(`
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="tool.html#tool.is_planet_pos_allowed">is_planet_pos_allowed() (in module tool)</a>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph.image">image() (toycoronagraph.observe.Coronagraph method)</a>
 </li>
+      <li><a href="selection.html#toycoronagraph.selection.image_asymmetry">image_asymmetry() (in module toycoronagraph.selection)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.image_error_estimate">image_error_estimate() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.image_hdu">image_hdu() (in module toycoronagraph.scene)</a>
+</li>
+      <li><a href="selection.html#toycoronagraph.selection.image_symmetry">image_symmetry() (in module toycoronagraph.selection)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Result.in_unit">in_unit() (toycoronagraph.observe.Result method)</a>
+
+      <ul>
+        <li><a href="scene.html#toycoronagraph.scene.Scene.in_unit">(toycoronagraph.scene.Scene method)</a>
+</li>
+      </ul></li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.Cme.inspect">inspect() (toycoronagraph.sources.cme.Cme method)</a>
+
+      <ul>
+        <li><a href="sources.images.html#toycoronagraph.sources.images.SceneFits.inspect">(toycoronagraph.sources.images.SceneFits method)</a>
+</li>
+        <li><a href="sources.html#toycoronagraph.sources.Source.inspect">(toycoronagraph.sources.Source method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="tool.html#tool.is_positive_even_integer">is_positive_even_integer() (in module tool)</a>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph.interpolated_point_sources">interpolated_point_sources() (toycoronagraph.observe.Coronagraph method)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.is_legacy">is_legacy() (in module toycoronagraph.params)</a>
+</li>
+      <li><a href="inputs.html#toycoronagraph.inputs.is_mcfost">is_mcfost() (in module toycoronagraph.inputs)</a>
+</li>
+      <li><a href="tool.html#toycoronagraph.tool.is_planet_pos_allowed">is_planet_pos_allowed() (in module toycoronagraph.tool)</a>
+</li>
+      <li><a href="tool.html#toycoronagraph.tool.is_positive_even_integer">is_positive_even_integer() (in module toycoronagraph.tool)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph.iwa">iwa (toycoronagraph.observe.Coronagraph property)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Result.iwa">iwa() (toycoronagraph.observe.Result method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="params_docs.html#toycoronagraph.params_docs.json_schema">json_schema() (in module toycoronagraph.params_docs)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -446,7 +693,35 @@ document.write(`
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.list_planets">list_planets() (main.Target method)</a>
+      <li><a href="scene.html#toycoronagraph.scene.Grid.lambda_d">lambda_d (toycoronagraph.scene.Grid property)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.LambdaD">LambdaD (class in toycoronagraph.params)</a>
+</li>
+      <li><a href="optics.html#toycoronagraph.optics.Optics.lazuli">lazuli() (toycoronagraph.optics.Optics class method)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.lazuli_parameters">lazuli_parameters() (in module toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.LazuliBackend">LazuliBackend (class in toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.LazuliSource">LazuliSource (class in toycoronagraph.lazuli)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="params.html#toycoronagraph.params.legacy_to_new">legacy_to_new() (in module toycoronagraph.params)</a>
+</li>
+      <li><a href="main.html#toycoronagraph.main.Target.list_planets">list_planets() (toycoronagraph.main.Target method)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.load">load() (in module toycoronagraph.params)</a>
+
+      <ul>
+        <li><a href="observe.html#toycoronagraph.observe.Result.load">(toycoronagraph.observe.Result class method)</a>
+</li>
+      </ul></li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.load_cme_imaging">load_cme_imaging() (in module toycoronagraph.sources.cme)</a>
+</li>
+      <li><a href="config.html#toycoronagraph.config.load_config">load_config() (in module toycoronagraph.config)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.load_spatial_psfs">load_spatial_psfs() (in module toycoronagraph.psf)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -454,41 +729,104 @@ document.write(`
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    main
-
-      <ul>
-        <li><a href="main.html#module-main">module</a>
+      <li><a href="cli.html#toycoronagraph.__main__.main">main() (in module toycoronagraph.__main__)</a>
 </li>
-      </ul></li>
+      <li><a href="params.html#toycoronagraph.params.make">make() (in module toycoronagraph.params)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.make_blend_weights">make_blend_weights() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.make_psf_inds">make_psf_inds() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.mark_points">mark_points() (in module toycoronagraph.scene)</a>
+</li>
+      <li><a href="sources.images.html#toycoronagraph.sources.images.Mcfost">Mcfost (class in toycoronagraph.sources.images)</a>
+</li>
+      <li><a href="selection.html#toycoronagraph.selection.measure_psf_symmetry">measure_psf_symmetry() (in module toycoronagraph.selection)</a>
+</li>
+      <li><a href="params_docs.html#toycoronagraph.params_docs.migrate">migrate() (in module toycoronagraph.params_docs)</a>
+</li>
+      <li><a href="sources.html#toycoronagraph.sources.Source.missing">missing() (toycoronagraph.sources.Source method)</a>
+</li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.model_arguments">model_arguments() (in module toycoronagraph.sources.cme)</a>
+</li>
       <li>
     module
 
       <ul>
-        <li><a href="main.html#module-main">main</a>
+        <li><a href="cli.html#module-toycoronagraph.__main__">toycoronagraph.__main__</a>
 </li>
-        <li><a href="para.html#module-para">para</a>
+        <li><a href="config.html#module-toycoronagraph.config">toycoronagraph.config</a>
 </li>
-        <li><a href="planet.html#module-planet">planet</a>
+        <li><a href="inputs.html#module-toycoronagraph.inputs">toycoronagraph.inputs</a>
 </li>
-        <li><a href="psf.html#module-psf">psf</a>
+        <li><a href="lazuli.html#module-toycoronagraph.lazuli">toycoronagraph.lazuli</a>
 </li>
-        <li><a href="tool.html#module-tool">tool</a>
+        <li><a href="main.html#module-toycoronagraph.main">toycoronagraph.main</a>
+</li>
+        <li><a href="observe.html#module-toycoronagraph.observe">toycoronagraph.observe</a>
+</li>
+        <li><a href="optics.html#module-toycoronagraph.optics">toycoronagraph.optics</a>
+</li>
+        <li><a href="params.html#module-toycoronagraph.params">toycoronagraph.params</a>
+</li>
+        <li><a href="params_docs.html#module-toycoronagraph.params_docs">toycoronagraph.params_docs</a>
+</li>
+        <li><a href="planet.html#module-toycoronagraph.planet">toycoronagraph.planet</a>
+</li>
+        <li><a href="psf.html#module-toycoronagraph.psf">toycoronagraph.psf</a>
+</li>
+        <li><a href="scene.html#module-toycoronagraph.scene">toycoronagraph.scene</a>
+</li>
+        <li><a href="selection.html#module-toycoronagraph.selection">toycoronagraph.selection</a>
+</li>
+        <li><a href="sources.html#module-toycoronagraph.sources">toycoronagraph.sources</a>
+</li>
+        <li><a href="sources.cme.html#module-toycoronagraph.sources.cme">toycoronagraph.sources.cme</a>
+</li>
+        <li><a href="sources.images.html#module-toycoronagraph.sources.images">toycoronagraph.sources.images</a>
+</li>
+        <li><a href="sources.planets.html#module-toycoronagraph.sources.planets">toycoronagraph.sources.planets</a>
+</li>
+        <li><a href="sources.thomson.html#module-toycoronagraph.sources.thomson">toycoronagraph.sources.thomson</a>
+</li>
+        <li><a href="spatial.html#module-toycoronagraph.spatial">toycoronagraph.spatial</a>
+</li>
+        <li><a href="tool.html#module-toycoronagraph.tool">toycoronagraph.tool</a>
+</li>
+        <li><a href="units.html#module-toycoronagraph.units">toycoronagraph.units</a>
+</li>
+        <li><a href="video.html#module-toycoronagraph.video">toycoronagraph.video</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="params_docs.html#toycoronagraph.params_docs.new_config">new_config() (in module toycoronagraph.params_docs)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="planet.html#planet.orbit_plot">orbit_plot() (in module planet)</a>
+      <li><a href="observe.html#toycoronagraph.observe.observe">observe() (in module toycoronagraph.observe)</a>
+</li>
+      <li><a href="optics.html#toycoronagraph.optics.Optics">Optics (class in toycoronagraph.optics)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.optics_for">optics_for() (in module toycoronagraph.observe)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="planet.html#planet.orbit_position">orbit_position() (in module planet)</a>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.optics_from_table">optics_from_table() (in module toycoronagraph.lazuli)</a>
 </li>
-      <li><a href="main.html#main.Target.orbits">orbits (main.Target attribute)</a>
+      <li><a href="planet.html#toycoronagraph.planet.orbit_plot">orbit_plot() (in module toycoronagraph.planet)</a>
+</li>
+      <li><a href="planet.html#toycoronagraph.planet.orbit_position">orbit_position() (in module toycoronagraph.planet)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.Params.origin">origin() (toycoronagraph.params.Params method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -496,97 +834,483 @@ document.write(`
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    para
+      <li><a href="params.html#toycoronagraph.params.Param">Param (class in toycoronagraph.params)</a>
+</li>
+      <li><a href="optics.html#toycoronagraph.optics.Optics.param">param() (toycoronagraph.optics.Optics method)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.ParamError">ParamError</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.Params">Params (class in toycoronagraph.params)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph.peak_norm">peak_norm (toycoronagraph.observe.Coronagraph property)</a>
 
       <ul>
-        <li><a href="para.html#module-para">module</a>
+        <li><a href="scene.html#toycoronagraph.scene.Grid.peak_norm">(toycoronagraph.scene.Grid property)</a>
 </li>
       </ul></li>
-      <li>
-    planet
+      <li><a href="units.html#toycoronagraph.units.per_pixel">per_pixel() (in module toycoronagraph.units)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Grid.pixel">pixel() (toycoronagraph.scene.Grid method)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Grid.pixel_area">pixel_area (toycoronagraph.scene.Grid property)</a>
+</li>
+      <li><a href="sources.thomson.html#toycoronagraph.sources.thomson.pixel_integrals">pixel_integrals() (in module toycoronagraph.sources.thomson)</a>
+</li>
+      <li><a href="optics.html#toycoronagraph.optics.Optics.pixel_scale">pixel_scale (toycoronagraph.optics.Optics property)</a>
+</li>
+      <li><a href="sources.planets.html#toycoronagraph.sources.planets.Planet">Planet (class in toycoronagraph.sources.planets)</a>
+</li>
+      <li><a href="main.html#toycoronagraph.main.Target.planet_move">planet_move() (toycoronagraph.main.Target method)</a>
+</li>
+      <li><a href="planet.html#toycoronagraph.planet.planet_position">planet_position() (in module toycoronagraph.planet)</a>
+</li>
+      <li><a href="main.html#toycoronagraph.main.Target.planet_video">planet_video() (toycoronagraph.main.Target method)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Result.plot">plot() (toycoronagraph.observe.Result method)</a>
 
       <ul>
-        <li><a href="planet.html#module-planet">module</a>
+        <li><a href="scene.html#toycoronagraph.scene.Scene.plot">(toycoronagraph.scene.Scene method)</a>
 </li>
       </ul></li>
-      <li><a href="main.html#main.Target.planet_move">planet_move() (main.Target method)</a>
+      <li><a href="observe.html#toycoronagraph.observe.Result.plot_compare">plot_compare() (toycoronagraph.observe.Result method)</a>
 </li>
-      <li><a href="planet.html#planet.planet_position">planet_position() (in module planet)</a>
+      <li><a href="observe.html#toycoronagraph.observe.Result.plot_contributions">plot_contributions() (toycoronagraph.observe.Result method)</a>
 </li>
-      <li><a href="main.html#main.Target.planet_video">planet_video() (main.Target method)</a>
-</li>
-      <li><a href="main.html#main.Target.planets">planets (main.Target attribute)</a>
-</li>
-      <li><a href="main.html#main.Target.planets_brightness">planets_brightness (main.Target attribute)</a>
+      <li><a href="main.html#toycoronagraph.main.Target.plot_final">plot_final() (toycoronagraph.main.Target method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.plot_final">plot_final() (main.Target method)</a>
+      <li><a href="main.html#toycoronagraph.main.Target.plot_orbit">plot_orbit() (toycoronagraph.main.Target method)</a>
 </li>
-      <li><a href="main.html#main.Target.plot_orbit">plot_orbit() (main.Target method)</a>
+      <li><a href="main.html#toycoronagraph.main.Target.plot_origin">plot_origin() (toycoronagraph.main.Target method)</a>
 </li>
-      <li><a href="main.html#main.Target.plot_origin">plot_origin() (main.Target method)</a>
-</li>
-      <li><a href="main.html#main.Target.pre_img">pre_img (main.Target attribute)</a>
-</li>
-      <li>
-    psf
+      <li><a href="scene.html#toycoronagraph.scene.plot_profiles">plot_profiles() (in module toycoronagraph.scene)</a>
 
       <ul>
-        <li><a href="psf.html#module-psf">module</a>
+        <li><a href="observe.html#toycoronagraph.observe.Result.plot_profiles">(toycoronagraph.observe.Result method)</a>
+</li>
+        <li><a href="scene.html#toycoronagraph.scene.Scene.plot_profiles">(toycoronagraph.scene.Scene method)</a>
 </li>
       </ul></li>
-      <li><a href="psf.html#psf.psf_calculation">psf_calculation() (in module psf)</a>
+      <li><a href="scene.html#toycoronagraph.scene.point_labels">point_labels() (in module toycoronagraph.scene)</a>
 </li>
-      <li><a href="psf.html#psf.psf_chunk">psf_chunk() (in module psf)</a>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph.point_sources">point_sources() (toycoronagraph.observe.Coronagraph method)</a>
+
+      <ul>
+        <li><a href="sources.planets.html#toycoronagraph.sources.planets.Planet.point_sources">(toycoronagraph.sources.planets.Planet method)</a>
 </li>
-      <li><a href="main.html#main.Target.psf_scale">psf_scale (main.Target attribute)</a>
+        <li><a href="sources.html#toycoronagraph.sources.Source.point_sources">(toycoronagraph.sources.Source method)</a>
 </li>
+      </ul></li>
+      <li><a href="sources.planets.html#toycoronagraph.sources.planets.Planet.position">position() (toycoronagraph.sources.planets.Planet method)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.positions_to_polar">positions_to_polar() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="sources.thomson.html#toycoronagraph.sources.thomson.profile_factor">profile_factor() (in module toycoronagraph.sources.thomson)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.Params.provide">provide() (toycoronagraph.params.Params method)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.psf_convolve_cpu">psf_convolve_cpu() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.psf_convolve_gpu">psf_convolve_gpu() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="selection.html#toycoronagraph.selection.psf_symmetry">psf_symmetry() (in module toycoronagraph.selection)</a>
+
+      <ul>
+        <li><a href="observe.html#toycoronagraph.observe.Coronagraph.psf_symmetry">(toycoronagraph.observe.Coronagraph method)</a>
+</li>
+      </ul></li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.pupil">pupil() (in module toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.pupil_samples">pupil_samples() (in module toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="optics.html#toycoronagraph.optics.PupilPlaneSource">PupilPlaneSource (class in toycoronagraph.optics)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="scene.html#toycoronagraph.scene.radial_profile">radial_profile() (in module toycoronagraph.scene)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.radial_psf_series">radial_psf_series() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="main.html#toycoronagraph.main.Target.radial_psfs">radial_psfs() (toycoronagraph.main.Target method)</a>
+
+      <ul>
+        <li><a href="observe.html#toycoronagraph.observe.Coronagraph.radial_psfs">(toycoronagraph.observe.Coronagraph method)</a>
+</li>
+      </ul></li>
+      <li><a href="main.html#toycoronagraph.main.Target.radial_psfs_file">radial_psfs_file() (toycoronagraph.main.Target method)</a>
+
+      <ul>
+        <li><a href="observe.html#toycoronagraph.observe.Coronagraph.radial_psfs_file">(toycoronagraph.observe.Coronagraph method)</a>
+</li>
+      </ul></li>
+      <li><a href="psf.html#toycoronagraph.psf.radial_source_positions">radial_source_positions() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.read_opd">read_opd() (in module toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="inputs.html#toycoronagraph.inputs.read_plane">read_plane() (in module toycoronagraph.inputs)</a>
+</li>
+      <li><a href="inputs.html#toycoronagraph.inputs.read_target">read_target() (in module toycoronagraph.inputs)</a>
+</li>
+      <li><a href="params_docs.html#toycoronagraph.params_docs.reference_markdown">reference_markdown() (in module toycoronagraph.params_docs)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="optics.html#toycoronagraph.optics.register_backend">register_backend() (in module toycoronagraph.optics)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.register_coronagraph">register_coronagraph() (in module toycoronagraph.params)</a>
+</li>
+      <li><a href="sources.html#toycoronagraph.sources.register_source">register_source() (in module toycoronagraph.sources)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Scene.render">render() (toycoronagraph.scene.Scene method)</a>
+
+      <ul>
+        <li><a href="sources.cme.html#toycoronagraph.sources.cme.Cme.render">(toycoronagraph.sources.cme.Cme method)</a>
+</li>
+        <li><a href="sources.images.html#toycoronagraph.sources.images.SceneFits.render">(toycoronagraph.sources.images.SceneFits method)</a>
+</li>
+        <li><a href="sources.html#toycoronagraph.sources.Source.render">(toycoronagraph.sources.Source method)</a>
+</li>
+        <li><a href="sources.thomson.html#toycoronagraph.sources.thomson.Wind.render">(toycoronagraph.sources.thomson.Wind method)</a>
+</li>
+      </ul></li>
+      <li><a href="scene.html#toycoronagraph.scene.resample">resample() (in module toycoronagraph.scene)</a>
+</li>
+      <li><a href="config.html#toycoronagraph.config.resolve">resolve() (in module toycoronagraph.config)</a>
+
+      <ul>
+        <li><a href="params.html#toycoronagraph.params.Params.resolve">(toycoronagraph.params.Params method)</a>
+</li>
+      </ul></li>
+      <li><a href="observe.html#toycoronagraph.observe.Result">Result (class in toycoronagraph.observe)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="scene.html#toycoronagraph.scene.Grid.sampling">sampling (toycoronagraph.scene.Grid property)</a>
+</li>
+      <li><a href="optics.html#toycoronagraph.optics.SamplingWarning">SamplingWarning</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Result.save">save() (toycoronagraph.observe.Result method)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Scene">Scene (class in toycoronagraph.scene)</a>
+</li>
+      <li><a href="sources.images.html#toycoronagraph.sources.images.SceneFits">SceneFits (class in toycoronagraph.sources.images)</a>
+</li>
+      <li><a href="optics.html#toycoronagraph.optics.Optics.settings">settings() (toycoronagraph.optics.Optics method)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.shape_change_rates">shape_change_rates() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.shape_change_rates_direct">shape_change_rates_direct() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.show_image">show_image() (in module toycoronagraph.scene)</a>
+</li>
+      <li><a href="sources.html#toycoronagraph.sources.Source">Source (class in toycoronagraph.sources)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.LazuliBackend.source">source() (toycoronagraph.lazuli.LazuliBackend method)</a>
+
+      <ul>
+        <li><a href="optics.html#toycoronagraph.optics.VortexBackend.source">(toycoronagraph.optics.VortexBackend method)</a>
+</li>
+      </ul></li>
+      <li><a href="sources.html#toycoronagraph.sources.source_kinds">source_kinds() (in module toycoronagraph.sources)</a>
+</li>
+      <li><a href="units.html#toycoronagraph.units.SourceImage">SourceImage (class in toycoronagraph.units)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="psf.html#toycoronagraph.psf.spatial_error_report">spatial_error_report() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="spatial.html#toycoronagraph.spatial.spatial_iwa">spatial_iwa() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="main.html#toycoronagraph.main.Target.spatial_model">spatial_model() (toycoronagraph.main.Target method)</a>
+
+      <ul>
+        <li><a href="observe.html#toycoronagraph.observe.Coronagraph.spatial_model">(toycoronagraph.observe.Coronagraph method)</a>
+</li>
+      </ul></li>
+      <li><a href="spatial.html#toycoronagraph.spatial.spatial_psf">spatial_psf() (in module toycoronagraph.spatial)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.spatial_psf_calculation">spatial_psf_calculation() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.spatial_psf_contrast">spatial_psf_contrast() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.spatial_psf_planets">spatial_psf_planets() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.spectral_weights">spectral_weights() (in module toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Star">Star (class in toycoronagraph.scene)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.Params.star_flux_needed">star_flux_needed() (toycoronagraph.params.Params method)</a>
+</li>
+      <li><a href="units.html#toycoronagraph.units.star_flux_of">star_flux_of() (in module toycoronagraph.units)</a>
+</li>
+      <li><a href="sources.cme.html#toycoronagraph.sources.cme.star_photons">star_photons() (in module toycoronagraph.sources.cme)</a>
+</li>
+      <li><a href="sources.html#toycoronagraph.sources.Source.symmetric">symmetric() (toycoronagraph.sources.Source method)</a>
+
+      <ul>
+        <li><a href="sources.thomson.html#toycoronagraph.sources.thomson.Wind.symmetric">(toycoronagraph.sources.thomson.Wind method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="planet.html#planet.t_period_convert">t_period_convert() (in module planet)</a>
+      <li><a href="planet.html#toycoronagraph.planet.t_period_convert">t_period_convert() (in module toycoronagraph.planet)</a>
 </li>
-      <li><a href="main.html#main.Target.taregt_pixel">taregt_pixel (main.Target attribute)</a>
+      <li><a href="params.html#toycoronagraph.params.Params.table">table() (toycoronagraph.params.Params method)</a>
+</li>
+      <li><a href="observe.html#toycoronagraph.observe.Coronagraph.tag">tag (toycoronagraph.observe.Coronagraph property)</a>
+</li>
+      <li><a href="main.html#toycoronagraph.main.Target">Target (class in toycoronagraph.main)</a>
+</li>
+      <li><a href="inputs.html#toycoronagraph.inputs.target_path">target_path() (in module toycoronagraph.inputs)</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.tele_data">tele_data() (in module toycoronagraph.lazuli)</a>
+</li>
+      <li><a href="units.html#toycoronagraph.units.to_internal">to_internal() (in module toycoronagraph.units)</a>
+</li>
+      <li><a href="psf.html#toycoronagraph.psf.tol_for_error_target">tol_for_error_target() (in module toycoronagraph.psf)</a>
+</li>
+      <li><a href="optics.html#toycoronagraph.optics.PupilPlaneSource.total">total (toycoronagraph.optics.PupilPlaneSource property)</a>
+</li>
+      <li>
+    toycoronagraph.__main__
+
+      <ul>
+        <li><a href="cli.html#module-toycoronagraph.__main__">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.config
+
+      <ul>
+        <li><a href="config.html#module-toycoronagraph.config">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.inputs
+
+      <ul>
+        <li><a href="inputs.html#module-toycoronagraph.inputs">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.lazuli
+
+      <ul>
+        <li><a href="lazuli.html#module-toycoronagraph.lazuli">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.main
+
+      <ul>
+        <li><a href="main.html#module-toycoronagraph.main">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.observe
+
+      <ul>
+        <li><a href="observe.html#module-toycoronagraph.observe">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.optics
+
+      <ul>
+        <li><a href="optics.html#module-toycoronagraph.optics">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.params
+
+      <ul>
+        <li><a href="params.html#module-toycoronagraph.params">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.params_docs
+
+      <ul>
+        <li><a href="params_docs.html#module-toycoronagraph.params_docs">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    toycoronagraph.planet
+
+      <ul>
+        <li><a href="planet.html#module-toycoronagraph.planet">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.psf
+
+      <ul>
+        <li><a href="psf.html#module-toycoronagraph.psf">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.scene
+
+      <ul>
+        <li><a href="scene.html#module-toycoronagraph.scene">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.selection
+
+      <ul>
+        <li><a href="selection.html#module-toycoronagraph.selection">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.sources
+
+      <ul>
+        <li><a href="sources.html#module-toycoronagraph.sources">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.sources.cme
+
+      <ul>
+        <li><a href="sources.cme.html#module-toycoronagraph.sources.cme">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.sources.images
+
+      <ul>
+        <li><a href="sources.images.html#module-toycoronagraph.sources.images">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.sources.planets
+
+      <ul>
+        <li><a href="sources.planets.html#module-toycoronagraph.sources.planets">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.sources.thomson
+
+      <ul>
+        <li><a href="sources.thomson.html#module-toycoronagraph.sources.thomson">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.spatial
+
+      <ul>
+        <li><a href="spatial.html#module-toycoronagraph.spatial">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.tool
+
+      <ul>
+        <li><a href="tool.html#module-toycoronagraph.tool">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.units
+
+      <ul>
+        <li><a href="units.html#module-toycoronagraph.units">module</a>
+</li>
+      </ul></li>
+      <li>
+    toycoronagraph.video
+
+      <ul>
+        <li><a href="video.html#module-toycoronagraph.video">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="units.html#toycoronagraph.units.UnitError">UnitError</a>
+</li>
+      <li><a href="lazuli.html#toycoronagraph.lazuli.LazuliBackend.unocculted">unocculted() (toycoronagraph.lazuli.LazuliBackend method)</a>
+
+      <ul>
+        <li><a href="optics.html#toycoronagraph.optics.VortexBackend.unocculted">(toycoronagraph.optics.VortexBackend method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="params.html#toycoronagraph.params.Params.used_by">used_by() (toycoronagraph.params.Params method)</a>
+</li>
+      <li><a href="config.html#toycoronagraph.config.used_path">used_path() (in module toycoronagraph.config)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.Params.used_toml">used_toml() (toycoronagraph.params.Params method)</a>
+</li>
+      <li><a href="params.html#toycoronagraph.params.Params.user_set">user_set() (toycoronagraph.params.Params method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="observe.html#toycoronagraph.observe.video">video() (in module toycoronagraph.observe)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Grid.visual_range">visual_range (toycoronagraph.scene.Grid property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target">Target (class in main)</a>
+      <li><a href="optics.html#toycoronagraph.optics.Optics.vortex">vortex() (toycoronagraph.optics.Optics class method)</a>
 </li>
-      <li>
-    tool
-
-      <ul>
-        <li><a href="tool.html#module-tool">module</a>
+      <li><a href="optics.html#toycoronagraph.optics.VortexBackend">VortexBackend (class in toycoronagraph.optics)</a>
 </li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="psf.html#psf.Wavefront_pos">Wavefront_pos() (in module psf)</a>
+      <li><a href="optics.html#toycoronagraph.optics.VortexBackend.wavefront">wavefront() (toycoronagraph.optics.VortexBackend method)</a>
+</li>
+      <li><a href="sources.thomson.html#toycoronagraph.sources.thomson.Wind">Wind (class in toycoronagraph.sources.thomson)</a>
+</li>
+      <li><a href="sources.thomson.html#toycoronagraph.sources.thomson.wind_constant">wind_constant() (in module toycoronagraph.sources.thomson)</a>
+</li>
+      <li><a href="scene.html#toycoronagraph.scene.Scene.write">write() (toycoronagraph.scene.Scene method)</a>
+</li>
+      <li><a href="config.html#toycoronagraph.config.write_example">write_example() (in module toycoronagraph.config)</a>
 </li>
   </ul></td>
-</tr></table>
-
-<h2 id="X">X</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.xpix">xpix (main.Target attribute)</a>
+      <li><a href="config.html#toycoronagraph.config.write_resolved">write_resolved() (in module toycoronagraph.config)</a>
 </li>
-  </ul></td>
-</tr></table>
+      <li><a href="scene.html#toycoronagraph.scene.write_scene">write_scene() (in module toycoronagraph.scene)</a>
+</li>
+      <li><a href="params_docs.html#toycoronagraph.params_docs.write_schema">write_schema() (in module toycoronagraph.params_docs)</a>
+</li>
+      <li><a href="config.html#toycoronagraph.config.write_used">write_used() (in module toycoronagraph.config)</a>
 
-<h2 id="Y">Y</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="main.html#main.Target.ypix">ypix (main.Target attribute)</a>
+      <ul>
+        <li><a href="params.html#toycoronagraph.params.Params.write_used">(toycoronagraph.params.Params method)</a>
+</li>
+      </ul></li>
+      <li><a href="video.html#toycoronagraph.video.write_video">write_video() (in module toycoronagraph.video)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -597,16 +1321,12 @@ document.write(`
               
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -624,8 +1344,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -633,28 +1353,32 @@ document.write(`
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="copyright">
     
-      © Copyright 2023, dreamjade.
+      © Copyright 2023-2026, dreamjade.
       <br/>
     
   </p>
 </div>
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.4.
-    <br/>
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
   </p>
 </div>
       
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
 </p></div>
       
     </div>

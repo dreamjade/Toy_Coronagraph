@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Observe: a scene through coronagraphs &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=79f5c508"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'observe';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Units" href="units.html" />
+    <link rel="prev" title="Planets" href="sources.planets.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="scene.html">Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Source modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.images.html">Image sources: FITS, MCFOST, scene files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.thomson.html">Stellar wind (Thomson scattering)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.cme.html">Coronal mass ejection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.planets.html">Planets</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Observe: a scene through coronagraphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selection.html">Circular or spatial method</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="scenes.html" class="nav-link">Scenes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Observe: a scene through coronagraphs</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-toycoronagraph.observe">
+<span id="observe-a-scene-through-coronagraphs"></span><h1>Observe: a scene through coronagraphs<a class="headerlink" href="#module-toycoronagraph.observe" title="Link to this heading">#</a></h1>
+<p>A scene through one or more coronagraphs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">observe</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>                              <span class="c1"># the parameter file's coronagraphs and settings</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">observe</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="p">[</span><span class="s2">"vortex:2"</span><span class="p">,</span> <span class="s2">"vortex:6"</span><span class="p">],</span> <span class="n">combine</span><span class="o">=</span><span class="s2">"together"</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">"vortex_c6"</span><span class="p">)</span>                            <span class="c1"># the total; result.final("vortex_c6", "wind"): one component</span>
+<span class="n">result</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>                                        <span class="c1"># results/&lt;run&gt;/: FITS per coronagraph, params_used.toml, plots</span>
+</pre></div>
+</div>
+<p>combine = “separate” (default): each component goes through each coronagraph with its own
+method (symmetric ones on the exact circular method, the others on the spatial one), and the
+final images are summed, each one kept. “together”: the components are summed first and go
+through each coronagraph once. Planets (point sources) always get their exact PSF.
+components=[…] restricts a run to some components (the spatial kernel size still comes
+from the whole scene, so separate runs add up to the combined one).</p>
+<p>A Coronagraph holds one optical system on one grid: its PSFs (radial series and spatial
+models, cached on disk and in memory) and the final images it has made (cached by image),
+so only what changed is computed again. Coronagraph.get returns the same object for the same
+optics and settings, so Target (toycoronagraph.main) and observe() share these caches.
+optics_for turns a [[coronagraph]] table into its Optics, one builder per type (OPTICS_BUILDERS):
+“vortex” (hcipy) and “lazuli” (the Lazuli telescope computed with prysm, toycoronagraph.lazuli).</p>
+<p>A Result holds the final images in the scene’s internal unit (“Jy/arcsec^2” or
+“contrast_pixel”); Result.save writes a run folder that Result.load reads back.
+Conventions: (N, N) images with the star at pixel (N-1)/2; rows are +y (as in FITS).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.observe.</span></span><span class="sig-name descname"><span class="pre">Coronagraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_kernel_gb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetry_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>One coronagraph on one grid: its PSFs and the final images of the images given to it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling (img_pixel N, psf_range in lambda/D).</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name in outputs, e.g. “vortex_c6”.</p></li>
+<li><p><strong>num_cores</strong><strong>,</strong><strong>​error_target</strong><strong>,</strong><strong>​max_kernel_gb</strong><strong>,</strong><strong>​use_gpu</strong><strong>,</strong><strong>​cache_dir</strong><strong>,</strong><strong>​symmetric</strong><strong>,</strong><strong>​symmetry_tol</strong> – See __init__.</p></li>
+<li><p><strong>rot_number</strong> (<em>int</em>) – Circular method: number of rotations (N when 0 was given).</p></li>
+<li><p><strong>computed</strong> (<em>list</em>) – (what, key) of everything actually calculated, e.g. (“radial PSFs”, name), (“spatial model”, (mode, kernel_size)), (“final image”, first 8 characters of the image’s digest); what is not listed came from the caches.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name in outputs and messages.</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – CPU cores for the PSF calculations (joblib: -1 = all).</p></li>
+<li><p><strong>error_target</strong> (<em>float</em>) – Target relative error of spatial-method final images (0.02 = 2%).</p></li>
+<li><p><strong>max_kernel_gb</strong> (<em>float</em>) – Memory limit of the spatial PSF kernels, in GB.</p></li>
+<li><p><strong>use_gpu</strong> (<em>bool</em>) – Spatial method: use CuPy for the FFT convolutions.</p></li>
+<li><p><strong>cache_dir</strong> (<em>str</em>) – Folder of the PSF cache files; “”: the working directory.</p></li>
+<li><p><strong>symmetric</strong> (<em>bool</em><em> or </em><em>str</em>) – Whether the PSFs are circularly symmetric; “auto”: from the optics model (or measured), see selection.psf_symmetry.</p></li>
+<li><p><strong>rot_number</strong> (<em>int</em>) – Circular method: number of rotations of the radial PSFs; 0: N.</p></li>
+<li><p><strong>symmetry_tol</strong> (<em>float</em>) – Largest measured image asymmetry still counted as symmetric.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.get">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.get" title="Link to this definition">#</a></dt>
+<dd><p>The same object for the same optics and settings (so its PSFs and final images are reused).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name in outputs.</p></li>
+<li><p><strong>settings</strong> – The other __init__ arguments (keywords; values must be hashable).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cached instance, created on first use.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.observe.Coronagraph" title="toycoronagraph.observe.Coronagraph">Coronagraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.tag">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.tag" title="Link to this definition">#</a></dt>
+<dd><p>Part of the cache file names: everything the PSFs depend on, e.g. “vortex_c6_N512_range16_lyot0.95”
+for the vortex (and backends with its parameters), else “&lt;kind&gt;_N&lt;N&gt;_range&lt;psf_range&gt;_&lt;digest&gt;” with
+the first 12 hex characters of the SHA-1 of the optics’ params, e.g. “lazuli_N101_range3.16_0123456789ab”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.radial_psfs_file">
+<span class="sig-name descname"><span class="pre">radial_psfs_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.radial_psfs_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.radial_psfs_file" title="Link to this definition">#</a></dt>
+<dd><p>The radial PSF series, computed once and cached on disk.</p>
+<p>PSFs of sources along +x at psf.radial_source_positions, on frames larger than the
+image (psf.extended_frame_size) so that rotated about the star they still cover the
+image corners.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path of the .npy file, cache_dir/radial_&lt;tag&gt;_frame&lt;size&gt;.npy, holding a ((N+1)//2, size, size) float32 array.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.radial_psfs">
+<span class="sig-name descname"><span class="pre">radial_psfs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.radial_psfs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.radial_psfs" title="Link to this definition">#</a></dt>
+<dd><p>The radial PSF series (radial_psfs_file), memory-mapped once: the circular method and the planets
+read only the frames they use, from the file (or the system’s file cache), not the whole file
+every time (552 MB at 512 px).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>((N+1)//2, size, size) float32 PSFs, read-only.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.memmap</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.spatial_model">
+<span class="sig-name descname"><span class="pre">spatial_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.spatial_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.spatial_model" title="Link to this definition">#</a></dt>
+<dd><p>The spatial PSF model whose kernel size meets the error target for an image.</p>
+<p>The kernel size is chosen for <code class="code docutils literal notranslate"><span class="pre">weight</span></code> (psf.choose_kernel_size; in ‘rotate’ mode from the
+cached radial PSFs, without new propagations) and cached per image, in memory and on disk
+(cache_dir/kernel_&lt;tag&gt;_&lt;16 hex characters&gt;.json, keyed by the image, mode and error target);
+a model already built with a larger kernel is reused (it is more accurate). The model itself
+(kernels, sample grid, blend weights, transmission map and error report) is cached on disk,
+cache_dir/model_&lt;tag&gt;_&lt;mode&gt;_K&lt;kernel_size&gt;_&lt;16 hex characters&gt;.npz, keyed by everything it is
+made from (_model_description, also stored in the file and compared when it is read: a file
+made from anything else is built again). Building one also caches the x-axis PSF runs and the
+error report (psf.spatial_error_report) on disk (cache_dir/axis_&lt;tag&gt;_K&lt;kernel_size&gt;.npz,
+cache_dir/error_&lt;tag&gt;_&lt;mode&gt;_K&lt;kernel_size&gt;_t&lt;target&gt;.npz), so a new session estimates nothing again.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<em>str</em>) – “rotate” or “direct” (see psf.spatial_psf_calculation).</p></li>
+<li><p><strong>weight</strong> (<em>np.ndarray</em>) – (N, N) image whose light sets the kernel size.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The model (see psf.spatial_psf_calculation; “kernel_size” is its kernel width in pixels).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.peak_norm">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">peak_norm</span></span><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.peak_norm" title="Link to this definition">#</a></dt>
+<dd><p>The peak of the star’s unocculted PSF (the backend’s unocculted(): the optics without
+the starlight-suppression element, the Lyot stop kept), as a fraction of the star’s light per pixel:
+the contrast_peak reference. It is the intensity at the star’s position, so it does not depend on
+where the pixels fall (for an even N the star is between four pixels). Computed once; None if the
+backend has no unocculted().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.iwa">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">iwa</span></span><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.iwa" title="Link to this definition">#</a></dt>
+<dd><p>The inner working angle, in lambda/D: the distance from the star at which a point source’s
+throughput (its light leaving the system relative to the same source without the starlight-suppression
+element, so 1 far from the star) reaches 0.5. It depends on the optics only, not on the image: it is
+searched along +x beyond the image’s edge if needed (to 64 lambda/D), by bisection to 0.01 lambda/D (about
+15 sources, assuming the throughput rises with the distance); computed once. None when a source on the
+star already passes half (no coronagraph: e.g. the Lazuli telescope alone, charge = 0), or none reaches it
+by 64 lambda/D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.psf_symmetry">
+<span class="sig-name descname"><span class="pre">psf_symmetry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.psf_symmetry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.psf_symmetry" title="Link to this definition">#</a></dt>
+<dd><p>Whether the PSFs are circularly symmetric (selection.psf_symmetry, computed once).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(bool, reason str).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.choose">
+<span class="sig-name descname"><span class="pre">choose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.choose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.choose" title="Link to this definition">#</a></dt>
+<dd><p>The method for an image (see selection.choose_method).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – (N, N) image (only used to measure its symmetry when <code class="code docutils literal notranslate"><span class="pre">symmetry</span></code> is None).</p></li>
+<li><p><strong>symmetry</strong> (<em>tuple</em>) – (bool, reason str) if the image’s symmetry is known; None: measured.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “auto”, “circular” or “spatial”.</p></li>
+<li><p><strong>spatial_mode</strong> (<em>str</em>) – “auto”, “rotate” or “direct”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(method str, spatial_mode str or None for circular, messages: list of str, the first one the summary).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – An unknown method / spatial_mode, or “rotate” for optics that do not allow it.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.image">
+<span class="sig-name descname"><span class="pre">image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.image" title="Link to this definition">#</a></dt>
+<dd><p>The final image of an image, with the circular or the spatial method (cached).</p>
+<p>The coronagraph is linear, so the image may be in any unit; the final image is in the same one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – (N, N) image, star at pixel (N-1)/2.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “circular” (exact for symmetric images and PSFs) or “spatial”.</p></li>
+<li><p><strong>spatial_mode</strong> (<em>str</em>) – Spatial method: “rotate” or “direct” (ignored for circular).</p></li>
+<li><p><strong>weight</strong> (<em>np.ndarray</em>) – (N, N) image setting the spatial kernel size; None: <code class="code docutils literal notranslate"><span class="pre">image</span></code>.</p></li>
+<li><p><strong>iwa_ignore</strong> (<em>bool</em>) – Leave out the light inside the inner working angle.</p></li>
+<li><p><strong>report</strong> (<em>bool</em>) – Spatial method: print the estimated error of this image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(final image: (N, N) float64 in the unit of <code class="code docutils literal notranslate"><span class="pre">image</span></code>, estimated typical relative error: float, 0 for the exact circular method).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.point_sources">
+<span class="sig-name descname"><span class="pre">point_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.point_sources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.point_sources" title="Link to this definition">#</a></dt>
+<dd><p>Point sources through the coronagraph, each with its exact PSF (psf.exact_point_sources).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pixels</strong> (<em>list</em>) – (row, column) of each source (floats; rows = +y in a scene, see Grid.pixel).</p></li>
+<li><p><strong>values</strong> (<em>list</em>) – Each source’s flux per pixel area (e.g. Jy/arcsec^2 = Jy / pixel_scale^2).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(N, N) image of the sources, in the unit of <code class="code docutils literal notranslate"><span class="pre">values</span></code>. Sources outside the image are left out (with a message).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Coronagraph.interpolated_point_sources">
+<span class="sig-name descname"><span class="pre">interpolated_point_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Coronagraph.interpolated_point_sources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Coronagraph.interpolated_point_sources" title="Link to this definition">#</a></dt>
+<dd><p>Point sources from the radial PSFs, interpolated in radius and rotated (Target’s circular method).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>positions</strong> (<em>list</em>) – (radius arcsec, angle rad) of each source; the orientation of tool.arcsec_to_pixel (y increases with the row, as in FITS).</p></li>
+<li><p><strong>values</strong> (<em>list</em>) – Each source’s flux per pixel area (e.g. Jy/arcsec^2).</p></li>
+<li><p><strong>pixel_scale</strong> (<em>float</em>) – Pixel size in arcsec.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(N, N) image of the sources. Sources beyond the radial PSFs are left out silently.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.observe.optics_for">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.observe.</span></span><span class="sig-name descname"><span class="pre">optics_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_fix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'set</span> <span class="pre">[grid]</span> <span class="pre">size</span> <span class="pre">=</span> <span class="pre">%d</span> <span class="pre">or</span> <span class="pre">%d</span> <span class="pre">(the</span> <span class="pre">image</span> <span class="pre">is</span> <span class="pre">resampled</span> <span class="pre">onto</span> <span class="pre">it)'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#optics_for"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.optics_for" title="Link to this definition">#</a></dt>
+<dd><p>The Optics of a coronagraph of any type (used by coronagraph_for and by Target).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctype</strong> (<em>str</em>) – The coronagraph type (a key of toycoronagraph.params.CORONAGRAPHS and OPTICS_BUILDERS).</p></li>
+<li><p><strong>values</strong> (<em>dict</em>) – Its parameters, every key of its declaration present (defaults filled in).</p></li>
+<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p></li>
+<li><p><strong>psf_range</strong> (<em>float</em>) – Half-width of the image, in lambda/D of the scene.</p></li>
+<li><p><strong>wavelength</strong> (<em>float</em>) – The scene’s wavelength in m.</p></li>
+<li><p><strong>diameter</strong> (<em>float</em>) – The scene’s telescope diameter in m.</p></li>
+<li><p><strong>size_fix</strong> (<em>str</em>) – How the user makes the image size odd, for optics that need it (two %d for the odd sizes around img_pixel); the default names [grid] size.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The optical system and image sampling.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics">Optics</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="params.html#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – The optics cannot work on this image (a lazuli coronagraph on an even size, or with too few pupil samples for its field).</p></li>
+<li><p><strong>ValueError</strong><strong>, </strong><strong>OSError</strong><strong>, </strong><strong>ImportError</strong> – A lazuli coronagraph’s settings cannot be resolved (see _lazuli_optics).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.observe.coronagraph_for">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.observe.</span></span><span class="sig-name descname"><span class="pre">coronagraph_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#coronagraph_for"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.coronagraph_for" title="Link to this definition">#</a></dt>
+<dd><p>The Coronagraph of a [[coronagraph]] table on a grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> (<a class="reference internal" href="scene.html#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – The scene grid (size, field, wavelength and diameter set the Optics).</p></li>
+<li><p><strong>table</strong> (<em>dict</em><em>, </em><em>str</em><em> or </em><em>SimpleNamespace</em>) – A [[coronagraph]] table as a dict, a string “&lt;type&gt;:&lt;charge&gt;” (e.g. “vortex:6”, “lazuli:0”; “” type: vortex, no charge: the type’s default), or a table already checked by toycoronagraph.params.</p></li>
+<li><p><strong>params</strong> (<a class="reference internal" href="params.html#toycoronagraph.params.Params" title="toycoronagraph.params.Params"><em>Params</em></a>) – The scene’s parameters ([compute] and [method] settings).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(the checked table: SimpleNamespace with type, name, values; the Coronagraph).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="params.html#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – The table is not valid, or its optics cannot work on the grid (see optics_for).</p></li>
+<li><p><strong>ValueError</strong><strong>, </strong><strong>OSError</strong><strong>, </strong><strong>ImportError</strong> – A lazuli coronagraph’s settings cannot be resolved (see optics_for).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.observe.observe">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.observe.</span></span><span class="sig-name descname"><span class="pre">observe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scene</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronagraphs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#observe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.observe" title="Link to this definition">#</a></dt>
+<dd><p>The final images of a scene through one or more coronagraphs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scene</strong> (<a class="reference internal" href="scene.html#toycoronagraph.scene.Scene" title="toycoronagraph.scene.Scene"><em>Scene</em></a>) – Rendered here if it is not yet.</p></li>
+<li><p><strong>coronagraphs</strong> (<em>list</em>) – [[coronagraph]] tables (dicts or checked tables), or strings like “vortex:6”; None: the scene’s parameters (a charge-2 vortex if they have none).</p></li>
+<li><p><strong>combine</strong> (<em>str</em>) – “separate” or “together”; None: [method] combine.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “auto”, “circular” or “spatial” for every component; None: each component’s own <code class="code docutils literal notranslate"><span class="pre">method</span></code>, else [method] method.</p></li>
+<li><p><strong>components</strong> (<em>list</em>) – Only these components (names, images or point sources), e.g. one for an individual analysis; None: all. The spatial kernel size still comes from the whole scene, so individual runs add up exactly to the combined one.</p></li>
+<li><p><strong>iwa_ignore</strong> (<em>bool</em>) – Leave out the light inside the inner working angle (images only).</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print the method chosen for each image (and the scene’s notes if it is rendered here).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>finals[coronagraph name][component name, or “total” for the images with combine = “together”], in scene.internal_unit.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.observe.Result" title="toycoronagraph.observe.Result">Result</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="params.html#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – An unknown combine, components that are not in the scene, or a coronagraph that cannot work on the scene grid (e.g. “lazuli” on an even size); before any PSF is computed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.observe.video">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.observe.</span></span><span class="sig-name descname"><span class="pre">video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scene</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronagraph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'contrast_peak'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">difference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.video" title="Link to this definition">#</a></dt>
+<dd><p>A video of a scene through one coronagraph while one component changes, e.g. a CME moving outwards.</p>
+<p>The scene is observed once, every component on its own with its current settings (combine =
+“separate”, whatever [method] combine says). Then, per frame, the
+component gets that frame’s settings (checked by its module), the scene is rendered again
+and only the component is observed again, with the method chosen the first time and the
+spatial kernel chosen for the first scene (its model comes from the caches: about one
+convolution per frame); the other components’ final images are reused. The colour scale
+is fixed by the first frame. The component gets its own settings back at the end. The video
+is lossless (toycoronagraph.video). A faint component (e.g. a CME against a stellar wind) shows
+with difference=True: each frame minus the other components’ final images, like the
+base-difference images (minus a pre-event image) that reveal solar CMEs against the corona.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scene</strong> (<a class="reference internal" href="scene.html#toycoronagraph.scene.Scene" title="toycoronagraph.scene.Scene"><em>Scene</em></a>) – The scene.</p></li>
+<li><p><strong>coronagraph</strong> (<em>str</em><em> or </em><em>dict</em>) – One coronagraph, as in observe() (e.g. “vortex:6”).</p></li>
+<li><p><strong>component</strong> (<em>str</em>) – The component that changes (an image, not a point source).</p></li>
+<li><p><strong>frames</strong> (<em>list</em>) – One dict per frame: the component’s settings in it, e.g. {“horizontal_height_factor”: 2.0}.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – The .webm file; None: &lt;component&gt;_&lt;coronagraph name&gt;.webm in the working directory.</p></li>
+<li><p><strong>fps</strong> (<em>int</em>) – Frames per second.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Output unit (see Result.in_unit; “contrast_peak”: relative to the coronagraph’s own peak).</p></li>
+<li><p><strong>log</strong> (<em>bool</em>) – Log colour scale. None here and below: the [display] setting.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log scale: decades shown below the first frame’s top.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Axis unit (see Grid.axis).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – Dots per inch of the 6.4 x 5 inch frames.</p></li>
+<li><p><strong>iwa_ignore</strong> (<em>bool</em>) – Leave out the light inside the inner working angle.</p></li>
+<li><p><strong>difference</strong> (<em>bool</em>) – Show only the component’s final image (the frame minus the others’).</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s imshow, e.g. cmap=”magma”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(path, list of the (N, N) images shown, in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>, one per frame: the final image of all components summed, or with difference=True of the component alone).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.observe.</span></span><span class="sig-name descname"><span class="pre">Result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The final images of a scene, and what made them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> (<a class="reference internal" href="scene.html#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – The scene grid.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – The unit of every image: the scene’s internal unit (“Jy/arcsec^2” or “contrast_pixel”).</p></li>
+<li><p><strong>star</strong> (<a class="reference internal" href="scene.html#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – The scene’s star.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><em>None</em>) – The star’s flux density in Jy (None: unknown).</p></li>
+<li><p><strong>combine</strong> (<em>str</em>) – “separate” or “together”.</p></li>
+<li><p><strong>inputs</strong> (<em>dict</em>) – {component name: (N, N) input image} (the images of this run, not the point sources).</p></li>
+<li><p><strong>points</strong> (<em>dict</em>) – {name: (positions, fluxes)}: point sources, positions a list of (radius arcsec, angle rad), fluxes a 1-D array of each one’s flux per pixel area in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>.</p></li>
+<li><p><strong>params</strong> (<a class="reference internal" href="params.html#toycoronagraph.params.Params" title="toycoronagraph.params.Params"><em>Params</em></a><em> or </em><em>None</em>) – The scene’s parameters (display defaults, run folder settings).</p></li>
+<li><p><strong>finals</strong> (<em>dict</em>) – {coronagraph name: {component name (or “total” for the images with combine = “together”): (N, N) float64 final image in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>}}.</p></li>
+<li><p><strong>methods</strong> (<em>dict</em>) – {(coronagraph name, component name): (method, spatial_mode or None, why str, estimated typical relative error)}; method “exact” for point sources.</p></li>
+<li><p><strong>coronagraphs</strong> (<em>dict</em>) – {coronagraph name: Coronagraph} (empty after load()).</p></li>
+<li><p><strong>peak_norms</strong> (<em>dict</em>) – {coronagraph name: the peak of the star’s unocculted PSF through it, as a fraction of the star’s light per pixel (Coronagraph.peak_norm; None: unknown)}: the contrast_peak references.</p></li>
+<li><p><strong>iwas</strong> (<em>dict</em>) – {coronagraph name: its inner working angle in arcsec, or None}, filled as iwa() is asked.</p></li>
+<li><p><strong>tables</strong> (<em>list</em>) – The [[coronagraph]] tables used (for params_used.toml).</p></li>
+<li><p><strong>method_used</strong> (<em>dict</em>) – The [method] settings given to observe() (for params_used.toml).</p></li>
+<li><p><strong>folder</strong> (<em>str</em>) – The run folder, once saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>grid</strong> (<a class="reference internal" href="scene.html#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – The scene grid.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – The images’ unit (“Jy/arcsec^2” or “contrast_pixel”).</p></li>
+<li><p><strong>star</strong> (<a class="reference internal" href="scene.html#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – The star.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><em>None</em>) – The star’s flux density in Jy.</p></li>
+<li><p><strong>combine</strong> (<em>str</em>) – “separate” or “together”.</p></li>
+<li><p><strong>inputs</strong> (<em>dict</em>) – {component name: (N, N) input image in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>}.</p></li>
+<li><p><strong>points</strong> (<em>dict</em>) – {name: (positions, fluxes per pixel area)}; None: no point sources.</p></li>
+<li><p><strong>params</strong> (<a class="reference internal" href="params.html#toycoronagraph.params.Params" title="toycoronagraph.params.Params"><em>Params</em></a>) – The parameters; None: no display / run defaults.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.final">
+<span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coronagraph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.final"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.final" title="Link to this definition">#</a></dt>
+<dd><p>The total final image, or one component’s, of a coronagraph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coronagraph</strong> (<em>str</em>) – Coronagraph name; None: the first.</p></li>
+<li><p><strong>component</strong> (<em>str</em>) – Component name (or “total” with combine = “together”); None: the sum of all of them (images and point sources; zero for a run without components).</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Output unit (see in_unit); None / “auto”: self.unit.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><a class="reference internal" href="scene.html#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – See in_unit.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(N, N) final image in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – An unknown coronagraph or component.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.in_unit">
+<span class="sig-name descname"><span class="pre">in_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronagraph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.in_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.in_unit" title="Link to this definition">#</a></dt>
+<dd><p>An image of this result in another unit (units.convert_image).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – (N, N) image in self.unit.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – “Jy/arcsec^2”, “Jy/pixel”, “contrast_pixel” or “contrast_peak”; None or “auto”: unchanged.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><a class="reference internal" href="scene.html#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – The star’s flux in Jy, or a Star (its flux at the grid’s wavelength), to turn a contrast result into a brightness (and back); None: self.star_flux.</p></li>
+<li><p><strong>coronagraph</strong> (<em>str</em>) – contrast_peak: the coronagraph whose final image it is (relative to the peak of the star’s PSF through it without its mask, peak_norms); None: an input image (relative to the ideal aperture’s PSF peak, Grid.peak_norm).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(N, N) image in <code class="code docutils literal notranslate"><span class="pre">unit</span></code> (the same array if no conversion is needed).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="units.html#toycoronagraph.units.UnitError" title="toycoronagraph.units.UnitError"><strong>UnitError</strong></a> – The conversion needs the star’s flux, or the coronagraph’s peak, and it is unknown.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.contributions">
+<span class="sig-name descname"><span class="pre">contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coronagraph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.contributions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.contributions" title="Link to this definition">#</a></dt>
+<dd><p>Each component’s fractional contribution to the final image, pixel by pixel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coronagraph</strong> (<em>str</em>) – Coronagraph name; None: the first.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>{component name: (N, N) float64 fraction of the total final image (0 where the total is 0)}; empty for a run without components.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.contrast">
+<span class="sig-name descname"><span class="pre">contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">planet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronagraph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.contrast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.contrast" title="Link to this definition">#</a></dt>
+<dd><p>The light of every component inside a planet’s core.</p>
+<p>The core is the set of pixels where the planet’s final image is above half its peak;
+each component’s final image is summed over it and multiplied by the pixel area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>planet</strong> (<em>str</em>) – The planet’s component name.</p></li>
+<li><p><strong>coronagraph</strong> (<em>str</em>) – Coronagraph name; None: the first.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>{component name (the planet included): float}, in self.unit x arcsec^2 (Jy for “Jy/arcsec^2”).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronagraphs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.plot" title="Link to this definition">#</a></dt>
+<dd><p>Plot the input and the final images.</p>
+<p>Rows: the input (input=True) and each coronagraph; columns: each component and the total
+(when there are several components or none, or combine = “together”; zero without
+components). A single column is drawn as one row of panels: components=[“total”] compares
+the coronagraphs side by side. Point sources are marked on the input row (their panel there
+is blank: they have no input image), with their flux in the plot’s unit family. With unit =
+“contrast_peak” each row is relative to its own peak (see in_unit). Each column has one
+colour scale (shared=True), so the rows compare directly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> (<em>str</em>) – Output unit (see in_unit); “auto”: self.unit. None here and below: the [display] setting.</p></li>
+<li><p><strong>log</strong> (<em>bool</em>) – Log colour scale.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Axis unit (see Grid.axis).</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Save the figure there; None: not saved.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – Show the figure (else it is closed).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – Resolution of the saved file.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log scale: decades shown below the top of the scale.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><a class="reference internal" href="scene.html#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – See in_unit.</p></li>
+<li><p><strong>coronagraphs</strong> (<em>str</em><em> or </em><em>list</em>) – The coronagraphs shown; None: all.</p></li>
+<li><p><strong>components</strong> (<em>list</em>) – The columns (component names, “total”); None: all, see above.</p></li>
+<li><p><strong>input</strong> (<em>bool</em>) – Show the input row.</p></li>
+<li><p><strong>shared</strong> (<em>bool</em>) – One colour scale per column, set by its brightest panel (log: the 99.99th percentile, see scene.show_image); False: one per panel.</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s imshow for every image, e.g. cmap=”magma”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.iwa">
+<span class="sig-name descname"><span class="pre">iwa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coronagraph</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.iwa"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.iwa" title="Link to this definition">#</a></dt>
+<dd><p>A coronagraph’s inner working angle (Coronagraph.iwa: where a source’s throughput reaches half), in arcsec.</p>
+<p>Computed when first asked (a few seconds) and kept in iwas; save() writes it and load() reads it back.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coronagraph</strong> (<em>str</em>) – The coronagraph’s name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None without a coronagraph (e.g. the Lazuli telescope alone), or when it is not known (a run loaded from files written without it).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.plot_profiles">
+<span class="sig-name descname"><span class="pre">plot_profiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronagraphs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.plot_profiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.plot_profiles" title="Link to this definition">#</a></dt>
+<dd><p>Azimuthal mean against the distance from the star (see scene.plot_profiles).</p>
+<p>components=False: one panel, the summed input and each coronagraph’s total final image.
+components=True: one panel per coronagraph (shared axes), each component’s input (dashed)
+and final image (solid, same colour), and the totals (thick).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>components</strong> (<em>bool</em>) – One panel per coronagraph with each component (see above).</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Output unit (see in_unit); “auto”: self.unit. None here and below: the [display] setting.</p></li>
+<li><p><strong>log</strong> (<em>bool</em>) – Log-log axes (else linear, both from 0).</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Distance unit (see Grid.axis).</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Save the figure there; None: not saved.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – Show the figure (else it is closed).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – Resolution of the saved file.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><a class="reference internal" href="scene.html#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – See in_unit.</p></li>
+<li><p><strong>extra</strong> (<em>dict</em>) – More curves {label: (radius in arcsec, values in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>)}, dashed, on every panel.</p></li>
+<li><p><strong>coronagraphs</strong> (<em>str</em><em> or </em><em>list</em>) – The coronagraphs shown; None: all.</p></li>
+<li><p><strong>iwa</strong> (<em>bool</em>) – Mark each coronagraph’s inner working angle (see iwa) with a dotted vertical line, in its curve’s colour (components=False) or grey (one panel per coronagraph).</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log axes show log_range + scene.PROFILE_DECADES decades below the highest point.</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s plot for every curve, over the plot’s own styles, e.g. lw=2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.plot_contributions">
+<span class="sig-name descname"><span class="pre">plot_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coronagraphs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.plot_contributions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.plot_contributions" title="Link to this definition">#</a></dt>
+<dd><p>Each component’s share of the image, pixel by pixel: before and after each coronagraph.</p>
+<p>Rows: the input (input=True) and each coronagraph; columns: each component’s fraction of
+that row’s total image (see contributions; one colour scale, 0 to 1), titled with its share
+of the row’s light, and a last panel colouring each pixel by the component that dominates
+it. Point sources have no input image: their input panel is blank, with their position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coronagraphs</strong> (<em>str</em><em> or </em><em>list</em>) – The coronagraphs shown; None: all.</p></li>
+<li><p><strong>input</strong> (<em>bool</em>) – Show the input row.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Axis unit (see Grid.axis); None: [display] axis.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Save the figure there; None: not saved.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – Show the figure (else it is closed).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – Resolution of the saved file; None: [display] dpi.</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s imshow for every share map, e.g. cmap=”magma”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.plot_compare">
+<span class="sig-name descname"><span class="pre">plot_compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.plot_compare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.plot_compare" title="Link to this definition">#</a></dt>
+<dd><p>Compare two coronagraphs (two sets of PSFs) on the same image.</p>
+<p>Panels: each one’s final image (one colour scale); their relative difference, (second - first)
+/ first, where the first is within log_range decades of its peak (elsewhere grey), titled with
+its median and 99th percentile in absolute value; and the azimuthal means of the input and of
+both final images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> (<em>str</em>) – Coronagraph names.</p></li>
+<li><p><strong>second</strong> (<em>str</em>) – Coronagraph names.</p></li>
+<li><p><strong>component</strong> (<em>str</em>) – Component name; None: the total.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Output unit (see in_unit); “auto”: self.unit. None here and below: the [display] setting.</p></li>
+<li><p><strong>log</strong> (<em>bool</em>) – Log colour scale and log-log profiles.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Axis / distance unit (see Grid.axis).</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Save the figure there; None: not saved.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – Show the figure (else it is closed).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – Resolution of the saved file.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Decades shown below the top of the colour scale, and kept in the difference.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><a class="reference internal" href="scene.html#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – See in_unit.</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s imshow for the two final images, e.g. cmap=”magma”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.save" title="Link to this definition">#</a></dt>
+<dd><p>Save to a run folder (needs self.params).</p>
+<p>Files written in the folder:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>params_used.toml: the parameters used (Params.used_toml, with the coronagraphs and [method] settings).
+scene.fits: the inputs (see scene.write_scene; primary header also STARFLUX in Jy, 0 if
+    unknown, and PARHASH), and a POINTS binary table of the point sources (NAME, RADIUS
+    arcsec, ANGLE rad, FLUX per pixel area in self.unit) if there are any.
+&lt;coronagraph&gt;.fits: one per coronagraph; primary header CORONAG, OPTICS and the optics
+    parameters (keywords cut to 8 characters, lists such as the wavelengths as comma-separated
+    text), COMBINE, BUNIT, STARFLUX, PEAKNORM (peak_norms; 0 if unknown), IWA (arcsec, iwa(); 0: none),
+    PARHASH (first 16 hex characters of the SHA-1 of params_used.toml); then FINAL_TOTAL (the sum of the others) and FINAL_&lt;COMPONENT&gt; images
+    (with METHOD, MODE, ERRTYP and WHY, cut to 68 characters); with combine = "together", the
+    final image of the summed images (component "total") is TOGETHER (TOGETHER_EXTENSION).
+quicklook/finals.png (see plot), and quicklook/contributions.png when there are several
+    components (see plot_contributions).
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>folder</strong> (<em>str</em>) – The run folder; None: [run] output_dir / [run] name (“auto”: the parameter file’s name, else “scene”).</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Write into an existing folder; else the new one gets _2, _3, …; None: [run] overwrite.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The folder written (also self.folder).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.observe.Result.load">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/observe.html#Result.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.observe.Result.load" title="Link to this definition">#</a></dt>
+<dd><p>A saved result (for plots, contributions, other units), without computing anything again.</p>
+<p>Reads scene.fits, params_used.toml and every other .fits file of the folder (one per
+coronagraph). Component names come back in lower case (from the FITS extension names; TOGETHER
+of a combine = “together” run is “total”); <code class="code docutils literal notranslate"><span class="pre">coronagraphs</span></code> stays empty and <code class="code docutils literal notranslate"><span class="pre">tables</span></code> / <code class="code docutils literal notranslate"><span class="pre">method_used</span></code>
+are not restored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>folder</strong> (<em>str</em>) – A run folder written by save().</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result; None if the folder has no coronagraph FITS file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.observe.Result" title="toycoronagraph.observe.Result">Result</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sources.planets.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Planets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="units.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Units</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph"><code class="docutils literal notranslate"><span class="pre">Coronagraph</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.get"><code class="docutils literal notranslate"><span class="pre">Coronagraph.get()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.tag"><code class="docutils literal notranslate"><span class="pre">Coronagraph.tag</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.radial_psfs_file"><code class="docutils literal notranslate"><span class="pre">Coronagraph.radial_psfs_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.radial_psfs"><code class="docutils literal notranslate"><span class="pre">Coronagraph.radial_psfs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.spatial_model"><code class="docutils literal notranslate"><span class="pre">Coronagraph.spatial_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.peak_norm"><code class="docutils literal notranslate"><span class="pre">Coronagraph.peak_norm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.iwa"><code class="docutils literal notranslate"><span class="pre">Coronagraph.iwa</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.psf_symmetry"><code class="docutils literal notranslate"><span class="pre">Coronagraph.psf_symmetry()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.choose"><code class="docutils literal notranslate"><span class="pre">Coronagraph.choose()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.image"><code class="docutils literal notranslate"><span class="pre">Coronagraph.image()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.point_sources"><code class="docutils literal notranslate"><span class="pre">Coronagraph.point_sources()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Coronagraph.interpolated_point_sources"><code class="docutils literal notranslate"><span class="pre">Coronagraph.interpolated_point_sources()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.optics_for"><code class="docutils literal notranslate"><span class="pre">optics_for()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.coronagraph_for"><code class="docutils literal notranslate"><span class="pre">coronagraph_for()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.observe"><code class="docutils literal notranslate"><span class="pre">observe()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.video"><code class="docutils literal notranslate"><span class="pre">video()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result"><code class="docutils literal notranslate"><span class="pre">Result</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.final"><code class="docutils literal notranslate"><span class="pre">Result.final()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.in_unit"><code class="docutils literal notranslate"><span class="pre">Result.in_unit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.contributions"><code class="docutils literal notranslate"><span class="pre">Result.contributions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.contrast"><code class="docutils literal notranslate"><span class="pre">Result.contrast()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.plot"><code class="docutils literal notranslate"><span class="pre">Result.plot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.iwa"><code class="docutils literal notranslate"><span class="pre">Result.iwa()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.plot_profiles"><code class="docutils literal notranslate"><span class="pre">Result.plot_profiles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.plot_contributions"><code class="docutils literal notranslate"><span class="pre">Result.plot_contributions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.plot_compare"><code class="docutils literal notranslate"><span class="pre">Result.plot_compare()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.save"><code class="docutils literal notranslate"><span class="pre">Result.save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.observe.Result.load"><code class="docutils literal notranslate"><span class="pre">Result.load()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Parameters &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=79f5c508"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'params';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Parameter files, schema and reference" href="params_docs.html" />
+    <link rel="prev" title="Parameters" href="parameters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="params_docs.html">Parameter files, schema and reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command line</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="parameters.html" class="nav-link">Parameters</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Parameters</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-toycoronagraph.params">
+<span id="parameters"></span><h1>Parameters<a class="headerlink" href="#module-toycoronagraph.params" title="Link to this heading">#</a></h1>
+<p>Parameters of a scene run: declared once, read from TOML, checked, resolved with provenance.</p>
+<p>Every quantity has ONE home:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[observation]    wavelength, diameter                       (the observation)
+[grid]           size, pixel_scale | sampling, fov, resample (the simulated image)
+[star]           distance, radius, temperature | flux_jy     (the star / system)
+[[source]]       kind + that module's own parameters only (input_* keys describe its file)
+[[coronagraph]]  type + the optics' parameters
+[method] [compute] [checks] [run] [display]
+</pre></div>
+</div>
+<p>Modules declare the shared quantities they need (<code class="code docutils literal notranslate"><span class="pre">requires</span></code>) and those they can supply
+(<code class="code docutils literal notranslate"><span class="pre">provides</span></code>, e.g. a FITS header’s pixel scale); a shared key inside a [[source]] table is
+refused with a pointer to its home. Values are resolved user &gt; provided &gt; default, every
+disagreement is checked against a per-quantity rule (error / warning / resample), and the
+origin of each value is kept for the printed table and the params_used.toml file.</p>
+<p>The steps:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>load(path)        reads the file and its `include = [...]` files (_read_toml), then from_data()
+from_data(data)   checks the layout ([[source]] / [[coronagraph]] lists, known sections), builds a
+                  Component per [[source]] table, then make()
+make(...)         checks the core sections and the coronagraphs, names the components, and returns
+                  a Params after Params.check() (what is missing / unused)
+Params.resolve()  the final shared values (user &gt; provided by the sources &gt; default), with the
+                  conflict rules; Params.table() / used_toml() show them with their origins
+</pre></div>
+</div>
+<p>Every function collects all the problems it finds and raises one ParamError listing them, one per line.</p>
+<p>Everything users read is generated from these declarations by toycoronagraph.params_docs
+(example files, the JSON schema, the reference tables, describe, migrate). The old layout
+([target], [telescope], a single [coronagraph]) is read and mapped to the new one (legacy_to_new).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.params.Param">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">Param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclusive_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_word</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_d</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advanced</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">example</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Param"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Param" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The declaration of one parameter: how it is checked (convert()) and documented (params_docs).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – key in the TOML file.</p></li>
+<li><p><strong>default</strong> (<em>object</em>) – value when not set; None = no default (required when it is needed).</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – canonical unit (astropy syntax), or None; numbers are in this unit, strings with a unit (“3.22 pc”) are converted to it.</p></li>
+<li><p><strong>doc</strong> (<em>str</em>) – short description (the comment in generated files).</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – “float”, “int”, “bool”, “str”, “int_list”, “float_list”, “str_list” or “table” (ignored when choices are given).</p></li>
+<li><p><strong>choices</strong> (<em>tuple</em>) – allowed values, if limited (compared with their type: 1 is not true).</p></li>
+<li><p><strong>min</strong><strong>,</strong><strong>​max</strong> (<em>float</em>) – bounds of a number, or None; min is exclusive if exclusive_min.</p></li>
+<li><p><strong>exclusive_min</strong> (<em>bool</em>) – the value must be &gt; min (else &gt;= min).</p></li>
+<li><p><strong>auto</strong> (<em>bool</em>) – “auto” is also allowed.</p></li>
+<li><p><strong>auto_word</strong> (<em>str</em>) – another allowed word (e.g. “all”), or None.</p></li>
+<li><p><strong>lambda_d</strong> (<em>bool</em>) – “32 lambda/D” is also allowed (read as a LambdaD, converted to arcsec when the wavelength and diameter are known).</p></li>
+<li><p><strong>advanced</strong> (<em>bool</em>) – commented out in generated files (or left out unless full=True).</p></li>
+<li><p><strong>example</strong> (<em>object</em>) – value written in generated files when there is no default.</p></li>
+<li><p><strong>help</strong> (<em>str</em>) – longer description (editor hover, describe()).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Param.describe_type">
+<span class="sig-name descname"><span class="pre">describe_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Param.describe_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Param.describe_type" title="Link to this definition">#</a></dt>
+<dd><p>The allowed values in words, as shown in error messages and the docs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>e.g. ‘“auto” or number [m]’, ‘one of “separate”, “together”’, ‘number [arcsec] or “N lambda/D”’.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.params.LambdaD">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">LambdaD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#LambdaD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.LambdaD" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+<p>A size given in lambda/D (resolved to arcsec when the wavelength and diameter are known).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.register_coronagraph">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">register_coronagraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#register_coronagraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.register_coronagraph" title="Link to this definition">#</a></dt>
+<dd><p>Declare the parameters of a new coronagraph type (with its optics backend).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type_name</strong> (<em>str</em>) – the value of <code class="code docutils literal notranslate"><span class="pre">type</span></code> in [[coronagraph]] tables.</p></li>
+<li><p><strong>doc</strong> (<em>str</em>) – one line describing it.</p></li>
+<li><p><strong>params</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="#toycoronagraph.params.Param" title="toycoronagraph.params.Param"><em>Param</em></a>) – its own parameters (besides CORONAGRAPH_COMMON’s type and name).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.coronagraph_problems">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">coronagraph_problems</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refused</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#coronagraph_problems"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.coronagraph_problems" title="Link to this definition">#</a></dt>
+<dd><p>The checks of a coronagraph table that involve several keys (each value is checked on its own by convert()).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctype</strong> (<em>str</em>) – the coronagraph type.</p></li>
+<li><p><strong>values</strong> (<em>dict</em>) – the checked values set in the table; unset keys are absent (their defaults are valid).</p></li>
+<li><p><strong>refused</strong> (<em>iterable</em><em> of </em><em>str</em>) – keys set in the table but refused by their own check (so absent from values, where they would read as their defaults): the checks involving them are left out.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the problems, e.g. “charge = 3: a vortex charge must be even”; [] if none.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.convert">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#convert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.convert" title="Link to this definition">#</a></dt>
+<dd><p>Check one value against its declaration and return it in canonical form.</p>
+<p>In order: “auto” (if allowed), the auto_word, the choices, then the type. A float (and each item
+of a float_list) may be a number, “N lambda/D” (if lambda_d; returned as a LambdaD, which converts
+to itself) or a string with a unit (converted to param.unit with astropy; “Msun” / “Rsun” are
+accepted). Numbers are then checked against min / max.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>param</strong> (<a class="reference internal" href="#toycoronagraph.params.Param" title="toycoronagraph.params.Param"><em>Param</em></a>) – the declaration.</p></li>
+<li><p><strong>value</strong> (<em>object</em>) – the value as read from TOML (or given in Python).</p></li>
+<li><p><strong>where</strong> (<em>str</em>) – where it is set, starting the message (e.g. “[grid]”, “[[source]] #1 (wind)”).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>“auto”, the auto_word, the matching choice, a bool / str / dict, a list (float_list items as floats in param.unit), an int, a float in param.unit, or a LambdaD.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – ‘&lt;where&gt; &lt;name&gt; = &lt;value&gt;: &lt;why&gt; (expected &lt;param.describe_type()&gt;)’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toycoronagraph.params.ParamError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">ParamError</span></span><a class="reference internal" href="_modules/toycoronagraph/params.html#ParamError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.ParamError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+<p>Problems in the parameters (all of them, one per line).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.is_legacy">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">is_legacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#is_legacy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.is_legacy" title="Link to this definition">#</a></dt>
+<dd><p>Whether file content is in the old layout: [target], [telescope] or [resolved] (written back by
+old runs), or a single [coronagraph] table instead of a [[coronagraph]] list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>) – the parsed file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.params.Component">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">Component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Component"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Component" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>One source module in a scene, and how it is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<a class="reference internal" href="sources.html#toycoronagraph.sources.Source" title="toycoronagraph.sources.Source"><em>Source</em></a>) – the module instance (toycoronagraph.sources), holding its own settings.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – name in outputs; “auto” = the kind, numbered from the second of a kind (set by make()).</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – factor multiplying its image.</p></li>
+<li><p><strong>enabled</strong> (<em>bool</em>) – False leaves it out of the run.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “auto”, “circular” or “spatial” (override of [method] method for this component).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.load">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.load" title="Link to this definition">#</a></dt>
+<dd><p>Read and check a parameter file (an old-layout file is mapped to the new layout).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – the TOML file (its <code class="code docutils literal notranslate"><span class="pre">include</span> <span class="pre">=</span> <span class="pre">[...]</span></code> files are read too).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>checked values with their origins; Params.resolve() then fills in what the sources provide.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.params.Params" title="toycoronagraph.params.Params">Params</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – every problem found, one per line.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.from_data">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">from_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#from_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.from_data" title="Link to this definition">#</a></dt>
+<dd><p>Check parameters given as a dict in the file layout (see load()).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>) – the file content: {section: {key: value}}, “source” / “coronagraph”: lists of tables. An old-layout dict (is_legacy) is mapped with legacy_to_new() first (and a note added).</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – the file, for messages, origins and relative paths in the old layout; None = given in Python (relative paths in the old layout are then in the working directory).</p></li>
+<li><p><strong>origins</strong> (<em>dict</em>) – {(section, key): file path} from _read_toml(); None = all from path.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>see make().</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.params.Params" title="toycoronagraph.params.Params">Params</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – every problem found, one per line (the layout and [[source]] tables first; then those of make()).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.make">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">make</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronagraphs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#make"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.make" title="Link to this definition">#</a></dt>
+<dd><p>Checked parameters from core sections, Components and [[coronagraph]] tables (used by
+from_data() and by scenes built in Python).</p>
+<p>Components named “auto” are named here (in place): the kind, then kind_2, kind_3, … by position
+among the components of the same kind. Without coronagraphs, one vortex of charge 2 is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sections</strong> (<em>dict</em>) – {section name: {key: value}} for the core SECTIONS.</p></li>
+<li><p><strong>components</strong> (<em>list</em><em> of </em><a class="reference internal" href="#toycoronagraph.params.Component" title="toycoronagraph.params.Component"><em>Component</em></a>) – the scene’s components.</p></li>
+<li><p><strong>coronagraphs</strong> (<em>list</em><em> of </em><em>dict</em>) – [[coronagraph]] tables, {key: value} with “type” (default “vortex”).</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – the parameter file, or None (built in Python).</p></li>
+<li><p><strong>origins</strong> (<em>dict</em>) – {(section, key): file path} from _read_toml(), or None.</p></li>
+<li><p><strong>notes</strong> (<em>iterable</em><em> of </em><em>str</em>) – notes from reading (e.g. the old layout).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>after Params.check().</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.params.Params" title="toycoronagraph.params.Params">Params</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – every problem found, one per line (also those of Params.check()).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">Params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronagraphs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Checked parameters: get() / origin() / used_by(); check() for what is missing or unused;
+resolve() for the final shared values, with what the sources provide.</p>
+<p>Keys of the core sections are written “section.name”, e.g. “star.distance”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – the parameter file, or None (built in Python).</p></li>
+<li><p><strong>sections</strong> (<em>dict</em>) – {section: {key: checked value}}: only what the user set.</p></li>
+<li><p><strong>components</strong> (<em>list</em><em> of </em><a class="reference internal" href="#toycoronagraph.params.Component" title="toycoronagraph.params.Component"><em>Component</em></a>) – all components (enabled() for those used).</p></li>
+<li><p><strong>coronagraphs</strong> (<em>list</em><em> of </em><em>SimpleNamespace</em>) – type, name, values (see _coronagraph()).</p></li>
+<li><p><strong>load_notes</strong> (<em>list</em><em> of </em><em>str</em>) – notes from reading and check().</p></li>
+<li><p><strong>notes</strong> (<em>list</em><em> of </em><em>str</em>) – load_notes + the messages of the last resolve().</p></li>
+<li><p><strong>provided</strong> (<em>list</em><em> of </em><em>tuple</em>) – (key, value, origin) supplied by the sources (Source.inspect()), set before resolve().</p></li>
+<li><p><strong>resolved</strong> (<em>dict</em>) – {key: (value, origin)}: the final shared values, after resolve().</p></li>
+</ul>
+</dd>
+</dl>
+<p>Store checked parameters (use make() to build them).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – the parameter file, or None.</p></li>
+<li><p><strong>sections</strong> (<em>dict</em>) – {section: {key: checked value}}.</p></li>
+<li><p><strong>components</strong> (<em>list</em><em> of </em><a class="reference internal" href="#toycoronagraph.params.Component" title="toycoronagraph.params.Component"><em>Component</em></a>) – with their final names.</p></li>
+<li><p><strong>coronagraphs</strong> (<em>list</em><em> of </em><em>SimpleNamespace</em>) – see _coronagraph().</p></li>
+<li><p><strong>origins</strong> (<em>dict</em>) – {(section, key): file path}.</p></li>
+<li><p><strong>notes</strong> (<em>iterable</em><em> of </em><em>str</em>) – notes from reading.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.user_set">
+<span class="sig-name descname"><span class="pre">user_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.user_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.user_set" title="Link to this definition">#</a></dt>
+<dd><p>Whether the user set a core key (even to “auto”).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – “section.name”.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.get" title="Link to this definition">#</a></dt>
+<dd><p>The value of a core key: resolved, else the user’s, else the default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – “section.name”.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value (None if no value and no default).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.origin">
+<span class="sig-name descname"><span class="pre">origin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.origin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.origin" title="Link to this definition">#</a></dt>
+<dd><p>Where the value of a core key comes from.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – “section.name”.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the resolved origin (e.g. “header PIXSCALE of x.fits”), else “set in &lt;file name&gt;” (or “set in parameters” when built in Python), else “default”.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.enabled">
+<span class="sig-name descname"><span class="pre">enabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.enabled"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.enabled" title="Link to this definition">#</a></dt>
+<dd><p>The components used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>those with enabled = True.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of <a class="reference internal" href="#toycoronagraph.params.Component" title="toycoronagraph.params.Component">Component</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.families">
+<span class="sig-name descname"><span class="pre">families</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.families"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.families" title="Link to this definition">#</a></dt>
+<dd><p>The unit family of each enabled component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>{component name: “physical”, “relative” or None (decided by the input)}.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.star_flux_needed">
+<span class="sig-name descname"><span class="pre">star_flux_needed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.star_flux_needed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.star_flux_needed" title="Link to this definition">#</a></dt>
+<dd><p>Whether the star’s flux density is needed to put the components and the output in one unit:
+the components are in different families, or [display] unit asks for another family.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.used_by">
+<span class="sig-name descname"><span class="pre">used_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.used_by"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.used_by" title="Link to this definition">#</a></dt>
+<dd><p>Who uses a shared quantity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – “section.name”.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>names of the enabled components requiring it, plus “the PSFs” (wavelength, diameter), “the image grid” (grid.*) or “unit conversion” (the star keys needed for its flux).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.check">
+<span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.check" title="Link to this definition">#</a></dt>
+<dd><p>Check that everything a component needs is given; note the [star] keys nobody uses.</p>
+<p>A required shared key is given if it has a value (user or default) or an enabled component
+provides it. When the star’s flux is needed, temperature or flux_jy must be set (with
+temperature, radius and distance are needed too). Notes are appended to load_notes; notes is
+reset to load_notes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – everything missing, one per line.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.provide">
+<span class="sig-name descname"><span class="pre">provide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.provide"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.provide" title="Link to this definition">#</a></dt>
+<dd><p>A source supplies a shared quantity (e.g. a header’s pixel scale), used by resolve().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – “section.name”, e.g. “grid.pixel_scale”.</p></li>
+<li><p><strong>value</strong> (<em>float</em><em> or </em><em>int</em>) – in the key’s canonical unit.</p></li>
+<li><p><strong>origin</strong> (<em>str</em>) – where it comes from, e.g. “header PIXSCALE of x.fits”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.resolve">
+<span class="sig-name descname"><span class="pre">resolve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.resolve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.resolve" title="Link to this definition">#</a></dt>
+<dd><p>The final shared values: the user’s, else what a source provides, else the default.</p>
+<p>For [observation] and [star]: the user’s value (not “auto”), else the first provided, else the
+default (wavelength: 1e-6 m assumed, with a note); the grid: see _resolve_grid(). Every
+disagreement is checked: over-specified settings (grid, temperature + flux_jy) and the provided
+values against the resolved ones (CONFLICT_RULES). Sets resolved and notes (load_notes + the
+messages).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the messages (notes and warnings).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of str</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – conflicts and missing grid settings, one per line ([checks] on_conflict = “warn” turns the CONFLICT_RULES errors into warnings).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.table">
+<span class="sig-name descname"><span class="pre">table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.table" title="Link to this definition">#</a></dt>
+<dd><p>The provenance table of the resolved values (after resolve()).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>aligned columns “quantity, value, from, used by”, one line per resolved key.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.used_toml">
+<span class="sig-name descname"><span class="pre">used_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coronagraphs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.used_toml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.used_toml" title="Link to this definition">#</a></dt>
+<dd><p>The values used, as a TOML file to save with the results.</p>
+<p>The shared sections hold the resolved values (with unit and origin as comments), the other
+sections what the user set, then every component (with all its settings) and every coronagraph
+(with all its parameters).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coronagraphs</strong> (<em>list</em><em> of </em><em>SimpleNamespace</em>) – the coronagraphs a run used (type, name, values), or None for the parameters’.</p></li>
+<li><p><strong>method</strong> (<em>dict</em>) – [method] settings a run used instead of the parameters’ ({key: value}), or None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the TOML text (ends with a newline).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.params.Params.write_used">
+<span class="sig-name descname"><span class="pre">write_used</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#Params.write_used"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.Params.write_used" title="Link to this definition">#</a></dt>
+<dd><p>Write used_toml() (with the parameters’ coronagraphs and [method]) to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – the file (overwritten).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.blackbody_flux_jy">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">blackbody_flux_jy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius_rsun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_pc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_m</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#blackbody_flux_jy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.blackbody_flux_jy" title="Link to this definition">#</a></dt>
+<dd><p>Flux density of a blackbody star: pi B_nu(T) (R/d)^2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<em>float</em>) – effective temperature in K.</p></li>
+<li><p><strong>radius_rsun</strong> (<em>float</em>) – stellar radius in R_sun.</p></li>
+<li><p><strong>distance_pc</strong> (<em>float</em>) – distance in pc.</p></li>
+<li><p><strong>wavelength_m</strong> (<em>float</em>) – wavelength in m.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the flux density in Jy.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.params.legacy_to_new">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.params.</span></span><span class="sig-name descname"><span class="pre">legacy_to_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/params.html#legacy_to_new"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.params.legacy_to_new" title="Link to this definition">#</a></dt>
+<dd><p>Map the old layout ([target], [telescope], [coronagraph], [method], [compute]) to the new one.</p>
+<p>[target] becomes one [[source]] (mcfost if input_format = “mcfost”, mcfost_* keys are set or the
+file looks like an MCFOST cube; else fits_image), [telescope] wavelength / diameter go to
+[observation], target_pixel / visual_range (lambda/D) to [grid] size / fov, the [coronagraph]
+table to one [[coronagraph]] (type vortex if not set), [target] unit to [display] label;
+[method] and [compute] are copied. “auto” values are left out.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>) – the old-layout file content.</p></li>
+<li><p><strong>base_dir</strong> (<em>str</em>) – directory of the file (for relative FITS file names).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the content in the new layout (to check with from_data()).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="parameters.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Parameters</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="params_docs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Parameter files, schema and reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Param"><code class="docutils literal notranslate"><span class="pre">Param</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Param.describe_type"><code class="docutils literal notranslate"><span class="pre">Param.describe_type()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.LambdaD"><code class="docutils literal notranslate"><span class="pre">LambdaD</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.register_coronagraph"><code class="docutils literal notranslate"><span class="pre">register_coronagraph()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.coronagraph_problems"><code class="docutils literal notranslate"><span class="pre">coronagraph_problems()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.convert"><code class="docutils literal notranslate"><span class="pre">convert()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.ParamError"><code class="docutils literal notranslate"><span class="pre">ParamError</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.is_legacy"><code class="docutils literal notranslate"><span class="pre">is_legacy()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Component"><code class="docutils literal notranslate"><span class="pre">Component</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.load"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.from_data"><code class="docutils literal notranslate"><span class="pre">from_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.make"><code class="docutils literal notranslate"><span class="pre">make()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params"><code class="docutils literal notranslate"><span class="pre">Params</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.user_set"><code class="docutils literal notranslate"><span class="pre">Params.user_set()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.get"><code class="docutils literal notranslate"><span class="pre">Params.get()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.origin"><code class="docutils literal notranslate"><span class="pre">Params.origin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.enabled"><code class="docutils literal notranslate"><span class="pre">Params.enabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.families"><code class="docutils literal notranslate"><span class="pre">Params.families()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.star_flux_needed"><code class="docutils literal notranslate"><span class="pre">Params.star_flux_needed()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.used_by"><code class="docutils literal notranslate"><span class="pre">Params.used_by()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.check"><code class="docutils literal notranslate"><span class="pre">Params.check()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.provide"><code class="docutils literal notranslate"><span class="pre">Params.provide()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.resolve"><code class="docutils literal notranslate"><span class="pre">Params.resolve()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.table"><code class="docutils literal notranslate"><span class="pre">Params.table()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.used_toml"><code class="docutils literal notranslate"><span class="pre">Params.used_toml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.Params.write_used"><code class="docutils literal notranslate"><span class="pre">Params.write_used()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.blackbody_flux_jy"><code class="docutils literal notranslate"><span class="pre">blackbody_flux_jy()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.params.legacy_to_new"><code class="docutils literal notranslate"><span class="pre">legacy_to_new()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

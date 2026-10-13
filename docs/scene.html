@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Scene &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=79f5c508"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scene';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Source modules" href="sources.html" />
+    <link rel="prev" title="Scenes" href="scenes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Source modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.images.html">Image sources: FITS, MCFOST, scene files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.thomson.html">Stellar wind (Thomson scattering)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.cme.html">Coronal mass ejection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.planets.html">Planets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observe.html">Observe: a scene through coronagraphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selection.html">Circular or spatial method</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="scenes.html" class="nav-link">Scenes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Scene</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-toycoronagraph.scene">
+<span id="scene"></span><h1>Scene<a class="headerlink" href="#module-toycoronagraph.scene" title="Link to this heading">#</a></h1>
+<p>The scene: the image before the coronagraph, built from source modules.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">"eps_eri.toml"</span><span class="p">)</span>                     <span class="c1"># from a parameter file</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">500e-9</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="mf">6.0</span><span class="p">,</span> <span class="n">sampling</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">fov</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+              <span class="n">star</span><span class="o">=</span><span class="n">Star</span><span class="p">(</span><span class="n">distance</span><span class="o">=</span><span class="mf">3.22</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.73</span><span class="p">))</span>          <span class="c1"># or in Python</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Wind</span><span class="p">(</span><span class="n">mdot</span><span class="o">=</span><span class="mf">6e-13</span><span class="p">))</span>                                  <span class="c1"># any Source module, yours too</span>
+<span class="n">images</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>                                      <span class="c1"># {name: image}, and scene.total</span>
+</pre></div>
+</div>
+<p>Each component is rendered by its module (centred on the star, on its own grid, in its own
+unit), put per pixel (Jy, or the fraction of the star’s flux), resampled onto the scene grid
+with the flux conserved, and converted to the scene’s internal unit (units.choose_internal):
+“Jy/arcsec^2” when the star’s flux is known (or every component is physical), else
+“contrast_pixel” (the fraction of the star’s flux per pixel). Point sources (planets) are
+not images: they are kept as positions and fluxes (Scene.points).</p>
+<p>Conventions: images are (N, N) float64 arrays with the star at pixel ((N-1)/2, (N-1)/2);
+rows are +y (upwards, as in FITS; plotted with origin=”lower”), columns +x; angles are
+measured from +x towards +y. The shared quantities (grid, wavelength, star) are resolved once
+by toycoronagraph.params.</p>
+<p>Also here: the plotting helpers shared with toycoronagraph.observe (show_image, mark_points,
+point_labels, blank_panel, radial_profile, plot_profiles) and the scene FITS writer
+(write_scene, image_hdu).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">Grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diameter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Grid" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The simulated image: size x size pixels of pixel_scale arcsec, star at pixel (size-1)/2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – Pixels on one edge of the (square) image.</p></li>
+<li><p><strong>pixel_scale</strong> (<em>float</em>) – Pixel size in arcsec.</p></li>
+<li><p><strong>wavelength</strong> (<em>float</em>) – Observing wavelength in m.</p></li>
+<li><p><strong>diameter</strong> (<em>float</em>) – Telescope aperture diameter D in m.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.lambda_d">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">lambda_d</span></span><a class="headerlink" href="#toycoronagraph.scene.Grid.lambda_d" title="Link to this definition">#</a></dt>
+<dd><p>lambda/D in arcsec.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.sampling">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sampling</span></span><a class="headerlink" href="#toycoronagraph.scene.Grid.sampling" title="Link to this definition">#</a></dt>
+<dd><p>Pixels per lambda/D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.visual_range">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">visual_range</span></span><a class="headerlink" href="#toycoronagraph.scene.Grid.visual_range" title="Link to this definition">#</a></dt>
+<dd><p>Image width in lambda/D (twice the Optics psf_range).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.pixel_area">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">pixel_area</span></span><a class="headerlink" href="#toycoronagraph.scene.Grid.pixel_area" title="Link to this definition">#</a></dt>
+<dd><p>Area of one pixel in arcsec^2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.peak_norm">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">peak_norm</span></span><a class="headerlink" href="#toycoronagraph.scene.Grid.peak_norm" title="Link to this definition">#</a></dt>
+<dd><p>The peak of an ideal circular aperture’s PSF (no coronagraph, no Lyot stop) as a fraction
+of the star’s light per pixel, pi/4 (pixel_scale / lambda_d)^2: the contrast_peak reference of
+input images (final images use their coronagraph’s own, Coronagraph.peak_norm).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.extent">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">extent</span></span><a class="headerlink" href="#toycoronagraph.scene.Grid.extent" title="Link to this definition">#</a></dt>
+<dd><p>[left, right, bottom, top] pixel edges in arcsec from the star (for imshow’s extent).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.coordinates">
+<span class="sig-name descname"><span class="pre">coordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Grid.coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Grid.coordinates" title="Link to this definition">#</a></dt>
+<dd><p>Offsets from the star of the pixel centres.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(x, y), each a (size, size) float64 array in arcsec; rows are y (upwards, as in FITS), columns x (np.meshgrid order: x varies along axis 1, y along axis 0).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.pixel">
+<span class="sig-name descname"><span class="pre">pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Grid.pixel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Grid.pixel" title="Link to this definition">#</a></dt>
+<dd><p>Pixel position of a point given in polar coordinates around the star.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>float</em><em> or </em><em>np.ndarray</em>) – Distance from the star in arcsec.</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em> or </em><em>np.ndarray</em>) – Angle in rad, from +x towards +y.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(row, column) as floats (not rounded; arrays if the inputs are), rows = +y.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Grid.axis">
+<span class="sig-name descname"><span class="pre">axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'arcsec'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Grid.axis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Grid.axis" title="Link to this definition">#</a></dt>
+<dd><p>Scale factor and label for plot axes in another unit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> (<em>str</em>) – “arcsec”, “mas”, “lambda/D”, “au” or “pixel”.</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – The star’s distance in pc; needed for “au” (1 arcsec at d pc is d au).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(factor, label): multiply arcsec by factor (float) to get <code class="code docutils literal notranslate"><span class="pre">unit</span></code>; label is <code class="code docutils literal notranslate"><span class="pre">unit</span></code> (str).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="params.html#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – “au” without a distance, or an unknown unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Star">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">Star</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux_jy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Star"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Star" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The star / system. Any field may be None (unknown).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>distance</strong> (<em>float</em>) – Distance in pc.</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – Stellar radius in R_sun.</p></li>
+<li><p><strong>temperature</strong> (<em>float</em>) – Effective temperature in K (blackbody flux, with radius and distance).</p></li>
+<li><p><strong>flux_jy</strong> (<em>float</em>) – Flux density in Jy at the scene’s wavelength (overrides the blackbody).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Star.flux_at">
+<span class="sig-name descname"><span class="pre">flux_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Star.flux_at"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Star.flux_at" title="Link to this definition">#</a></dt>
+<dd><p>The star’s flux density at a wavelength.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>wavelength</strong> (<em>float</em>) – Wavelength in m.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>flux_jy if set, else the blackbody flux in Jy (needs temperature, radius and distance); None if neither is known.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.resample">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#resample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.resample" title="Link to this definition">#</a></dt>
+<dd><p>Resample per-pixel values onto another grid centred on the same star, conserving the flux.</p>
+<p>The values must be per pixel (fluxes, not surface brightnesses): each input pixel’s flux
+is shared among the output pixels it overlaps, in proportion to the overlap area (integer
+factors give block sums). The 2-D overlap is separable, so it is one 1-D weight matrix w
+applied to both axes: w &#64; values &#64; w.T. Light outside the output grid is dropped.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>np.ndarray</em>) – (n_in, n_in) per-pixel values, star at pixel (n_in-1)/2.</p></li>
+<li><p><strong>scale_in</strong> (<em>float</em>) – Input pixel size in arcsec.</p></li>
+<li><p><strong>scale_out</strong> (<em>float</em>) – Output pixel size in arcsec.</p></li>
+<li><p><strong>size_out</strong> (<em>int</em>) – Output pixels on one edge.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(size_out, size_out) float64 per-pixel values, star at pixel (size_out-1)/2.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">Scene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">star</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Components (source modules) on one grid, in one unit; see the module docstring.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sections</strong> (<em>dict</em>) – Parameter sections {section: {key: value}} given by the user.</p></li>
+<li><p><strong>components</strong> (<em>list</em>) – The params.Component of each source module (enabled or not).</p></li>
+<li><p><strong>coronagraphs</strong> (<em>list</em>) – [[coronagraph]] tables of the parameters (used by observe()).</p></li>
+<li><p><strong>params</strong> (<a class="reference internal" href="params.html#toycoronagraph.params.Params" title="toycoronagraph.params.Params"><em>Params</em></a><em> or </em><em>None</em>) – Checked parameters; built from the above by build() (None until then, and reset by add()).</p></li>
+</ul>
+</dd>
+</dl>
+<p>Set by build():</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>grid (Grid): The scene grid.
+star (Star): The resolved star.
+</pre></div>
+</div>
+<p>Set by render():</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>images (dict or None): {component name: (N, N) float64 image in internal_unit}; None until
+    rendered (and after add()).
+points (dict): Point-source components {name: (positions, fluxes)}: positions a list of
+    (radius arcsec, angle rad), fluxes a 1-D array of each source's flux per pixel area, in
+    internal_unit (multiply by grid.pixel_area for Jy, or for the fraction of the star's flux).
+total (np.ndarray): (N, N) sum of `images` (zeros if there is none; point sources are not in it).
+internal_unit (str): "Jy/arcsec^2" or "contrast_pixel".
+star_flux (float or None): The star's flux density in Jy at the wavelength (None: unknown).
+families (dict): {name: "physical" or "relative"} of every image and point-source component.
+units (dict): {name: the unit the module gave its image in} (images only).
+origins (dict): {name: where the image came from, e.g. a file name} (images only).
+component_of (dict): {name: the params.Component it came from} (images and point sources).
+notes (list): Notes and warnings (str) from the parameters and the rendering.
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>star</strong> (<a class="reference internal" href="#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a><em> or </em><em>dict</em>) – The star (distance pc, radius R_sun, temperature K or flux_jy Jy); None fields are left out (so the sources or defaults may provide them).</p></li>
+<li><p><strong>settings</strong> – [observation] / [grid] keys (wavelength, diameter, size, pixel_scale, sampling, fov, …), and other sections as dicts (method={…}, checks={…}, …).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="params.html#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – A setting that is neither an [observation] / [grid] key nor a section given as a dict.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.from_file">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.from_file" title="Link to this definition">#</a></dt>
+<dd><p>A scene from a parameter file (see toycoronagraph.params).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The .toml parameter file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Not rendered yet.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.scene.Scene" title="toycoronagraph.scene.Scene">Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.from_params">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.from_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.from_params" title="Link to this definition">#</a></dt>
+<dd><p>A scene from loaded parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="params.html#toycoronagraph.params.Params" title="toycoronagraph.params.Params"><em>Params</em></a>) – From toycoronagraph.params.load (its sections, components and coronagraphs are used).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Not rendered yet.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.scene.Scene" title="toycoronagraph.scene.Scene">Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.add" title="Link to this definition">#</a></dt>
+<dd><p>Add a component; the parameters and the images are built again when next needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<a class="reference internal" href="sources.html#toycoronagraph.sources.Source" title="toycoronagraph.sources.Source"><em>Source</em></a>) – A source module instance (toycoronagraph.sources).</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Component name (FITS extension, plots); “auto”: the module’s kind (ring, ring_2, …).</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Factor applied to the component’s image or fluxes.</p></li>
+<li><p><strong>enabled</strong> (<em>bool</em>) – Whether the component is rendered.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “auto”, “circular” or “spatial”: this component’s method in observe().</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="code docutils literal notranslate"><span class="pre">source</span></code> (to keep a handle on it).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="sources.html#toycoronagraph.sources.Source" title="toycoronagraph.sources.Source">Source</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.build" title="Link to this definition">#</a></dt>
+<dd><p>Resolve the grid, wavelength and star with what the sources provide (every disagreement is checked).</p>
+<p>Sets self.params (if None), self.grid and self.star.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="params.html#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – Conflicting or missing parameters (from Params.resolve).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.render"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.render" title="Link to this definition">#</a></dt>
+<dd><p>Render every enabled component onto the grid, in the internal unit.</p>
+<p>Each module’s image is put per pixel (units.per_pixel), resampled onto the grid if it
+has another pixel size or field ([grid] resample), scaled by the component’s scale and
+converted to the internal unit. Point-source modules give positions and fluxes instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>verbose</strong> (<em>bool</em>) – Print the notes and a one-line summary of the scene.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>{component name: (N, N) float64 image in self.internal_unit}; also sets self.total, self.points, self.internal_unit, self.star_flux, self.families, self.units, self.origins, self.component_of and self.notes (see the class docstring).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="params.html#toycoronagraph.params.ParamError" title="toycoronagraph.params.ParamError"><strong>ParamError</strong></a> – An image covers another field than the grid while [grid] resample = false.</p></li>
+<li><p><a class="reference internal" href="units.html#toycoronagraph.units.UnitError" title="toycoronagraph.units.UnitError"><strong>UnitError</strong></a> – The components cannot be put in one unit (units.choose_internal).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.in_unit">
+<span class="sig-name descname"><span class="pre">in_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.in_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.in_unit" title="Link to this definition">#</a></dt>
+<dd><p>An image of this scene in another output unit (see units.convert_image).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – (N, N) image in self.internal_unit.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – “Jy/arcsec^2”, “Jy/pixel”, “contrast_pixel” or “contrast_peak” (relative to the ideal aperture’s PSF peak, Grid.peak_norm); None or “auto”: unchanged.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><a class="reference internal" href="#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – The star’s flux in Jy, or a Star (its flux at the scene’s wavelength), to convert a contrast scene to a brightness (and back) without rendering again; None: self.star_flux.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(N, N) image in <code class="code docutils literal notranslate"><span class="pre">unit</span></code> (the same array if no conversion is needed).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="units.html#toycoronagraph.units.UnitError" title="toycoronagraph.units.UnitError"><strong>UnitError</strong></a> – The conversion needs the star’s flux and it is unknown.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.plot" title="Link to this definition">#</a></dt>
+<dd><p>Plot each component and the total side by side (rendering the scene first if needed).</p>
+<p>The total panel is added when there are several images or point sources; point sources
+are marked on it with their flux.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log</strong> (<em>bool</em>) – Log colour scale. None here and below: the [display] setting (see display_setting).</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Output unit (see in_unit); “auto”: the internal unit.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Axis unit (see Grid.axis).</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Save the figure there; None: not saved.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – Show the figure (else it is closed).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – Resolution of the saved file.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log scale: decades shown below each panel’s peak.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><a class="reference internal" href="#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – See in_unit.</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s imshow for every panel, e.g. cmap=”magma”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.plot_profiles">
+<span class="sig-name descname"><span class="pre">plot_profiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.plot_profiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.plot_profiles" title="Link to this definition">#</a></dt>
+<dd><p>Azimuthal mean of each component (and of the total, if several) against the distance from the star.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log</strong> (<em>bool</em>) – Log-log axes (else linear, both from 0). None here and below: the [display] setting.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Output unit (see in_unit); “auto”: the internal unit.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Distance unit (see Grid.axis).</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Save the figure there; None: not saved.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – Show the figure (else it is closed).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – Resolution of the saved file.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em><em> or </em><a class="reference internal" href="#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – See in_unit.</p></li>
+<li><p><strong>extra</strong> (<em>dict</em>) – More curves {label: (radius in arcsec, values in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>)}, dashed.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log axes show log_range + PROFILE_DECADES decades below the highest point.</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s plot for every curve, e.g. lw=2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.scene.Scene.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#Scene.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.Scene.write" title="Link to this definition">#</a></dt>
+<dd><p>Save the components as a scene FITS file (readable with kind = “scene_fits”; see write_scene).</p>
+<p>Point sources are not written (Result.save adds them as a POINTS table).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The FITS file to write.</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Replace an existing file (else astropy raises OSError).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.display_setting">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">display_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#display_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.display_setting" title="Link to this definition">#</a></dt>
+<dd><p>A plot setting: the value given to the plot, else [display] &lt;key&gt; of the parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<a class="reference internal" href="params.html#toycoronagraph.params.Params" title="toycoronagraph.params.Params"><em>Params</em></a><em> or </em><em>None</em>) – The scene’s parameters; None: the declared [display] defaults.</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – The [display] key: “unit”, “log”, “log_range”, “axis” or “dpi”.</p></li>
+<li><p><strong>value</strong> – The value given to the plot; None: not given.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The setting.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.finish">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#finish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.finish" title="Link to this definition">#</a></dt>
+<dd><p>The end of every plot: save the figure (if path is given), then show it or close it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fig</strong> (<em>matplotlib.figure.Figure</em>) – The figure.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Save the figure there; None: not saved.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – Show the figure (else it is closed).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – Resolution of the saved file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.show_image">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">show_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'arcsec'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gnuplot'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#show_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.show_image" title="Link to this definition">#</a></dt>
+<dd><p>Show an image on its grid (origin=”lower”: rows are +y), with a colour bar.</p>
+<p>Log scale: log10 of the positive pixels (others are blank, drawn in the darkest colour),
+from the 99.99th percentile (a lone extreme pixel, e.g. a wind’s star pixel, does not set
+the scale) down <code class="code docutils literal notranslate"><span class="pre">log_range</span></code> decades. Linear scale of non-negative data: from 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em>) – Where to draw.</p></li>
+<li><p><strong>fig</strong> (<em>matplotlib.figure.Figure</em>) – The figure (for the colour bar).</p></li>
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – (N, N) image on <code class="code docutils literal notranslate"><span class="pre">grid</span></code>.</p></li>
+<li><p><strong>grid</strong> (<a class="reference internal" href="#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – The image’s grid.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Axis unit (see Grid.axis).</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – The star’s distance in pc (for axis “au”).</p></li>
+<li><p><strong>log</strong> (<em>bool</em>) – Log colour scale.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log scale: decades shown below the top.</p></li>
+<li><p><strong>label</strong> (<em>str</em>) – Colour bar label (e.g. the unit); “log10 “ is put in front on a log scale.</p></li>
+<li><p><strong>cmap</strong> (<em>str</em><em> or </em><em>Colormap</em>) – The colour map.</p></li>
+<li><p><strong>vmin</strong> (<em>float</em>) – Lower colour limit (log10 of the value on a log scale); None: automatic.</p></li>
+<li><p><strong>vmax</strong> (<em>float</em>) – Upper colour limit (log10 of the value on a log scale); None: automatic.</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s imshow, e.g. interpolation=”nearest”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The axis factor (arcsec -&gt; <code class="code docutils literal notranslate"><span class="pre">axis</span></code> units), e.g. for mark_points.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.point_labels">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">point_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#point_labels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.point_labels" title="Link to this definition">#</a></dt>
+<dd><p>Labels of point sources for mark_points: each source’s flux in Jy, or as a fraction of the star’s.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>dict</em>) – {name: (positions, fluxes)}: positions a list of (radius arcsec, angle rad), fluxes each source’s flux per pixel area in <code class="code docutils literal notranslate"><span class="pre">unit</span></code> (scalar or 1-D array).</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – The internal unit, “Jy/arcsec^2” or “contrast_pixel”.</p></li>
+<li><p><strong>pixel_area</strong> (<em>float</em>) – Pixel area in arcsec^2.</p></li>
+<li><p><strong>shown</strong> (<em>str</em>) – The unit of the plot: a contrast unit labels fractions of the star’s flux, a Jy unit fluxes in Jy (converted with star_flux when needed and known); None: <code class="code docutils literal notranslate"><span class="pre">unit</span></code>’s.</p></li>
+<li><p><strong>star_flux</strong> (<em>float</em>) – The star’s flux in Jy (None: unknown; the labels then stay in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>’s family).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>{name: (positions, labels)}, labels a list of str such as “planet 5e-05 Jy”.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.mark_points">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">mark_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#mark_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.mark_points" title="Link to this definition">#</a></dt>
+<dd><p>Mark point sources with a cyan cross and a label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em>) – Where to draw (axes in arcsec times <code class="code docutils literal notranslate"><span class="pre">factor</span></code>, y upwards).</p></li>
+<li><p><strong>points</strong> (<em>dict</em>) – {name: (positions, labels)}: positions a list of (radius arcsec, angle rad from +x towards +y), labels a list of str (see point_labels).</p></li>
+<li><p><strong>factor</strong> (<em>float</em>) – Axis factor from arcsec (see Grid.axis / show_image).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.blank_panel">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">blank_panel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'arcsec'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#blank_panel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.blank_panel" title="Link to this definition">#</a></dt>
+<dd><p>An empty (black) panel on the grid’s axes, e.g. for point sources, which have no image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em>) – Where to draw.</p></li>
+<li><p><strong>grid</strong> (<a class="reference internal" href="#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – The grid giving the axis limits.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Axis unit (see Grid.axis).</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – The star’s distance in pc (for axis “au”).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The axis factor (arcsec -&gt; <code class="code docutils literal notranslate"><span class="pre">axis</span></code> units).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.radial_profile">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">radial_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#radial_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.radial_profile" title="Link to this definition">#</a></dt>
+<dd><p>Azimuthal mean in 1-pixel-wide rings around the star.</p>
+<p>Each pixel goes to the ring of its distance from the star rounded to whole pixels; empty
+rings are left out.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – (N, N) image on <code class="code docutils literal notranslate"><span class="pre">grid</span></code>.</p></li>
+<li><p><strong>grid</strong> (<a class="reference internal" href="#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – The image’s grid.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(radius, mean): 1-D float64 arrays of the same length; radius is the mean distance of each ring’s pixels from the star in arcsec (0 for the star pixel of an odd grid), mean the ring’s mean value (in the image’s unit).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.plot_profiles">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">plot_profiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curves</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'arcsec'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">styles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#plot_profiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.plot_profiles" title="Link to this definition">#</a></dt>
+<dd><p>Plot radial profiles (radial_profile) of images against the distance from the star.</p>
+<p>Curves named “total” or “input” are drawn thicker. A curve’s style: these defaults, then its entry in
+<code class="code docutils literal notranslate"><span class="pre">styles</span></code>, then kwargs (every curve). Log:
+log-log axes, at most <code class="code docutils literal notranslate"><span class="pre">log_range</span></code> decades below the highest point (points at radius 0 or
+with a non-positive mean are left out; linear axes if no point is left, e.g. a run without
+components); linear: both axes start at 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em>) – Where to draw.</p></li>
+<li><p><strong>curves</strong> (<em>dict</em>) – {label: (N, N) image on <code class="code docutils literal notranslate"><span class="pre">grid</span></code>}.</p></li>
+<li><p><strong>grid</strong> (<a class="reference internal" href="#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – The images’ grid.</p></li>
+<li><p><strong>axis</strong> (<em>str</em>) – Distance unit (see Grid.axis).</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – The star’s distance in pc (for axis “au”).</p></li>
+<li><p><strong>log</strong> (<em>bool</em>) – Log-log axes.</p></li>
+<li><p><strong>label</strong> (<em>str</em>) – The values’ unit, for the y label (”” for none).</p></li>
+<li><p><strong>extra</strong> (<em>dict</em>) – More curves {label: (radius in arcsec, values)}, drawn dashed.</p></li>
+<li><p><strong>styles</strong> (<em>dict</em>) – {curve label: matplotlib line keywords (e.g. color, ls, lw)}; None: the defaults.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log axes: decades shown below the highest point.</p></li>
+<li><p><strong>legend</strong> (<em>bool</em>) – Draw the legend.</p></li>
+<li><p><strong>**kwargs</strong> – Passed to matplotlib’s plot for every curve, over <code class="code docutils literal notranslate"><span class="pre">styles</span></code>, e.g. lw=2.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.image_hdu">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">image_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#image_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.image_hdu" title="Link to this definition">#</a></dt>
+<dd><p>A FITS image extension of a scene or final image.</p>
+<p>Header: EXTNAME (name in capitals), BUNIT, PIXSCALE (arcsec), WAVELEN (m), and a linear
+WCS of arcsec offsets from the star (CRPIX = (N+1)/2: pixel (N-1)/2 counted from 0).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The extension name (upper-cased).</p></li>
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – (N, N) image, written as float64.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Its unit (BUNIT).</p></li>
+<li><p><strong>grid</strong> (<a class="reference internal" href="#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – Its grid.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The extension.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>astropy.io.fits.ImageHDU</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.scene.write_scene">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.scene.</span></span><span class="sig-name descname"><span class="pre">write_scene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/scene.html#write_scene"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.scene.write_scene" title="Link to this definition">#</a></dt>
+<dd><p>Write a multi-extension scene FITS file.</p>
+<p>The primary HDU holds the grid (PIXSCALE arcsec, WAVELEN m, DIAMETER m), the star’s known
+fields (DISTANCE pc, RADIUS R_sun, TEMPERAT K, FLUX_JY Jy) and the <code class="code docutils literal notranslate"><span class="pre">extra</span></code> header cards;
+then one image extension per component (see image_hdu).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The FITS file to write.</p></li>
+<li><p><strong>images</strong> (<em>dict</em>) – {component name: (N, N) image in <code class="code docutils literal notranslate"><span class="pre">unit</span></code>}.</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – The images’ unit (BUNIT).</p></li>
+<li><p><strong>grid</strong> (<a class="reference internal" href="#toycoronagraph.scene.Grid" title="toycoronagraph.scene.Grid"><em>Grid</em></a>) – Their grid.</p></li>
+<li><p><strong>star</strong> (<a class="reference internal" href="#toycoronagraph.scene.Star" title="toycoronagraph.scene.Star"><em>Star</em></a>) – The star; None: no star cards.</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Replace an existing file (else astropy raises OSError).</p></li>
+<li><p><strong>extra</strong> (<em>dict</em>) – More primary header cards {key: value or (value, comment)}.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="scenes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scenes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sources.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Source modules</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid"><code class="docutils literal notranslate"><span class="pre">Grid</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.lambda_d"><code class="docutils literal notranslate"><span class="pre">Grid.lambda_d</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.sampling"><code class="docutils literal notranslate"><span class="pre">Grid.sampling</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.visual_range"><code class="docutils literal notranslate"><span class="pre">Grid.visual_range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.pixel_area"><code class="docutils literal notranslate"><span class="pre">Grid.pixel_area</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.peak_norm"><code class="docutils literal notranslate"><span class="pre">Grid.peak_norm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.extent"><code class="docutils literal notranslate"><span class="pre">Grid.extent</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.coordinates"><code class="docutils literal notranslate"><span class="pre">Grid.coordinates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.pixel"><code class="docutils literal notranslate"><span class="pre">Grid.pixel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Grid.axis"><code class="docutils literal notranslate"><span class="pre">Grid.axis()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Star"><code class="docutils literal notranslate"><span class="pre">Star</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Star.flux_at"><code class="docutils literal notranslate"><span class="pre">Star.flux_at()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.resample"><code class="docutils literal notranslate"><span class="pre">resample()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene"><code class="docutils literal notranslate"><span class="pre">Scene</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.from_file"><code class="docutils literal notranslate"><span class="pre">Scene.from_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.from_params"><code class="docutils literal notranslate"><span class="pre">Scene.from_params()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.add"><code class="docutils literal notranslate"><span class="pre">Scene.add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.build"><code class="docutils literal notranslate"><span class="pre">Scene.build()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.render"><code class="docutils literal notranslate"><span class="pre">Scene.render()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.in_unit"><code class="docutils literal notranslate"><span class="pre">Scene.in_unit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.plot"><code class="docutils literal notranslate"><span class="pre">Scene.plot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.plot_profiles"><code class="docutils literal notranslate"><span class="pre">Scene.plot_profiles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.Scene.write"><code class="docutils literal notranslate"><span class="pre">Scene.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.display_setting"><code class="docutils literal notranslate"><span class="pre">display_setting()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.finish"><code class="docutils literal notranslate"><span class="pre">finish()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.show_image"><code class="docutils literal notranslate"><span class="pre">show_image()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.point_labels"><code class="docutils literal notranslate"><span class="pre">point_labels()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.mark_points"><code class="docutils literal notranslate"><span class="pre">mark_points()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.blank_panel"><code class="docutils literal notranslate"><span class="pre">blank_panel()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.radial_profile"><code class="docutils literal notranslate"><span class="pre">radial_profile()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.plot_profiles"><code class="docutils literal notranslate"><span class="pre">plot_profiles()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.image_hdu"><code class="docutils literal notranslate"><span class="pre">image_hdu()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.scene.write_scene"><code class="docutils literal notranslate"><span class="pre">write_scene()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

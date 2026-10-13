@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.config &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/config';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.config</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.config</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Parameters of Target (one image through one coronagraph), read from toycoronagraph_para.toml.</span>
+
+<span class="sd">This is the parameter reader of the older, flat configuration used by Target (main.py);</span>
+<span class="sd">the scene framework (toycoronagraph.observe) uses toycoronagraph.params directly.</span>
+
+<span class="sd">Two layouts are read:</span>
+<span class="sd">  * the scene layout of toycoronagraph.params ([observation], [grid], [star], [[source]],</span>
+<span class="sd">    [[coronagraph]], ...): checked there, then mapped onto the flat configuration below</span>
+<span class="sd">    (one image source; the first coronagraph);</span>
+<span class="sd">  * the older layout ([target], [telescope], [coronagraph], [method], [compute]) in SCHEMA;</span>
+<span class="sd">    its [coronagraph] type is "vortex" or "lazuli". A lazuli [coronagraph] has the keys of the</span>
+<span class="sd">    scene layout's "lazuli" type and is checked with its declarations</span>
+<span class="sd">    (toycoronagraph.params.CORONAGRAPHS); its own keys (LAZULI_KEYS) are refused under a vortex.</span>
+<span class="sd">Every key is optional. Keys set to "auto" are filled from the input image and its FITS</span>
+<span class="sd">header (resolve(), called by inputs.read_target). The values actually used are written to</span>
+<span class="sd">&lt;parameter file&gt;_used.toml (write_used); the parameter file itself is not modified unless</span>
+<span class="sd">[run] write_back = true. An old-style toycoronagraph_para.py is still read (with a notice)</span>
+<span class="sd">when no .toml file exists. If there is no parameter file at all, a minimal one is created</span>
+<span class="sd">(toycoronagraph.params_docs.new_config).</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleNamespace</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">tomllib</span> <span class="c1"># Python &gt;= 3.11</span>
+<span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">tomli</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tomllib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">CORONAGRAPHS</span><span class="p">,</span> <span class="n">Param</span><span class="p">,</span> <span class="n">convert</span><span class="p">,</span> <span class="n">coronagraph_problems</span>
+
+<span class="n">PARA_FILE</span> <span class="o">=</span> <span class="s2">"toycoronagraph_para.toml"</span>
+<span class="n">LEGACY_PARA_FILE</span> <span class="o">=</span> <span class="s2">"toycoronagraph_para.py"</span>
+<span class="n">RAD_TO_ARCSEC</span> <span class="o">=</span> <span class="mf">206264.806247</span>
+<span class="n">LIGHT_SPEED</span> <span class="o">=</span> <span class="mi">299792458</span> <span class="c1"># m/s</span>
+<span class="n">JY</span> <span class="o">=</span> <span class="mf">1e26</span> <span class="c1"># W / m^2 / Hz to Jy</span>
+<span class="n">MISMATCH_TOL</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># relative difference between parameters and header that is reported</span>
+<span class="n">RESOLVED_MARK</span> <span class="o">=</span> <span class="s2">"# ---- Values used in the last run, after checking the input (written by toycoronagraph; not read back) ----"</span>
+
+<span class="n">AUTO</span> <span class="o">=</span> <span class="s2">"auto"</span>
+<span class="n">UNITS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"W/m^2/pixel"</span><span class="p">,</span> <span class="s2">"Jy/arcsec^2"</span><span class="p">,</span> <span class="s2">"Jy/pixel"</span><span class="p">)</span>
+<span class="c1"># MCFOST image cubes (RT.fits.gz): axis 0 holds these 8 planes (FLUX_1 ... FLUX_8)</span>
+<span class="n">MCFOST_COMPONENTS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"total"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Q"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"U"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"direct_star"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"scattered_star"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                     <span class="s2">"direct_thermal"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">"scattered_thermal"</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+<span class="c1"># "disk": all the light of the disk, i.e. the total minus the direct starlight (the star itself)</span>
+<span class="n">MCFOST_CHOICES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"disk"</span><span class="p">,)</span><span class="o">+</span><span class="nb">tuple</span><span class="p">(</span><span class="n">MCFOST_COMPONENTS</span><span class="p">)</span>
+<span class="c1"># [coronagraph] keys used only by type = "lazuli": declared (and checked) as in toycoronagraph.params</span>
+<span class="n">LAZULI_KEYS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"wavelengths"</span><span class="p">,</span> <span class="s2">"throughput"</span><span class="p">,</span> <span class="s2">"opd"</span><span class="p">,</span> <span class="s2">"pupil_samples"</span><span class="p">)</span>
+
+<span class="c1"># section -&gt; key -&gt; (default, allowed values / type / "auto|&lt;type&gt;" / "index list" / a params.Param, description)</span>
+<span class="n">SCHEMA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"fits_filename"</span><span class="p">:</span> <span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">"FITS file of the target (</span><span class="se">\"</span><span class="s2">.fits</span><span class="se">\"</span><span class="s2"> is added if no extension is given); </span><span class="se">\"\"</span><span class="s2"> uses the example target"</span><span class="p">),</span>
+        <span class="s2">"input_format"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="s2">"image"</span><span class="p">,</span> <span class="s2">"mcfost"</span><span class="p">),</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">image</span><span class="se">\"</span><span class="s2">: a 2-D image; </span><span class="se">\"</span><span class="s2">mcfost</span><span class="se">\"</span><span class="s2">: an MCFOST image cube; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> recognizes MCFOST cubes"</span><span class="p">),</span>
+        <span class="s2">"mcfost_component"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"scattered_star"</span><span class="p">,</span> <span class="n">MCFOST_CHOICES</span><span class="p">,</span> <span class="s2">"MCFOST plane: </span><span class="se">\"</span><span class="s2">disk</span><span class="se">\"</span><span class="s2"> = total minus the star; </span><span class="se">\"</span><span class="s2">total</span><span class="se">\"</span><span class="s2"> (I) includes the star itself"</span><span class="p">),</span>
+        <span class="s2">"mcfost_inclination"</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"MCFOST: index of the inclination"</span><span class="p">),</span>
+        <span class="s2">"mcfost_azimuth"</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"MCFOST: index of the azimuth"</span><span class="p">),</span>
+        <span class="s2">"fits_hdu"</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"FITS extension (HDU) holding the data"</span><span class="p">),</span>
+        <span class="s2">"fits_slice"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="s2">"index list"</span><span class="p">,</span> <span class="s2">"explicit indices into the leading axes, e.g. [5, 0, 0] (overrides the MCFOST keys); </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2">: from input_format"</span><span class="p">),</span>
+        <span class="s2">"input_unit"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,)</span><span class="o">+</span><span class="n">UNITS</span><span class="p">,</span> <span class="s2">"unit of the data; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> reads the BUNIT header keyword"</span><span class="p">),</span>
+        <span class="s2">"target_pixel"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="s2">"auto|int"</span><span class="p">,</span> <span class="s2">"pixels on one edge of the (square) image; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> uses the image size"</span><span class="p">),</span>
+        <span class="s2">"unit"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"none"</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">"colorbar label; </span><span class="se">\"</span><span class="s2">none</span><span class="se">\"</span><span class="s2"> uses Jy/arcsec^2"</span><span class="p">),</span>
+        <span class="s2">"symmetric"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">"is the target circularly symmetric about the star? </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> measures it"</span><span class="p">),</span>
+    <span class="p">},</span>
+    <span class="s2">"telescope"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"wavelength"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="s2">"auto|float"</span><span class="p">,</span> <span class="s2">"observing wavelength in m; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> reads WAVELEN (m) or WAVE (um) from the header, else 1e-6"</span><span class="p">),</span>
+        <span class="s2">"diameter"</span><span class="p">:</span> <span class="p">(</span><span class="mf">2.4</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">"aperture diameter D, in meters"</span><span class="p">),</span>
+        <span class="s2">"visual_range"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="s2">"auto|float"</span><span class="p">,</span> <span class="s2">"width of the image in lambda/D; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> follows the header's pixel scale (PIXSCALE, or CDELT), else 32"</span><span class="p">),</span>
+    <span class="p">},</span>
+    <span class="s2">"coronagraph"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"vortex"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"vortex"</span><span class="p">,</span> <span class="s2">"lazuli"</span><span class="p">),</span> <span class="s2">"coronagraph model: </span><span class="se">\"</span><span class="s2">vortex</span><span class="se">\"</span><span class="s2">, or </span><span class="se">\"</span><span class="s2">lazuli</span><span class="se">\"</span><span class="s2"> (the Lazuli telescope, prysm)"</span><span class="p">),</span>
+        <span class="s2">"charge"</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"vortex charge (positive, even); lazuli: 0 = the telescope alone (its default when "</span>
+                           <span class="s2">"charge is left out) or even; used when a method is called without one"</span><span class="p">),</span>
+        <span class="s2">"lyot_mask_size"</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">"Lyot stop diameter relative to the aperture"</span><span class="p">),</span>
+        <span class="s2">"symmetric"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">"are the PSFs circularly symmetric? </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> uses the optics model"</span><span class="p">),</span>
+        <span class="o">**</span><span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="s2">"lazuli: "</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="p">[</span><span class="s2">"lazuli"</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">LAZULI_KEYS</span><span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">"method"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="s2">"circular"</span><span class="p">,</span> <span class="s2">"spatial"</span><span class="p">),</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2">: circular if the target and the PSFs are both symmetric, else spatial"</span><span class="p">),</span>
+        <span class="s2">"spatial_mode"</span><span class="p">:</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="s2">"rotate"</span><span class="p">,</span> <span class="s2">"direct"</span><span class="p">),</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2">: rotate for symmetric PSFs, else direct"</span><span class="p">),</span>
+        <span class="s2">"error_target"</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">"target relative error of the final image (spatial: sets kernel size and grid)"</span><span class="p">),</span>
+        <span class="s2">"symmetry_tol"</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">"measured target asymmetry above which </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> treats it as not symmetric"</span><span class="p">),</span>
+        <span class="s2">"rot_number"</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"circular method: number of rotations; 0 uses target_pixel"</span><span class="p">),</span>
+    <span class="p">},</span>
+    <span class="s2">"compute"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"num_cores"</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"CPU cores for parallel work; -1 uses all"</span><span class="p">),</span>
+        <span class="s2">"use_gpu"</span><span class="p">:</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="s2">"use CuPy for the spatial convolutions"</span><span class="p">),</span>
+        <span class="s2">"max_kernel_gb"</span><span class="p">:</span> <span class="p">(</span><span class="mf">4.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">"largest spatial kernel cube to build, in GB"</span><span class="p">),</span>
+        <span class="s2">"psf_cache_dir"</span><span class="p">:</span> <span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">"folder for computed PSFs; </span><span class="se">\"\"</span><span class="s2"> uses the current folder"</span><span class="p">),</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">USAGE_NOTE</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<span class="s2"># Using your own target</span>
+<span class="s2">#   * An MCFOST image (e.g. data_0.6/RT.fits.gz): set fits_filename to it; the cube is</span>
+<span class="s2">#     recognized, and mcfost_component / mcfost_inclination / mcfost_azimuth pick the plane.</span>
+<span class="s2">#     Use "disk" (or "scattered_star", ...) rather than "total": the total includes the star</span>
+<span class="s2">#     itself, which the coronagraph is meant to remove. The header gives the unit, pixel</span>
+<span class="s2">#     scale and wavelength.</span>
+<span class="s2">#   * Any other image: save a FITS file with a square 2-D array (or a cube and set</span>
+<span class="s2">#     fits_slice), the star at the centre of the array ((N-1)/2 in 0-based pixels), and</span>
+<span class="s2">#     header keywords BUNIT (W/m^2/pixel, Jy/arcsec^2 or Jy/pixel), PIXSCALE (arcsec per</span>
+<span class="s2">#     pixel; or CDELT1/CDELT2 in degrees) and WAVELEN (m) - or set input_unit / wavelength</span>
+<span class="s2">#     / visual_range here instead.</span>
+<span class="s2">#   The image pixel scale must match the PSF sampling: with visual_range = "auto" it does.</span>
+<span class="s2">#   The values actually used are saved to &lt;this file's name&gt;_used.toml (this file is not modified).</span>
+<span class="s2">"""</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_toml_value</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A value as TOML text (lists/tuples as arrays, booleans as true/false, strings quoted).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value: A str, bool, int, float, or a list/tuple of these.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The TOML literal (strings are not escaped).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="s2">"[</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_toml_value</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"true"</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="s2">"false"</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">'"</span><span class="si">%s</span><span class="s1">"'</span> <span class="o">%</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="example_text">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.example_text">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">example_text</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The text of a commented example toycoronagraph_para.toml in the older layout (all defaults).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The file content: a header with USAGE_NOTE, then every SCHEMA section and key</span>
+<span class="sd">            with its default and description (the LAZULI_KEYS commented out: the type is "vortex").</span>
+<span class="sd">    """</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"# Toy Coronagraph parameters. Every key is optional; these are the defaults."</span><span class="p">,</span> <span class="s2">"#"</span><span class="p">,</span> <span class="n">USAGE_NOTE</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">section</span><span class="p">,</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">SCHEMA</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">section</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">description</span><span class="p">)</span> <span class="ow">in</span> <span class="n">keys</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="s2">"</span><span class="si">%-18s</span><span class="s2"> = </span><span class="si">%-16s</span><span class="s2"> # </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">_toml_value</span><span class="p">(</span><span class="n">default</span><span class="p">),</span> <span class="n">description</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"# "</span> <span class="o">+</span> <span class="n">line</span> <span class="k">if</span> <span class="n">section</span> <span class="o">==</span> <span class="s2">"coronagraph"</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">LAZULI_KEYS</span> <span class="k">else</span> <span class="n">line</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="write_example">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.write_example">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_example</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">PARA_FILE</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Create an example parameter file in the older layout (example_text); overwrites path.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): The file to write.</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">example_text</span><span class="p">())</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_number</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">kind</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Whether value is a number of the given kind (booleans are not numbers).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value: Any value.</span>
+<span class="sd">        kind (type): int (only int accepted) or float (int or float accepted).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">if</span> <span class="n">kind</span> <span class="ow">is</span> <span class="nb">int</span> <span class="k">else</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Check one value against SCHEMA and convert it.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        section (str): Section name in SCHEMA.</span>
+<span class="sd">        key (str): Key name in that section.</span>
+<span class="sd">        value: The value read from the file (or the default).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The value: "auto" kept as is; numbers converted to int/float as the schema says; keys</span>
+<span class="sd">            declared by a params.Param converted by params.convert (e.g. "632 nm" to m).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the value does not match the schema.</span>
+<span class="sd">    """</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">allowed</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">SCHEMA</span><span class="p">[</span><span class="n">section</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">allowed</span><span class="p">,</span> <span class="n">Param</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">convert</span><span class="p">(</span><span class="n">allowed</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">"[</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">section</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">allowed</span> <span class="o">==</span> <span class="s2">"index list"</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">AUTO</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">_is_number</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">] </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2">: must be </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> or a list of integers, e.g. [5, 0, 0]"</span> <span class="o">%</span> <span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">allowed</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">allowed</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"auto|"</span><span class="p">):</span>
+        <span class="n">kind</span> <span class="o">=</span> <span class="nb">int</span> <span class="k">if</span> <span class="n">allowed</span> <span class="o">==</span> <span class="s2">"auto|int"</span> <span class="k">else</span> <span class="nb">float</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">AUTO</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="n">_is_number</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">kind</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">kind</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">] </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2">: must be </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> or a</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">"n"</span> <span class="k">if</span> <span class="n">kind</span> <span class="ow">is</span> <span class="nb">int</span> <span class="k">else</span> <span class="s2">""</span><span class="p">,</span> <span class="n">kind</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">allowed</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="c1"># booleans must match booleans exactly (in Python, True == 1 and False == 0)</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">==</span> <span class="n">value</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">allowed</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">] </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2">: must be one of </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">_toml_value</span><span class="p">,</span> <span class="n">allowed</span><span class="p">))))</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="k">if</span> <span class="n">allowed</span> <span class="ow">is</span> <span class="nb">float</span> <span class="ow">and</span> <span class="n">_is_number</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="c1"># (bool is a subclass of int: a boolean is only accepted where bool is expected)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">allowed</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">allowed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">bool</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">] </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2">: must be a </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">allowed</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+
+<div class="viewcode-block" id="from_dict">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.from_dict">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">"parameters"</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Validate a parsed TOML dict and return the flat configuration (not yet resolved).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (dict): {section: {key: value}}; a [resolved] section is ignored.</span>
+<span class="sd">        source (str): Name used in messages (the file path).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SimpleNamespace: every parameter, flat (the two `symmetric` keys become</span>
+<span class="sd">            image_symmetric and psf_symmetric, [coronagraph] type becomes</span>
+<span class="sd">            coronagraph_type, fits_filename "" becomes None, diameter is also</span>
+<span class="sd">            stored as D). "auto" values stay "auto" until resolve(). Also has</span>
+<span class="sd">            source (str) and legacy (False).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: For an unknown section or key, a lazuli-only key (LAZULI_KEYS) under</span>
+<span class="sd">            another type, a value that does not match SCHEMA (lazuli: the declarations</span>
+<span class="sd">            of that type), a vortex charge that is not positive and even, a lazuli</span>
+<span class="sd">            charge that is not even, or a lazuli throughput without one weight per</span>
+<span class="sd">            wavelength.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">section</span><span class="p">,</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">section</span> <span class="o">==</span> <span class="s2">"resolved"</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">section</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SCHEMA</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: unknown section [</span><span class="si">%s</span><span class="s2">]; known: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">SCHEMA</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: [</span><span class="si">%s</span><span class="s2">] must be a table of keys"</span> <span class="o">%</span> <span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">section</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SCHEMA</span><span class="p">[</span><span class="n">section</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: unknown key [</span><span class="si">%s</span><span class="s2">] </span><span class="si">%s</span><span class="s2">; known: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">SCHEMA</span><span class="p">[</span><span class="n">section</span><span class="p">])))</span>
+    <span class="n">coronagraph</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"coronagraph"</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="c1"># a lazuli [coronagraph] is checked with that type's declarations (its own defaults: charge 0, the telescope alone)</span>
+    <span class="n">lazuli</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="p">[</span><span class="s2">"lazuli"</span><span class="p">][</span><span class="mi">1</span><span class="p">]}</span> <span class="k">if</span> <span class="n">coronagraph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"lazuli"</span> <span class="k">else</span> <span class="p">{}</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">LAZULI_KEYS</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">coronagraph</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">lazuli</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">extra</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: [coronagraph] </span><span class="si">%s</span><span class="s2">: only used with type = </span><span class="se">\"</span><span class="s2">lazuli</span><span class="se">\"</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">extra</span><span class="p">)))</span>
+    <span class="n">rename</span> <span class="o">=</span> <span class="p">{(</span><span class="s2">"target"</span><span class="p">,</span> <span class="s2">"symmetric"</span><span class="p">):</span> <span class="s2">"image_symmetric"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"coronagraph"</span><span class="p">,</span> <span class="s2">"symmetric"</span><span class="p">):</span> <span class="s2">"psf_symmetric"</span><span class="p">,</span>
+              <span class="p">(</span><span class="s2">"coronagraph"</span><span class="p">,</span> <span class="s2">"type"</span><span class="p">):</span> <span class="s2">"coronagraph_type"</span><span class="p">}</span>
+    <span class="n">cfg</span> <span class="o">=</span> <span class="n">SimpleNamespace</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">legacy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">section</span><span class="p">,</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">SCHEMA</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="n">keys</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">declared</span> <span class="o">=</span> <span class="n">lazuli</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">if</span> <span class="n">section</span> <span class="o">==</span> <span class="s2">"coronagraph"</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">declared</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">_check</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">convert</span><span class="p">(</span><span class="n">declared</span><span class="p">,</span> <span class="n">coronagraph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">declared</span><span class="o">.</span><span class="n">default</span><span class="p">),</span> <span class="s2">"[coronagraph]"</span><span class="p">)</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">rename</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">key</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">D</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">diameter</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">fits_filename</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">fits_filename</span> <span class="ow">or</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">coronagraph_type</span> <span class="o">==</span> <span class="s2">"vortex"</span> <span class="ow">and</span> <span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">charge</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">cfg</span><span class="o">.</span><span class="n">charge</span><span class="o">%</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"[coronagraph] charge = </span><span class="si">%r</span><span class="s2">: a vortex charge must be positive and even"</span> <span class="o">%</span> <span class="n">cfg</span><span class="o">.</span><span class="n">charge</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lazuli</span><span class="p">:</span>
+        <span class="n">problems</span> <span class="o">=</span> <span class="n">coronagraph_problems</span><span class="p">(</span><span class="s2">"lazuli"</span><span class="p">,</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"charge"</span><span class="p">,</span> <span class="s2">"wavelengths"</span><span class="p">,</span> <span class="s2">"throughput"</span><span class="p">)})</span>
+        <span class="k">if</span> <span class="n">problems</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"[coronagraph] "</span> <span class="o">+</span> <span class="s2">"; "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">problems</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">cfg</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_header_unit</span><span class="p">(</span><span class="n">header</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The unit named by the header's BUNIT, restricted to UNITS.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        header: FITS header (dict-like).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple:</span>
+<span class="sd">            unit (str or None): One of UNITS, or None for any other (or no) BUNIT.</span>
+<span class="sd">            raw (str): The BUNIT text as written ("" if absent).</span>
+<span class="sd">    """</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">header_unit</span>
+    <span class="n">unit</span><span class="p">,</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">header_unit</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">unit</span> <span class="k">if</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">UNITS</span> <span class="k">else</span> <span class="kc">None</span><span class="p">),</span> <span class="n">raw</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_header_pixel_scale</span><span class="p">(</span><span class="n">header</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The pixel scale from PIXSCALE (arcsec) or CDELT2/CDELT1 (unit from CUNIT, default deg).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        header: FITS header (dict-like).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple:</span>
+<span class="sd">            scale (float or None): arcsec per pixel (absolute value); None if not found</span>
+<span class="sd">                or the CUNIT is not understood.</span>
+<span class="sd">            key (str or None): Where it came from, e.g. "PIXSCALE" or "CDELT2 (deg)".</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="s2">"PIXSCALE"</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">"PIXSCALE"</span><span class="p">])),</span> <span class="s2">"PIXSCALE"</span>
+    <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"2"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">"CDELT"</span> <span class="o">+</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"CUNIT"</span> <span class="o">+</span> <span class="n">axis</span><span class="p">,</span> <span class="s2">"deg"</span><span class="p">))</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="n">factor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"deg"</span><span class="p">:</span> <span class="mf">3600.0</span><span class="p">,</span> <span class="s2">"arcmin"</span><span class="p">:</span> <span class="mf">60.0</span><span class="p">,</span> <span class="s2">"arcsec"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">"mas"</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="s2">"rad"</span><span class="p">:</span> <span class="n">RAD_TO_ARCSEC</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">factor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">"CDELT"</span> <span class="o">+</span> <span class="n">axis</span><span class="p">]))</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="s2">"CDELT</span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_header_wavelength</span><span class="p">(</span><span class="n">header</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The wavelength from WAVELEN (m) or MCFOST's WAVE (um).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        header: FITS header (dict-like).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple:</span>
+<span class="sd">            wavelength (float or None): In m (WAVE rounded to 12 significant digits after</span>
+<span class="sd">                the um -&gt; m conversion); None if neither keyword is present.</span>
+<span class="sd">            key (str or None): "WAVELEN" or "WAVE (um)".</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="s2">"WAVELEN"</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">"WAVELEN"</span><span class="p">]),</span> <span class="s2">"WAVELEN"</span>
+    <span class="k">if</span> <span class="s2">"WAVE"</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"</span><span class="si">%.12g</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">"WAVE"</span><span class="p">])</span><span class="o">*</span><span class="mf">1e-6</span><span class="p">)),</span> <span class="s2">"WAVE (um)"</span>
+    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_differs</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Whether a differs from the reference b by more than MISMATCH_TOL (relative to b).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        a, b (float): The value and the reference.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MISMATCH_TOL</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="resolve">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.resolve">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">resolve</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Fill the "auto" parameters from the input image and its header, check the explicit</span>
+<span class="sd">    ones against the header, and compute the derived quantities (psf_scale, F_transfer,</span>
+<span class="sd">    psf_range, rot_number).</span>
+
+<span class="sd">    Sets (in cfg): target_pixel, wavelength (m), visual_range (lambda/D across the image),</span>
+<span class="sd">    psf_scale (arcsec/pixel), F_transfer (factor from nu F_nu in W/m^2/pixel to F_nu in</span>
+<span class="sd">    Jy/arcsec^2), psf_range (lambda/D, half of visual_range), input_unit, rot_number</span>
+<span class="sd">    (target_pixel if &lt;= 0), sources ({parameter: where its value came from}) and notes.</span>
+<span class="sd">    For a legacy (.py) configuration, wavelength, visual_range, psf_scale, F_transfer and</span>
+<span class="sd">    psf_range are kept as read.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cfg (SimpleNamespace): From load_config / from_dict; modified in place.</span>
+<span class="sd">        image_shape (tuple): Shape of the (sliced) input image; must be square and 2-D.</span>
+<span class="sd">        header: The image's FITS header (a dict-like), or None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: Messages: a summary of the input (where each value came from), then any</span>
+<span class="sd">            mismatch (WARNING lines). Also stored as cfg.notes, with cfg.sources.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the image is not square and 2-D, target_pixel does not match it,</span>
+<span class="sd">            or input_unit is "auto" and the header has no known BUNIT.</span>
+<span class="sd">    """</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="n">header</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sources</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"the input image must be square and 2-D (got shape </span><span class="si">%s</span><span class="s2">); check fits_hdu, fits_slice "</span>
+                         <span class="s2">"or the MCFOST keys"</span> <span class="o">%</span> <span class="p">(</span><span class="n">image_shape</span><span class="p">,))</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">target_pixel</span> <span class="o">==</span> <span class="n">AUTO</span><span class="p">:</span>
+        <span class="n">cfg</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">,</span> <span class="n">sources</span><span class="p">[</span><span class="s2">"target_pixel"</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="s2">"image size"</span>
+    <span class="k">elif</span> <span class="n">cfg</span><span class="o">.</span><span class="n">target_pixel</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"target_pixel = </span><span class="si">%d</span><span class="s2"> but the input image is </span><span class="si">%d</span><span class="s2"> x </span><span class="si">%d</span><span class="s2">; set target_pixel = </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> or match the image"</span>
+                         <span class="o">%</span> <span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sources</span><span class="p">[</span><span class="s2">"target_pixel"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"parameters (matches the image)"</span>
+
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">legacy</span><span class="p">:</span> <span class="c1"># an old .py file: its own derived values are used as they are</span>
+        <span class="n">sources</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="s2">"old .py file"</span><span class="p">,</span> <span class="n">visual_range</span><span class="o">=</span><span class="s2">"old .py file"</span><span class="p">,</span> <span class="n">psf_scale</span><span class="o">=</span><span class="s2">"old .py file"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">h_wave</span><span class="p">,</span> <span class="n">h_wave_key</span> <span class="o">=</span> <span class="n">_header_wavelength</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">==</span> <span class="n">AUTO</span><span class="p">:</span>
+            <span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">sources</span><span class="p">[</span><span class="s2">"wavelength"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">h_wave</span><span class="p">,</span> <span class="s2">"header "</span> <span class="o">+</span> <span class="n">h_wave_key</span><span class="p">)</span> <span class="k">if</span> <span class="n">h_wave</span> <span class="k">else</span> <span class="p">(</span><span class="mf">1.0e-6</span><span class="p">,</span> <span class="s2">"default (no wavelength in the header)"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sources</span><span class="p">[</span><span class="s2">"wavelength"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"parameters"</span>
+            <span class="k">if</span> <span class="n">h_wave</span> <span class="ow">and</span> <span class="n">_differs</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">h_wave</span><span class="p">):</span>
+                <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"WARNING: wavelength </span><span class="si">%.4g</span><span class="s2"> m (parameters) differs from the header's </span><span class="si">%.4g</span><span class="s2"> m (</span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">h_wave</span><span class="p">,</span> <span class="n">h_wave_key</span><span class="p">))</span>
+        <span class="n">lambda_d</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="o">/</span><span class="n">cfg</span><span class="o">.</span><span class="n">diameter</span><span class="o">*</span><span class="n">RAD_TO_ARCSEC</span> <span class="c1"># arcsec</span>
+        <span class="n">h_scale</span><span class="p">,</span> <span class="n">h_scale_key</span> <span class="o">=</span> <span class="n">_header_pixel_scale</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span> <span class="o">==</span> <span class="n">AUTO</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">h_scale</span><span class="p">:</span>
+                <span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span> <span class="o">=</span> <span class="n">h_scale</span>
+                <span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">h_scale</span><span class="o">/</span><span class="n">lambda_d</span>
+                <span class="n">sources</span><span class="p">[</span><span class="s2">"visual_range"</span><span class="p">]</span> <span class="o">=</span> <span class="n">sources</span><span class="p">[</span><span class="s2">"psf_scale"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"header "</span> <span class="o">+</span> <span class="n">h_scale_key</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span> <span class="o">=</span> <span class="mf">32.0</span>
+                <span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span> <span class="o">=</span> <span class="n">lambda_d</span><span class="o">*</span><span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="o">/</span><span class="n">n</span>
+                <span class="n">sources</span><span class="p">[</span><span class="s2">"visual_range"</span><span class="p">]</span> <span class="o">=</span> <span class="n">sources</span><span class="p">[</span><span class="s2">"psf_scale"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default (no pixel scale in the header)"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span> <span class="o">=</span> <span class="n">lambda_d</span><span class="o">*</span><span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="o">/</span><span class="n">n</span>
+            <span class="n">sources</span><span class="p">[</span><span class="s2">"visual_range"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"parameters"</span>
+            <span class="n">sources</span><span class="p">[</span><span class="s2">"psf_scale"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"from visual_range"</span>
+            <span class="k">if</span> <span class="n">h_scale</span> <span class="ow">and</span> <span class="n">_differs</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">,</span> <span class="n">h_scale</span><span class="p">):</span>
+                <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"WARNING: the PSFs are sampled at </span><span class="si">%.5g</span><span class="s2"> arcsec/pixel (visual_range = </span><span class="si">%g</span><span class="s2">) but the image header says </span><span class="si">%.5g</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">): "</span>
+                             <span class="s2">"the target would be scaled wrongly; use visual_range = </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="p">,</span> <span class="n">h_scale</span><span class="p">,</span> <span class="n">h_scale_key</span><span class="p">))</span>
+        <span class="n">cfg</span><span class="o">.</span><span class="n">F_transfer</span> <span class="o">=</span> <span class="n">JY</span><span class="o">*</span><span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="o">/</span><span class="n">LIGHT_SPEED</span><span class="o">/</span><span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># nu F_nu (W/m^2/pixel) to F_nu (Jy/arcsec^2)</span>
+        <span class="n">cfg</span><span class="o">.</span><span class="n">psf_range</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="o">/</span><span class="mi">2</span>
+
+    <span class="n">h_unit</span><span class="p">,</span> <span class="n">h_unit_raw</span> <span class="o">=</span> <span class="n">_header_unit</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">input_unit</span> <span class="o">==</span> <span class="n">AUTO</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">h_unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"the unit of the input image is unknown (BUNIT = </span><span class="si">%r</span><span class="s2">); set [target] input_unit to one of </span><span class="si">%s</span><span class="s2">, "</span>
+                             <span class="s2">"or the BUNIT header keyword"</span> <span class="o">%</span> <span class="p">(</span><span class="n">h_unit_raw</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">UNITS</span><span class="p">)))</span>
+        <span class="n">cfg</span><span class="o">.</span><span class="n">input_unit</span><span class="p">,</span> <span class="n">sources</span><span class="p">[</span><span class="s2">"input_unit"</span><span class="p">]</span> <span class="o">=</span> <span class="n">h_unit</span><span class="p">,</span> <span class="s2">"header BUNIT"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sources</span><span class="p">[</span><span class="s2">"input_unit"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"parameters"</span>
+        <span class="k">if</span> <span class="n">h_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">h_unit</span> <span class="o">!=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">input_unit</span><span class="p">:</span>
+            <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"WARNING: input_unit </span><span class="si">%s</span><span class="s2"> (parameters) differs from the header's BUNIT = </span><span class="si">%r</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">input_unit</span><span class="p">,</span> <span class="n">h_unit_raw</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">rot_number</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cfg</span><span class="o">.</span><span class="n">rot_number</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">target_pixel</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">sources</span> <span class="o">=</span> <span class="n">sources</span>
+    <span class="n">notes</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"Input: </span><span class="si">%s</span><span class="s2">, </span><span class="si">%d</span><span class="s2"> x </span><span class="si">%d</span><span class="s2">, </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">); </span><span class="si">%.5g</span><span class="s2"> arcsec/pixel (</span><span class="si">%s</span><span class="s2">) = </span><span class="si">%.4g</span><span class="s2"> lambda/D across at </span><span class="si">%.4g</span><span class="s2"> m (</span><span class="si">%s</span><span class="s2">)"</span>
+                 <span class="o">%</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="s2">"input_description"</span><span class="p">,</span> <span class="s2">"image"</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">input_unit</span><span class="p">,</span> <span class="n">sources</span><span class="p">[</span><span class="s2">"input_unit"</span><span class="p">],</span>
+                    <span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">,</span> <span class="n">sources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"psf_scale"</span><span class="p">),</span> <span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">sources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"wavelength"</span><span class="p">)))</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">notes</span> <span class="o">=</span> <span class="n">notes</span>
+    <span class="k">return</span> <span class="n">notes</span></div>
+
+
+
+<div class="viewcode-block" id="used_path">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.used_path">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">used_path</span><span class="p">(</span><span class="n">cfg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Where the values used are saved: &lt;parameter file name&gt;_used.toml next to it.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cfg (SimpleNamespace): A configuration (uses cfg.source).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The path; "toycoronagraph_para_used.toml" when cfg.source is not a .toml or .py file.</span>
+<span class="sd">    """</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+    <span class="n">stem</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">source</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">source</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">".toml"</span><span class="p">,</span> <span class="s2">".py"</span><span class="p">))</span> <span class="k">else</span> <span class="s2">"toycoronagraph_para"</span>
+    <span class="k">return</span> <span class="n">stem</span> <span class="o">+</span> <span class="s2">"_used.toml"</span></div>
+
+
+
+<div class="viewcode-block" id="write_used">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.write_used">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_used</span><span class="p">(</span><span class="n">cfg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Save the values used (after resolve()) to used_path(cfg); with write_back, also into the parameter file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cfg (SimpleNamespace): A resolved configuration; cfg.write_back (if present and true)</span>
+<span class="sd">            also writes the [resolved] section into cfg.source.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The path written (used_path(cfg)).</span>
+<span class="sd">    """</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">used_path</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"# Values used by toycoronagraph for </span><span class="si">%s</span><span class="s2"> (written after each run; not read back)</span><span class="se">\n</span><span class="s2">"</span> <span class="o">%</span> <span class="n">cfg</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+    <span class="n">write_resolved</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="s2">"write_back"</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="n">write_resolved</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+
+<div class="viewcode-block" id="write_resolved">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.write_resolved">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_resolved</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Write the values used (after resolve()) into a [resolved] section at the end of a</span>
+<span class="sd">    .toml file, replacing the previous one; the rest of the file is kept as is.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cfg (SimpleNamespace): A resolved configuration.</span>
+<span class="sd">        path (str): The .toml file; default cfg.source (skipped if it is not a .toml file).</span>
+<span class="sd">    """</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">path</span> <span class="ow">or</span> <span class="n">cfg</span><span class="o">.</span><span class="n">source</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".toml"</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">RESOLVED_MARK</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[:</span><span class="n">text</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">RESOLVED_MARK</span><span class="p">)]</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">RESOLVED_MARK</span><span class="p">,</span> <span class="s2">"[resolved]"</span><span class="p">]</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="s2">"used_slice"</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"input"</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="s2">"input_description"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)),</span> <span class="p">(</span><span class="s2">"fits_slice"</span><span class="p">,</span> <span class="n">used</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">used</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">used</span><span class="p">)),</span>
+              <span class="p">(</span><span class="s2">"input_unit"</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">input_unit</span><span class="p">),</span> <span class="p">(</span><span class="s2">"target_pixel"</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">),</span> <span class="p">(</span><span class="s2">"wavelength"</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">"visual_range"</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span> <span class="p">(</span><span class="s2">"psf_scale"</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">),</span> <span class="p">(</span><span class="s2">"psf_range"</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">psf_range</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>
+              <span class="p">(</span><span class="s2">"rot_number"</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">rot_number</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"</span><span class="si">%-13s</span><span class="s2"> = </span><span class="si">%-28s%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">_toml_value</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="p">(</span><span class="s2">"# "</span> <span class="o">+</span> <span class="n">source</span><span class="p">)</span> <span class="k">if</span> <span class="n">source</span> <span class="k">else</span> <span class="s2">""</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">cfg</span><span class="o">.</span><span class="n">notes</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"# "</span> <span class="o">+</span> <span class="n">note</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_from_legacy</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Read an old-style toycoronagraph_para.py (its derived values are taken as given).</span>
+
+<span class="sd">    The file is executed as a Python module; its variables are mapped onto the older</span>
+<span class="sd">    layout and checked with from_dict. psf_scale, F_transfer and psf_range are taken</span>
+<span class="sd">    from the file if it defines them, else derived as in resolve().</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): The .py parameter file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SimpleNamespace: The configuration, with legacy = True.</span>
+<span class="sd">    """</span>
+    <span class="n">spec</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">spec_from_file_location</span><span class="p">(</span><span class="s2">"toycoronagraph_para_legacy"</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="n">par</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">module_from_spec</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+    <span class="n">spec</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">exec_module</span><span class="p">(</span><span class="n">par</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"target"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"target_pixel"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">)},</span>
+            <span class="s2">"telescope"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"wavelength"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"wavelength"</span><span class="p">,</span> <span class="mf">1.0e-6</span><span class="p">)),</span>
+                          <span class="s2">"diameter"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"D"</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">)),</span>
+                          <span class="s2">"visual_range"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"visual_range"</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">))},</span>
+            <span class="s2">"coronagraph"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"coronagraph_type"</span><span class="p">,</span> <span class="s2">"vortex"</span><span class="p">),</span>
+                            <span class="s2">"lyot_mask_size"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"lyot_mask_size"</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">))},</span>
+            <span class="s2">"method"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"rot_number"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"rot_number"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))},</span>
+            <span class="s2">"compute"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"num_cores"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"num_cores"</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))}}</span>
+    <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"fits_filename"</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">"target"</span><span class="p">][</span><span class="s2">"fits_filename"</span><span class="p">]</span> <span class="o">=</span> <span class="n">par</span><span class="o">.</span><span class="n">fits_filename</span>
+    <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"unit"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">"none"</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">"target"</span><span class="p">][</span><span class="s2">"unit"</span><span class="p">]</span> <span class="o">=</span> <span class="n">par</span><span class="o">.</span><span class="n">unit</span>
+    <span class="n">cfg</span> <span class="o">=</span> <span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">legacy</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">lambda_d</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="o">/</span><span class="n">cfg</span><span class="o">.</span><span class="n">diameter</span><span class="o">*</span><span class="n">RAD_TO_ARCSEC</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"psf_scale"</span><span class="p">,</span> <span class="n">lambda_d</span><span class="o">*</span><span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="o">/</span><span class="n">cfg</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">)</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">F_transfer</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"F_transfer"</span><span class="p">,</span> <span class="n">JY</span><span class="o">*</span><span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="o">/</span><span class="n">LIGHT_SPEED</span><span class="o">/</span><span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">psf_range</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="s2">"psf_range"</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cfg</span>
+
+
+<div class="viewcode-block" id="from_params">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.from_params">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">from_params</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The old flat configuration (toycoronagraph.config) for Target, from new-layout parameters.</span>
+
+<span class="sd">    Only files with exactly one enabled component, a fits_image or mcfost source, can be</span>
+<span class="sd">    mapped; Target uses the first [[coronagraph]] (a note is added to params.notes when</span>
+<span class="sd">    there are several).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        params (toycoronagraph.params.Params): Checked new-layout parameters (params.load).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SimpleNamespace: The configuration (see from_dict), with params (the Params object)</span>
+<span class="sd">            and write_back ([run] write_back) added.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ParamError: When the file needs the scene framework (not exactly one image source).</span>
+<span class="sd">    """</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParamError</span>
+    <span class="n">comps</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">enabled</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">comps</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">comps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"fits_image"</span><span class="p">,</span> <span class="s2">"mcfost"</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: Target simulates one image source (fits_image or mcfost); this file has </span><span class="si">%s</span><span class="s2">. "</span>
+                         <span class="s2">"Use toycoronagraph.observe() for scenes with several components."</span>
+                         <span class="o">%</span> <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comps</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">"none"</span><span class="p">))</span>
+    <span class="n">kind</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">comps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span> <span class="n">comps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">settings</span>
+    <span class="c1"># The image itself is read through the scene (toycoronagraph.scene); these keys only describe it</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"fits_filename"</span><span class="p">:</span> <span class="s2">""</span> <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">"file"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"example"</span> <span class="k">else</span> <span class="n">s</span><span class="p">[</span><span class="s2">"file"</span><span class="p">],</span>
+              <span class="s2">"input_format"</span><span class="p">:</span> <span class="s2">"image"</span> <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">"fits_image"</span> <span class="k">else</span> <span class="s2">"mcfost"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">"fits_image"</span><span class="p">:</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s2">"input_unit"</span><span class="p">]</span> <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">"input_unit"</span><span class="p">]</span> <span class="ow">in</span> <span class="n">UNITS</span> <span class="k">else</span> <span class="n">AUTO</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fits_hdu</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">"hdu"</span><span class="p">],</span> <span class="n">fits_slice</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">"slice"</span><span class="p">],</span> <span class="n">input_unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mcfost_component</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">"component"</span><span class="p">],</span> <span class="n">mcfost_inclination</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">"inclination"</span><span class="p">],</span> <span class="n">mcfost_azimuth</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">"azimuth"</span><span class="p">])</span>
+    <span class="n">target</span><span class="p">[</span><span class="s2">"symmetric"</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s2">"symmetric"</span><span class="p">]</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"grid.size"</span><span class="p">)</span>
+    <span class="n">target</span><span class="p">[</span><span class="s2">"target_pixel"</span><span class="p">]</span> <span class="o">=</span> <span class="n">size</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="n">AUTO</span>
+    <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"display.label"</span><span class="p">):</span>
+        <span class="n">target</span><span class="p">[</span><span class="s2">"unit"</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"display.label"</span><span class="p">)</span>
+    <span class="n">telescope</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"wavelength"</span><span class="p">:</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"observation.wavelength"</span><span class="p">),</span> <span class="s2">"diameter"</span><span class="p">:</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"observation.diameter"</span><span class="p">)}</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">coronagraphs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">coronagraph</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">)}}</span>
+    <span class="n">method</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"method"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"combine"</span><span class="p">,</span> <span class="s2">"error_metric"</span><span class="p">)}</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"target"</span><span class="p">:</span> <span class="n">target</span><span class="p">,</span> <span class="s2">"telescope"</span><span class="p">:</span> <span class="n">telescope</span><span class="p">,</span> <span class="s2">"coronagraph"</span><span class="p">:</span> <span class="n">coronagraph</span><span class="p">,</span> <span class="s2">"method"</span><span class="p">:</span> <span class="n">method</span><span class="p">,</span>
+            <span class="s2">"compute"</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"compute"</span><span class="p">,</span> <span class="p">{}))}</span>
+    <span class="n">cfg</span> <span class="o">=</span> <span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">write_back</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run.write_back"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">coronagraphs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">params</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Note: Target uses the first [[coronagraph]] (</span><span class="si">%s</span><span class="s2">) as its default; observe() uses all of them"</span>
+                            <span class="o">%</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cfg</span></div>
+
+
+
+<div class="viewcode-block" id="load_config">
+<a class="viewcode-back" href="../../config.html#toycoronagraph.config.load_config">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_config</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Load the parameters (not yet resolved against the input image; see resolve()).</span>
+
+<span class="sd">    With no path: toycoronagraph_para.toml in the current directory; if it does not</span>
+<span class="sd">    exist, an old toycoronagraph_para.py (with a notice); if neither exists, a minimal</span>
+<span class="sd">    new-layout .toml is created (params_docs.new_config) and used.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): A .toml (or legacy .py) parameter file.</span>
+<span class="sd">        verbose (bool): Print notices.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SimpleNamespace: The configuration (see from_dict; from_params for a new-layout file).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">PARA_FILE</span><span class="p">):</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">PARA_FILE</span>
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">LEGACY_PARA_FILE</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Reading the old-style </span><span class="si">%s</span><span class="s2">; toycoronagraph.config.write_example() creates a </span><span class="si">%s</span><span class="s2"> to replace it"</span>
+                      <span class="o">%</span> <span class="p">(</span><span class="n">LEGACY_PARA_FILE</span><span class="p">,</span> <span class="n">PARA_FILE</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">_from_legacy</span><span class="p">(</span><span class="n">LEGACY_PARA_FILE</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.params_docs</span><span class="w"> </span><span class="kn">import</span> <span class="n">new_config</span>
+            <span class="n">new_config</span><span class="p">([</span><span class="s2">"fits_image"</span><span class="p">],</span> <span class="p">[</span><span class="s2">"vortex:2"</span><span class="p">],</span> <span class="n">path</span><span class="o">=</span><span class="n">PARA_FILE</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"There is no </span><span class="si">%s</span><span class="s2"> file, created a minimal one (python -m toycoronagraph new --help: other templates)"</span>
+                      <span class="o">%</span> <span class="n">PARA_FILE</span><span class="p">)</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">PARA_FILE</span>
+    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".py"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">_from_legacy</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">params</span>
+    <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">is_legacy</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">"include"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">cfg</span> <span class="o">=</span> <span class="n">from_params</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cfg</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,73 +1,78 @@
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PSF &#8212; Toy_Coronagraph 1.6.1 documentation</title>
+    <title>PSFs: circular and spatial methods &#8212; Toy_Coronagraph 2.0.0</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
 
-    <script src="_static/documentation_options.js?v=662e1299"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=79f5c508"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'psf';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tool" href="tool.html" />
-    <link rel="prev" title="Planet" href="planet.html" />
+    <link rel="next" title="Spatial method: grid, blending, convolution" href="spatial.html" />
+    <link rel="prev" title="Lazuli telescope (prysm)" href="lazuli.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
+  <body data-default-mode="">
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
   
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -75,7 +80,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -83,18 +87,27 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -103,75 +116,55 @@
   
   
   
-    <p class="title logo__title">Toy_Coronagraph 1.6.1 documentation</p>
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
   
 </a></div>
     
   </div>
   
-  
   <div class="col-lg-9 navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+        <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="main.html">
-                        Main
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="para.html">
-                        Para
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="planet.html">
-                        Planet
-                      </a>
-                    </li>
-                
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        PSF
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tool.html">
-                        Tool
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="history.html">
-                        Version History
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -182,26 +175,44 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
-`);
-</script></div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -209,29 +220,32 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
-    </label>
+    </button>
   
 </div>
 
-    </nav>
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -240,66 +254,49 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="main.html">
-                        Main
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="para.html">
-                        Para
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="planet.html">
-                        Planet
-                      </a>
-                    </li>
-                
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        PSF
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tool.html">
-                        Tool
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="history.html">
-                        Version History
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -308,53 +305,101 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
-`);
-</script></div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="optics.html">Optics backends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lazuli.html">Lazuli telescope (prysm)</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">PSFs: circular and spatial methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial.html">Spatial method: grid, blending, convolution</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
         <div class="header-article-item">
 
-
-
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">PSF</li>
+    
+    <li class="breadcrumb-item"><a href="optics_psfs.html" class="nav-link">Optics and PSFs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">PSFs: circular and spatial methods</span></li>
   </ul>
 </nav>
 </div>
@@ -369,85 +414,37 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section id="psf">
-<span id="toycoronagraph"></span><h1>PSF<a class="headerlink" href="#psf" title="Link to this heading">#</a></h1>
-<p>Function to calculate PSF</p>
-<dl class="py function" id="module-psf">
-<dt class="sig sig-object py" id="psf.Wavefront_pos">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">Wavefront_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil_grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.Wavefront_pos" title="Link to this definition">#</a></dt>
-<dd><p>Compute the wavefront with a given position.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>float</em>) – x-coordinate of the wavefront position.</p></li>
-<li><p><strong>y</strong> (<em>float</em>) – y-coordinate of the wavefront position.</p></li>
-<li><p><strong>pupil_grid</strong> – Grid representing the pupil plane.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Wavefront at the specified position.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Field</p>
-</dd>
-</dl>
-</dd></dl>
-
+  <section id="module-toycoronagraph.psf">
+<span id="psfs-circular-and-spatial-methods"></span><h1>PSFs: circular and spatial methods<a class="headerlink" href="#module-toycoronagraph.psf" title="Link to this heading">#</a></h1>
+<p>Coronagraphic PSFs and the two ways the package images a target through them.</p>
+<p>Circular method (cir_*): for rotationally symmetric optics and targets. A radial series of PSFs
+of sources along the +x axis (radial_psf_series, one per pixel of radius, out to the image’s
+edge; beyond it, out to the corners, the last one shifted) is weighted by the target’s radial
+profile, summed, and rotated about the star.</p>
+<p>Spatial method (spatial_*): for any target. PSF kernels are sampled on a grid whose density
+follows how fast the PSF shape changes (spatial.equal_error_grid) and blended per pixel by
+spatial.spatial_psf. Kernels come either from direct propagation of every sample (‘direct’, any
+optics) or from x-axis PSFs interpolated in source position and rotated (‘rotate’, rotationally
+symmetric band-limited optics). spatial_error_report checks the model against exact PSFs.</p>
+<p>Conventions (see toycoronagraph.optics): the star is at pixel coordinate c = (img_pixel-1)/2 on
+both axes; a source at pixel (row, col) is at x = (col-c)*pixel_scale, y = (row-c)*pixel_scale in
+lambda/D, with pixel_scale = 2*psf_range/img_pixel lambda/D per pixel. Intensities are in the
+package’s units (hcipy intensity / normal_factor), the same for frames, kernels and strips.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="psf.cir_core_throughput_plot">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_core_throughput_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_core_throughput_plot" title="Link to this definition">#</a></dt>
-<dd><p>Plot the core throughput of a series of circular symmetric PSFs.</p>
+<dt class="sig sig-object py" id="toycoronagraph.psf.radial_source_positions">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">radial_source_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#radial_source_positions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.radial_source_positions" title="Link to this definition">#</a></dt>
+<dd><p>Source positions of the radial PSF series along the +x axis.</p>
+<p>For odd img_pixel the star is on a pixel and the sources are at 0, 1, 2, … pixels. For even
+img_pixel the star lies between the four central pixels and source i is at sqrt(i^2+0.25)
+pixels (these radii lie between pixel centres).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – The normalized PSFs.</p></li>
-<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Core_throughput.png</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="psf.cir_iwa">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_iwa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_iwa" title="Link to this definition">#</a></dt>
-<dd><p>Calculate the inner working angle (IWA) of a series of circular symmetric PSFs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – The normalized PSFs.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The IWA of the PSFs, in units of pixel.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="psf.cir_psf">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_planet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the final image of a circular symmetric pre-image through circular symmetric PSF with added planets.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>pre_img</strong> (<em>np.ndarray</em>) – The input image.</p></li>
-<li><p><strong>planets_pos</strong> (<em>list</em>) – List of planet positions.</p></li>
-<li><p><strong>planet_brightness</strong> (<em>list</em>) – List of planet brightness values.</p></li>
-<li><p><strong>psf_scale</strong> (<em>float</em>) – Scale of the PSF.</p></li>
-<li><p><strong>add_planet</strong> (<em>bool</em>) – Whether to add planets to the PSF.</p></li>
-<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels in the image.</p></li>
-<li><p><strong>rot_number</strong> (<em>int</em>) – Number of rotations for generating the circular PSF.</p></li>
-<li><p><strong>psfs_name</strong> (<em>str</em>) – Name of the file containing PSFs.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Final image.</p>
+<dd class="field-even"><p>((img_pixel+1)//2,) float64, distance of each radial PSF’s source from the star, in pixels.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
@@ -456,20 +453,417 @@ document.write(`
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="psf.cir_psf_contrast">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf_contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_psfs_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf_contrast" title="Link to this definition">#</a></dt>
-<dd><p>Find the planet brightness and background brightness in the final image.</p>
+<dt class="sig sig-object py" id="toycoronagraph.psf.extended_frame_size">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">extended_frame_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#extended_frame_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.extended_frame_size" title="Link to this definition">#</a></dt>
+<dd><p>Size of radial PSF frames that, rotated about the star, still cover the image corners.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ceil(sqrt(2)*img_pixel)+8 pixels, plus 1 if needed so it has the parity of img_pixel (the frame then shares the image’s pixel lattice and centre).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.radial_psf_series">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">radial_psf_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#radial_psf_series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.radial_psf_series" title="Link to this definition">#</a></dt>
+<dd><p>PSFs of sources along the +x axis (at radial_source_positions).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pre_img</strong> (<em>np.ndarray</em>) – The input image.</p></li>
-<li><p><strong>planet_psfs_number</strong> (<em>int</em>) – According to the distance between the planet and the origin, choose the nearest psf.</p></li>
-<li><p><strong>planet_angle</strong> (<em>float</em>) – The angle between the x-axis and the line of the planet and the origin.</p></li>
-<li><p><strong>planet_brightness</strong> (<em>list</em>) – List of planet brightness values.</p></li>
-<li><p><strong>psf_scale</strong> (<em>float</em>) – Scale of the PSF.</p></li>
-<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels in the image.</p></li>
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling.</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – Number of CPU cores to use for parallel calculation (joblib n_jobs).</p></li>
+<li><p><strong>frame_size</strong> (<em>int</em>) – None for frames of the image size (float64); otherwise the size (same parity as the image) of larger float32 frames centred on the star, e.g. extended_frame_size(img_pixel) so rotated PSFs cover the image corners.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>((img_pixel+1)//2, size, size) array of PSFs (size = img_pixel or frame_size), in the package’s intensity units.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If frame_size and img_pixel differ in parity.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.coronagraph_throughput">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">coronagraph_throughput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radii</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#coronagraph_throughput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.coronagraph_throughput" title="Link to this definition">#</a></dt>
+<dd><p>Throughput of point sources on the +x axis: their total light relative to
+the same sources without the starlight-suppression element (for the
+vortex: the power through the Lyot stop with and without the vortex; by
+Parseval this is the whole focal plane’s light, independent of the image frame).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling.</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – Number of CPU cores to use for parallel calculation.</p></li>
+<li><p><strong>radii</strong> (<em>array-like</em>) – Source distances from the star, in pixels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(len(radii),) float64, throughput (0-1) at each radius.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.tol_for_error_target">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">tol_for_error_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blend_share</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#tol_for_error_target"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.tol_for_error_target" title="Link to this definition">#</a></dt>
+<dd><p>Grid tolerance whose blending error fits blend_share of the image error target.</p>
+<p>Uses the measured law (largest blended-PSF shape error ~ 1.5 tol^1.6, vortex
+at 16 px per lambda/D); the error report checks the result for any optics.
+The kernel crop gets the other 80% of the target (see choose_kernel_size).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error_target</strong> (<em>float</em>) – Target relative error of the final image.</p></li>
+<li><p><strong>blend_share</strong> (<em>float</em>) – Share of the target given to blending.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>tol (L1 shape change of unit-sum kernels between neighbouring samples), clipped to [0.003, 0.05].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.axis_products">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">axis_products</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#axis_products"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.axis_products" title="Link to this definition">#</a></dt>
+<dd><p>Runs for sources on the +x axis, shared by every spatial PSF grid of
+rotationally symmetric, band-limited optics.</p>
+<p>Sources are spaced at half the Nyquist spacing of the intensity’s band limit
+(so band-limited interpolation between them is exact), from the star to
+beyond the frame corners. Each run gives the throughput; runs beyond the
+reach of the radial frames also give a “far strip”: the intensity on the
+block of the image pixel lattice (possibly outside the image) that
+interpolation windows around nearby radii need. These depend only on the
+optics, the image sampling and the kernel size, not on the grid tolerance,
+so they can be cached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling.</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – Number of CPU cores to use for parallel calculation.</p></li>
+<li><p><strong>kernel_size</strong> (<em>int</em>) – Kernel width in pixels (odd).</p></li>
+<li><p><strong>cache_path</strong> (<em>str</em>) – If given, load from / save to this .npz (reused when the settings match, otherwise recomputed and overwritten).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>axis_x ((n,) float64, source positions in pixels from the star), throughput ((n,) float64), far_x ((m,) float64, the positions with a far strip), far_strips ((m, 2wh+3, width) float64, intensity on rows far_row0..far_row0+2wh+2 and columns far_col0[k]..far_col0[k]+width-1 of the image pixel lattice), far_col0 ((m,) int), far_row0 (int), and the settings (optics.settings(), kernel_size, cache_version); wh is from _rotate_geometry.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.shape_change_rates">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">shape_change_rates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#shape_change_rates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.shape_change_rates" title="Link to this definition">#</a></dt>
+<dd><p>How fast the PSF shape changes with source radius and angle, for
+rotationally symmetric optics (from x-axis PSFs).</p>
+<p>d_r(r) is the L1 difference between unit-sum kernels at neighbouring radii
+per pixel of radius, and d_phi(r) the L1 difference between the kernel at
+(r, 0) and at (r, 2 deg) per radian. Both are smoothed with a running
+maximum (conservative). Radii are 0.5 px apart out to 3 lambda/D (or the
+reach of the radial frames) and at the axis node spacing beyond.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>window</strong> (<em>callable</em>) – From _window_builder.</p></li>
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling.</p></li>
+<li><p><strong>kernel_size</strong> (<em>int</em>) – Kernel width in pixels (odd).</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – Number of threads.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>r_metric ((n,) radii in pixels, out to past the image corners), d_r ((n,) L1 change per pixel of radius), d_phi ((n,) L1 change per radian); float64.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.shape_change_rates_direct">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">shape_change_rates_direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_dirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#shape_change_rates_direct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.shape_change_rates_direct" title="Link to this definition">#</a></dt>
+<dd><p>How fast the PSF shape changes with source radius and angle, for any optics
+(from PSFs computed directly along several directions).</p>
+<p>Same quantities as shape_change_rates, measured along n_dirs directions (off
+the pixel axes) and taking the largest, so the grid is dense enough in every
+direction. Radii are 1 px apart out to 3 lambda/D and 0.25 lambda/D beyond.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling.</p></li>
+<li><p><strong>kernel_size</strong> (<em>int</em>) – Kernel width in pixels (odd).</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – Number of CPU cores for the propagation.</p></li>
+<li><p><strong>n_dirs</strong> (<em>int</em>) – Number of directions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>r_metric ((n,) radii in pixels), d_r ((n,) L1 change per pixel of radius) and d_phi ((n,) L1 change per radian), the maxima over the directions; float64.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.choose_kernel_size">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">choose_kernel_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_probe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_share</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radial_psfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#choose_kernel_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.choose_kernel_size" title="Link to this definition">#</a></dt>
+<dd><p>The smallest kernel size whose crop keeps the image error within a target.</p>
+<p>A kernel of K x K pixels misses each PSF’s light that lands on the image
+outside the kernel window. That loss is measured, not modelled: PSFs of the
+actual optics are computed on the whole image at n_probe pixels drawn where
+pre_img is bright, and for every odd K the light on the image outside the
+K x K window around each probe is summed. Weighted by each probe’s light on
+the image, this is the crop error of pre_img’s final image. The smallest K
+keeping it within crop_share * error_target is returned; the rest of the
+target is left for the other error sources (blending, transmission map),
+which the error report checks afterwards.</p>
+<p>With radial_psfs (circularly symmetric optics), a probe’s PSF is the radial PSF rotated to
+it, as the circular method places planets (_cir_planet): no new propagation. Against
+propagated probes the kernel size was the same in 207 of 216 cases (4-16 px per lambda/D,
+charges 2 and 6, rings, arcs, 1/r^3 profiles) and one step (2 px) apart otherwise, where the
+true crop error sits at the threshold (within 1% of it). Probes beyond the last radial PSF
+(the image corners) are still propagated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling.</p></li>
+<li><p><strong>pre_img</strong> (<em>np.ndarray</em>) – (img_pixel, img_pixel) target image (any unit; its absolute value weighs the probes); None, or an all-zero image, weighs every pixel equally.</p></li>
+<li><p><strong>error_target</strong> (<em>float</em>) – Target relative error of the final image (e.g. 0.02 for 2%).</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – Number of CPU cores for the propagation.</p></li>
+<li><p><strong>n_probe</strong> (<em>int</em>) – Number of probe pixels drawn (with replacement; repeats count several times).</p></li>
+<li><p><strong>crop_share</strong> (<em>float</em>) – Share of the error target given to the crop.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Random seed of the probe pixels.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print the choice.</p></li>
+<li><p><strong>radial_psfs</strong> (<em>np.ndarray</em><em> or </em><em>None</em>) – ((img_pixel+1)//2, S, S) radial PSF series of circularly symmetric optics, on frames of S &gt;= extended_frame_size(img_pixel) (smaller frames would lose the wings rotated into the image corners: then every probe is propagated); None: propagate every probe.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the kernel size (int, odd, pixels; 2*img_pixel-1 if no size meets the target), and a dict with kernel_sizes ((img_pixel,) int: 1, 3, …, 2*img_pixel-1) and crop (their estimated crop error, a fraction of the image light).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.spatial_psf_calculation">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">spatial_psf_calculation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radial_psfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_kernel_gb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#spatial_psf_calculation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.spatial_psf_calculation" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the spatially-sampled PSF kernels, sample grid and blend weights
+for the spatial convolution method.</p>
+<p>The sample grid (equal_error_grid) is built from how fast the PSF shape
+actually changes, so neighbouring samples differ by about tol; inside
+~1-3 lambda/D every pixel is its own sample. Each kernel is centred on its
+source and divided by the source’s throughput, so it carries the PSF shape
+only; the throughput goes into the transmission map tmap: each pixel’s own
+throughput for symmetric, band-limited optics, otherwise the samples’
+throughput blended onto the pixels like the kernels. Their product
+reproduces the PSF at every sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image sampling (see toycoronagraph.optics).</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – Number of CPU cores to use for parallel calculation.</p></li>
+<li><p><strong>radial_psfs</strong> (<em>np.ndarray</em>) – ((img_pixel+1)//2, S, S) radial PSF series ( radial_psf_series; S &gt;= img_pixel, larger frames are cropped); computed if needed and not given. Used for rotationally symmetric, band-limited optics, to measure the grid’s rates and by ‘rotate’.</p></li>
+<li><p><strong>kernel_size</strong> (<em>int</em>) – Kernel width in pixels (odd); None chooses the smallest one meeting error_target for pre_img (see choose_kernel_size).</p></li>
+<li><p><strong>error_target</strong> (<em>float</em>) – Target relative error of the final image (e.g. 0.02 for 2%).</p></li>
+<li><p><strong>pre_img</strong> (<em>np.ndarray</em>) – (img_pixel, img_pixel) target image, used only to choose the kernel size.</p></li>
+<li><p><strong>tol</strong> (<em>float</em>) – Target PSF-shape change (L1 of unit-sum kernels) between neighbouring samples; None derives it from error_target (see tol_for_error_target).</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – ‘rotate’ interpolates the x-axis PSFs in source position (band-limited weights) and rotates them (quintic spline): fast, only for optics that are rotationally symmetric with a known band limit. ‘direct’ propagates every sample (any optics, much slower). None picks ‘rotate’ when the optics allow it.</p></li>
+<li><p><strong>axis_cache</strong> (<em>str</em>) – .npz path to cache the x-axis runs (see axis_products); None for no cache.</p></li>
+<li><p><strong>save_path</strong> (<em>str</em>) – If given, save the result there with np.savez.</p></li>
+<li><p><strong>validate</strong> (<em>bool</em>) – Check the result against exact PSFs and print the error analysis per stage (see spatial_error_report); stored in the result.</p></li>
+<li><p><strong>n_validate</strong> (<em>int</em>) – Samples and pixels checked per radius band.</p></li>
+<li><p><strong>max_kernel_gb</strong> (<em>float</em>) – Refuse to build a kernel cube larger than this (GB).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>psfs ((n, K, K) float32 kernels centred on their sources, divided by their throughput; 0 where the throughput is &lt;= 1e-12), throughput ((n,) float64), tmap ((img_pixel, img_pixel) float64 transmission map), the grid of equal_error_grid (positions ((n, 2) (row, col) pixels), rings, ring_radii, ring_theta0, ring_ntheta, r_pix, and the blend weights inds, wts ((img_pixel, img_pixel, 4))), the shape-change rates r_metric, d_r, d_phi, the settings (optics.settings(), mode, kernel_size, tol, error_target) and, if validated, the err_* entries of spatial_error_report.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If mode is unknown, ‘rotate’ is not allowed for the optics, or kernel_size is even.</p></li>
+<li><p><strong>MemoryError</strong> – If the kernel cube would exceed max_kernel_gb.</p></li>
+<li><p><strong>RuntimeError</strong> – If ‘direct’ kernels are not centred on their sources (tilt convention check).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.load_spatial_psfs">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">load_spatial_psfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#load_spatial_psfs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.load_spatial_psfs" title="Link to this definition">#</a></dt>
+<dd><p>Load spatial PSF data saved by spatial_psf_calculation (or axis_products).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path of the .npz file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The saved arrays, with 0-d entries (scalar settings) converted back to Python values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.spatial_error_report">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">spatial_error_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_per_band</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#spatial_error_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.spatial_error_report" title="Link to this definition">#</a></dt>
+<dd><p>Error analysis of the spatial PSF model, stage by stage, against exact PSFs
+(propagated directly through the model’s optics).</p>
+<p>Checks a few random samples in each radius band (per-pixel zone, r_pix-3,
+3-8 and &gt;8 lambda/D; empty bands are dropped), and pixels spread evenly in
+radius over each band, so the image estimate can follow the error with
+radius. Errors are L1 differences of the PSF on the image, relative to the
+PSF’s light that lands on the image (light falling outside the image is not
+part of it, so it is not an error):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. kernel generation: a sample's kernel x throughput vs the exact PSF at
+   the sample, over the kernel window;
+2. blending between samples: the blended kernel (with the exact throughput)
+   vs the exact PSF of a source at the pixel;
+3. transmission map: its error, times the light in the kernel;
+4. kernel crop: the PSF's light on the image but outside the kernel window;
+5. cumulated: the pixel's effective PSF (transmission map x blended kernel,
+   nothing outside the window) vs the exact PSF, end to end.
+</pre></div>
+</div>
+<p>Stage 2 includes the kernel generation error of the neighbouring samples,
+and the cumulated error is at most about the sum of stages 2-4.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>dict</em>) – From spatial_psf_calculation (kernels, grid, tmap and settings).</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em>) – Number of CPU cores for the hcipy runs.</p></li>
+<li><p><strong>n_per_band</strong> (<em>int</em>) – Samples and pixels checked per radius band.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Random seed of the choice of samples and pixels.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print the table (largest error per stage and band).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>err_edges ((n_band+1,) band edges, pixels), err_stages ((5,) stage names), err_max and err_median ((5, n_band) relative errors; NaN where a band has no check), err_n ((n_band,) pixels checked per band), err_pix_r ((n_pix,) the checked pixels’ radii, pixels) and err_pix ((5, n_pix) their errors per stage; NaN for the kernel generation, which is checked at samples).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.spatial_psf_planets">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">spatial_psf_planets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#spatial_psf_planets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.spatial_psf_planets" title="Link to this definition">#</a></dt>
+<dd><p>Add one or more planets to an image with exact coronagraphic PSFs.</p>
+<p>Each planet’s PSF is propagated through the model’s optics at its exact
+position (no interpolation), on the full image frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>planets_pos</strong> (<em>list</em>) – Planet positions (radius in arcsec, angle in radian from +x towards +y).</p></li>
+<li><p><strong>planet_brightness</strong> (<em>list</em>) – Planet brightnesses, in Jy/arcsec^2 (as Target stores them).</p></li>
+<li><p><strong>psf_scale</strong> (<em>float</em>) – The scale of the PSF, in arcsec per pixel.</p></li>
+<li><p><strong>model</strong> (<em>dict</em>) – From spatial_psf_calculation (gives the optics settings).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(img_pixel, img_pixel) float64 image of the planets (Jy/arcsec^2); planets outside the image are skipped with a message.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.exact_point_sources">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">exact_point_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#exact_point_sources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.exact_point_sources" title="Link to this definition">#</a></dt>
+<dd><p>Point sources through the optics, each propagated at its exact position on the full frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="optics.html#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The optical system and image grid.</p></li>
+<li><p><strong>pixels</strong> (<em>list</em>) – (row, column) of each source on the image, in pixels (need not be integers).</p></li>
+<li><p><strong>values</strong> (<em>list</em>) – Each source’s flux per pixel area (e.g. Jy/arcsec^2: Jy / pixel_scale^2).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(img_pixel, img_pixel) float64 image of the sources, in the unit of values. Sources more than half a pixel outside the image are skipped with a message.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.spatial_psf_contrast">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">spatial_psf_contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#spatial_psf_contrast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.spatial_psf_contrast" title="Link to this definition">#</a></dt>
+<dd><p>Find the planet brightness and background brightness in the final image, with spatially-varying PSFs.</p>
+<p>Same measurement as cir_psf_contrast: the planet’s core (pixels above half
+its peak) is the aperture; the planet and the dust (with and without the
+target inside the IWA) are summed inside it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pre_img</strong> (<em>np.ndarray</em>) – (img_pixel, img_pixel) input image, in Jy/arcsec^2.</p></li>
+<li><p><strong>planet_pos</strong> (<em>array-like</em>) – Planet position (radius in arcsec, angle in radian).</p></li>
+<li><p><strong>planet_brightness</strong> (<em>float</em>) – Planet brightness in Jy/arcsec^2.</p></li>
+<li><p><strong>psf_scale</strong> (<em>float</em>) – The scale of the PSF, in arcsec per pixel.</p></li>
+<li><p><strong>model</strong> (<em>dict</em>) – From spatial_psf_calculation.</p></li>
+<li><p><strong>use_gpu</strong> (<em>bool</em>) – Use CuPy for the FFT convolutions.</p></li>
+<li><p><strong>ncores</strong> (<em>int</em>) – Number of threads.</p></li>
+<li><p><strong>report</strong> (<em>bool</em>) – Print the estimated error of the disk image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>planet brightness, background brightness, background brightness (ignored dust inside IWA) in Jy (floats: sums over the planet’s core aperture times psf_scale^2).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.cir_psf_contrast">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf_contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#cir_psf_contrast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.cir_psf_contrast" title="Link to this definition">#</a></dt>
+<dd><p>Find the planet brightness and background brightness in the final image.</p>
+<p>The planet’s core (pixels above half its peak) is the aperture; the planet and the dust
+(with and without the target inside the IWA, see cir_iwa) are summed inside it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pre_img</strong> (<em>np.ndarray</em>) – (img_pixel, img_pixel) circularly symmetric input image, in Jy/arcsec^2.</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – the distance between the planet and the origin, in pixel unit.</p></li>
+<li><p><strong>planet_angle</strong> (<em>float</em>) – The angle between the x-axis and the line of the planet and the origin (radian).</p></li>
+<li><p><strong>planet_brightness</strong> (<em>float</em>) – The planet brightness, in Jy/arcsec^2.</p></li>
+<li><p><strong>psf_scale</strong> (<em>float</em>) – Scale of the PSF, in arcsec per pixel.</p></li>
+<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p></li>
 <li><p><strong>rot_number</strong> (<em>int</em>) – Number of rotations for generating the circular PSF.</p></li>
-<li><p><strong>psfs_name</strong> (<em>str</em>) – Name of the file containing PSFs.</p></li>
+<li><p><strong>psfs_name</strong> (<em>str</em><em> or </em><em>np.ndarray</em>) – The .npy file of the radial PSFs (frames of the image size, or larger), or the PSFs themselves (e.g. memory-mapped once: Coronagraph.radial_psfs).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -482,21 +876,55 @@ document.write(`
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="psf.cir_psf_planets">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf_planets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.cir_psf_planets" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="toycoronagraph.psf.cir_psf">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_planet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#cir_psf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.cir_psf" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the final image of a circular symmetric pre-image through circular symmetric PSF with added planets.</p>
+<p>Each radial PSF is weighted by the light it stands for (see _cir_chunks: the
+profile times the annulus area, and near the star the pixels’ own light), and
+the PSFs are rotated with cubic interpolation (not clipped, so the disk image is
+linear in pre_img). With radial PSF frames larger than the image
+(radial_psf_series with frames of extended_frame_size) the rotated PSFs also fill the image
+corners; with frames of the image size, the corners (beyond the inscribed
+circle) miss part of their light.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pre_img</strong> (<em>np.ndarray</em>) – (img_pixel, img_pixel) circularly symmetric input image (any unit, e.g. Jy/arcsec^2).</p></li>
+<li><p><strong>planets_pos</strong> (<em>list</em>) – Planet positions (radius in arcsec, angle in radian).</p></li>
+<li><p><strong>planet_brightness</strong> (<em>list</em>) – Planet brightnesses, in the unit of pre_img.</p></li>
+<li><p><strong>psf_scale</strong> (<em>float</em>) – Scale of the PSF, in arcsec per pixel.</p></li>
+<li><p><strong>iwa_ignore</strong> (<em>bool</em>) – Whether to ignore the target inside the IWA (see cir_iwa).</p></li>
+<li><p><strong>add_planet</strong> (<em>bool</em>) – Whether to add planets to the PSF.</p></li>
+<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p></li>
+<li><p><strong>rot_number</strong> (<em>int</em>) – Number of rotations for generating the circular PSF.</p></li>
+<li><p><strong>psfs_name</strong> (<em>str</em><em> or </em><em>np.ndarray</em>) – The .npy file of the radial PSFs (frames of the image size, or larger), or the PSFs themselves (e.g. memory-mapped once: Coronagraph.radial_psfs).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(img_pixel, img_pixel) float64 final image, in the unit of pre_img. Planets beyond the last radial PSF are skipped with a message.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.psf.cir_psf_planets">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">cir_psf_planets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">planets_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planet_brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psfs_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#cir_psf_planets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.cir_psf_planets" title="Link to this definition">#</a></dt>
 <dd><p>Add one or more planets to an image through a series of circular symmetric PSFs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>planets_pos</strong> (<em>list</em>) – A list of planet positions, in units of arcsec.</p></li>
-<li><p><strong>planet_brightness</strong> (<em>list</em>) – A list of planet brightnesses, in units of Jy.</p></li>
-<li><p><strong>psf_scale</strong> (<em>float</em>) – The scale of the PSF, in units of arcsec.</p></li>
-<li><p><strong>img_pixel</strong> (<em>int</em>) – The number of pixels in the image.</p></li>
-<li><p><strong>psfs_name</strong> (<em>str</em>) – The file name of the PSFs.</p></li>
+<li><p><strong>planets_pos</strong> (<em>list</em>) – Planet positions (radius in arcsec, angle in radian).</p></li>
+<li><p><strong>planet_brightness</strong> (<em>list</em>) – Planet brightnesses, e.g. in Jy/arcsec^2 (the image has the same unit).</p></li>
+<li><p><strong>psf_scale</strong> (<em>float</em>) – The scale of the PSF, in arcsec per pixel.</p></li>
+<li><p><strong>img_pixel</strong> (<em>int</em>) – The number of pixels on one edge of the image.</p></li>
+<li><p><strong>psfs_name</strong> (<em>str</em><em> or </em><em>np.ndarray</em>) – The .npy file of the radial PSFs (frames of the image size, or larger), or the PSFs themselves (e.g. memory-mapped once: Coronagraph.radial_psfs).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The image of planets.</p>
+<dd class="field-even"><p>(img_pixel, img_pixel) float64 image of the planets. Planets beyond the last radial PSF are silently skipped.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
@@ -505,15 +933,15 @@ document.write(`
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="psf.core_throughput_fun">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">core_throughput_fun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.core_throughput_fun" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="toycoronagraph.psf.core_throughput_fun">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">core_throughput_fun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#core_throughput_fun"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.core_throughput_fun" title="Link to this definition">#</a></dt>
 <dd><p>Calculate the core throughput of a series of PSFs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – The normalized PSFs.</p>
+<dd class="field-odd"><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – (n, S, S) normalized PSFs (e.g. the radial PSF series).</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The core throughput of the psfs</p>
+<dd class="field-even"><p>(n,) float64 core throughput of the psfs: the sum of each PSF’s pixels above half its peak.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
@@ -522,65 +950,38 @@ document.write(`
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="psf.core_throughput_vectorized">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">core_throughput_vectorized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.core_throughput_vectorized" title="Link to this definition">#</a></dt>
-<dd><p>Calculate the core throughput of a series of PSFs in a vectorized way.</p>
+<dt class="sig sig-object py" id="toycoronagraph.psf.cir_iwa">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">cir_iwa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#cir_iwa"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.cir_iwa" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the inner working angle (IWA) of a series of circular symmetric PSFs.</p>
+<p>The IWA is the index of the first radial PSF whose core throughput reaches half of the
+largest one (np.searchsorted, assuming the core throughput increases with radius).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – The normalized PSFs.</p>
+<dd class="field-odd"><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – (n, S, S) radial PSFs (see radial_psf_series).</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The core throughput of the psfs</p>
+<dd class="field-even"><p>The IWA of the PSFs, as a radial PSF index (~ distance from the star in pixels).</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
+<dd class="field-odd"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="psf.psf_calculation">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">psf_calculation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lyot_mask_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.psf_calculation" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the PSFs of a vortex coronagraph for a given charge along the positive x-axis, and saves them to a file.</p>
+<dt class="sig sig-object py" id="toycoronagraph.psf.cir_core_throughput_plot">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.psf.</span></span><span class="sig-name descname"><span class="pre">cir_core_throughput_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/psf.html#cir_core_throughput_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.psf.cir_core_throughput_plot" title="Link to this definition">#</a></dt>
+<dd><p>Plot the core throughput of a series of circular symmetric PSFs, with the IWA marked.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>charge</strong> (<em>int</em>) – Charge of the vortex coronagraph.</p></li>
-<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p></li>
-<li><p><strong>psf_range</strong> (<em>float</em>) – Range of the PSF in lambda/D.</p></li>
-<li><p><strong>num_cores</strong> (<em>int</em>) – Number of CPU cores to use for multiprocessing.</p></li>
+<li><p><strong>psfs</strong> (<em>numpy.ndarray</em>) – (n, S, S) radial PSFs (see radial_psf_series).</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+<li><p><strong>pixel_scale</strong> (<em>float</em>) – Pixel size in lambda/D (e.g. Optics.pixel_scale): the distance axis in lambda/D; None: in pixels (the index of each radial PSF).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Array of calculated PSFs.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="psf.psf_chunk">
-<span class="sig-prename descclassname"><span class="pre">psf.</span></span><span class="sig-name descname"><span class="pre">psf_chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lyot_stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psf.psf_chunk" title="Link to this definition">#</a></dt>
-<dd><p>Calculate a chunk of PSF.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> (<em>int</em>) – Index of the chunk.</p></li>
-<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels in the image.</p></li>
-<li><p><strong>psf_range</strong> (<em>float</em>) – Range of the PSF.</p></li>
-<li><p><strong>pupil_grid</strong> – Grid representing the pupil plane.</p></li>
-<li><p><strong>prop</strong> – Propagator for the PSF calculation.</p></li>
-<li><p><strong>lyot_stop</strong> – Lyot stop for the coronagraph.</p></li>
-<li><p><strong>coro</strong> – Coronagraph for the PSF calculation.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Index and the calculated PSF chunk as a 2D numpy array.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>tuple</p>
+<dd class="field-even"><p>None. Saves Core_throughput.png in the current directory and shows the plot.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -592,68 +993,71 @@ document.write(`
               
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="planet.html"
+       href="lazuli.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Planet</p>
+        <p class="prev-next-title">Lazuli telescope (prysm)</p>
       </div>
     </a>
     <a class="right-next"
-       href="tool.html"
+       href="spatial.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tool</p>
+        <p class="prev-next-title">Spatial method: grid, blending, convolution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.Wavefront_pos"><code class="docutils literal notranslate"><span class="pre">Wavefront_pos()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_core_throughput_plot"><code class="docutils literal notranslate"><span class="pre">cir_core_throughput_plot()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_iwa"><code class="docutils literal notranslate"><span class="pre">cir_iwa()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf"><code class="docutils literal notranslate"><span class="pre">cir_psf()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf_contrast"><code class="docutils literal notranslate"><span class="pre">cir_psf_contrast()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.cir_psf_planets"><code class="docutils literal notranslate"><span class="pre">cir_psf_planets()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.core_throughput_fun"><code class="docutils literal notranslate"><span class="pre">core_throughput_fun()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.core_throughput_vectorized"><code class="docutils literal notranslate"><span class="pre">core_throughput_vectorized()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.psf_calculation"><code class="docutils literal notranslate"><span class="pre">psf_calculation()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psf.psf_chunk"><code class="docutils literal notranslate"><span class="pre">psf_chunk()</span></code></a></li>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.radial_source_positions"><code class="docutils literal notranslate"><span class="pre">radial_source_positions()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.extended_frame_size"><code class="docutils literal notranslate"><span class="pre">extended_frame_size()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.radial_psf_series"><code class="docutils literal notranslate"><span class="pre">radial_psf_series()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.coronagraph_throughput"><code class="docutils literal notranslate"><span class="pre">coronagraph_throughput()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.tol_for_error_target"><code class="docutils literal notranslate"><span class="pre">tol_for_error_target()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.axis_products"><code class="docutils literal notranslate"><span class="pre">axis_products()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.shape_change_rates"><code class="docutils literal notranslate"><span class="pre">shape_change_rates()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.shape_change_rates_direct"><code class="docutils literal notranslate"><span class="pre">shape_change_rates_direct()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.choose_kernel_size"><code class="docutils literal notranslate"><span class="pre">choose_kernel_size()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.spatial_psf_calculation"><code class="docutils literal notranslate"><span class="pre">spatial_psf_calculation()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.load_spatial_psfs"><code class="docutils literal notranslate"><span class="pre">load_spatial_psfs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.spatial_error_report"><code class="docutils literal notranslate"><span class="pre">spatial_error_report()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.spatial_psf_planets"><code class="docutils literal notranslate"><span class="pre">spatial_psf_planets()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.exact_point_sources"><code class="docutils literal notranslate"><span class="pre">exact_point_sources()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.spatial_psf_contrast"><code class="docutils literal notranslate"><span class="pre">spatial_psf_contrast()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.cir_psf_contrast"><code class="docutils literal notranslate"><span class="pre">cir_psf_contrast()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.cir_psf"><code class="docutils literal notranslate"><span class="pre">cir_psf()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.cir_psf_planets"><code class="docutils literal notranslate"><span class="pre">cir_psf_planets()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.core_throughput_fun"><code class="docutils literal notranslate"><span class="pre">core_throughput_fun()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.cir_iwa"><code class="docutils literal notranslate"><span class="pre">cir_iwa()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.psf.cir_core_throughput_plot"><code class="docutils literal notranslate"><span class="pre">cir_core_throughput_plot()</span></code></a></li>
 </ul>
   </nav></div>
-
-  <div class="sidebar-secondary-item">
-  <div class="tocsection sourcelink">
-    <a href="_sources/psf.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
 
 </div></div>
               
@@ -668,8 +1072,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -677,28 +1081,32 @@ document.write(`
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="copyright">
     
-      © Copyright 2023, dreamjade.
+      © Copyright 2023-2026, dreamjade.
       <br/>
     
   </p>
 </div>
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.4.
-    <br/>
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
   </p>
 </div>
       
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
 </p></div>
       
     </div>

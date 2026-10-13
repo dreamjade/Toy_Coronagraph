@@ -1,0 +1,4 @@
+Tools
+=====
+
+.. automodule:: toycoronagraph.tool

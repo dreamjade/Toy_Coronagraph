@@ -1,9 +1,4 @@
-.. _toycoronagraph:
+PSFs: circular and spatial methods
+==================================
 
-PSF
-=====================
-
-Function to calculate PSF
-
-.. automodule:: psf
-   :members:
+.. automodule:: toycoronagraph.psf

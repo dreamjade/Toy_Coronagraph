@@ -1,9 +1,4 @@
-.. _toycoronagraph:
+Planet orbits
+=============
 
-Planet
-=====================
-
-Function to calculate planet's orbit and location
-
-.. automodule:: planet
-   :members:
+.. automodule:: toycoronagraph.planet

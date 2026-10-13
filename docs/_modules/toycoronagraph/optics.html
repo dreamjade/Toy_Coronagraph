@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.optics &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/optics';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.optics</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.optics</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Optical systems behind one interface.</span>
+
+<span class="sd">The spatial PSF machinery (toycoronagraph.psf, toycoronagraph.spatial) only asks an optical</span>
+<span class="sd">system for the image of a point source: its throughput, its total light, and its intensity</span>
+<span class="sd">on blocks of the image pixel grid. So a different coronagraph, or a starshade, can be added</span>
+<span class="sd">as a new backend without touching that machinery:</span>
+
+<span class="sd">    @register_backend('my_system')</span>
+<span class="sd">    class MySystemBackend:</span>
+<span class="sd">        rotationally_symmetric = False  # True allows the fast 'rotate' mode</span>
+<span class="sd">        bandlimit = None                # cycles per lambda/D of the intensity vs. source</span>
+<span class="sd">                                        # position, if known (also needed by 'rotate')</span>
+<span class="sd">        def __init__(self, optics): ...</span>
+<span class="sd">        def source(self, x, y): ...     # returns an object with .throughput, .total,</span>
+<span class="sd">                                        # .block(center, shape) and .frame()</span>
+<span class="sd">        def unocculted(self): ...       # optional: the star without the starlight-suppression</span>
+<span class="sd">                                        # element (same kind of object; the contrast_peak unit)</span>
+
+<span class="sd">and then Optics('my_system', img_pixel, psf_range, (('name', value), ...), module='my.package').</span>
+<span class="sd">The module is imported when the kind is not registered yet (e.g. in parallel worker processes).</span>
+<span class="sd">Two systems come with the package: Optics.vortex (hcipy; VortexBackend below) and Optics.lazuli</span>
+<span class="sd">(the Lazuli space telescope computed with prysm; toycoronagraph.lazuli, imported only when used).</span>
+
+<span class="sd">Conventions shared by every backend:</span>
+<span class="sd">    * positions are in lambda/D, with the star at the origin; image pixel (row, col) is at</span>
+<span class="sd">      x = (col - c) * pixel_scale, y = (row - c) * pixel_scale with c = (img_pixel - 1) / 2;</span>
+<span class="sd">    * intensities are in the package's units (hcipy intensity / normal_factor, as in</span>
+<span class="sd">      radial_psf_series): each pixel holds the fraction of the source's light entering the</span>
+<span class="sd">      aperture, so kernels, frames and totals are directly comparable;</span>
+<span class="sd">    * throughput is the source's total light relative to the same source without the</span>
+<span class="sd">      starlight-suppression element.</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hcipy</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">make_pupil_grid</span><span class="p">,</span> <span class="n">make_uniform_grid</span><span class="p">,</span> <span class="n">make_circular_aperture</span><span class="p">,</span> <span class="n">evaluate_supersampled</span><span class="p">,</span>
+                   <span class="n">FraunhoferPropagator</span><span class="p">,</span> <span class="n">VortexCoronagraph</span><span class="p">,</span> <span class="n">Apodizer</span><span class="p">,</span> <span class="n">Wavefront</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Optics">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.Optics">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Optics</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Description of an optical system and of the image sampling (hashable, picklable).</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        kind (str): Name of a registered backend, e.g. 'vortex'.</span>
+<span class="sd">        img_pixel (int): Number of pixels on one edge of the image.</span>
+<span class="sd">        psf_range (float): Half-width of the image in lambda/D.</span>
+<span class="sd">        params (tuple): The backend's parameters as sorted (name, value) pairs.</span>
+<span class="sd">        module (str): Module that registers the backend (imported if needed).</span>
+<span class="sd">    """</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">img_pixel</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">psf_range</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">params</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">module</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'toycoronagraph.optics'</span>
+
+<div class="viewcode-block" id="Optics.vortex">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.Optics.vortex">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vortex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">img_pixel</span><span class="p">,</span> <span class="n">psf_range</span><span class="p">,</span> <span class="n">lyot_mask_size</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        An ideal vortex coronagraph with a circular aperture and a circular Lyot stop.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Vortex charge (topological charge of the focal-plane mask).</span>
+<span class="sd">            img_pixel (int): Number of pixels on one edge of the image.</span>
+<span class="sd">            psf_range (float): Half-width of the image, in lambda/D.</span>
+<span class="sd">            lyot_mask_size (float): Lyot stop diameter relative to the aperture diameter.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optics: kind 'vortex' with params (('charge', int), ('lyot_mask_size', float)).</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="s1">'vortex'</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">img_pixel</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">psf_range</span><span class="p">),</span>
+                   <span class="p">((</span><span class="s1">'charge'</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">charge</span><span class="p">)),</span> <span class="p">(</span><span class="s1">'lyot_mask_size'</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">lyot_mask_size</span><span class="p">))))</span></div>
+
+
+<div class="viewcode-block" id="Optics.lazuli">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.Optics.lazuli">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lazuli</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">img_pixel</span><span class="p">,</span> <span class="n">psf_range</span><span class="p">,</span> <span class="n">wavelengths</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">scene_wavelength</span><span class="p">,</span> <span class="n">scene_diameter</span><span class="p">,</span>
+               <span class="n">pupil_samples</span><span class="p">,</span> <span class="n">lyot_mask_size</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">opd</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The Lazuli space telescope, alone or with an ideal vortex coronagraph, computed with prysm</span>
+<span class="sd">        (toycoronagraph.lazuli; observe.optics_for builds it from a [[coronagraph]] table).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): 0 for the telescope alone; else the vortex charge (even).</span>
+<span class="sd">            img_pixel (int): Number of pixels on one edge of the image.</span>
+<span class="sd">            psf_range (float): Half-width of the image, in scene lambda/D (scene_wavelength / scene_diameter).</span>
+<span class="sd">            wavelengths (sequence of float): Wavelengths of the PSF, in m.</span>
+<span class="sd">            weights (sequence of float): Relative weight of each wavelength (normalised here to sum 1).</span>
+<span class="sd">            scene_wavelength (float): The scene's wavelength in m ([observation] wavelength); with</span>
+<span class="sd">                scene_diameter it sets the lambda/D unit of source positions and of psf_range.</span>
+<span class="sd">            scene_diameter (float): The scene's telescope diameter in m ([observation] diameter).</span>
+<span class="sd">            pupil_samples (int): Pupil samples across the aperture (the OPD map's size when there is one).</span>
+<span class="sd">            lyot_mask_size (float): Lyot stop diameter relative to the aperture (used with a charge).</span>
+<span class="sd">            opd (str): OPD map file (see lazuli.read_opd); "" for none. Stored as an absolute path, with</span>
+<span class="sd">                the SHA-1 of the file (opd_sha1), so cached PSFs follow the map's content.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optics: kind 'lazuli' (module 'toycoronagraph.lazuli'); the wavelengths and weights are</span>
+<span class="sd">                stored as tuples (hashable).</span>
+<span class="sd">        """</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="s2">""</span>
+        <span class="k">if</span> <span class="n">opd</span><span class="p">:</span>
+            <span class="n">opd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">opd</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">opd</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">digest</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()[:</span><span class="mi">16</span><span class="p">]</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">))</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">charge</span><span class="p">),</span> <span class="n">lyot_mask_size</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">lyot_mask_size</span><span class="p">),</span> <span class="n">opd</span><span class="o">=</span><span class="n">opd</span><span class="p">,</span> <span class="n">opd_sha1</span><span class="o">=</span><span class="n">digest</span><span class="p">,</span>
+                      <span class="n">pupil_samples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">pupil_samples</span><span class="p">),</span> <span class="n">scene_diameter</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">scene_diameter</span><span class="p">),</span>
+                      <span class="n">scene_wavelength</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">scene_wavelength</span><span class="p">),</span> <span class="n">wavelengths</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">wavelengths</span><span class="p">),</span>
+                      <span class="n">weights</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">total</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">weights</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="s1">'lazuli'</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">img_pixel</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">psf_range</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">items</span><span class="p">())),</span> <span class="s1">'toycoronagraph.lazuli'</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Optics.param">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.Optics.param">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The value of one backend parameter.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): Parameter name, e.g. 'charge'.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The value stored in params (KeyError if there is none).</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)[</span><span class="n">name</span><span class="p">]</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pixel_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""float: Image pixel size, in lambda/D per pixel (2*psf_range/img_pixel)."""</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">psf_range</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">img_pixel</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">centre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""float: Pixel coordinate of the star on both axes, (img_pixel-1)/2."""</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">img_pixel</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+<div class="viewcode-block" id="Optics.backend">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.Optics.backend">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">backend</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The backend object of this system (cached per process; see get_backend)."""</span>
+        <span class="k">return</span> <span class="n">get_backend</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Optics.settings">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.Optics.settings">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Flat dict of plain values (for .npz files and cache checks).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: optics_kind, optics_module, img_pixel, psf_range, and 'optics_&lt;name&gt;'</span>
+<span class="sd">                for every backend parameter.</span>
+<span class="sd">        """</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">optics_kind</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span> <span class="n">optics_module</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="n">img_pixel</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">img_pixel</span><span class="p">,</span> <span class="n">psf_range</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">psf_range</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'optics_'</span><span class="o">+</span><span class="n">name</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+
+<div class="viewcode-block" id="Optics.from_settings">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.Optics.from_settings">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_settings</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">settings</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Rebuild from settings() (or from a saved spatial PSF model).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            settings (dict): Holds the keys of settings(); other keys are ignored. Values may</span>
+<span class="sd">                be numpy arrays (as loaded from .npz): 0-d ones become Python scalars (.item()),</span>
+<span class="sd">                1-D ones tuples (e.g. the wavelengths of Optics.lazuli).</span>
+<span class="sd">                optics_module defaults to 'toycoronagraph.optics'.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optics: The described system (params sorted by name).</span>
+<span class="sd">        """</span>
+        <span class="n">plain</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">((</span><span class="n">k</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="s1">'optics_'</span><span class="p">):],</span> <span class="n">plain</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                              <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'optics_'</span><span class="p">)</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'optics_kind'</span><span class="p">,</span> <span class="s1">'optics_module'</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s1">'optics_kind'</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s1">'img_pixel'</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s1">'psf_range'</span><span class="p">]),</span> <span class="n">params</span><span class="p">,</span>
+                   <span class="nb">str</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'optics_module'</span><span class="p">,</span> <span class="s1">'toycoronagraph.optics'</span><span class="p">)))</span></div>
+</div>
+
+
+
+<span class="c1"># A PSF's far wing at r lambda/D from its source comes from pupil structure D/r across, so it needs about 13</span>
+<span class="c1"># pupil samples across D per lambda/D of r to be right to about 1%. The vortex model (VortexBackend: 2 N samples</span>
+<span class="c1"># over 1.5 D, with N = 2 x the half-width x the pixels per lambda/D) gets 8/3 x its pixels per lambda/D samples</span>
+<span class="c1"># per lambda/D of the image's half-width, so it needs at least MIN_SAMPLING pixels per lambda/D (measured</span>
+<span class="c1"># against the exact Airy pattern, largest error inside the image edge: 5.0% at 2.36, 2.0% at 4, 1.3% at 5, 0.9%</span>
+<span class="c1"># at 6 pixels per lambda/D); Lazuli (its own pupil samples) needs MIN_SAMPLING x 8/3 = 13.3 per lambda/D of the</span>
+<span class="c1"># half-width.</span>
+<span class="n">MIN_SAMPLING</span> <span class="o">=</span> <span class="mi">5</span>
+
+
+<div class="viewcode-block" id="SamplingWarning">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.SamplingWarning">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SamplingWarning</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The pupil is sampled too coarsely for the PSFs' far wings near the image edge (see MIN_SAMPLING)."""</span></div>
+
+
+
+<span class="n">_BACKENDS</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># kind -&gt; backend class, filled by register_backend</span>
+
+
+<div class="viewcode-block" id="register_backend">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.register_backend">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">register_backend</span><span class="p">(</span><span class="n">kind</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class decorator registering a backend under the given kind.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        kind (str): Name used as Optics.kind.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        callable: The decorator; it returns the class unchanged.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Store cls in _BACKENDS under kind and return it unchanged."""</span>
+        <span class="n">_BACKENDS</span><span class="p">[</span><span class="n">kind</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span>
+        <span class="k">return</span> <span class="bp">cls</span>
+    <span class="k">return</span> <span class="n">register</span></div>
+
+
+
+<div class="viewcode-block" id="get_backend">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.get_backend">[docs]</a>
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_backend</span><span class="p">(</span><span class="n">optics</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The backend of an Optics, built once per process (each parallel worker keeps its own).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        optics (Optics): The system; its module is imported if its kind is not registered yet.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The backend instance (e.g. VortexBackend).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the kind is still unknown after importing optics.module.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">optics</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_BACKENDS</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">importlib</span>
+        <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">optics</span><span class="o">.</span><span class="n">module</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">optics</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_BACKENDS</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"unknown optics kind </span><span class="si">%r</span><span class="s2"> (registered: </span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">optics</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_BACKENDS</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">_BACKENDS</span><span class="p">[</span><span class="n">optics</span><span class="o">.</span><span class="n">kind</span><span class="p">](</span><span class="n">optics</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PupilPlaneSource">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.PupilPlaneSource">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PupilPlaneSource</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A point source behind a pupil-plane system: holds the field leaving the last pupil</span>
+<span class="sd">    (e.g. after the Lyot stop) and focuses it onto any block of the image pixel grid.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        throughput (float): The source's light leaving the system relative to the same</span>
+<span class="sd">            source without the starlight-suppression element.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">exit_field</span><span class="p">,</span> <span class="n">throughput</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Args:</span>
+<span class="sd">            backend: The backend (needs optics, normal_factor, pupil_grid and prop).</span>
+<span class="sd">            exit_field (hcipy.Wavefront): Field leaving the last pupil, on backend.pupil_grid.</span>
+<span class="sd">            throughput (float): See the class attributes.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">=</span> <span class="n">backend</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_field</span> <span class="o">=</span> <span class="n">exit_field</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">throughput</span> <span class="o">=</span> <span class="n">throughput</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""float: Total light over the whole (infinite) focal plane (Parseval), in the package's pixel units."""</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_field</span><span class="o">.</span><span class="n">power</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">optics</span><span class="o">.</span><span class="n">pixel_scale</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span><span class="o">.</span><span class="n">normal_factor</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PupilPlaneSource.block">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.PupilPlaneSource.block">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Intensity on a block of the image pixel grid (pixel size optics.pixel_scale).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            center (tuple): (x, y) of the block's centre, in lambda/D from the star.</span>
+<span class="sd">            shape (tuple): (ny, nx) size of the block, in pixels.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: (ny, nx) float64 intensity (rows = y, columns = x), in the package's units.</span>
+<span class="sd">        """</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span>
+        <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">shape</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">optics</span><span class="o">.</span><span class="n">pixel_scale</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="n">make_uniform_grid</span><span class="p">([</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">],</span> <span class="p">[</span><span class="n">nx</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">ny</span><span class="o">*</span><span class="n">s</span><span class="p">],</span> <span class="n">center</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">center</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">FraunhoferPropagator</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">pupil_grid</span><span class="p">,</span> <span class="n">grid</span><span class="p">)(</span><span class="bp">self</span><span class="o">.</span><span class="n">_field</span><span class="p">)</span><span class="o">.</span><span class="n">intensity</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()[</span><span class="s2">"values"</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">)</span><span class="o">/</span><span class="n">b</span><span class="o">.</span><span class="n">normal_factor</span></div>
+
+
+<div class="viewcode-block" id="PupilPlaneSource.frame">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.PupilPlaneSource.frame">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">frame</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""np.ndarray: (img_pixel, img_pixel) float64 intensity on the whole image (= |field()|^2)."""</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="PupilPlaneSource.field">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.PupilPlaneSource.field">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">field</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""np.ndarray: (img_pixel, img_pixel) complex field on the whole image (rows = y, columns = x)."""</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">optics</span><span class="o">.</span><span class="n">img_pixel</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_field</span><span class="p">)</span><span class="o">.</span><span class="n">electric_field</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">normal_factor</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="VortexBackend">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.VortexBackend">[docs]</a>
+<span class="nd">@register_backend</span><span class="p">(</span><span class="s1">'vortex'</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">VortexBackend</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Ideal vortex coronagraph: circular aperture, vortex focal-plane mask, circular Lyot stop.</span>
+
+<span class="sd">    Rotationally symmetric, and a source enters only through a tilt across the pupil, so the</span>
+<span class="sd">    intensity is band-limited in the source position at D/lambda: 'rotate' mode is valid.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        optics (Optics): The system (kind 'vortex', params charge and lyot_mask_size).</span>
+<span class="sd">        pupil_grid: hcipy pupil grid, 2*img_pixel samples across 1.5 aperture diameters.</span>
+<span class="sd">        aperture: Circular aperture of diameter 1 on pupil_grid (4x supersampled edges).</span>
+<span class="sd">        prop (FraunhoferPropagator): Pupil to the (img_pixel, img_pixel) image grid in lambda/D.</span>
+<span class="sd">        lyot_stop (Apodizer): Circular Lyot stop of diameter lyot_mask_size.</span>
+<span class="sd">        coro (VortexCoronagraph): The vortex mask (with its own internal propagation).</span>
+<span class="sd">        normal_factor (float): Divisor turning hcipy intensities into the package's units.</span>
+<span class="sd">    """</span>
+    <span class="n">rotationally_symmetric</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">bandlimit</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optics</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Args:</span>
+<span class="sd">            optics (Optics): An Optics of kind 'vortex' (e.g. Optics.vortex(...)).</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optics</span> <span class="o">=</span> <span class="n">optics</span>
+        <span class="n">n</span><span class="p">,</span> <span class="n">psf_range</span> <span class="o">=</span> <span class="n">optics</span><span class="o">.</span><span class="n">img_pixel</span><span class="p">,</span> <span class="n">optics</span><span class="o">.</span><span class="n">psf_range</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pupil_grid</span> <span class="o">=</span> <span class="n">make_pupil_grid</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aperture</span> <span class="o">=</span> <span class="n">evaluate_supersampled</span><span class="p">(</span><span class="n">make_circular_aperture</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">pupil_grid</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">focal_grid_resolution</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">psf_range</span> <span class="c1"># pixels per lambda/D (= 1/pixel_scale)</span>
+        <span class="c1"># Symmetric grid in lambda/D with the star at pixel (n-1)/2, i.e. between the four</span>
+        <span class="c1"># central pixels for even n (make_focal_grid would always put a pixel on the star)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">FraunhoferPropagator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pupil_grid</span><span class="p">,</span> <span class="n">make_uniform_grid</span><span class="p">([</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">psf_range</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">psf_range</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span> <span class="o">=</span> <span class="n">Apodizer</span><span class="p">(</span><span class="n">evaluate_supersampled</span><span class="p">(</span><span class="n">make_circular_aperture</span><span class="p">(</span><span class="n">optics</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="s1">'lyot_mask_size'</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">pupil_grid</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coro</span> <span class="o">=</span> <span class="n">VortexCoronagraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pupil_grid</span><span class="p">,</span> <span class="n">optics</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="s1">'charge'</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">normal_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">focal_grid_resolution</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<div class="viewcode-block" id="VortexBackend.wavefront">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.VortexBackend.wavefront">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wavefront</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        A point source at (x, y) lambda/D, as a tilted wavefront on the aperture.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x, y (float): Source position, in lambda/D from the star (x along columns, y along rows).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            hcipy.Wavefront: The aperture field with the source's tilt, on pupil_grid.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">Wavefront</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aperture</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pupil_grid</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">pupil_grid</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="VortexBackend.source">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.VortexBackend.source">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        A point source at (x, y) lambda/D, propagated through the vortex and the Lyot stop.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x, y (float): Source position, in lambda/D from the star.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            PupilPlaneSource: Its throughput is the light after the Lyot stop with the vortex</span>
+<span class="sd">                relative to the light after the Lyot stop without it.</span>
+<span class="sd">        """</span>
+        <span class="n">wf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavefront</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">exit_field</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coro</span><span class="p">(</span><span class="n">wf</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">PupilPlaneSource</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exit_field</span><span class="p">,</span> <span class="n">exit_field</span><span class="o">.</span><span class="n">power</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span><span class="p">(</span><span class="n">wf</span><span class="p">)</span><span class="o">.</span><span class="n">power</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="VortexBackend.unocculted">
+<a class="viewcode-back" href="../../optics.html#toycoronagraph.optics.VortexBackend.unocculted">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unocculted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The star without the vortex (the Lyot stop kept): the reference of the contrast_peak unit.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            PupilPlaneSource: The star through the aperture and the Lyot stop (throughput 1).</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">PupilPlaneSource</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavefront</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="mf">1.0</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.main &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/main';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.main</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.main</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Target: the original one-image interface (one target image through one coronagraph).</span>
+
+<span class="sd">    target = Target()                         # toycoronagraph_para.toml in the working directory</span>
+<span class="sd">    target.plot_origin()                      # the input image -&gt; origin.png</span>
+<span class="sd">    target.add_planet([0.5, 0.0], 5e-5, mode="cartesian")</span>
+<span class="sd">    final = target.plot_final(charge=6)       # the final image -&gt; charge6_with_planets_final.png</span>
+<span class="sd">    target.contrast(charge=6)                 # planet and dust light in the planet's core (Jy)</span>
+<span class="sd">    target.planet_video(charge=6)             # a moving planet over one period -&gt; planet_video.webm</span>
+
+<span class="sd">The parameters come from the parameter file (toycoronagraph.config, either layout); the</span>
+<span class="sd">image is in Jy/arcsec^2 on target_pixel x target_pixel pixels of psf_scale arcsec, star at</span>
+<span class="sd">pixel (N-1)/2. The coronagraph is [coronagraph] type: a vortex (charge: positive, even) or the</span>
+<span class="sd">Lazuli telescope (toycoronagraph.lazuli; charge 0 = no coronagraph, or an even vortex charge; odd</span>
+<span class="sd">image size). The PSFs and final images are made and cached by toycoronagraph.observe's</span>
+<span class="sd">Coronagraph (shared with observe()). Planet positions are (radius arcsec, angle rad from +x</span>
+<span class="sd">towards +y), with y increasing with the image row as in FITS and in scenes</span>
+<span class="sd">(tool.arcsec_to_pixel); plots show +y upwards (flip=False turns the y axis over). Planet</span>
+<span class="sd">brightnesses are stored per pixel area (Jy/arcsec^2 = Jy / psf_scale^2).</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numbers</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.psf</span><span class="w"> </span><span class="kn">import</span> <span class="n">cir_psf_contrast</span><span class="p">,</span> <span class="n">spatial_psf_contrast</span><span class="p">,</span> <span class="n">radial_source_positions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.planet</span><span class="w"> </span><span class="kn">import</span> <span class="n">planet_position</span><span class="p">,</span> <span class="n">orbit_position</span><span class="p">,</span> <span class="n">orbit_plot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.tool</span><span class="w"> </span><span class="kn">import</span> <span class="n">convert_to_polar</span><span class="p">,</span> <span class="n">is_positive_even_integer</span><span class="p">,</span> <span class="n">is_planet_pos_allowed</span><span class="p">,</span> <span class="n">arcsec_to_pixel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_config</span><span class="p">,</span> <span class="n">write_used</span><span class="p">,</span> <span class="n">LAZULI_KEYS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.inputs</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_target</span><span class="p">,</span> <span class="n">target_path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">selection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.video</span><span class="w"> </span><span class="kn">import</span> <span class="n">write_video</span>
+
+<span class="c1"># How to make the image size odd for a lazuli coronagraph with the older layout (see observe.GRID_SIZE_FIX)</span>
+<span class="n">LEGACY_SIZE_FIX</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"use an image of </span><span class="si">%d</span><span class="s2"> or </span><span class="si">%d</span><span class="s2"> pixels: this layout does not resample it ([target] target_pixel follows "</span>
+                   <span class="s2">"the image; [grid] size of the scene layout resamples it)"</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Target">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Target</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A target: a dust ring, a debris disk, ice remains, ... (not necessarily circularly symmetric).</span>
+
+<span class="sd">    The parameters come from toycoronagraph_para.toml (see toycoronagraph.config). The</span>
+<span class="sd">    final image is made with the circular method when the target and the PSFs are both</span>
+<span class="sd">    circularly symmetric, otherwise with the spatial method (see check_symmetry); the</span>
+<span class="sd">    parameter file, or the method argument, can choose either.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        par (SimpleNamespace): The parameters, resolved against the input image (target_pixel N,</span>
+<span class="sd">            psf_scale in arcsec/pixel, wavelength in m, charge, method, ...).</span>
+<span class="sd">        file_name (str): The FITS file of the target.</span>
+<span class="sd">        scene (Scene or None): The scene the image was read through (scene-layout parameter</span>
+<span class="sd">            files only; see toycoronagraph.scene).</span>
+<span class="sd">        xpix (np.ndarray): (N,) float64 pixel-centre offsets from the star along the columns, in</span>
+<span class="sd">            arcsec (x).</span>
+<span class="sd">        ypix (np.ndarray): (N,) float64 pixel-centre offsets from the star along the rows, in arcsec,</span>
+<span class="sd">            in row order (equal to xpix; y increases with the row, see tool.arcsec_to_pixel).</span>
+<span class="sd">        extent (list): [left, right, bottom, top] pixel edges in arcsec, for imshow.</span>
+<span class="sd">        pre_img (np.ndarray): (N, N) float64 target image in Jy/arcsec^2.</span>
+<span class="sd">        planets (list): Each planet's position (radius arcsec, angle rad).</span>
+<span class="sd">        orbits (list): Each planet's orbit: np.ndarray [a (arcsec), e, pa (deg), inc (deg), t (orbital</span>
+<span class="sd">            periods)] for moving planets, None for static ones.</span>
+<span class="sd">        planets_brightness (list): Each planet's brightness per pixel area in Jy/arcsec^2 (Jy / psf_scale^2).</span>
+<span class="sd">        output_prefix (str): Prefix of saved figures and videos: "&lt;target name&gt;_", "" for the example.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">para_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">""" Initialization</span>
+
+<span class="sd">        Initializes the instance based on the parameter file and the target fits file; writes</span>
+<span class="sd">        the values used to &lt;parameter file&gt;_used.toml (the parameter file is not modified).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            para_file (str): Parameter file; default toycoronagraph_para.toml in the working directory.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: The image cannot be read or put in Jy/arcsec^2 (e.g. an unknown unit,</span>
+<span class="sd">                or a contrast image without the star's flux), or the coronagraph cannot work on</span>
+<span class="sd">                it (lazuli: an even image size, too few pupil samples for its field, no light at</span>
+<span class="sd">                its wavelengths, an OPD map that is not valid; see observe.optics_for).</span>
+<span class="sd">            OSError: A lazuli coronagraph's OPD map cannot be read.</span>
+<span class="sd">            ImportError: A lazuli coronagraph without prysm or the Lazuli config packages.</span>
+<span class="sd">        """</span>
+        <span class="c1"># Read the latest parameters (toycoronagraph_para.toml in the working directory)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">par</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="n">para_file</span><span class="p">)</span>
+
+        <span class="c1"># Read the target image (in Jy/arcsec^2); the parameters left "auto" are filled from it,</span>
+        <span class="c1"># and the values used are saved to &lt;parameter file&gt;_used.toml (the parameter file is not modified).</span>
+        <span class="c1"># Files in the scene layout are read through toycoronagraph.scene (resampling, units, checks).</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_name</span> <span class="o">=</span> <span class="n">target_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="p">,</span> <span class="s2">"params"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">F_v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_from_scene</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">F_v</span> <span class="o">=</span> <span class="n">read_target</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="p">)</span>
+            <span class="n">write_used</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="p">)</span>
+
+        <span class="c1"># Pixel centres in arcsec (star at pixel (N-1)/2) and the image extent (pixel edges)</span>
+        <span class="n">n</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xpix</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">scale</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ypix</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">scale</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="p">,</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="p">,</span> <span class="o">-</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="p">,</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pre_img</span> <span class="o">=</span> <span class="n">F_v</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">planets</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_image_symmetry</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># (bool, reason) of pre_img, measured once (see _choose)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_choice</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># the method messages printed last (printed again only when they change)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reported</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>    <span class="c1"># images whose estimated error was printed already</span>
+        <span class="c1"># Saved figures and videos start with the target's name (none for the bundled example)</span>
+        <span class="n">stem</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_prefix</span> <span class="o">=</span> <span class="s2">""</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">fits_filename</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">stem</span><span class="o">+</span><span class="s2">"_"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_optics_of</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># charge -&gt; Optics (see _optics)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_optics</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">charge</span><span class="p">)</span>  <span class="c1"># built now, so the optics are checked against the image at once</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_image_from_scene</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The target image through the scene framework.</span>
+
+<span class="sd">        Renders the scene of a scene-layout parameter file, fills the flat parameters from the</span>
+<span class="sd">        scene grid (target_pixel, psf_scale, wavelength, diameter, D, visual_range, psf_range,</span>
+<span class="sd">        rot_number if &lt;= 0, F_transfer, input_description, input_unit), prints the input summary</span>
+<span class="sd">        and notes, and writes the values used (&lt;parameter file&gt;_used.toml). Sets self.scene.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: (N, N) total scene image in Jy/arcsec^2.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: The scene is in contrast (the star's flux is unknown).</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.scene</span><span class="w"> </span><span class="kn">import</span> <span class="n">Scene</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
+        <span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scene</span><span class="o">.</span><span class="n">internal_unit</span> <span class="o">!=</span> <span class="s2">"Jy/arcsec^2"</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Target works in Jy/arcsec^2, but the image is in contrast and the star's flux is unknown: "</span>
+                             <span class="s2">"set [star] temperature (with radius and distance) or flux_jy"</span><span class="p">)</span>
+        <span class="n">g</span><span class="p">,</span> <span class="n">par</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="p">,</span> <span class="n">scene</span><span class="o">.</span><span class="n">params</span>
+        <span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">,</span> <span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">,</span> <span class="n">par</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">par</span><span class="o">.</span><span class="n">diameter</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">diameter</span>
+        <span class="n">par</span><span class="o">.</span><span class="n">D</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">diameter</span>
+        <span class="n">par</span><span class="o">.</span><span class="n">visual_range</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">visual_range</span>
+        <span class="n">par</span><span class="o">.</span><span class="n">psf_range</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">visual_range</span><span class="o">/</span><span class="mi">2</span>
+        <span class="k">if</span> <span class="n">par</span><span class="o">.</span><span class="n">rot_number</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">par</span><span class="o">.</span><span class="n">rot_number</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span>
+        <span class="c1"># nu F_nu (W/m^2/pixel) to F_nu (Jy/arcsec^2), as in config.resolve</span>
+        <span class="n">par</span><span class="o">.</span><span class="n">F_transfer</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">JY</span><span class="o">*</span><span class="n">g</span><span class="o">.</span><span class="n">wavelength</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">LIGHT_SPEED</span><span class="o">/</span><span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">images</span><span class="p">))</span>
+        <span class="n">par</span><span class="o">.</span><span class="n">input_description</span><span class="p">,</span> <span class="n">par</span><span class="o">.</span><span class="n">input_unit</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">units</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Input: </span><span class="si">%s</span><span class="s2">, </span><span class="si">%d</span><span class="s2"> x </span><span class="si">%d</span><span class="s2">, </span><span class="si">%s</span><span class="s2">; </span><span class="si">%.5g</span><span class="s2"> arcsec/pixel (</span><span class="si">%s</span><span class="s2">) = </span><span class="si">%.4g</span><span class="s2"> lambda/D across at </span><span class="si">%.4g</span><span class="s2"> m (</span><span class="si">%s</span><span class="s2">)"</span>
+              <span class="o">%</span> <span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">input_description</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">par</span><span class="o">.</span><span class="n">input_unit</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">origin</span><span class="p">(</span><span class="s2">"grid.pixel_scale"</span><span class="p">),</span>
+                 <span class="n">g</span><span class="o">.</span><span class="n">visual_range</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">origin</span><span class="p">(</span><span class="s2">"observation.wavelength"</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">scene</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">write_used</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">used_path</span><span class="p">(</span><span class="n">par</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="o">=</span> <span class="n">scene</span>
+        <span class="k">return</span> <span class="n">scene</span><span class="o">.</span><span class="n">total</span>
+
+    <span class="c1"># ------------------------------------------------------------ optics, PSFs and method</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_charge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The charge to use.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int or None): The requested charge; None: [coronagraph] charge.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: `charge`, or the parameters' charge if it is None or not a positive even integer</span>
+<span class="sd">                (lazuli: nor 0) (with a message).</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">charge</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">charge</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">is_positive_even_integer</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">coronagraph_type</span> <span class="o">==</span> <span class="s1">'lazuli'</span> <span class="ow">and</span> <span class="n">charge</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Charge number is not compatible with </span><span class="si">%s</span><span class="s2"> coronagraph type, use </span><span class="si">%d</span><span class="s2"> from the parameters"</span>
+                  <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">coronagraph_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">charge</span><span class="p">))</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">charge</span>
+        <span class="k">return</span> <span class="n">charge</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_optics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The Optics of a charge on this target's grid ([coronagraph] type and parameters; observe.optics_for),</span>
+<span class="sd">        built once per charge.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge (vortex; lazuli: 0 = the telescope alone).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optics: N = target_pixel pixels, psf_range (half-width in lambda/D), and the [coronagraph]</span>
+<span class="sd">                parameters (lazuli: also the target's wavelength and diameter).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParamError: A lazuli coronagraph on an image of even size, or with too few pupil samples for it.</span>
+<span class="sd">            ValueError, OSError, ImportError: A lazuli coronagraph's settings cannot be resolved (see</span>
+<span class="sd">                observe.optics_for).</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">charge</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optics_of</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.observe</span><span class="w"> </span><span class="kn">import</span> <span class="n">optics_for</span><span class="p">,</span> <span class="n">GRID_SIZE_FIX</span>
+            <span class="n">par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="n">charge</span><span class="p">,</span> <span class="n">lyot_mask_size</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">lyot_mask_size</span><span class="p">,</span> <span class="n">symmetric</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">psf_symmetric</span><span class="p">,</span>
+                          <span class="o">**</span><span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">LAZULI_KEYS</span><span class="p">})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_optics_of</span><span class="p">[</span><span class="n">charge</span><span class="p">]</span> <span class="o">=</span> <span class="n">optics_for</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">coronagraph_type</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">,</span> <span class="n">par</span><span class="o">.</span><span class="n">psf_range</span><span class="p">,</span>
+                                                 <span class="n">par</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">par</span><span class="o">.</span><span class="n">diameter</span><span class="p">,</span>
+                                                 <span class="n">GRID_SIZE_FIX</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">LEGACY_SIZE_FIX</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optics_of</span><span class="p">[</span><span class="n">charge</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_coronagraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The coronagraph of a charge on this target's grid (toycoronagraph.observe.Coronagraph).</span>
+
+<span class="sd">        The same object for the same charge and settings, so its PSFs (cached on disk in</span>
+<span class="sd">        psf_cache_dir and in memory) and the final images it has made are reused.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge (vortex; lazuli: 0 = the telescope alone).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Coronagraph: Named "&lt;type&gt;_c&lt;charge&gt;", e.g. "vortex_c6" or "lazuli_c0".</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.observe</span><span class="w"> </span><span class="kn">import</span> <span class="n">Coronagraph</span>
+        <span class="n">par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span>
+        <span class="k">return</span> <span class="n">Coronagraph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_optics</span><span class="p">(</span><span class="n">charge</span><span class="p">),</span> <span class="s2">"</span><span class="si">%s</span><span class="s2">_c</span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">coronagraph_type</span><span class="p">,</span> <span class="n">charge</span><span class="p">),</span> <span class="n">num_cores</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">num_cores</span><span class="p">,</span>
+                               <span class="n">error_target</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">error_target</span><span class="p">,</span> <span class="n">max_kernel_gb</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">max_kernel_gb</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">use_gpu</span><span class="p">,</span>
+                               <span class="n">cache_dir</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">psf_cache_dir</span><span class="p">,</span> <span class="n">symmetric</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">psf_symmetric</span><span class="p">,</span> <span class="n">rot_number</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">rot_number</span><span class="p">,</span>
+                               <span class="n">symmetry_tol</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">symmetry_tol</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Target.radial_psfs_file">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.radial_psfs_file">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">radial_psfs_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Radial PSF file</span>
+
+<span class="sd">        The file of the radial PSF series (sources along the +x axis) on frames larger than the</span>
+<span class="sd">        image, calculated and saved in psf_cache_dir if it does not exist. Its name records</span>
+<span class="sd">        the optics and sampling, so a cache made with other parameters is never reused.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The path of the .npy file (psf_cache_dir/radial_&lt;tag&gt;_frame&lt;size&gt;.npy, a</span>
+<span class="sd">                ((N+1)//2, size, size) float32 array; see Coronagraph.radial_psfs_file).</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coronagraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_charge</span><span class="p">(</span><span class="n">charge</span><span class="p">))</span><span class="o">.</span><span class="n">radial_psfs_file</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Target.radial_psfs">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.radial_psfs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">radial_psfs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The radial PSF series (see radial_psfs_file).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: ((N+1)//2, size, size) float32 PSFs of sources along +x, size &gt; N.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radial_psfs_file</span><span class="p">(</span><span class="n">charge</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Target.choose_method">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.choose_method">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">choose_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Method choice</span>
+
+<span class="sd">        The method for the final image: method / spatial_mode if given, else the parameter</span>
+<span class="sd">        file's; "auto" uses the circular method only when the target and the PSFs are both</span>
+<span class="sd">        circularly symmetric ([target] / [coronagraph] symmetric, or measured / from the optics model).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</span>
+<span class="sd">            method (str): "auto", "circular" or "spatial"; default from the parameters.</span>
+<span class="sd">            spatial_mode (str): "auto", "rotate" or "direct"; default from the parameters.</span>
+<span class="sd">            verbose (bool): Print the choice and why.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: method (str) and spatial_mode (str; None for the circular method).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: An unknown method / spatial_mode, or "rotate" for optics that do not allow it.</span>
+<span class="sd">        """</span>
+        <span class="n">charge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_charge</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+        <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">,</span> <span class="n">messages</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_choose</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">messages</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_choice</span> <span class="o">=</span> <span class="n">messages</span>
+        <span class="k">return</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""choose_method for the image makers: prints the choice only when it changes.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge (already checked).</span>
+<span class="sd">            method (str or None): "auto", "circular" or "spatial"; None: from the parameters.</span>
+<span class="sd">            spatial_mode (str or None): "auto", "rotate" or "direct"; None: from the parameters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: method (str) and spatial_mode (str; None for the circular method).</span>
+<span class="sd">        """</span>
+        <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">,</span> <span class="n">messages</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_choose</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_choice</span> <span class="o">!=</span> <span class="n">messages</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">messages</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_choice</span> <span class="o">=</span> <span class="n">messages</span>
+        <span class="k">return</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_choose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The method, spatial mode and the messages explaining the choice (see selection.choose_method).</span>
+
+<span class="sd">        The target's symmetry is measured (or taken from [target] symmetric) once per Target.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge (already checked).</span>
+<span class="sd">            method (str or None): "auto", "circular" or "spatial"; None: from the parameters.</span>
+<span class="sd">            spatial_mode (str or None): "auto", "rotate" or "direct"; None: from the parameters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: method (str), spatial_mode (str or None for circular), messages (list of str).</span>
+<span class="sd">        """</span>
+        <span class="n">optics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optics</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_symmetry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_image_symmetry</span> <span class="o">=</span> <span class="n">selection</span><span class="o">.</span><span class="n">image_symmetry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_img</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">image_symmetric</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">symmetry_tol</span><span class="p">)</span>
+        <span class="n">image_sym</span><span class="p">,</span> <span class="n">image_why</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_symmetry</span>
+        <span class="n">psf_sym</span><span class="p">,</span> <span class="n">psf_why</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coronagraph</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span><span class="o">.</span><span class="n">psf_symmetry</span><span class="p">()</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="n">optics</span><span class="o">.</span><span class="n">backend</span><span class="p">()</span>
+        <span class="c1"># 'rotate' needs rotationally symmetric optics with a known band limit</span>
+        <span class="k">return</span> <span class="n">selection</span><span class="o">.</span><span class="n">choose_method</span><span class="p">(</span>
+            <span class="n">method</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">spatial_mode</span><span class="p">,</span> <span class="n">image_sym</span><span class="p">,</span> <span class="n">psf_sym</span><span class="p">,</span>
+            <span class="nb">bool</span><span class="p">(</span><span class="n">backend</span><span class="o">.</span><span class="n">rotationally_symmetric</span> <span class="ow">and</span> <span class="n">backend</span><span class="o">.</span><span class="n">bandlimit</span><span class="p">),</span> <span class="p">(</span><span class="n">image_why</span><span class="p">,</span> <span class="n">psf_why</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Target.check_symmetry">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.check_symmetry">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_symmetry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Symmetry check</span>
+
+<span class="sd">        Print whether the target and the PSFs are circularly symmetric and which method the</span>
+<span class="sd">        final image will use (see choose_method).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: method (str) and spatial_mode (str; None for the circular method).</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">choose_method</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Target.spatial_model">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.spatial_model">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spatial_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="o">=</span><span class="s2">"rotate"</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Spatial PSF model</span>
+
+<span class="sd">        The spatially-sampled PSFs for this target (built once per charge and mode): the</span>
+<span class="sd">        kernel size and the grid are chosen so the final image meets [method] error_target;</span>
+<span class="sd">        the runs along the x axis are cached in psf_cache_dir. Prints the error analysis.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</span>
+<span class="sd">            spatial_mode (str): "rotate" or "direct".</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: The model (see psf.spatial_psf_calculation).</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coronagraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_charge</span><span class="p">(</span><span class="n">charge</span><span class="p">))</span><span class="o">.</span><span class="n">spatial_model</span><span class="p">(</span><span class="n">spatial_mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_img</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_disk_and_planets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">iwa_ignore</span><span class="p">,</span> <span class="n">add_planet</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The final image (disk, plus planets if add_planet) with the chosen method.</span>
+
+<span class="sd">        The disk's estimated error (spatial method) is printed once per (charge, mode, iwa_ignore).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge (already checked).</span>
+<span class="sd">            iwa_ignore (bool): Leave out the target inside the IWA.</span>
+<span class="sd">            add_planet (bool): Add self.planets (see _planets_image).</span>
+<span class="sd">            method (str): "circular" or "spatial" (already chosen).</span>
+<span class="sd">            spatial_mode (str or None): "rotate" or "direct" for the spatial method.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: (N, N) float64 final image in Jy/arcsec^2.</span>
+<span class="sd">        """</span>
+        <span class="n">coro</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coronagraph</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+        <span class="n">final_img</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">coro</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_img</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">,</span> <span class="n">iwa_ignore</span><span class="o">=</span><span class="n">iwa_ignore</span><span class="p">,</span>
+                                  <span class="n">report</span><span class="o">=</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"spatial"</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_first_report</span><span class="p">((</span><span class="n">charge</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">,</span> <span class="n">iwa_ignore</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">add_planet</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">:</span>
+            <span class="n">final_img</span> <span class="o">=</span> <span class="n">final_img</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_planets_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">final_img</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_planets_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">brightness</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Planets through the coronagraph: the radial PSFs rotated (circular), else their exact PSFs.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            positions (list): Each planet's (radius arcsec, angle rad).</span>
+<span class="sd">            brightness (list): Each planet's brightness per pixel area in Jy/arcsec^2.</span>
+<span class="sd">            charge (int): Charge (already checked).</span>
+<span class="sd">            method (str): "circular" or "spatial".</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: (N, N) image of the planets in Jy/arcsec^2 (planets off the image are left out).</span>
+<span class="sd">        """</span>
+        <span class="n">coro</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coronagraph</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"circular"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">coro</span><span class="o">.</span><span class="n">interpolated_point_sources</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">brightness</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">coro</span><span class="o">.</span><span class="n">point_sources</span><span class="p">([</span><span class="n">arcsec_to_pixel</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">)</span> <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">],</span>
+                                  <span class="n">brightness</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_first_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Whether the estimated error of this disk image is still to be printed (once per image).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (tuple): Identifies the image, e.g. (charge, spatial_mode, iwa_ignore).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True the first time the key is seen (it is then recorded).</span>
+<span class="sd">        """</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reported</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reported</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">first</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_save_figure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">default_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Save a figure exactly at file_name, or under the default name.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            fig (matplotlib.figure.Figure): The figure.</span>
+<span class="sd">            file_name (str or os.PathLike or None): "name" or "folder/name" (the folder is created;</span>
+<span class="sd">                the format follows the extension, PNG if it is not a known one); a message gives</span>
+<span class="sd">                the path. None: &lt;output_prefix&gt;&lt;default_name&gt;.png, without a message.</span>
+<span class="sd">            default_name (str): The default file name, without the extension.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The path written.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_prefix</span><span class="o">+</span><span class="n">default_name</span><span class="o">+</span><span class="s2">".png"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">folder</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># The format follows the extension (.png, .pdf, .svg, ...); PNG when there is none</span>
+        <span class="n">known</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">"."</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">get_supported_filetypes</span><span class="p">()</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">known</span> <span class="k">else</span> <span class="s2">"png"</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Saved the image to </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">path</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_colorbar_label</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The colour bar label: [target] unit, or "Jy/arcsec^2" when it is "none".</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The label.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">unit</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">unit</span> <span class="o">!=</span> <span class="s2">"none"</span> <span class="k">else</span> <span class="s2">"Jy/arcsec^2"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_optics_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The coronagraph in words, after "the" in figure titles, e.g. "charge-6 vortex" or "Lazuli telescope alone".</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): The charge.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The text.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">coronagraph_type</span> <span class="o">==</span> <span class="s2">"vortex"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"charge-</span><span class="si">%d</span><span class="s2"> vortex"</span> <span class="o">%</span> <span class="n">charge</span>
+        <span class="k">return</span> <span class="s2">"Lazuli telescope with a charge-</span><span class="si">%d</span><span class="s2"> vortex"</span> <span class="o">%</span> <span class="n">charge</span> <span class="k">if</span> <span class="n">charge</span> <span class="k">else</span> <span class="s2">"Lazuli telescope alone"</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_colour_scale</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">log_range</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The colour map and scale of an image plot.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            image (np.ndarray): The image shown.</span>
+<span class="sd">            log (bool): Log scale, from the image's peak down `log_range` decades (zero or negative</span>
+<span class="sd">                pixels in the darkest colour); else linear from 0.</span>
+<span class="sd">            log_range (float): Decades shown on a log scale.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (Colormap, Normalize) for imshow.</span>
+<span class="sd">        """</span>
+        <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="s1">'gnuplot'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">log</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cmap</span><span class="o">.</span><span class="n">with_extremes</span><span class="p">(</span><span class="n">bad</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">under</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)),</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LogNorm</span><span class="p">(</span><span class="n">top</span><span class="o">*</span><span class="mf">10.0</span><span class="o">**-</span><span class="n">log_range</span><span class="p">,</span> <span class="n">top</span><span class="p">)</span>
+
+    <span class="c1"># ------------------------------------------------------------ plots</span>
+
+<div class="viewcode-block" id="Target.plot_origin">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.plot_origin">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_origin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot_planets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">plot_dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">boundary</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_range</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Plot original target</span>
+
+<span class="sd">        Plot the original image (Jy/arcsec^2) with or without planets: each planet is a</span>
+<span class="sd">        coloured circle labelled with its brightness in Jy, with its orbit (dashed) if it moves.</span>
+<span class="sd">        Planets outside the image are reported, greyed, and drawn only without boundary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            plot_planets (bool): Whether to plot planets or not.</span>
+<span class="sd">            res (int): Number of points used for orbit calculations.</span>
+<span class="sd">            plot_dpi (int): Dots per inch (DPI) for the plot.</span>
+<span class="sd">            boundary (bool): Whether to limit the axes to the image.</span>
+<span class="sd">            flip (bool): True: +y upwards (row 0 at the bottom, as DS9 shows FITS); False: the y axis turned over.</span>
+<span class="sd">            file_name (str): Save the figure exactly there: "name.png" or "folder/name.png" (the</span>
+<span class="sd">                folder is created). The format follows the extension (PNG if there is none). None</span>
+<span class="sd">                (default): origin.png / origin_with_planets.png (with the target's name in front</span>
+<span class="sd">                for your own targets).</span>
+<span class="sd">            log (bool): Log colour scale (faint outer parts visible); else linear from 0.</span>
+<span class="sd">            log_range (float): Log scale: decades shown below the image's peak.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None: The figure is saved (origin*.png, see file_name) and shown.</span>
+<span class="sd">        """</span>
+        <span class="c1"># Create a new figure and axes for plotting</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="n">plot_dpi</span><span class="p">)</span>
+        <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+        <span class="c1"># Plot the pre-processed image data</span>
+        <span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_colour_scale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_img</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">log_range</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">'lower'</span><span class="p">)</span>
+        <span class="n">marked</span> <span class="o">=</span> <span class="n">plot_planets</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span> <span class="o">!=</span> <span class="p">[]</span>
+        <span class="n">axs</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Input image</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">" (planets: brightness in Jy)"</span> <span class="k">if</span> <span class="n">marked</span> <span class="k">else</span> <span class="s2">""</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+        <span class="c1"># Calculate boundary limits based on pixel scale (half the image width, arcsec)</span>
+        <span class="n">x_range</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">y_range</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">/</span><span class="mi">2</span>
+
+        <span class="k">if</span> <span class="n">boundary</span><span class="p">:</span>
+            <span class="n">axs</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="n">x_range</span><span class="p">,</span> <span class="n">x_range</span><span class="p">)</span>
+            <span class="n">axs</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="n">y_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">flip</span><span class="p">:</span>
+            <span class="n">axs</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+        <span class="c1"># Set axis labels</span>
+        <span class="n">axs</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y [arcsec]'</span><span class="p">)</span>
+        <span class="n">axs</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x [arcsec]'</span><span class="p">)</span>
+
+        <span class="c1"># Add color bar</span>
+        <span class="n">colorbar</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">orientation</span><span class="o">=</span><span class="s1">'vertical'</span><span class="p">)</span>
+        <span class="n">colorbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_colorbar_label</span><span class="p">())</span>
+
+        <span class="c1"># Iterate through planets, their brightness, orbits, and orders to add them into the plot</span>
+        <span class="k">if</span> <span class="n">plot_planets</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span> <span class="o">!=</span><span class="p">[]:</span>
+            <span class="n">circle_size</span> <span class="o">=</span> <span class="mf">0.02</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">)</span>
+            <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="sa">u</span><span class="s1">'#1f77b4'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'#ff7f0e'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'#2ca02c'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'#d62728'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'#9467bd'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'#8c564b'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'#e377c2'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'#bcbd22'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'#17becf'</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">orbit</span><span class="p">,</span> <span class="n">order</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">))):</span>
+                <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">order</span><span class="o">%</span><span class="mi">9</span><span class="p">]</span>
+
+                <span class="n">outside</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">x_range</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">y_range</span>
+                <span class="k">if</span> <span class="n">outside</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">"Planet #"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">order</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">" is outside the range of the plot"</span><span class="p">)</span>
+                    <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">'#7f7f7f'</span>
+
+                <span class="c1"># A planet outside the image is drawn only when the axes are not limited to it</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">outside</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">boundary</span><span class="p">:</span>
+                    <span class="n">circle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">circle_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+                    <span class="n">axs</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+                    <span class="n">axs</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>  <span class="c1"># brightness in Jy</span>
+
+                <span class="k">if</span> <span class="n">orbit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">orbit_x</span><span class="p">,</span> <span class="n">orbit_y</span> <span class="o">=</span> <span class="n">orbit_position</span><span class="p">(</span><span class="n">orbit</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">orbit</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">orbit</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">orbit</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">res</span><span class="p">)</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">orbit_x</span><span class="p">,</span> <span class="n">orbit_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'--'</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Plot the orbit.</span>
+
+            <span class="n">default_name</span> <span class="o">=</span> <span class="s2">"origin_with_planets"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">default_name</span> <span class="o">=</span> <span class="s2">"origin"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">default_name</span><span class="p">)</span>
+
+        <span class="c1"># Show the plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Target.add_planet">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.add_planet">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_planet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">brightness</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"moving"</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Add a planet</span>
+
+<span class="sd">        Add a planet to the Target object (appended to planets, planets_brightness and orbits).</span>
+<span class="sd">        Invalid input (a position that tool.is_planet_pos_allowed refuses, e.g. one with an entry</span>
+<span class="sd">        that is not a number, a brightness that is not a positive number, an unknown mode) is</span>
+<span class="sd">        reported with a message and nothing is added.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            pos (array-like): Planet position information (depends on mode); each entry a finite real</span>
+<span class="sd">                number (Python or numpy int or float). For "moving" mode, pos = [a, e, pa, inc, t]: semi-major</span>
+<span class="sd">                axis (arcsec), eccentricity (0 &lt;= e &lt; 1), position angle (deg), inclination (deg)</span>
+<span class="sd">                and time (in orbital periods); for "polar" mode, pos = [r (arcsec), theta (deg, from</span>
+<span class="sd">                +x towards +y)]; for "cartesian" mode, pos = [x, y] (arcsec).</span>
+<span class="sd">            brightness (numbers.Real): Planet brightness in Jy (&gt; 0): a Python or numpy int or float</span>
+<span class="sd">                (not a bool).</span>
+<span class="sd">            mode (str): Mode for specifying planet position coordinates ("moving", "polar", "cartesian").</span>
+<span class="sd">            res (int): Number of points used for orbit calculations.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        """</span>
+        <span class="n">brightness_valid</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">brightness</span><span class="p">,</span> <span class="n">numbers</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">brightness</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="n">brightness</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"moving"</span><span class="p">:</span>
+            <span class="c1"># Check if planet position and brightness are valid</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_planet_pos_allowed</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Planet position is not allowed"</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">brightness_valid</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Brightness is invalid"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>  <span class="c1"># (integer times would be truncated when the planet moves)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">planet_position</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">mode</span><span class="o">=</span><span class="s2">"polar"</span><span class="p">,</span><span class="n">res</span><span class="o">=</span><span class="n">res</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="c1">#pos = np.array(a, e, pa, inc, t)</span>
+
+        <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"polar"</span><span class="p">:</span>
+            <span class="c1"># Check if planet position and brightness are valid</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_planet_pos_allowed</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Planet position is not allowed"</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">brightness_valid</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Brightness is invalid"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Convert polar mode angle from degree to radian (in floats: integers would truncate it)</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+                <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"cartesian"</span><span class="p">:</span>
+            <span class="c1"># Check if planet position and brightness are valid</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_planet_pos_allowed</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"planet position is not allowed"</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">brightness_valid</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Brightness is invalid"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">convert_to_polar</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"no "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span><span class="o">+</span><span class="s2">" mode"</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Target.list_planets">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.list_planets">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">list_planets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""List planets</span>
+
+<span class="sd">        Print the planets present in the Target object with their order numbers (from 1),</span>
+<span class="sd">        static or moving, position (x, y) in arcsec and brightness in Jy.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        """</span>
+        <span class="c1"># Check if the planet list is empty</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"There is no planet, but you can add planet via Target.add_planet(pos, brightness)"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">order</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{}</span><span class="s2"> Planet </span><span class="si">{:d}</span><span class="s2">: (</span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">) arcsec, brightness: </span><span class="si">{:.2e}</span><span class="s2"> Jy"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="s2">"Static"</span> <span class="k">if</span> <span class="n">o</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">"Moving"</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">b</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Target.delete_planet">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.delete_planet">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_planet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Delete planet</span>
+
+<span class="sd">        Deletes a planet from self.planets, self.orbits, and self.planets_brightness with a given</span>
+<span class="sd">        order number, then prints the remaining planets.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            order (int): The order number of the planet to be deleted (from 1). Defaults to 1.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        """</span>
+        <span class="c1"># Check if the input order is valid</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Input order number is not existed, please try again or use Target.list_planets() to list all planets"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Delete planet, brightness, and orbit information at the given order</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Successfully remove planet #"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">order</span><span class="p">)</span><span class="o">+</span><span class="s2">", here is the latest planet list:"</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">list_planets</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Target.planet_move">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.planet_move">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">planet_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"cumulate"</span><span class="p">,</span> <span class="n">plot_pos</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot_dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Planet moving</span>
+
+<span class="sd">        Move a moving planet along its orbit (static planets cannot move).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            time (float): The time, in orbital periods.</span>
+<span class="sd">            order (int): The order number of the planet (from 1).</span>
+<span class="sd">            mode (str): "cumulate": time is added to the planet's current time; "specific": the</span>
+<span class="sd">                planet's time is set to `time`. Any other mode leaves the time unchanged.</span>
+<span class="sd">            plot_pos (bool): Whether to plot the new planet's position in its orbit</span>
+<span class="sd">                (saved as oribit_planet&lt;order&gt;.png and shown, see planet.orbit_plot).</span>
+<span class="sd">            plot_dpi (int): Dots per inch (DPI) for the plot.</span>
+<span class="sd">            res (int): Number of points used for orbit calculations.</span>
+<span class="sd">            flip (bool): True: +y upwards; False: the y axis turned over.</span>
+<span class="sd">            message (bool): Whether to show the notification once job done (when not plotting).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        """</span>
+        <span class="c1"># Check if the input order is valid</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Input order number is not existed, please try again or use Target.list_planets() to list all planets"</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"A static planet is unable to move"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"cumulate"</span><span class="p">:</span>
+                <span class="c1"># Update the time of the planet's orbit by adding to the current time</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">+=</span> <span class="n">time</span>
+            <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"specific"</span><span class="p">:</span>
+                <span class="c1"># Set a new time for the planet's orbit</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span>
+
+            <span class="c1"># Get the updated position of the planet based on the updated time</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">planet_position</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">mode</span><span class="o">=</span><span class="s2">"polar"</span><span class="p">,</span><span class="n">res</span><span class="o">=</span><span class="n">res</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">plot_pos</span><span class="p">:</span>
+                <span class="c1"># Plot the new planet position on its orbit</span>
+                <span class="n">orbit_plot</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">plot_dpi</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">flip</span><span class="p">,</span> <span class="s2">"polar"</span><span class="p">,</span> <span class="s1">'_planet'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">order</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">message</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Planet has moved to new position"</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Target.planet_video">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.planet_video">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">planet_video</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">iwa_ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot_dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                     <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Planet Video</span>
+
+<span class="sd">        Create a movie of the planet moving over one orbital period, starting from its current</span>
+<span class="sd">        position; afterwards the planet is back at that position. The disk's final image is</span>
+<span class="sd">        made once; each frame adds the planet's image at its new position.</span>
+
+<span class="sd">        The video is lossless (VP9 lossless in WebM, see toycoronagraph.video): every frame decodes</span>
+<span class="sd">        to exactly the rendered pixels, so colours can be read against the colour bar. It stays</span>
+<span class="sd">        small (about 100-200 kB for 60 frames) because the frames differ only around the planet.</span>
+<span class="sd">        It plays in browsers, VS Code and VLC (not QuickTime). Needs ffmpeg with libvpx-vp9.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</span>
+<span class="sd">            order (int): The order number of the planet, using self.list_planets() to look up the order.</span>
+<span class="sd">            iwa_ignore (bool): Whether to ignore the dust inside IWA.</span>
+<span class="sd">            plot_dpi (int): Dots per inch of the 10 x 8 inch frames (300: 3000 x 2400 pixels).</span>
+<span class="sd">            length (int): The length of the movie in seconds.</span>
+<span class="sd">            fps (int): The frames per second of the movie.</span>
+<span class="sd">            flip (bool): True: +y upwards; False: the y axis turned over.</span>
+<span class="sd">            method (str): "auto", "circular" or "spatial"; default from the parameters.</span>
+<span class="sd">            spatial_mode (str): "auto", "rotate" or "direct"; default from the parameters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None: The video is saved as &lt;prefix&gt;planet_video[_iwa_ignore][_spatial].webm in the</span>
+<span class="sd">                working directory (with the target's name in front for your own targets).</span>
+<span class="sd">        """</span>
+        <span class="n">charge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_charge</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+
+        <span class="c1"># Check if the input order is valid</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Input order number is not existed, please try again or use Target.list_planets() to list all planets"</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"A static planet is unable to move"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_method</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">)</span>
+            <span class="n">total_frames</span> <span class="o">=</span> <span class="n">length</span><span class="o">*</span><span class="n">fps</span>
+            <span class="n">target_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_disk_and_planets</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">iwa_ignore</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">)</span>
+            <span class="n">fig</span><span class="p">,[</span><span class="n">ax</span><span class="p">,</span><span class="n">cax</span><span class="p">]</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">width_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="n">plot_dpi</span><span class="p">)</span>
+            <span class="c1"># Set the colormap and norm to correspond to the data for which the colorbar will be used.</span>
+            <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="s1">'gnuplot'</span><span class="p">]</span>
+            <span class="n">planet_brightness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">t0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">initial_planet_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">initial_planet_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_planets_image</span><span class="p">([</span><span class="n">initial_planet_pos</span><span class="p">],</span> <span class="p">[</span><span class="n">planet_brightness</span><span class="p">],</span> <span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+            <span class="c1"># The colour scale is fixed by the first frame</span>
+            <span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">target_img</span><span class="o">+</span><span class="n">initial_planet_img</span><span class="p">))</span>
+            <span class="n">colorbar</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">ColorbarBase</span><span class="p">(</span><span class="n">cax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span><span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">'vertical'</span><span class="p">)</span>
+            <span class="n">colorbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_colorbar_label</span><span class="p">())</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">target_img</span><span class="o">+</span><span class="n">initial_planet_img</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extent</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">'lower'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">flip</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y [arcsec]'</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x [arcsec]'</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Planet #</span><span class="si">%d</span><span class="s2"> over one orbit, through the </span><span class="si">%s%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optics_text</span><span class="p">(</span><span class="n">charge</span><span class="p">),</span>
+                         <span class="s2">", dust inside the IWA removed"</span> <span class="k">if</span> <span class="n">iwa_ignore</span> <span class="k">else</span> <span class="s2">""</span><span class="p">))</span>
+            <span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="w">                </span><span class="sd">"""Frame num: the planet at time t0 + num/total_frames periods, added to the disk image.</span>
+
+<span class="sd">                Args:</span>
+<span class="sd">                    num (int): Frame number (0 ... total_frames-1).</span>
+
+<span class="sd">                Returns:</span>
+<span class="sd">                    list: The updated artist (the image).</span>
+<span class="sd">                """</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">planet_move</span><span class="p">(</span><span class="n">t0</span><span class="o">+</span><span class="n">num</span><span class="o">/</span><span class="n">total_frames</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"specific"</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="n">total_frames</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">current_img</span> <span class="o">=</span> <span class="n">target_img</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_planets_image</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">planet_brightness</span><span class="p">],</span> <span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+                <span class="n">img</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">current_img</span><span class="p">)</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">img</span><span class="p">]</span>
+            <span class="n">anim_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_prefix</span> <span class="o">+</span> <span class="s1">'planet_video'</span> <span class="o">+</span> <span class="p">(</span><span class="s1">'_iwa_ignore'</span> <span class="k">if</span> <span class="n">iwa_ignore</span> <span class="k">else</span> <span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">'_spatial'</span> <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"spatial"</span> <span class="k">else</span> <span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'.webm'</span>
+            <span class="n">write_video</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">total_frames</span><span class="p">,</span> <span class="n">anim_name</span><span class="p">,</span> <span class="n">fps</span><span class="p">,</span> <span class="n">plot_dpi</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+            <span class="c1"># The video does not move the planet: back to where it was</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">t0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">initial_planet_pos</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Saved the video to </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">anim_name</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Target.plot_orbit">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.plot_orbit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_orbit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">plot_dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Orbit plot</span>
+
+<span class="sd">        Plot the orbit of a moving planet, with its current position (planet.orbit_plot).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            order (int): The order number of the planet, using self.list_planets() to look up the order.</span>
+<span class="sd">            plot_dpi (int): Dots per inch (DPI) for the plot.</span>
+<span class="sd">            res (int): Number of points used for orbit calculations.</span>
+<span class="sd">            flip (bool): True: +y upwards; False: the y axis turned over.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None: The figure is saved as oribit_planet&lt;order&gt;.png (sic) and shown.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">order</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Input order number is not existed, please try again or use Target.list_planets() to list all planets"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">orbits</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">pos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"A static planet has no orbit"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">orbit_plot</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">plot_dpi</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">flip</span><span class="p">,</span> <span class="s2">"polar"</span><span class="p">,</span> <span class="s1">'_planet'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">order</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Target.contrast">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.contrast">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">contrast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">plot_contrast</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">exozodi_limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                 <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Contrast</span>
+
+<span class="sd">        Find the planet brightness and background brightness in the final image: the planet's</span>
+<span class="sd">        core (the pixels where its final image is above half its peak) is the aperture, and the</span>
+<span class="sd">        planet and the dust (with and without the dust inside the IWA) are summed inside it.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</span>
+<span class="sd">            order (int): The order number of the planet, using self.list_planets() to look up the order.</span>
+<span class="sd">            plot_contrast (bool): Whether to plot the dust to planet light ratio in the planet's core</span>
+<span class="sd">                against a factor scaling the dust's brightness (e.g. more exozodiacal dust; shown, not saved).</span>
+<span class="sd">            plot_dpi (int): Dots per inch (DPI) for the plot.</span>
+<span class="sd">            exozodi_limit (float): The largest dust brightness factor plotted.</span>
+<span class="sd">            res (int): The number of points in the exozodi ratio range.</span>
+<span class="sd">            method (str): "auto", "circular" or "spatial"; default from the parameters.</span>
+<span class="sd">            spatial_mode (str): "auto", "rotate" or "direct"; default from the parameters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple or None: planet brightness, background brightness, and background brightness</span>
+<span class="sd">                (ignored dust inside IWA), floats in Jy (also printed, and plotted if plot_contrast);</span>
+<span class="sd">                None for an invalid order, or (circular method) a planet at or beyond the last radial</span>
+<span class="sd">                PSF's source, which the final image leaves out (see psf.cir_psf_planets).</span>
+<span class="sd">        """</span>
+        <span class="c1"># Check if the input order is valid</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Input order number is not existed, please try again or use Target.list_planets() to list all planets"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">charge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_charge</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">coronagraph_type</span> <span class="o">==</span> <span class="s1">'vortex'</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a charge-"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" vortex coronagraph."</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">charge</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the Lazuli telescope with a charge-</span><span class="si">%d</span><span class="s2"> vortex coronagraph."</span> <span class="o">%</span> <span class="n">charge</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the Lazuli telescope without a coronagraph."</span><span class="p">)</span>
+        <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_method</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">)</span>
+        <span class="n">planet_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">planet_r</span> <span class="o">=</span> <span class="n">planet_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span>  <span class="c1"># in pixels</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"circular"</span><span class="p">:</span>
+            <span class="c1"># Check if the planet is inside the range of the radial PSFs (the limit of psf.cir_psf_planets;</span>
+            <span class="c1"># the radial PSF file holds all (N+1)//2 of them)</span>
+            <span class="k">if</span> <span class="n">planet_r</span> <span class="o">&gt;=</span> <span class="n">radial_source_positions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Planet is outside the range of the plot"</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="n">planet_b</span><span class="p">,</span> <span class="n">dust_b</span><span class="p">,</span> <span class="n">dust_b_iwa</span> <span class="o">=</span> <span class="n">cir_psf_contrast</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_img</span><span class="p">,</span> <span class="n">planet_r</span><span class="p">,</span> <span class="n">planet_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                                                            <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">rot_number</span><span class="p">,</span>
+                                                            <span class="bp">self</span><span class="o">.</span><span class="n">radial_psfs_file</span><span class="p">(</span><span class="n">charge</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">planet_b</span><span class="p">,</span> <span class="n">dust_b</span><span class="p">,</span> <span class="n">dust_b_iwa</span> <span class="o">=</span> <span class="n">spatial_psf_contrast</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_img</span><span class="p">,</span> <span class="n">planet_pos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets_brightness</span><span class="p">[</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                                                                <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">psf_scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spatial_model</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">),</span>
+                                                                <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">use_gpu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">num_cores</span><span class="p">,</span>
+                                                                <span class="n">report</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_first_report</span><span class="p">((</span><span class="n">charge</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">,</span> <span class="kc">False</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">plot_contrast</span><span class="p">:</span>
+            <span class="c1"># The dust's final image is linear in its brightness: scaled by a factor, so is the dust in the core</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="n">plot_dpi</span><span class="p">)</span>
+            <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+            <span class="n">axs</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"dust / planet light in the planet's core"</span><span class="p">)</span>
+            <span class="n">axs</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"dust brightness relative to the target's (1 = as given)"</span><span class="p">)</span>
+            <span class="n">axs</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Planet #</span><span class="si">%d</span><span class="s2"> through the </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optics_text</span><span class="p">(</span><span class="n">charge</span><span class="p">)),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+            <span class="n">exozodi_ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">exozodi_limit</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+            <span class="n">dp_ratio</span> <span class="o">=</span> <span class="p">(</span><span class="n">dust_b</span> <span class="o">/</span> <span class="n">planet_b</span><span class="p">)</span> <span class="o">*</span> <span class="n">exozodi_ratio</span>
+            <span class="n">dp_ratio_iwa</span> <span class="o">=</span> <span class="p">(</span><span class="n">dust_b_iwa</span> <span class="o">/</span> <span class="n">planet_b</span><span class="p">)</span> <span class="o">*</span> <span class="n">exozodi_ratio</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">exozodi_ratio</span><span class="p">,</span> <span class="n">dp_ratio</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"all the dust"</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">exozodi_ratio</span><span class="p">,</span> <span class="n">dp_ratio_iwa</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"dust inside the IWA left out"</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">":"</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Planet brightness: </span><span class="si">%.2e</span><span class="s2"> Jy"</span> <span class="o">%</span> <span class="n">planet_b</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Dust brightness: </span><span class="si">%.2e</span><span class="s2"> Jy"</span> <span class="o">%</span> <span class="n">dust_b</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Dust brightness but ignore dust inside IWA: </span><span class="si">%.2e</span><span class="s2"> Jy"</span> <span class="o">%</span> <span class="n">dust_b_iwa</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">planet_b</span><span class="p">,</span> <span class="n">dust_b</span><span class="p">,</span> <span class="n">dust_b_iwa</span></div>
+
+
+<div class="viewcode-block" id="Target.plot_final">
+<a class="viewcode-back" href="../../main.html#toycoronagraph.main.Target.plot_final">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_final</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iwa_ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">add_planet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                   <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_range</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Final image</span>
+
+<span class="sd">        Plots the target image after processing with the coronagraph, with the circular or the</span>
+<span class="sd">        spatial method (see choose_method).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            charge (int): Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</span>
+<span class="sd">            iwa_ignore (bool): Whether to ignore the target inside the IWA.</span>
+<span class="sd">            add_planet (bool): Whether to include planets in the plot.</span>
+<span class="sd">            plot_dpi (int): Dots per inch (DPI) for the final plot.</span>
+<span class="sd">            flip (bool): True: +y upwards; False: the y axis turned over.</span>
+<span class="sd">            method (str): "auto", "circular" or "spatial"; default from the parameters.</span>
+<span class="sd">            spatial_mode (str): "auto", "rotate" or "direct"; default from the parameters.</span>
+<span class="sd">            file_name (str): Save the figure exactly there: "name.png" or "folder/name.png" (the</span>
+<span class="sd">                folder is created). The format follows the extension (PNG if there is none). None</span>
+<span class="sd">                (default): charge&lt;c&gt;[_with_planets][_iwa_ignore][_spatial]_final.png ("lazuli_charge&lt;c&gt;..."</span>
+<span class="sd">                for the Lazuli telescope; with the target's name in front for your own targets).</span>
+<span class="sd">            log (bool): Log colour scale (faint outer parts visible); else linear from 0.</span>
+<span class="sd">            log_range (float): Log scale: decades shown below the image's peak.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: The (N, N) float64 final image in Jy/arcsec^2 (also saved, see file_name, and shown).</span>
+<span class="sd">        """</span>
+        <span class="n">charge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_charge</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+        <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_method</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">)</span>
+
+        <span class="c1"># Generate the final image of the disk (and the planets)</span>
+        <span class="n">final_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_disk_and_planets</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">iwa_ignore</span><span class="p">,</span> <span class="n">add_planet</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">spatial_mode</span><span class="p">)</span>
+
+        <span class="c1"># Create a new figure and axes for plotting</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="n">plot_dpi</span><span class="p">)</span>
+        <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+        <span class="c1"># Plot the final image</span>
+        <span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_colour_scale</span><span class="p">(</span><span class="n">final_img</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">log_range</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">final_img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">'lower'</span><span class="p">)</span>
+        <span class="n">axs</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Through the </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2"> method)</span><span class="si">%s%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_optics_text</span><span class="p">(</span><span class="n">charge</span><span class="p">),</span> <span class="n">method</span><span class="p">,</span>
+                                                         <span class="s2">", with planets"</span> <span class="k">if</span> <span class="n">add_planet</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span> <span class="k">else</span> <span class="s2">""</span><span class="p">,</span>
+                                                         <span class="s2">", dust inside the IWA removed"</span> <span class="k">if</span> <span class="n">iwa_ignore</span> <span class="k">else</span> <span class="s2">""</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">flip</span><span class="p">:</span>
+            <span class="n">axs</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+        <span class="n">axs</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y [arcsec]'</span><span class="p">)</span>
+        <span class="n">axs</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x [arcsec]'</span><span class="p">)</span>
+
+        <span class="c1"># Add color bar</span>
+        <span class="n">colorbar</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">orientation</span><span class="o">=</span><span class="s1">'vertical'</span><span class="p">)</span>
+        <span class="n">colorbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_colorbar_label</span><span class="p">())</span>
+
+        <span class="c1"># Create a name for the final image</span>
+        <span class="n">final_image_name</span> <span class="o">=</span> <span class="p">(</span><span class="s2">""</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">coronagraph_type</span> <span class="o">==</span> <span class="s2">"vortex"</span> <span class="k">else</span> <span class="s2">"lazuli_"</span><span class="p">)</span><span class="o">+</span><span class="s2">"charge"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">add_planet</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span> <span class="o">!=</span> <span class="p">[]:</span>
+            <span class="n">final_image_name</span> <span class="o">+=</span> <span class="s2">"_with_planets"</span>
+
+        <span class="k">if</span> <span class="n">iwa_ignore</span><span class="p">:</span>
+            <span class="n">final_image_name</span> <span class="o">+=</span> <span class="s2">"_iwa_ignore"</span>
+
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"spatial"</span><span class="p">:</span>
+            <span class="n">final_image_name</span> <span class="o">+=</span> <span class="s2">"_spatial"</span>
+
+        <span class="c1"># Save the final image</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">final_image_name</span><span class="o">+</span><span class="s2">"_final"</span><span class="p">)</span>
+
+        <span class="c1"># Show the plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">final_img</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

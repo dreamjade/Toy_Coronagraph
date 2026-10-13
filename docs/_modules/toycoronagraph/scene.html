@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.scene &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/scene';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.scene</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.scene</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">The scene: the image before the coronagraph, built from source modules.</span>
+
+<span class="sd">    scene = Scene.from_file("eps_eri.toml")                     # from a parameter file</span>
+<span class="sd">    scene = Scene(wavelength=500e-9, diameter=6.0, sampling=4, fov=2.0,</span>
+<span class="sd">                  star=Star(distance=3.22, radius=0.73))          # or in Python</span>
+<span class="sd">    scene.add(Wind(mdot=6e-13))                                  # any Source module, yours too</span>
+<span class="sd">    images = scene.render()                                      # {name: image}, and scene.total</span>
+
+<span class="sd">Each component is rendered by its module (centred on the star, on its own grid, in its own</span>
+<span class="sd">unit), put per pixel (Jy, or the fraction of the star's flux), resampled onto the scene grid</span>
+<span class="sd">with the flux conserved, and converted to the scene's internal unit (units.choose_internal):</span>
+<span class="sd">"Jy/arcsec^2" when the star's flux is known (or every component is physical), else</span>
+<span class="sd">"contrast_pixel" (the fraction of the star's flux per pixel). Point sources (planets) are</span>
+<span class="sd">not images: they are kept as positions and fluxes (Scene.points).</span>
+
+<span class="sd">Conventions: images are (N, N) float64 arrays with the star at pixel ((N-1)/2, (N-1)/2);</span>
+<span class="sd">rows are +y (upwards, as in FITS; plotted with origin="lower"), columns +x; angles are</span>
+<span class="sd">measured from +x towards +y. The shared quantities (grid, wavelength, star) are resolved once</span>
+<span class="sd">by toycoronagraph.params.</span>
+
+<span class="sd">Also here: the plotting helpers shared with toycoronagraph.observe (show_image, mark_points,</span>
+<span class="sd">point_labels, blank_panel, radial_profile, plot_profiles) and the scene FITS writer</span>
+<span class="sd">(write_scene, image_hdu).</span>
+<span class="sd">"""</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">params</span> <span class="k">as</span> <span class="n">P</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">U</span>
+
+
+<div class="viewcode-block" id="Grid">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Grid">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Grid</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The simulated image: size x size pixels of pixel_scale arcsec, star at pixel (size-1)/2.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        size (int): Pixels on one edge of the (square) image.</span>
+<span class="sd">        pixel_scale (float): Pixel size in arcsec.</span>
+<span class="sd">        wavelength (float): Observing wavelength in m.</span>
+<span class="sd">        diameter (float): Telescope aperture diameter D in m.</span>
+<span class="sd">    """</span>
+    <span class="n">size</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">pixel_scale</span><span class="p">:</span> <span class="nb">float</span>     <span class="c1"># arcsec</span>
+    <span class="n">wavelength</span><span class="p">:</span> <span class="nb">float</span>      <span class="c1"># m</span>
+    <span class="n">diameter</span><span class="p">:</span> <span class="nb">float</span>        <span class="c1"># m</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lambda_d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""float: lambda/D in arcsec."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">diameter</span><span class="o">*</span><span class="n">P</span><span class="o">.</span><span class="n">RAD_TO_ARCSEC</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""float: Pixels per lambda/D."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_d</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_scale</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">visual_range</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""float: Image width in lambda/D (twice the Optics psf_range)."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_scale</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_d</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pixel_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""float: Area of one pixel in arcsec^2."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_scale</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">peak_norm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""float: The peak of an ideal circular aperture's PSF (no coronagraph, no Lyot stop) as a fraction</span>
+<span class="sd">        of the star's light per pixel, pi/4 (pixel_scale / lambda_d)^2: the contrast_peak reference of</span>
+<span class="sd">        input images (final images use their coronagraph's own, Coronagraph.peak_norm)."""</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">sampling</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""list: [left, right, bottom, top] pixel edges in arcsec from the star (for imshow's extent)."""</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_scale</span>
+        <span class="k">return</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Grid.coordinates">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Grid.coordinates">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Offsets from the star of the pixel centres.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (x, y), each a (size, size) float64 array in arcsec; rows are y (upwards, as in</span>
+<span class="sd">                FITS), columns x (np.meshgrid order: x varies along axis 1, y along axis 0).</span>
+<span class="sd">        """</span>
+        <span class="n">offsets</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_scale</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">offsets</span><span class="p">,</span> <span class="n">offsets</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Grid.pixel">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Grid.pixel">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pixel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Pixel position of a point given in polar coordinates around the star.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            radius (float or np.ndarray): Distance from the star in arcsec.</span>
+<span class="sd">            angle (float or np.ndarray): Angle in rad, from +x towards +y.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (row, column) as floats (not rounded; arrays if the inputs are), rows = +y.</span>
+<span class="sd">        """</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="k">return</span> <span class="n">c</span> <span class="o">+</span> <span class="n">radius</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="n">radius</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_scale</span></div>
+
+
+<div class="viewcode-block" id="Grid.axis">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Grid.axis">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">axis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"arcsec"</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Scale factor and label for plot axes in another unit.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            unit (str): "arcsec", "mas", "lambda/D", "au" or "pixel".</span>
+<span class="sd">            distance (float): The star's distance in pc; needed for "au" (1 arcsec at d pc is d au).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (factor, label): multiply arcsec by factor (float) to get `unit`; label is `unit` (str).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParamError: "au" without a distance, or an unknown unit.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s2">"au"</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">distance</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">P</span><span class="o">.</span><span class="n">ParamError</span><span class="p">(</span><span class="s1">'axis = "au" needs the distance: set [star] distance'</span><span class="p">)</span>
+        <span class="n">factors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"arcsec"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">"mas"</span><span class="p">:</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s2">"lambda/D"</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_d</span><span class="p">,</span> <span class="s2">"au"</span><span class="p">:</span> <span class="n">distance</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">"pixel"</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">P</span><span class="o">.</span><span class="n">ParamError</span><span class="p">(</span><span class="s2">"axis = </span><span class="si">%r</span><span class="s2">: use one of </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">factors</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">factors</span><span class="p">[</span><span class="n">unit</span><span class="p">],</span> <span class="n">unit</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Star">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Star">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Star</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The star / system. Any field may be None (unknown).</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        distance (float): Distance in pc.</span>
+<span class="sd">        radius (float): Stellar radius in R_sun.</span>
+<span class="sd">        temperature (float): Effective temperature in K (blackbody flux, with radius and distance).</span>
+<span class="sd">        flux_jy (float): Flux density in Jy at the scene's wavelength (overrides the blackbody).</span>
+<span class="sd">    """</span>
+    <span class="n">distance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">flux_jy</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Star.flux_at">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Star.flux_at">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">flux_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The star's flux density at a wavelength.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wavelength (float): Wavelength in m.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float or None: flux_jy if set, else the blackbody flux in Jy (needs temperature, radius</span>
+<span class="sd">                and distance); None if neither is known.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux_jy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux_jy</span>
+        <span class="k">if</span> <span class="kc">None</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">P</span><span class="o">.</span><span class="n">blackbody_flux_jy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="resample">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.resample">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">resample</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">scale_in</span><span class="p">,</span> <span class="n">scale_out</span><span class="p">,</span> <span class="n">size_out</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Resample per-pixel values onto another grid centred on the same star, conserving the flux.</span>
+
+<span class="sd">    The values must be per pixel (fluxes, not surface brightnesses): each input pixel's flux</span>
+<span class="sd">    is shared among the output pixels it overlaps, in proportion to the overlap area (integer</span>
+<span class="sd">    factors give block sums). The 2-D overlap is separable, so it is one 1-D weight matrix w</span>
+<span class="sd">    applied to both axes: w @ values @ w.T. Light outside the output grid is dropped.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        values (np.ndarray): (n_in, n_in) per-pixel values, star at pixel (n_in-1)/2.</span>
+<span class="sd">        scale_in (float): Input pixel size in arcsec.</span>
+<span class="sd">        scale_out (float): Output pixel size in arcsec.</span>
+<span class="sd">        size_out (int): Output pixels on one edge.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: (size_out, size_out) float64 per-pixel values, star at pixel (size_out-1)/2.</span>
+<span class="sd">    """</span>
+    <span class="n">n_in</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">e_in</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_in</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">n_in</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">scale_in</span>        <span class="c1"># pixel edges, from the star</span>
+    <span class="n">e_out</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">size_out</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">size_out</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">scale_out</span>
+    <span class="n">overlap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">e_out</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">e_in</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">:])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">e_out</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">e_in</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">overlap</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span><span class="o">/</span><span class="n">scale_in</span>          <span class="c1"># (size_out, n_in): share of each input pixel</span>
+    <span class="k">return</span> <span class="n">w</span> <span class="o">@</span> <span class="n">values</span> <span class="o">@</span> <span class="n">w</span><span class="o">.</span><span class="n">T</span></div>
+
+
+
+<div class="viewcode-block" id="Scene">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Scene</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Components (source modules) on one grid, in one unit; see the module docstring.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        sections (dict): Parameter sections {section: {key: value}} given by the user.</span>
+<span class="sd">        components (list): The params.Component of each source module (enabled or not).</span>
+<span class="sd">        coronagraphs (list): [[coronagraph]] tables of the parameters (used by observe()).</span>
+<span class="sd">        params (Params or None): Checked parameters; built from the above by build() (None until then,</span>
+<span class="sd">            and reset by add()).</span>
+
+<span class="sd">    Set by build():</span>
+<span class="sd">        grid (Grid): The scene grid.</span>
+<span class="sd">        star (Star): The resolved star.</span>
+
+<span class="sd">    Set by render():</span>
+<span class="sd">        images (dict or None): {component name: (N, N) float64 image in internal_unit}; None until</span>
+<span class="sd">            rendered (and after add()).</span>
+<span class="sd">        points (dict): Point-source components {name: (positions, fluxes)}: positions a list of</span>
+<span class="sd">            (radius arcsec, angle rad), fluxes a 1-D array of each source's flux per pixel area, in</span>
+<span class="sd">            internal_unit (multiply by grid.pixel_area for Jy, or for the fraction of the star's flux).</span>
+<span class="sd">        total (np.ndarray): (N, N) sum of `images` (zeros if there is none; point sources are not in it).</span>
+<span class="sd">        internal_unit (str): "Jy/arcsec^2" or "contrast_pixel".</span>
+<span class="sd">        star_flux (float or None): The star's flux density in Jy at the wavelength (None: unknown).</span>
+<span class="sd">        families (dict): {name: "physical" or "relative"} of every image and point-source component.</span>
+<span class="sd">        units (dict): {name: the unit the module gave its image in} (images only).</span>
+<span class="sd">        origins (dict): {name: where the image came from, e.g. a file name} (images only).</span>
+<span class="sd">        component_of (dict): {name: the params.Component it came from} (images and point sources).</span>
+<span class="sd">        notes (list): Notes and warnings (str) from the parameters and the rendering.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">star</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">settings</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Args:</span>
+<span class="sd">            star (Star or dict): The star (distance pc, radius R_sun, temperature K or flux_jy Jy);</span>
+<span class="sd">                None fields are left out (so the sources or defaults may provide them).</span>
+<span class="sd">            settings: [observation] / [grid] keys (wavelength, diameter, size, pixel_scale,</span>
+<span class="sd">                sampling, fov, ...), and other sections as dicts (method={...}, checks={...}, ...).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParamError: A setting that is neither an [observation] / [grid] key nor a section given as a dict.</span>
+<span class="sd">        """</span>
+        <span class="n">sections</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># a plain key belongs to whichever of [observation] / [grid] declares it</span>
+            <span class="n">section</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"observation"</span><span class="p">,</span> <span class="s2">"grid"</span><span class="p">)</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">P</span><span class="o">.</span><span class="n">SECTIONS</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="mi">1</span><span class="p">]}),</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">section</span><span class="p">:</span>
+                <span class="n">sections</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="p">{})[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">P</span><span class="o">.</span><span class="n">SECTIONS</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">sections</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">P</span><span class="o">.</span><span class="n">ParamError</span><span class="p">(</span><span class="s2">"Scene: unknown setting </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">star</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">star</span> <span class="o">=</span> <span class="n">star</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">star</span><span class="p">,</span> <span class="n">Star</span><span class="p">)</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">(</span><span class="n">star</span><span class="p">)</span>
+            <span class="n">sections</span><span class="p">[</span><span class="s2">"star"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">star</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="n">sections</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">components</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coronagraphs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="kc">None</span>      <span class="c1"># built from the sections and components when needed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">images</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_origins</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="p">{}</span>  <span class="c1"># the parameter file (from_params), for messages and provenance</span>
+
+<div class="viewcode-block" id="Scene.from_file">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.from_file">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        A scene from a parameter file (see toycoronagraph.params).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path (str): The .toml parameter file.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Scene: Not rendered yet.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Scene.from_params">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.from_params">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_params</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        A scene from loaded parameters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p (Params): From toycoronagraph.params.load (its sections, components and coronagraphs are used).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Scene: Not rendered yet.</span>
+<span class="sd">        """</span>
+        <span class="n">scene</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="n">scene</span><span class="o">.</span><span class="n">sections</span><span class="p">,</span> <span class="n">scene</span><span class="o">.</span><span class="n">components</span><span class="p">,</span> <span class="n">scene</span><span class="o">.</span><span class="n">coronagraphs</span><span class="p">,</span> <span class="n">scene</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">sections</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">components</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">coronagraphs</span><span class="p">,</span> <span class="n">p</span>
+        <span class="n">scene</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">scene</span><span class="o">.</span><span class="n">_origins</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">_origins</span>  <span class="c1"># kept if components are added later (params rebuilt)</span>
+        <span class="k">return</span> <span class="n">scene</span></div>
+
+
+<div class="viewcode-block" id="Scene.add">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.add">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">P</span><span class="o">.</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">P</span><span class="o">.</span><span class="n">AUTO</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Add a component; the parameters and the images are built again when next needed.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            source (Source): A source module instance (toycoronagraph.sources).</span>
+<span class="sd">            name (str): Component name (FITS extension, plots); "auto": the module's kind (ring, ring_2, ...).</span>
+<span class="sd">            scale (float): Factor applied to the component's image or fluxes.</span>
+<span class="sd">            enabled (bool): Whether the component is rendered.</span>
+<span class="sd">            method (str): "auto", "circular" or "spatial": this component's method in observe().</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Source: `source` (to keep a handle on it).</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">Component</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">method</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">source</span></div>
+
+
+<div class="viewcode-block" id="Scene.build">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.build">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Resolve the grid, wavelength and star with what the sources provide (every disagreement is checked).</span>
+
+<span class="sd">        Sets self.params (if None), self.grid and self.star.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParamError: Conflicting or missing parameters (from Params.resolve).</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tables</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">coronagraphs</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="p">,</span> <span class="n">tables</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">origins</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_origins</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">provided</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">enabled</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">inspect</span><span class="p">()]</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"grid.size"</span><span class="p">)),</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"grid.pixel_scale"</span><span class="p">)),</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"observation.wavelength"</span><span class="p">)),</span>
+                         <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"observation.diameter"</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">star</span> <span class="o">=</span> <span class="n">Star</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"star."</span><span class="o">+</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"distance"</span><span class="p">,</span> <span class="s2">"radius"</span><span class="p">,</span> <span class="s2">"temperature"</span><span class="p">,</span> <span class="s2">"flux_jy"</span><span class="p">)})</span></div>
+
+
+<div class="viewcode-block" id="Scene.render">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.render">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Render every enabled component onto the grid, in the internal unit.</span>
+
+<span class="sd">        Each module's image is put per pixel (units.per_pixel), resampled onto the grid if it</span>
+<span class="sd">        has another pixel size or field ([grid] resample), scaled by the component's scale and</span>
+<span class="sd">        converted to the internal unit. Point-source modules give positions and fluxes instead.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            verbose (bool): Print the notes and a one-line summary of the scene.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: {component name: (N, N) float64 image in self.internal_unit}; also sets self.total,</span>
+<span class="sd">                self.points, self.internal_unit, self.star_flux, self.families, self.units,</span>
+<span class="sd">                self.origins, self.component_of and self.notes (see the class docstring).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParamError: An image covers another field than the grid while [grid] resample = false.</span>
+<span class="sd">            UnitError: The components cannot be put in one unit (units.choose_internal).</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">notes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">notes</span><span class="p">)</span>
+        <span class="n">per_pixel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">families</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">origins</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">component_of</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{},</span> <span class="p">{},</span> <span class="p">{},</span> <span class="p">{}</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># point-source components: name -&gt; (positions, fluxes per pixel in their family)</span>
+        <span class="n">mismatches</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">enabled</span><span class="p">():</span>
+            <span class="n">sources</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">point_sources</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">sources</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">points</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">([</span><span class="n">pos</span> <span class="k">for</span> <span class="n">pos</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">])</span><span class="o">*</span><span class="n">c</span><span class="o">.</span><span class="n">scale</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">families</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">component_of</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">family_of</span><span class="p">(),</span> <span class="n">c</span>
+                <span class="k">continue</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">part</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="p">[(</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="p">)]):</span>
+                <span class="c1"># several images from one source are named after them (prefixed if you named the source)</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="n">part</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">part</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">c</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">kind</span> <span class="k">else</span> <span class="s2">"</span><span class="si">%s</span><span class="s2">_</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">part</span><span class="p">)</span>
+                <span class="n">img</span><span class="o">.</span><span class="n">pixel_scale</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">pixel_scale</span> <span class="ow">or</span> <span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span>  <span class="c1"># None: already on the scene grid</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">notes</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"Note: </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">img</span><span class="o">.</span><span class="n">notes</span><span class="p">]</span>
+                <span class="n">fam</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">per_pixel</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">wavelength</span><span class="p">)</span>
+                <span class="c1"># differences below 0.01 grid pixel (at the edge) are round-off</span>
+                <span class="n">n_in</span><span class="p">,</span> <span class="n">field_in</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">img</span><span class="o">.</span><span class="n">pixel_scale</span>
+                <span class="n">same_field</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">field_in</span> <span class="o">-</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="o">*</span><span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span>
+                <span class="n">same_pixels</span> <span class="o">=</span> <span class="n">n_in</span> <span class="o">==</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span> <span class="ow">and</span> <span class="n">same_field</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">same_pixels</span><span class="p">:</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%d</span><span class="s2"> px of </span><span class="si">%.6g</span><span class="s2"> arcsec (</span><span class="si">%.6g</span><span class="s2"> arcsec across), the grid is </span><span class="si">%d</span><span class="s2"> px of </span><span class="si">%.6g</span><span class="s2"> arcsec (</span><span class="si">%.6g</span><span class="s2"> across)"</span> <span class="o">%</span> <span class="p">(</span>
+                        <span class="n">img</span><span class="o">.</span><span class="n">origin</span> <span class="ow">or</span> <span class="n">name</span><span class="p">,</span> <span class="n">n_in</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">field_in</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">)</span>
+                    <span class="c1"># another resolution of the same field is always rebinned; another field needs [grid] resample</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">same_field</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"grid.resample"</span><span class="p">)):</span>
+                        <span class="n">mismatches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+                        <span class="k">continue</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Note: </span><span class="si">%s</span><span class="s2"> (flux conserved) </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"rebinned to the grid's resolution, same field:"</span>
+                                                                         <span class="k">if</span> <span class="n">same_field</span> <span class="k">else</span> <span class="s2">"resampled"</span><span class="p">,</span> <span class="n">text</span><span class="p">))</span>
+                    <span class="n">values</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+                <span class="n">per_pixel</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">families</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="o">*</span><span class="n">c</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">fam</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">component_of</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span> <span class="n">c</span>
+        <span class="k">if</span> <span class="n">mismatches</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">P</span><span class="o">.</span><span class="n">ParamError</span><span class="p">(</span><span class="s2">"[grid] resample = false, but these images cover another field than the grid:</span><span class="se">\n</span><span class="s2">  "</span>
+                               <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">  "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mismatches</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">  give the grid their field (for another resolution set only "</span>
+                               <span class="s2">"[grid] size, with pixel_scale = </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2">), or set [grid] resample = true"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">star_flux</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">star</span><span class="o">.</span><span class="n">flux_at</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">wavelength</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">choose_internal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">families</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star_flux</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">images</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">U</span><span class="o">.</span><span class="n">to_internal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">families</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">pixel_area</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star_flux</span><span class="p">)</span>
+                       <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">per_pixel</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="c1"># point sources: positions, and each one's flux per pixel area in the internal unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">points</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">to_internal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">families</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">pixel_area</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star_flux</span><span class="p">))</span>
+                       <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Scene: </span><span class="si">%d</span><span class="s2"> x </span><span class="si">%d</span><span class="s2"> px, </span><span class="si">%.5g</span><span class="s2"> arcsec/pixel (</span><span class="si">%.3g</span><span class="s2"> px per lambda/D at </span><span class="si">%.4g</span><span class="s2"> m); </span><span class="si">%s</span><span class="s2">; in </span><span class="si">%s</span><span class="s2">"</span>
+                  <span class="o">%</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">sampling</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">)</span><span class="o">+</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">)),</span>
+                     <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span></div>
+
+
+<div class="viewcode-block" id="Scene.in_unit">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.in_unit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">in_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">star_flux</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        An image of this scene in another output unit (see units.convert_image).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            image (np.ndarray): (N, N) image in self.internal_unit.</span>
+<span class="sd">            unit (str): "Jy/arcsec^2", "Jy/pixel", "contrast_pixel" or "contrast_peak" (relative to the</span>
+<span class="sd">                ideal aperture's PSF peak, Grid.peak_norm); None or "auto": unchanged.</span>
+<span class="sd">            star_flux (float or Star): The star's flux in Jy, or a Star (its flux at the scene's</span>
+<span class="sd">                wavelength), to convert a contrast scene to a brightness (and back) without</span>
+<span class="sd">                rendering again; None: self.star_flux.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: (N, N) image in `unit` (the same array if no conversion is needed).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            UnitError: The conversion needs the star's flux and it is unknown.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">P</span><span class="o">.</span><span class="n">AUTO</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">image</span>
+        <span class="n">flux</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">star_flux_of</span><span class="p">(</span><span class="n">star_flux</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">wavelength</span><span class="p">)</span> <span class="k">if</span> <span class="n">star_flux</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">star_flux</span>
+        <span class="k">return</span> <span class="n">U</span><span class="o">.</span><span class="n">convert_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">pixel_area</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">peak_norm</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Scene.plot">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.plot">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">star_flux</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+             <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Plot each component and the total side by side (rendering the scene first if needed).</span>
+
+<span class="sd">        The total panel is added when there are several images or point sources; point sources</span>
+<span class="sd">        are marked on it with their flux.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            log (bool): Log colour scale. None here and below: the [display] setting (see display_setting).</span>
+<span class="sd">            unit (str): Output unit (see in_unit); "auto": the internal unit.</span>
+<span class="sd">            axis (str): Axis unit (see Grid.axis).</span>
+<span class="sd">            path (str): Save the figure there; None: not saved.</span>
+<span class="sd">            show (bool): Show the figure (else it is closed).</span>
+<span class="sd">            dpi (int): Resolution of the saved file.</span>
+<span class="sd">            log_range (float): Log scale: decades shown below each panel's peak.</span>
+<span class="sd">            star_flux (float or Star): See in_unit.</span>
+<span class="sd">            **kwargs: Passed to matplotlib's imshow for every panel, e.g. cmap="magma".</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            matplotlib.figure.Figure: The figure.</span>
+<span class="sd">        """</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">log</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">log_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_setting</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span>
+                                      <span class="p">((</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">log</span><span class="p">),</span> <span class="p">(</span><span class="s2">"unit"</span><span class="p">,</span> <span class="n">unit</span><span class="p">),</span> <span class="p">(</span><span class="s2">"axis"</span><span class="p">,</span> <span class="n">axis</span><span class="p">),</span> <span class="p">(</span><span class="s2">"log_range"</span><span class="p">,</span> <span class="n">log_range</span><span class="p">)))</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span> <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="n">P</span><span class="o">.</span><span class="n">AUTO</span> <span class="k">else</span> <span class="n">unit</span>
+        <span class="n">panels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">+</span> <span class="p">([(</span><span class="s2">"total"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">)]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">points</span> <span class="k">else</span> <span class="p">[])</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">panels</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">4.2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">panels</span><span class="p">),</span> <span class="mf">3.6</span><span class="p">),</span> <span class="n">squeeze</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">panels</span><span class="p">):</span>
+            <span class="n">factor</span> <span class="o">=</span> <span class="n">show_image</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_unit</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">star_flux</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span>
+                                <span class="n">log_range</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"total"</span><span class="p">:</span>
+                <span class="n">mark_points</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">point_labels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">pixel_area</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span>
+                                             <span class="n">U</span><span class="o">.</span><span class="n">star_flux_of</span><span class="p">(</span><span class="n">star_flux</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">wavelength</span><span class="p">)</span> <span class="k">if</span> <span class="n">star_flux</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                                             <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">star_flux</span><span class="p">),</span> <span class="n">factor</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">finish</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">display_setting</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="s2">"dpi"</span><span class="p">,</span> <span class="n">dpi</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Scene.plot_profiles">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.plot_profiles">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_profiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">star_flux</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">log_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Azimuthal mean of each component (and of the total, if several) against the distance from the star.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            log (bool): Log-log axes (else linear, both from 0). None here and below: the [display] setting.</span>
+<span class="sd">            unit (str): Output unit (see in_unit); "auto": the internal unit.</span>
+<span class="sd">            axis (str): Distance unit (see Grid.axis).</span>
+<span class="sd">            path (str): Save the figure there; None: not saved.</span>
+<span class="sd">            show (bool): Show the figure (else it is closed).</span>
+<span class="sd">            dpi (int): Resolution of the saved file.</span>
+<span class="sd">            star_flux (float or Star): See in_unit.</span>
+<span class="sd">            extra (dict): More curves {label: (radius in arcsec, values in `unit`)}, dashed.</span>
+<span class="sd">            log_range (float): Log axes show log_range + PROFILE_DECADES decades below the highest point.</span>
+<span class="sd">            **kwargs: Passed to matplotlib's plot for every curve, e.g. lw=2.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            matplotlib.figure.Figure: The figure.</span>
+<span class="sd">        """</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">log</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">log_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_setting</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span>
+                                      <span class="p">((</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">log</span><span class="p">),</span> <span class="p">(</span><span class="s2">"unit"</span><span class="p">,</span> <span class="n">unit</span><span class="p">),</span> <span class="p">(</span><span class="s2">"axis"</span><span class="p">,</span> <span class="n">axis</span><span class="p">),</span> <span class="p">(</span><span class="s2">"log_range"</span><span class="p">,</span> <span class="n">log_range</span><span class="p">)))</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span> <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="n">P</span><span class="o">.</span><span class="n">AUTO</span> <span class="k">else</span> <span class="n">unit</span>
+        <span class="n">curves</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_unit</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">star_flux</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">curves</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">curves</span><span class="p">[</span><span class="s2">"total"</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_unit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">star_flux</span><span class="p">)</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">6.2</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">))</span>
+        <span class="n">plot_profiles</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">curves</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">extra</span><span class="p">,</span>
+                      <span class="n">log_range</span><span class="o">=</span><span class="n">log_range</span><span class="o">+</span><span class="n">PROFILE_DECADES</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">finish</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">display_setting</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="s2">"dpi"</span><span class="p">,</span> <span class="n">dpi</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Scene.write">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.Scene.write">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Save the components as a scene FITS file (readable with kind = "scene_fits"; see write_scene).</span>
+
+<span class="sd">        Point sources are not written (Result.save adds them as a POINTS table).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path (str): The FITS file to write.</span>
+<span class="sd">            overwrite (bool): Replace an existing file (else astropy raises OSError).</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">write_scene</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">internal_unit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span></div>
+</div>
+
+
+
+<span class="c1"># Profiles show this many decades more than images: curves span more than a colour scale can show</span>
+<span class="n">PROFILE_DECADES</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<div class="viewcode-block" id="display_setting">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.display_setting">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">display_setting</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A plot setting: the value given to the plot, else [display] &lt;key&gt; of the parameters.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        params (Params or None): The scene's parameters; None: the declared [display] defaults.</span>
+<span class="sd">        key (str): The [display] key: "unit", "log", "log_range", "axis" or "dpi".</span>
+<span class="sd">        value: The value given to the plot; None: not given.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The setting.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"display."</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">P</span><span class="o">.</span><span class="n">_param</span><span class="p">(</span><span class="s2">"display."</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">default</span></div>
+
+
+
+<div class="viewcode-block" id="finish">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.finish">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">finish</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">dpi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The end of every plot: save the figure (if path is given), then show it or close it.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fig (matplotlib.figure.Figure): The figure.</span>
+<span class="sd">        path (str): Save the figure there; None: not saved.</span>
+<span class="sd">        show (bool): Show the figure (else it is closed).</span>
+<span class="sd">        dpi (int): Resolution of the saved file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        matplotlib.figure.Figure: The figure.</span>
+<span class="sd">    """</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+    <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">"tight"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="k">if</span> <span class="n">show</span> <span class="k">else</span> <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+
+<div class="viewcode-block" id="show_image">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.show_image">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">show_image</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">"arcsec"</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_range</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gnuplot"</span><span class="p">,</span>
+               <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Show an image on its grid (origin="lower": rows are +y), with a colour bar.</span>
+
+<span class="sd">    Log scale: log10 of the positive pixels (others are blank, drawn in the darkest colour),</span>
+<span class="sd">    from the 99.99th percentile (a lone extreme pixel, e.g. a wind's star pixel, does not set</span>
+<span class="sd">    the scale) down `log_range` decades. Linear scale of non-negative data: from 0.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ax (matplotlib.axes.Axes): Where to draw.</span>
+<span class="sd">        fig (matplotlib.figure.Figure): The figure (for the colour bar).</span>
+<span class="sd">        data (np.ndarray): (N, N) image on `grid`.</span>
+<span class="sd">        grid (Grid): The image's grid.</span>
+<span class="sd">        axis (str): Axis unit (see Grid.axis).</span>
+<span class="sd">        distance (float): The star's distance in pc (for axis "au").</span>
+<span class="sd">        log (bool): Log colour scale.</span>
+<span class="sd">        log_range (float): Log scale: decades shown below the top.</span>
+<span class="sd">        label (str): Colour bar label (e.g. the unit); "log10 " is put in front on a log scale.</span>
+<span class="sd">        cmap (str or Colormap): The colour map.</span>
+<span class="sd">        vmin (float): Lower colour limit (log10 of the value on a log scale); None: automatic.</span>
+<span class="sd">        vmax (float): Upper colour limit (log10 of the value on a log scale); None: automatic.</span>
+<span class="sd">        **kwargs: Passed to matplotlib's imshow, e.g. interpolation="nearest".</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: The axis factor (arcsec -&gt; `axis` units), e.g. for mark_points.</span>
+<span class="sd">    """</span>
+    <span class="n">factor</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="n">top</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mf">99.99</span><span class="p">)</span>
+            <span class="n">vmax</span> <span class="o">=</span> <span class="n">top</span> <span class="k">if</span> <span class="n">vmax</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">vmax</span>
+            <span class="n">vmin</span> <span class="o">=</span> <span class="n">vmax</span><span class="o">-</span><span class="n">log_range</span> <span class="k">if</span> <span class="n">vmin</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">vmin</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="s2">"log10 "</span> <span class="o">+</span> <span class="n">label</span>
+    <span class="k">elif</span> <span class="n">vmin</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="n">cmap</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">cmap</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">with_extremes</span><span class="p">(</span><span class="n">bad</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>  <span class="c1"># zero (log scale: no light) in the darkest colour, not blank</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">"lower"</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">e</span><span class="o">*</span><span class="n">factor</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">grid</span><span class="o">.</span><span class="n">extent</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">"x [</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"y [</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">factor</span></div>
+
+
+
+<div class="viewcode-block" id="point_labels">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.point_labels">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">point_labels</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">pixel_area</span><span class="p">,</span> <span class="n">shown</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">star_flux</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Labels of point sources for mark_points: each source's flux in Jy, or as a fraction of the star's.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        points (dict): {name: (positions, fluxes)}: positions a list of (radius arcsec, angle rad),</span>
+<span class="sd">            fluxes each source's flux per pixel area in `unit` (scalar or 1-D array).</span>
+<span class="sd">        unit (str): The internal unit, "Jy/arcsec^2" or "contrast_pixel".</span>
+<span class="sd">        pixel_area (float): Pixel area in arcsec^2.</span>
+<span class="sd">        shown (str): The unit of the plot: a contrast unit labels fractions of the star's flux, a Jy unit</span>
+<span class="sd">            fluxes in Jy (converted with star_flux when needed and known); None: `unit`'s.</span>
+<span class="sd">        star_flux (float): The star's flux in Jy (None: unknown; the labels then stay in `unit`'s family).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: {name: (positions, labels)}, labels a list of str such as "planet 5e-05 Jy".</span>
+<span class="sd">    """</span>
+    <span class="n">jy</span> <span class="o">=</span> <span class="n">unit</span> <span class="o">==</span> <span class="s2">"Jy/arcsec^2"</span>
+    <span class="n">wanted</span> <span class="o">=</span> <span class="n">jy</span> <span class="k">if</span> <span class="n">shown</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">star_flux</span> <span class="k">else</span> <span class="ow">not</span> <span class="n">shown</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"contrast"</span><span class="p">)</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">wanted</span> <span class="o">==</span> <span class="n">jy</span> <span class="k">else</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">star_flux</span> <span class="k">if</span> <span class="n">jy</span> <span class="k">else</span> <span class="n">star_flux</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">fluxes</span><span class="p">)</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">fluxes</span><span class="p">)</span><span class="o">*</span><span class="n">U</span><span class="o">.</span><span class="n">flux_per_pixel</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">pixel_area</span><span class="p">)</span><span class="o">*</span><span class="n">factor</span>  <span class="c1"># per source</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> </span><span class="si">%.2g</span><span class="s2"> </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s2">"Jy"</span> <span class="k">if</span> <span class="n">wanted</span> <span class="k">else</span> <span class="s2">"of the star"</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">total</span><span class="p">]</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="mark_points">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.mark_points">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mark_points</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Mark point sources with a cyan cross and a label.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ax (matplotlib.axes.Axes): Where to draw (axes in arcsec times `factor`, y upwards).</span>
+<span class="sd">        points (dict): {name: (positions, labels)}: positions a list of (radius arcsec, angle rad</span>
+<span class="sd">            from +x towards +y), labels a list of str (see point_labels).</span>
+<span class="sd">        factor (float): Axis factor from arcsec (see Grid.axis / show_image).</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">),</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">factor</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"cyan"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">mew</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="c1"># keep the label inside the frame</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"cyan"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span> <span class="k">if</span> <span class="n">right</span> <span class="k">else</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s2">"offset points"</span><span class="p">,</span>
+                        <span class="n">ha</span><span class="o">=</span><span class="s2">"right"</span> <span class="k">if</span> <span class="n">right</span> <span class="k">else</span> <span class="s2">"left"</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="blank_panel">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.blank_panel">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">blank_panel</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">"arcsec"</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    An empty (black) panel on the grid's axes, e.g. for point sources, which have no image.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ax (matplotlib.axes.Axes): Where to draw.</span>
+<span class="sd">        grid (Grid): The grid giving the axis limits.</span>
+<span class="sd">        axis (str): Axis unit (see Grid.axis).</span>
+<span class="sd">        distance (float): The star's distance in pc (for axis "au").</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: The axis factor (arcsec -&gt; `axis` units).</span>
+<span class="sd">    """</span>
+    <span class="n">factor</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">"black"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="n">e</span><span class="o">*</span><span class="n">factor</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">grid</span><span class="o">.</span><span class="n">extent</span><span class="p">[:</span><span class="mi">2</span><span class="p">]],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="n">e</span><span class="o">*</span><span class="n">factor</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">grid</span><span class="o">.</span><span class="n">extent</span><span class="p">[</span><span class="mi">2</span><span class="p">:]],</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">"equal"</span><span class="p">,</span>
+           <span class="n">xlabel</span><span class="o">=</span><span class="s2">"x [</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"y [</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">factor</span></div>
+
+
+
+<div class="viewcode-block" id="radial_profile">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.radial_profile">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">radial_profile</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Azimuthal mean in 1-pixel-wide rings around the star.</span>
+
+<span class="sd">    Each pixel goes to the ring of its distance from the star rounded to whole pixels; empty</span>
+<span class="sd">    rings are left out.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image (np.ndarray): (N, N) image on `grid`.</span>
+<span class="sd">        grid (Grid): The image's grid.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: (radius, mean): 1-D float64 arrays of the same length; radius is the mean distance</span>
+<span class="sd">            of each ring's pixels from the star in arcsec (0 for the star pixel of an odd grid),</span>
+<span class="sd">            mean the ring's mean value (in the image's unit).</span>
+<span class="sd">    """</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="o">*</span><span class="n">grid</span><span class="o">.</span><span class="n">coordinates</span><span class="p">())</span><span class="o">/</span><span class="n">grid</span><span class="o">.</span><span class="n">pixel_scale</span>
+    <span class="n">rings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># ring 0 is the star pixel(s)</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">rings</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+    <span class="n">sums</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">rings</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">weights</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+    <span class="n">keep</span> <span class="o">=</span> <span class="n">counts</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">rings</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">weights</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[</span><span class="n">keep</span><span class="p">]</span><span class="o">/</span><span class="n">counts</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">radius</span><span class="o">*</span><span class="n">grid</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">sums</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span><span class="o">/</span><span class="n">counts</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="plot_profiles">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.plot_profiles">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_profiles</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">curves</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">"arcsec"</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">styles</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                  <span class="n">log_range</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Plot radial profiles (radial_profile) of images against the distance from the star.</span>
+
+<span class="sd">    Curves named "total" or "input" are drawn thicker. A curve's style: these defaults, then its entry in</span>
+<span class="sd">    `styles`, then kwargs (every curve). Log:</span>
+<span class="sd">    log-log axes, at most `log_range` decades below the highest point (points at radius 0 or</span>
+<span class="sd">    with a non-positive mean are left out; linear axes if no point is left, e.g. a run without</span>
+<span class="sd">    components); linear: both axes start at 0.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ax (matplotlib.axes.Axes): Where to draw.</span>
+<span class="sd">        curves (dict): {label: (N, N) image on `grid`}.</span>
+<span class="sd">        grid (Grid): The images' grid.</span>
+<span class="sd">        axis (str): Distance unit (see Grid.axis).</span>
+<span class="sd">        distance (float): The star's distance in pc (for axis "au").</span>
+<span class="sd">        log (bool): Log-log axes.</span>
+<span class="sd">        label (str): The values' unit, for the y label ("" for none).</span>
+<span class="sd">        extra (dict): More curves {label: (radius in arcsec, values)}, drawn dashed.</span>
+<span class="sd">        styles (dict): {curve label: matplotlib line keywords (e.g. color, ls, lw)}; None: the defaults.</span>
+<span class="sd">        log_range (float): Log axes: decades shown below the highest point.</span>
+<span class="sd">        legend (bool): Draw the legend.</span>
+<span class="sd">        **kwargs: Passed to matplotlib's plot for every curve, over `styles`, e.g. lw=2.</span>
+<span class="sd">    """</span>
+    <span class="n">factor</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
+    <span class="n">top</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># the highest point of each curve (log axes need some positive data: not so for a run without components)</span>
+    <span class="k">for</span> <span class="n">curve</span><span class="p">,</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">curves</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">radial_profile</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span>
+        <span class="n">keep</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mean</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">log</span> <span class="k">else</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"lw"</span><span class="p">:</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">curve</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"total"</span><span class="p">,</span> <span class="s2">"input"</span><span class="p">)</span> <span class="k">else</span> <span class="mf">1.2</span><span class="p">,</span> <span class="o">**</span><span class="p">(</span><span class="n">styles</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="p">{}),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">}</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="n">mean</span><span class="p">[</span><span class="n">keep</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">curve</span><span class="p">,</span> <span class="o">**</span><span class="n">style</span><span class="p">)</span>
+        <span class="n">top</span> <span class="o">+=</span> <span class="p">[</span><span class="n">mean</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">keep</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">curve</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="n">extra</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s2">"ls"</span><span class="p">:</span> <span class="s2">"--"</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">},</span> <span class="n">label</span><span class="o">=</span><span class="n">curve</span><span class="p">)</span>
+        <span class="n">top</span> <span class="o">+=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">values</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">log</span> <span class="ow">and</span> <span class="n">top</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xscale</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">top</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">**-</span><span class="n">log_range</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">top</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">"distance from the star [</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="p">(</span><span class="s2">"azimuthal mean [</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">label</span><span class="p">)</span> <span class="k">if</span> <span class="n">label</span> <span class="k">else</span> <span class="s2">"azimuthal mean"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">legend</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="image_hdu">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.image_hdu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">image_hdu</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A FITS image extension of a scene or final image.</span>
+
+<span class="sd">    Header: EXTNAME (name in capitals), BUNIT, PIXSCALE (arcsec), WAVELEN (m), and a linear</span>
+<span class="sd">    WCS of arcsec offsets from the star (CRPIX = (N+1)/2: pixel (N-1)/2 counted from 0).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name (str): The extension name (upper-cased).</span>
+<span class="sd">        image (np.ndarray): (N, N) image, written as float64.</span>
+<span class="sd">        unit (str): Its unit (BUNIT).</span>
+<span class="sd">        grid (Grid): Its grid.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        astropy.io.fits.ImageHDU: The extension.</span>
+<span class="sd">    """</span>
+    <span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">hdu</span><span class="o">.</span><span class="n">header</span>
+    <span class="n">e</span><span class="p">[</span><span class="s2">"BUNIT"</span><span class="p">]</span> <span class="o">=</span> <span class="n">unit</span>
+    <span class="n">e</span><span class="p">[</span><span class="s2">"PIXSCALE"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="s2">"arcsec per pixel"</span><span class="p">)</span>
+    <span class="n">e</span><span class="p">[</span><span class="s2">"WAVELEN"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="s2">"m"</span><span class="p">)</span>
+    <span class="n">e</span><span class="p">[</span><span class="s2">"CTYPE1"</span><span class="p">],</span> <span class="n">e</span><span class="p">[</span><span class="s2">"CTYPE2"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"OFFSET-X"</span><span class="p">,</span> <span class="s2">"OFFSET-Y"</span>
+    <span class="n">e</span><span class="p">[</span><span class="s2">"CUNIT1"</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="s2">"CUNIT2"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"arcsec"</span>
+    <span class="n">e</span><span class="p">[</span><span class="s2">"CRPIX1"</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="s2">"CRPIX2"</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">grid</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"the star (FITS pixels start at 1)"</span><span class="p">)</span>
+    <span class="n">e</span><span class="p">[</span><span class="s2">"CRVAL1"</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="s2">"CRVAL2"</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">e</span><span class="p">[</span><span class="s2">"CDELT1"</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="s2">"CDELT2"</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">pixel_scale</span>
+    <span class="k">return</span> <span class="n">hdu</span></div>
+
+
+
+<div class="viewcode-block" id="write_scene">
+<a class="viewcode-back" href="../../scene.html#toycoronagraph.scene.write_scene">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_scene</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Write a multi-extension scene FITS file.</span>
+
+<span class="sd">    The primary HDU holds the grid (PIXSCALE arcsec, WAVELEN m, DIAMETER m), the star's known</span>
+<span class="sd">    fields (DISTANCE pc, RADIUS R_sun, TEMPERAT K, FLUX_JY Jy) and the `extra` header cards;</span>
+<span class="sd">    then one image extension per component (see image_hdu).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): The FITS file to write.</span>
+<span class="sd">        images (dict): {component name: (N, N) image in `unit`}.</span>
+<span class="sd">        unit (str): The images' unit (BUNIT).</span>
+<span class="sd">        grid (Grid): Their grid.</span>
+<span class="sd">        star (Star): The star; None: no star cards.</span>
+<span class="sd">        overwrite (bool): Replace an existing file (else astropy raises OSError).</span>
+<span class="sd">        extra (dict): More primary header cards {key: value or (value, comment)}.</span>
+<span class="sd">    """</span>
+    <span class="n">primary</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">()</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">primary</span><span class="o">.</span><span class="n">header</span>
+    <span class="n">h</span><span class="p">[</span><span class="s2">"ORIGIN"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"toycoronagraph"</span>
+    <span class="n">h</span><span class="p">[</span><span class="s2">"SCNSIZE"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="s2">"scene size [pixels]"</span><span class="p">)</span>
+    <span class="n">h</span><span class="p">[</span><span class="s2">"PIXSCALE"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="s2">"arcsec per pixel"</span><span class="p">)</span>
+    <span class="n">h</span><span class="p">[</span><span class="s2">"WAVELEN"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="s2">"m"</span><span class="p">)</span>
+    <span class="n">h</span><span class="p">[</span><span class="s2">"DIAMETER"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">diameter</span><span class="p">,</span> <span class="s2">"telescope diameter [m]"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">comment</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">"distance"</span><span class="p">,</span> <span class="s2">"pc"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"radius"</span><span class="p">,</span> <span class="s2">"R_sun"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"temperature"</span><span class="p">,</span> <span class="s2">"K"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"flux_jy"</span><span class="p">,</span> <span class="s2">"Jy"</span><span class="p">)]:</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">star</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">h</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()[:</span><span class="mi">8</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">star</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">comment</span><span class="p">)</span>  <span class="c1"># FITS keywords have at most 8 characters</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">(</span><span class="n">extra</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="n">hdus</span> <span class="o">=</span> <span class="p">[</span><span class="n">primary</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">image_hdu</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">images</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+    <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">(</span><span class="n">hdus</span><span class="p">)</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

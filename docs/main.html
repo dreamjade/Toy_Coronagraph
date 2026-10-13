@@ -1,73 +1,78 @@
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Main &#8212; Toy_Coronagraph 1.6.1 documentation</title>
+    <title>Target: one image, one coronagraph &#8212; Toy_Coronagraph 2.0.0</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
 
-    <script src="_static/documentation_options.js?v=662e1299"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=79f5c508"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'main';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Para" href="para.html" />
-    <link rel="prev" title="Welcome to Toy_Coronagraph’s documentation!" href="index.html" />
+    <link rel="next" title="Target parameters" href="config.html" />
+    <link rel="prev" title="Target" href="target.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
+  <body data-default-mode="">
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
   
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -75,7 +80,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -83,18 +87,27 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -103,75 +116,55 @@
   
   
   
-    <p class="title logo__title">Toy_Coronagraph 1.6.1 documentation</p>
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
   
 </a></div>
     
   </div>
   
-  
   <div class="col-lg-9 navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+        <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Main
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="para.html">
-                        Para
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="planet.html">
-                        Planet
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="psf.html">
-                        PSF
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tool.html">
-                        Tool
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="history.html">
-                        Version History
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -182,26 +175,44 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
-`);
-</script></div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -209,29 +220,32 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
-    </label>
+    </button>
   
 </div>
 
-    </nav>
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -240,66 +254,49 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Main
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="para.html">
-                        Para
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="planet.html">
-                        Planet
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="psf.html">
-                        PSF
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tool.html">
-                        Tool
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="history.html">
-                        Version History
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -308,53 +305,103 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
-`);
-</script></div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Target: one image, one coronagraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Target parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Reading target images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="planet.html">Planet orbits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video.html">Videos</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
         <div class="header-article-item">
 
-
-
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Main</li>
+    
+    <li class="breadcrumb-item"><a href="target.html" class="nav-link">Target</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Target: one image, one coronagraph</span></li>
   </ul>
 </nav>
 </div>
@@ -369,149 +416,218 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section id="main">
-<span id="id1"></span><h1>Main<a class="headerlink" href="#main" title="Link to this heading">#</a></h1>
-<p>Function to perform toy coronagraph</p>
-<dl class="py class" id="module-main">
-<dt class="sig sig-object py" id="main.Target">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Target</span></span><a class="headerlink" href="#main.Target" title="Link to this definition">#</a></dt>
-<dd><p>A circular symmetric target</p>
-<p>A circular symmetric target, which could be a dust ring, a debris disk, or ice remains.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.file_name">
-<span class="sig-name descname"><span class="pre">file_name</span></span><a class="headerlink" href="#main.Target.file_name" title="Link to this definition">#</a></dt>
-<dd><p>The name of the FITS file containing the target data.</p>
+  <section id="module-toycoronagraph.main">
+<span id="target-one-image-one-coronagraph"></span><h1>Target: one image, one coronagraph<a class="headerlink" href="#module-toycoronagraph.main" title="Link to this heading">#</a></h1>
+<p>Target: the original one-image interface (one target image through one coronagraph).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">Target</span><span class="p">()</span>                         <span class="c1"># toycoronagraph_para.toml in the working directory</span>
+<span class="n">target</span><span class="o">.</span><span class="n">plot_origin</span><span class="p">()</span>                      <span class="c1"># the input image -&gt; origin.png</span>
+<span class="n">target</span><span class="o">.</span><span class="n">add_planet</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="mf">5e-5</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"cartesian"</span><span class="p">)</span>
+<span class="n">final</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">plot_final</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>       <span class="c1"># the final image -&gt; charge6_with_planets_final.png</span>
+<span class="n">target</span><span class="o">.</span><span class="n">contrast</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>                 <span class="c1"># planet and dust light in the planet's core (Jy)</span>
+<span class="n">target</span><span class="o">.</span><span class="n">planet_video</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>             <span class="c1"># a moving planet over one period -&gt; planet_video.webm</span>
+</pre></div>
+</div>
+<p>The parameters come from the parameter file (toycoronagraph.config, either layout); the
+image is in Jy/arcsec^2 on target_pixel x target_pixel pixels of psf_scale arcsec, star at
+pixel (N-1)/2. The coronagraph is [coronagraph] type: a vortex (charge: positive, even) or the
+Lazuli telescope (toycoronagraph.lazuli; charge 0 = no coronagraph, or an even vortex charge; odd
+image size). The PSFs and final images are made and cached by toycoronagraph.observe’s
+Coronagraph (shared with observe()). Planet positions are (radius arcsec, angle rad from +x
+towards +y), with y increasing with the image row as in FITS and in scenes
+(tool.arcsec_to_pixel); plots show +y upwards (flip=False turns the y axis over). Planet
+brightnesses are stored per pixel area (Jy/arcsec^2 = Jy / psf_scale^2).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.main.Target">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.main.</span></span><span class="sig-name descname"><span class="pre">Target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">para_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A target: a dust ring, a debris disk, ice remains, … (not necessarily circularly symmetric).</p>
+<p>The parameters come from toycoronagraph_para.toml (see toycoronagraph.config). The
+final image is made with the circular method when the target and the PSFs are both
+circularly symmetric, otherwise with the spatial method (see check_symmetry); the
+parameter file, or the method argument, can choose either.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>par</strong> (<em>SimpleNamespace</em>) – The parameters, resolved against the input image (target_pixel N, psf_scale in arcsec/pixel, wavelength in m, charge, method, …).</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – The FITS file of the target.</p></li>
+<li><p><strong>scene</strong> (<a class="reference internal" href="scene.html#toycoronagraph.scene.Scene" title="toycoronagraph.scene.Scene"><em>Scene</em></a><em> or </em><em>None</em>) – The scene the image was read through (scene-layout parameter files only; see toycoronagraph.scene).</p></li>
+<li><p><strong>xpix</strong> (<em>np.ndarray</em>) – (N,) float64 pixel-centre offsets from the star along the columns, in arcsec (x).</p></li>
+<li><p><strong>ypix</strong> (<em>np.ndarray</em>) – (N,) float64 pixel-centre offsets from the star along the rows, in arcsec, in row order (equal to xpix; y increases with the row, see tool.arcsec_to_pixel).</p></li>
+<li><p><strong>extent</strong> (<em>list</em>) – [left, right, bottom, top] pixel edges in arcsec, for imshow.</p></li>
+<li><p><strong>pre_img</strong> (<em>np.ndarray</em>) – (N, N) float64 target image in Jy/arcsec^2.</p></li>
+<li><p><strong>planets</strong> (<em>list</em>) – Each planet’s position (radius arcsec, angle rad).</p></li>
+<li><p><strong>orbits</strong> (<em>list</em>) – Each planet’s orbit: np.ndarray [a (arcsec), e, pa (deg), inc (deg), t (orbital periods)] for moving planets, None for static ones.</p></li>
+<li><p><strong>planets_brightness</strong> (<em>list</em>) – Each planet’s brightness per pixel area in Jy/arcsec^2 (Jy / psf_scale^2).</p></li>
+<li><p><strong>output_prefix</strong> (<em>str</em>) – Prefix of saved figures and videos: “&lt;target name&gt;_”, “” for the example.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Initialization</p>
+<p>Initializes the instance based on the parameter file and the target fits file; writes
+the values used to &lt;parameter file&gt;_used.toml (the parameter file is not modified).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>para_file</strong> (<em>str</em>) – Parameter file; default toycoronagraph_para.toml in the working directory.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – The image cannot be read or put in Jy/arcsec^2 (e.g. an unknown unit, or a contrast image without the star’s flux), or the coronagraph cannot work on it (lazuli: an even image size, too few pupil samples for its field, no light at its wavelengths, an OPD map that is not valid; see observe.optics_for).</p></li>
+<li><p><strong>OSError</strong> – A lazuli coronagraph’s OPD map cannot be read.</p></li>
+<li><p><strong>ImportError</strong> – A lazuli coronagraph without prysm or the Lazuli config packages.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.radial_psfs_file">
+<span class="sig-name descname"><span class="pre">radial_psfs_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.radial_psfs_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.radial_psfs_file" title="Link to this definition">#</a></dt>
+<dd><p>Radial PSF file</p>
+<p>The file of the radial PSF series (sources along the +x axis) on frames larger than the
+image, calculated and saved in psf_cache_dir if it does not exist. Its name records
+the optics and sampling, so a cache made with other parameters is never reused.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>charge</strong> (<em>int</em>) – Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The path of the .npy file (psf_cache_dir/radial_&lt;tag&gt;_frame&lt;size&gt;.npy, a ((N+1)//2, size, size) float32 array; see Coronagraph.radial_psfs_file).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.taregt_pixel">
-<span class="sig-name descname"><span class="pre">taregt_pixel</span></span><a class="headerlink" href="#main.Target.taregt_pixel" title="Link to this definition">#</a></dt>
-<dd><p>Number of pixels along the edge of the target image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.psf_scale">
-<span class="sig-name descname"><span class="pre">psf_scale</span></span><a class="headerlink" href="#main.Target.psf_scale" title="Link to this definition">#</a></dt>
-<dd><p>The scale of the PSF in arcseconds per pixel.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.xpix">
-<span class="sig-name descname"><span class="pre">xpix</span></span><a class="headerlink" href="#main.Target.xpix" title="Link to this definition">#</a></dt>
-<dd><p>The x-coordinates of the pixels in arcseconds.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.ypix">
-<span class="sig-name descname"><span class="pre">ypix</span></span><a class="headerlink" href="#main.Target.ypix" title="Link to this definition">#</a></dt>
-<dd><p>The y-coordinates of the pixels in arcseconds.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.pre_img">
-<span class="sig-name descname"><span class="pre">pre_img</span></span><a class="headerlink" href="#main.Target.pre_img" title="Link to this definition">#</a></dt>
-<dd><p>The pre-processed image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.planets">
-<span class="sig-name descname"><span class="pre">planets</span></span><a class="headerlink" href="#main.Target.planets" title="Link to this definition">#</a></dt>
-<dd><p>A list of the planets in the system.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.orbits">
-<span class="sig-name descname"><span class="pre">orbits</span></span><a class="headerlink" href="#main.Target.orbits" title="Link to this definition">#</a></dt>
-<dd><p>A list of the orbits of the planets.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.planets_brightness">
-<span class="sig-name descname"><span class="pre">planets_brightness</span></span><a class="headerlink" href="#main.Target.planets_brightness" title="Link to this definition">#</a></dt>
-<dd><p>A list of the brightnesses of the planets in Jy/arcsec^2.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
-<dt class="sig sig-object py" id="main.Target.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.__init__" title="Link to this definition">#</a></dt>
-<dd><p>Initialize the Target object.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
-<dd><p>Initialization</p>
-<p>Initializes the instance based on the target fits file.</p>
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.radial_psfs">
+<span class="sig-name descname"><span class="pre">radial_psfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.radial_psfs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.radial_psfs" title="Link to this definition">#</a></dt>
+<dd><p>The radial PSF series (see radial_psfs_file).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
+<dd class="field-odd"><p><strong>charge</strong> (<em>int</em>) – Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>((N+1)//2, size, size) float32 PSFs of sources along +x, size &gt; N.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.Target.__weakref__">
-<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#main.Target.__weakref__" title="Link to this definition">#</a></dt>
-<dd><p>list of weak references to the object (if defined)</p>
-</dd></dl>
-
 <dl class="py method">
-<dt class="sig sig-object py" id="main.Target.add_planet">
-<span class="sig-name descname"><span class="pre">add_planet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'moving'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.add_planet" title="Link to this definition">#</a></dt>
-<dd><p>Add a planet</p>
-<p>Add a planet to the Target object.</p>
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.choose_method">
+<span class="sig-name descname"><span class="pre">choose_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.choose_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.choose_method" title="Link to this definition">#</a></dt>
+<dd><p>Method choice</p>
+<p>The method for the final image: method / spatial_mode if given, else the parameter
+file’s; “auto” uses the circular method only when the target and the PSFs are both
+circularly symmetric ([target] / [coronagraph] symmetric, or measured / from the optics model).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pos</strong> (<em>array-like</em>) – Planet position information (depends on mode). For “moving” mode, pos = [a, e, pa, inc, t]; for “polar” mode, pos =[r, theta(in degree)]; for “cartesian” mode, pos =[x,y].</p></li>
-<li><p><strong>brightness</strong> (<em>float</em>) – Planet brightness in Jy.</p></li>
+<li><p><strong>charge</strong> (<em>int</em>) – Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “auto”, “circular” or “spatial”; default from the parameters.</p></li>
+<li><p><strong>spatial_mode</strong> (<em>str</em>) – “auto”, “rotate” or “direct”; default from the parameters.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print the choice and why.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>method (str) and spatial_mode (str; None for the circular method).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – An unknown method / spatial_mode, or “rotate” for optics that do not allow it.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.check_symmetry">
+<span class="sig-name descname"><span class="pre">check_symmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.check_symmetry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.check_symmetry" title="Link to this definition">#</a></dt>
+<dd><p>Symmetry check</p>
+<p>Print whether the target and the PSFs are circularly symmetric and which method the
+final image will use (see choose_method).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>charge</strong> (<em>int</em>) – Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>method (str) and spatial_mode (str; None for the circular method).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.spatial_model">
+<span class="sig-name descname"><span class="pre">spatial_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rotate'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.spatial_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.spatial_model" title="Link to this definition">#</a></dt>
+<dd><p>Spatial PSF model</p>
+<p>The spatially-sampled PSFs for this target (built once per charge and mode): the
+kernel size and the grid are chosen so the final image meets [method] error_target;
+the runs along the x axis are cached in psf_cache_dir. Prints the error analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charge</strong> (<em>int</em>) – Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</p></li>
+<li><p><strong>spatial_mode</strong> (<em>str</em>) – “rotate” or “direct”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The model (see psf.spatial_psf_calculation).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.plot_origin">
+<span class="sig-name descname"><span class="pre">plot_origin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_planets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.plot_origin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.plot_origin" title="Link to this definition">#</a></dt>
+<dd><p>Plot original target</p>
+<p>Plot the original image (Jy/arcsec^2) with or without planets: each planet is a
+coloured circle labelled with its brightness in Jy, with its orbit (dashed) if it moves.
+Planets outside the image are reported, greyed, and drawn only without boundary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plot_planets</strong> (<em>bool</em>) – Whether to plot planets or not.</p></li>
+<li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+<li><p><strong>boundary</strong> (<em>bool</em>) – Whether to limit the axes to the image.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – True: +y upwards (row 0 at the bottom, as DS9 shows FITS); False: the y axis turned over.</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Save the figure exactly there: “name.png” or “folder/name.png” (the folder is created). The format follows the extension (PNG if there is none). None (default): origin.png / origin_with_planets.png (with the target’s name in front for your own targets).</p></li>
+<li><p><strong>log</strong> (<em>bool</em>) – Log colour scale (faint outer parts visible); else linear from 0.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log scale: decades shown below the image’s peak.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure is saved (origin*.png, see file_name) and shown.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.add_planet">
+<span class="sig-name descname"><span class="pre">add_planet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'moving'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.add_planet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.add_planet" title="Link to this definition">#</a></dt>
+<dd><p>Add a planet</p>
+<p>Add a planet to the Target object (appended to planets, planets_brightness and orbits).
+Invalid input (a position that tool.is_planet_pos_allowed refuses, e.g. one with an entry
+that is not a number, a brightness that is not a positive number, an unknown mode) is
+reported with a message and nothing is added.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<em>array-like</em>) – Planet position information (depends on mode); each entry a finite real number (Python or numpy int or float). For “moving” mode, pos = [a, e, pa, inc, t]: semi-major axis (arcsec), eccentricity (0 &lt;= e &lt; 1), position angle (deg), inclination (deg) and time (in orbital periods); for “polar” mode, pos = [r (arcsec), theta (deg, from +x towards +y)]; for “cartesian” mode, pos = [x, y] (arcsec).</p></li>
+<li><p><strong>brightness</strong> (<em>numbers.Real</em>) – Planet brightness in Jy (&gt; 0): a Python or numpy int or float (not a bool).</p></li>
 <li><p><strong>mode</strong> (<em>str</em>) – Mode for specifying planet position coordinates (“moving”, “polar”, “cartesian”).</p></li>
 <li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
 </ul>
@@ -523,70 +639,50 @@ document.write(`
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.Target.contrast">
-<span class="sig-name descname"><span class="pre">contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exozodi_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.contrast" title="Link to this definition">#</a></dt>
-<dd><p>Contrast</p>
-<p>Find the planet brightness and background brightness in the final image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>charge</strong> (<em>int</em>) – Charge number (for vortex coronagraph).</p></li>
-<li><p><strong>order</strong> (<em>int</em>) – The order number of the planet, using self.list_planets() to look up the order.</p></li>
-<li><p><strong>plot_contrast</strong> (<em>bool</em>) – Whether to plot the dust to planet brightness ratio.</p></li>
-<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
-<li><p><strong>exozodi_limit</strong> (<em>float</em>) – The maximum exozodi to target dust ratio.</p></li>
-<li><p><strong>res</strong> (<em>int</em>) – The number of points in the exozodi ratio range.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>plot or print planet brightness, background brightness, and background brightness (ignored dust inside IWA) in Jy.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="main.Target.delete_planet">
-<span class="sig-name descname"><span class="pre">delete_planet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.delete_planet" title="Link to this definition">#</a></dt>
-<dd><p>Delete planet</p>
-<p>Deletes a planet from self.planet, self.orbit, and self.planet_brightness with a given order number.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<em>int</em>) – The order number of the planet to be deleted. Defaults to 1.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="main.Target.list_planets">
-<span class="sig-name descname"><span class="pre">list_planets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.list_planets" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.list_planets">
+<span class="sig-name descname"><span class="pre">list_planets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.list_planets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.list_planets" title="Link to this definition">#</a></dt>
 <dd><p>List planets</p>
-<p>List the planets present in the Target object with their order numbers.</p>
+<p>Print the planets present in the Target object with their order numbers (from 1),
+static or moving, position (x, y) in arcsec and brightness in Jy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>print the list of planets with their orders.</p>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.Target.planet_move">
-<span class="sig-name descname"><span class="pre">planet_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cumulate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.planet_move" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.delete_planet">
+<span class="sig-name descname"><span class="pre">delete_planet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.delete_planet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.delete_planet" title="Link to this definition">#</a></dt>
+<dd><p>Delete planet</p>
+<p>Deletes a planet from self.planets, self.orbits, and self.planets_brightness with a given
+order number, then prints the remaining planets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>order</strong> (<em>int</em>) – The order number of the planet to be deleted (from 1). Defaults to 1.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.planet_move">
+<span class="sig-name descname"><span class="pre">planet_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cumulate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.planet_move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.planet_move" title="Link to this definition">#</a></dt>
 <dd><p>Planet moving</p>
-<p>Move a planet’s position.</p>
+<p>Move a moving planet along its orbit (static planets cannot move).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time</strong> (<em>float</em>) – The time by which the planet should move.</p></li>
-<li><p><strong>order</strong> (<em>int</em>) – The order number of the planet.</p></li>
-<li><p><strong>mode</strong> (<em>str</em>) – Mode for specifying movement (“culmulated”, “specific”). The former will be added to the original time, while the latter will set up a new time regardless of the original time.</p></li>
-<li><p><strong>plot_pos</strong> (<em>bool</em>) – Whether to plot the new planet’s position in its orbit.</p></li>
+<li><p><strong>time</strong> (<em>float</em>) – The time, in orbital periods.</p></li>
+<li><p><strong>order</strong> (<em>int</em>) – The order number of the planet (from 1).</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – “cumulate”: time is added to the planet’s current time; “specific”: the planet’s time is set to <code class="code docutils literal notranslate"><span class="pre">time</span></code>. Any other mode leaves the time unchanged.</p></li>
+<li><p><strong>plot_pos</strong> (<em>bool</em>) – Whether to plot the new planet’s position in its orbit (saved as oribit_planet&lt;order&gt;.png and shown, see planet.orbit_plot).</p></li>
 <li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
 <li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
-<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
-<li><p><strong>message</strong> (<em>bool</em>) – Whether to show the notification once job done.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – True: +y upwards; False: the y axis turned over.</p></li>
+<li><p><strong>message</strong> (<em>bool</em>) – Whether to show the notification once job done (when not plotting).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -596,86 +692,117 @@ document.write(`
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.Target.planet_video">
-<span class="sig-name descname"><span class="pre">planet_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.planet_video" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.planet_video">
+<span class="sig-name descname"><span class="pre">planet_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.planet_video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.planet_video" title="Link to this definition">#</a></dt>
 <dd><p>Planet Video</p>
-<p>Create a movie of the planet moving in its orbit.</p>
+<p>Create a movie of the planet moving over one orbital period, starting from its current
+position; afterwards the planet is back at that position. The disk’s final image is
+made once; each frame adds the planet’s image at its new position.</p>
+<p>The video is lossless (VP9 lossless in WebM, see toycoronagraph.video): every frame decodes
+to exactly the rendered pixels, so colours can be read against the colour bar. It stays
+small (about 100-200 kB for 60 frames) because the frames differ only around the planet.
+It plays in browsers, VS Code and VLC (not QuickTime). Needs ffmpeg with libvpx-vp9.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>charge</strong> (<em>int</em>) – Charge number (for vortex coronagraph).</p></li>
+<li><p><strong>charge</strong> (<em>int</em>) – Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</p></li>
 <li><p><strong>order</strong> (<em>int</em>) – The order number of the planet, using self.list_planets() to look up the order.</p></li>
 <li><p><strong>iwa_ignore</strong> (<em>bool</em>) – Whether to ignore the dust inside IWA.</p></li>
-<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch of the 10 x 8 inch frames (300: 3000 x 2400 pixels).</p></li>
 <li><p><strong>length</strong> (<em>int</em>) – The length of the movie in seconds.</p></li>
 <li><p><strong>fps</strong> (<em>int</em>) – The frames per second of the movie.</p></li>
-<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – True: +y upwards; False: the y axis turned over.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “auto”, “circular” or “spatial”; default from the parameters.</p></li>
+<li><p><strong>spatial_mode</strong> (<em>str</em>) – “auto”, “rotate” or “direct”; default from the parameters.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>planet_video_*.mp4</p>
+<dd class="field-even"><p>The video is saved as &lt;prefix&gt;planet_video[_iwa_ignore][_spatial].webm in the working directory (with the target’s name in front for your own targets).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.Target.plot_final">
-<span class="sig-name descname"><span class="pre">plot_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_planet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_final" title="Link to this definition">#</a></dt>
-<dd><p>Final image</p>
-<p>Plots the target image after processing with the vortex coronagraph.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>charge</strong> (<em>int</em>) – Charge number (for vortex coronagraph).</p></li>
-<li><p><strong>add_planet</strong> (<em>bool</em>) – Whether to include planets in the plot.</p></li>
-<li><p><strong>rot_number</strong> (<em>int</em>) – Rotation number for creating the circular PSF.</p></li>
-<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the final plot.</p></li>
-<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><a href="#id2"><span class="problematic" id="id3">*</span></a>_final.png</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="main.Target.plot_orbit">
-<span class="sig-name descname"><span class="pre">plot_orbit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_orbit" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.plot_orbit">
+<span class="sig-name descname"><span class="pre">plot_orbit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.plot_orbit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.plot_orbit" title="Link to this definition">#</a></dt>
 <dd><p>Orbit plot</p>
-<p>Plot the orbit of a planet.</p>
+<p>Plot the orbit of a moving planet, with its current position (planet.orbit_plot).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>order</strong> (<em>int</em>) – The order number of the planet, using self.list_planets() to look up the order.</p></li>
 <li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
 <li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
-<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – True: +y upwards; False: the y axis turned over.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>orbit_*.png</p>
+<dd class="field-even"><p>The figure is saved as oribit_planet&lt;order&gt;.png (sic) and shown.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.Target.plot_origin">
-<span class="sig-name descname"><span class="pre">plot_origin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_planets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Target.plot_origin" title="Link to this definition">#</a></dt>
-<dd><p>Plot original target</p>
-<p>Plot the original image with or without planets.</p>
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.contrast">
+<span class="sig-name descname"><span class="pre">contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exozodi_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.contrast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.contrast" title="Link to this definition">#</a></dt>
+<dd><p>Contrast</p>
+<p>Find the planet brightness and background brightness in the final image: the planet’s
+core (the pixels where its final image is above half its peak) is the aperture, and the
+planet and the dust (with and without the dust inside the IWA) are summed inside it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>plot_planets</strong> (<em>bool</em>) – Whether to plot planets or not.</p></li>
-<li><p><strong>res</strong> (<em>int</em>) – Number of points used for orbit calculations.</p></li>
+<li><p><strong>charge</strong> (<em>int</em>) – Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</p></li>
+<li><p><strong>order</strong> (<em>int</em>) – The order number of the planet, using self.list_planets() to look up the order.</p></li>
+<li><p><strong>plot_contrast</strong> (<em>bool</em>) – Whether to plot the dust to planet light ratio in the planet’s core against a factor scaling the dust’s brightness (e.g. more exozodiacal dust; shown, not saved).</p></li>
 <li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the plot.</p></li>
-<li><p><strong>boundary</strong> (<em>bool</em>) – Whether to show the boundary limits.</p></li>
-<li><p><strong>flip</strong> (<em>bool</em>) – Whether to flip the y-axis of the plot.</p></li>
+<li><p><strong>exozodi_limit</strong> (<em>float</em>) – The largest dust brightness factor plotted.</p></li>
+<li><p><strong>res</strong> (<em>int</em>) – The number of points in the exozodi ratio range.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “auto”, “circular” or “spatial”; default from the parameters.</p></li>
+<li><p><strong>spatial_mode</strong> (<em>str</em>) – “auto”, “rotate” or “direct”; default from the parameters.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>origin_*.png</p>
+<dd class="field-even"><p>planet brightness, background brightness, and background brightness (ignored dust inside IWA), floats in Jy (also printed, and plotted if plot_contrast); None for an invalid order, or (circular method) a planet at or beyond the last radial PSF’s source, which the final image leaves out (see psf.cir_psf_planets).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.main.Target.plot_final">
+<span class="sig-name descname"><span class="pre">plot_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iwa_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_planet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/main.html#Target.plot_final"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.main.Target.plot_final" title="Link to this definition">#</a></dt>
+<dd><p>Final image</p>
+<p>Plots the target image after processing with the coronagraph, with the circular or the
+spatial method (see choose_method).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charge</strong> (<em>int</em>) – Charge number (vortex; lazuli: 0 = the telescope alone); default from the parameters.</p></li>
+<li><p><strong>iwa_ignore</strong> (<em>bool</em>) – Whether to ignore the target inside the IWA.</p></li>
+<li><p><strong>add_planet</strong> (<em>bool</em>) – Whether to include planets in the plot.</p></li>
+<li><p><strong>plot_dpi</strong> (<em>int</em>) – Dots per inch (DPI) for the final plot.</p></li>
+<li><p><strong>flip</strong> (<em>bool</em>) – True: +y upwards; False: the y axis turned over.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – “auto”, “circular” or “spatial”; default from the parameters.</p></li>
+<li><p><strong>spatial_mode</strong> (<em>str</em>) – “auto”, “rotate” or “direct”; default from the parameters.</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Save the figure exactly there: “name.png” or “folder/name.png” (the folder is created). The format follows the extension (PNG if there is none). None (default): charge&lt;c&gt;[_with_planets][_iwa_ignore][_spatial]_final.png (“lazuli_charge&lt;c&gt;…” for the Lazuli telescope; with the target’s name in front for your own targets).</p></li>
+<li><p><strong>log</strong> (<em>bool</em>) – Log colour scale (faint outer parts visible); else linear from 0.</p></li>
+<li><p><strong>log_range</strong> (<em>float</em>) – Log scale: decades shown below the image’s peak.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The (N, N) float64 final image in Jy/arcsec^2 (also saved, see file_name, and shown).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -689,82 +816,67 @@ document.write(`
               
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="target.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to Toy_Coronagraph’s documentation!</p>
+        <p class="prev-next-title">Target</p>
       </div>
     </a>
     <a class="right-next"
-       href="para.html"
+       href="config.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Para</p>
+        <p class="prev-next-title">Target parameters</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target"><code class="docutils literal notranslate"><span class="pre">Target</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.file_name"><code class="docutils literal notranslate"><span class="pre">Target.file_name</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.taregt_pixel"><code class="docutils literal notranslate"><span class="pre">Target.taregt_pixel</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.psf_scale"><code class="docutils literal notranslate"><span class="pre">Target.psf_scale</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.xpix"><code class="docutils literal notranslate"><span class="pre">Target.xpix</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.ypix"><code class="docutils literal notranslate"><span class="pre">Target.ypix</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.pre_img"><code class="docutils literal notranslate"><span class="pre">Target.pre_img</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.planets"><code class="docutils literal notranslate"><span class="pre">Target.planets</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.orbits"><code class="docutils literal notranslate"><span class="pre">Target.orbits</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.planets_brightness"><code class="docutils literal notranslate"><span class="pre">Target.planets_brightness</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.__init__"><code class="docutils literal notranslate"><span class="pre">Target.__init__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Target.__init__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.__weakref__"><code class="docutils literal notranslate"><span class="pre">Target.__weakref__</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.add_planet"><code class="docutils literal notranslate"><span class="pre">Target.add_planet()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.contrast"><code class="docutils literal notranslate"><span class="pre">Target.contrast()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.delete_planet"><code class="docutils literal notranslate"><span class="pre">Target.delete_planet()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.list_planets"><code class="docutils literal notranslate"><span class="pre">Target.list_planets()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.planet_move"><code class="docutils literal notranslate"><span class="pre">Target.planet_move()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.planet_video"><code class="docutils literal notranslate"><span class="pre">Target.planet_video()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.plot_final"><code class="docutils literal notranslate"><span class="pre">Target.plot_final()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.plot_orbit"><code class="docutils literal notranslate"><span class="pre">Target.plot_orbit()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main.Target.plot_origin"><code class="docutils literal notranslate"><span class="pre">Target.plot_origin()</span></code></a></li>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target"><code class="docutils literal notranslate"><span class="pre">Target</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.radial_psfs_file"><code class="docutils literal notranslate"><span class="pre">Target.radial_psfs_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.radial_psfs"><code class="docutils literal notranslate"><span class="pre">Target.radial_psfs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.choose_method"><code class="docutils literal notranslate"><span class="pre">Target.choose_method()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.check_symmetry"><code class="docutils literal notranslate"><span class="pre">Target.check_symmetry()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.spatial_model"><code class="docutils literal notranslate"><span class="pre">Target.spatial_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.plot_origin"><code class="docutils literal notranslate"><span class="pre">Target.plot_origin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.add_planet"><code class="docutils literal notranslate"><span class="pre">Target.add_planet()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.list_planets"><code class="docutils literal notranslate"><span class="pre">Target.list_planets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.delete_planet"><code class="docutils literal notranslate"><span class="pre">Target.delete_planet()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.planet_move"><code class="docutils literal notranslate"><span class="pre">Target.planet_move()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.planet_video"><code class="docutils literal notranslate"><span class="pre">Target.planet_video()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.plot_orbit"><code class="docutils literal notranslate"><span class="pre">Target.plot_orbit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.contrast"><code class="docutils literal notranslate"><span class="pre">Target.contrast()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.main.Target.plot_final"><code class="docutils literal notranslate"><span class="pre">Target.plot_final()</span></code></a></li>
 </ul>
 </li>
 </ul>
   </nav></div>
-
-  <div class="sidebar-secondary-item">
-  <div class="tocsection sourcelink">
-    <a href="_sources/main.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
 
 </div></div>
               
@@ -779,8 +891,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -788,28 +900,32 @@ document.write(`
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="copyright">
     
-      © Copyright 2023, dreamjade.
+      © Copyright 2023-2026, dreamjade.
       <br/>
     
   </p>
 </div>
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.4.
-    <br/>
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
   </p>
 </div>
       
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
 </p></div>
       
     </div>

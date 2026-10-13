@@ -1,0 +1,4 @@
+Scene
+=====
+
+.. automodule:: toycoronagraph.scene

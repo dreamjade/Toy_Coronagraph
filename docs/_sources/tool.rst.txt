@@ -1,9 +1,4 @@
-.. _toycoronagraph:
+Tools
+=====
 
-Tool
-=====================
-
-Function to check the validation of the input
-
-.. automodule:: tool
-   :members:
+.. automodule:: toycoronagraph.tool

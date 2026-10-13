@@ -1,10 +1,4 @@
-.. _main:
+Target: one image, one coronagraph
+==================================
 
-Main
-=====================
-
-Function to perform toy coronagraph
-
-.. automodule:: main
-   :members:
-   :special-members:
+.. automodule:: toycoronagraph.main

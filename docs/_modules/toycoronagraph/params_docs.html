@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.params_docs &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/params_docs';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.params_docs</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.params_docs</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Text generated from the parameter declarations (toycoronagraph.params and the source</span>
+<span class="sd">modules), so it never goes out of date:</span>
+
+<span class="sd">    new_config()          a parameter file holding only the chosen modules (+ the JSON schema)</span>
+<span class="sd">    json_schema()         the JSON schema: editor hover, completion and checks (Even Better TOML)</span>
+<span class="sd">    write_schema(path)    the JSON schema written to a file</span>
+<span class="sd">    reference_markdown()  the parameter reference tables</span>
+<span class="sd">    describe(query)       where a key is set, its unit, default, allowed values and users</span>
+<span class="sd">    migrate(path)         an old-layout file rewritten in the new layout</span>
+
+<span class="sd">Command line: python -m toycoronagraph new | describe | migrate | schema | reference</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">difflib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">tomllib</span> <span class="c1"># Python &gt;= 3.11</span>
+<span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">tomli</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tomllib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.params</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">SCHEMA_FILE</span><span class="p">,</span> <span class="n">SECTIONS</span><span class="p">,</span> <span class="n">SOURCE_COMMON</span><span class="p">,</span> <span class="n">CORONAGRAPHS</span><span class="p">,</span> <span class="n">CORONAGRAPH_COMMON</span><span class="p">,</span>
+                                   <span class="n">CONFLICT_RULES</span><span class="p">,</span> <span class="n">LambdaD</span><span class="p">,</span> <span class="n">ParamError</span><span class="p">,</span> <span class="n">_QUANTITY</span><span class="p">,</span> <span class="n">_toml</span><span class="p">,</span> <span class="n">_line</span><span class="p">,</span> <span class="n">_sources</span><span class="p">,</span>
+                                   <span class="n">_source_class</span><span class="p">,</span> <span class="n">from_data</span><span class="p">,</span> <span class="n">is_legacy</span><span class="p">,</span> <span class="n">legacy_to_new</span><span class="p">)</span>
+
+<span class="c1"># The [observation] wavelength of templates with a lazuli coronagraph: Lazuli's design wavelength (config_um</span>
+<span class="c1"># telescope.general.design_wavelength), in the WCC's r' band, where its "auto" wavelengths and throughput have light</span>
+<span class="n">LAZULI_WAVELENGTH</span> <span class="o">=</span> <span class="mf">633e-9</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_family</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">settings</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The unit family of a module with these settings.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cls (type): a Source subclass.</span>
+<span class="sd">        settings (dict): {key: value}; keys that are not cls's parameters and None values are ignored.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str or None: "physical", "relative", or None (decided by the input).</span>
+<span class="sd">    """</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">}</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span> <span class="ow">and</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">})</span><span class="o">.</span><span class="n">family_of</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">used_by</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The comment of a key in generated files: "unit; doc. Used by: ...".</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        p (Param): the declaration.</span>
+<span class="sd">        used_by (list of str): who uses it (e.g. source kinds); None or [] = not shown.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str</span>
+<span class="sd">    """</span>
+    <span class="n">unit</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">unit</span> <span class="ow">or</span> <span class="s2">""</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">(</span><span class="n">unit</span> <span class="o">+</span> <span class="s2">"; "</span> <span class="k">if</span> <span class="n">unit</span> <span class="k">else</span> <span class="s2">""</span><span class="p">)</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">doc</span>
+    <span class="k">if</span> <span class="n">used_by</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s2">". Used by: "</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">used_by</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_example_value</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The value written for a key in generated files: its default, else its example.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        p (Param): the declaration.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        object</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">p</span><span class="o">.</span><span class="n">example</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_odd_image_size</span><span class="p">(</span><span class="n">srcs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The [grid] size of a template whose grid comes from an image source, for a lazuli coronagraph (which</span>
+<span class="sd">    needs an odd size): the first image's own size, made odd.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        srcs (list): (Source class, {key: value} given) of the template's sources, one at least providing</span>
+<span class="sd">            grid.size (an image source). The first of those is read, its keys not given taking the values</span>
+<span class="sd">            the template writes for them.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        int or str: the image's size minus 1 when it is even (the image is resampled onto it); "auto" when</span>
+<span class="sd">            it is odd, or when the image cannot be read yet (e.g. a file still to be made: the run then names</span>
+<span class="sd">            the odd sizes to use).</span>
+<span class="sd">    """</span>
+    <span class="bp">cls</span><span class="p">,</span> <span class="n">given</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="bp">cls</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">srcs</span> <span class="k">if</span> <span class="s2">"grid.size"</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">provides</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">provided</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">given</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">_example_value</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">})</span><span class="o">.</span><span class="n">inspect</span><span class="p">()</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">AUTO</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">provided</span> <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">"grid.size"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">size</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">AUTO</span>
+
+
+<div class="viewcode-block" id="new_config">
+<a class="viewcode-back" href="../../params_docs.html#toycoronagraph.params_docs.new_config">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">new_config</span><span class="p">(</span><span class="n">sources</span><span class="o">=</span><span class="p">(</span><span class="s2">"fits_image"</span><span class="p">,),</span> <span class="n">coronagraphs</span><span class="o">=</span><span class="p">(</span><span class="s2">"vortex:2"</span><span class="p">,),</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">full</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A parameter file holding only what the chosen modules use.</span>
+
+<span class="sd">    [observation] and [grid] are always written ("auto" from an image source if one provides the pixel</span>
+<span class="sd">    scale, else sampling and fov); [star] holds the keys the sources require (and temperature, radius,</span>
+<span class="sd">    distance if the sources are in different unit families). Then one [[source]] table per source</span>
+<span class="sd">    (its keys without a default are marked "(required)"), one [[coronagraph]] per coronagraph, and</span>
+<span class="sd">    [method] if there are several sources. With a lazuli coronagraph, the wavelength is</span>
+<span class="sd">    LAZULI_WAVELENGTH (in the r' band of the Lazuli camera) and the image's size is made odd</span>
+<span class="sd">    (_odd_image_size), so the file runs as written.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        sources (list): Source kinds (str), or dicts {kind: ..., key: value} whose values are written</span>
+<span class="sd">            instead of the defaults.</span>
+<span class="sd">        coronagraphs (list): "type:charge" strings (e.g. "vortex:2"; "" type = vortex), or dicts</span>
+<span class="sd">            {type: ..., charge: ...}.</span>
+<span class="sd">        path (str): Write it there (and the JSON schema next to it, if schema); None = only return it.</span>
+<span class="sd">        full (bool): Also list the optional (advanced) keys and the other sections, commented out.</span>
+<span class="sd">        schema (bool): Refer to the JSON schema in the header ("#:schema" line) and write it next to path.</span>
+<span class="sd">        header (bool): Start with the header comment lines.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: the TOML text.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ParamError: an unknown source kind.</span>
+<span class="sd">    """</span>
+    <span class="n">srcs</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># (Source class, {key: value} given)</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"kind"</span><span class="p">:</span> <span class="n">s</span><span class="p">}</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="n">_source_class</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"kind"</span><span class="p">],</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"module"</span><span class="p">,</span> <span class="s2">""</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"unknown source kind </span><span class="si">%r</span><span class="s2">; known: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"kind"</span><span class="p">],</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">source_kinds</span><span class="p">())))</span>
+        <span class="n">srcs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="bp">cls</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+    <span class="n">coros</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># {type: ..., key: value}</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coronagraphs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">t</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">charge</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">":"</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="n">t</span> <span class="ow">or</span> <span class="s2">"vortex"</span><span class="p">}</span>
+            <span class="k">if</span> <span class="n">charge</span><span class="p">:</span>
+                <span class="n">c</span><span class="p">[</span><span class="s2">"charge"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">charge</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"vortex"</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"unknown coronagraph type </span><span class="si">%r</span><span class="s2">; known: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">),</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CORONAGRAPHS</span><span class="p">)))</span>
+        <span class="n">coros</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">requires</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">srcs</span><span class="p">:</span>
+        <span class="n">requires</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">requires</span><span class="p">)</span>
+    <span class="n">families</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">srcs</span><span class="p">:</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">}</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">families</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">_family</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">settings</span><span class="p">))</span>
+    <span class="n">families</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">image_source</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="s2">"grid.pixel_scale"</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">provides</span> <span class="k">for</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">srcs</span><span class="p">)</span>
+    <span class="n">flux_needed</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">families</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>  <span class="c1"># the star's flux puts the components in one unit</span>
+
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">header</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">schema</span><span class="p">:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"#:schema ./</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">SCHEMA_FILE</span><span class="p">)</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"# Toy Coronagraph parameters. Hover a key in VS Code (Even Better TOML), or run"</span><span class="p">,</span>
+                  <span class="s2">"#   python -m toycoronagraph describe KEY     for details. Every key is optional unless noted."</span><span class="p">,</span>
+                  <span class="s2">"# Each quantity is set in ONE place; the values used (and where they came from) are saved with the results."</span><span class="p">,</span>
+                  <span class="s2">""</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">used</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The kinds of the chosen sources requiring a shared key ("section.name")."""</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="n">kind</span> <span class="k">for</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">srcs</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">requires</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">section</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">note</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Append a core section to lines.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): the section.</span>
+<span class="sd">            keys (dict): {key: value} written; with full, the section's other keys are written commented out.</span>
+<span class="sd">            note (str): the comment of the section header; "" = the section's doc.</span>
+<span class="sd">        """</span>
+        <span class="n">doc</span> <span class="o">=</span> <span class="n">SECTIONS</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"</span><span class="si">%-26s</span><span class="s2"> # </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span> <span class="n">note</span> <span class="ow">or</span> <span class="n">doc</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">keys</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">used</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">))),</span> <span class="mi">26</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">full</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"# "</span> <span class="o">+</span> <span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">_example_value</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">24</span><span class="p">))</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+
+    <span class="n">lazuli</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"lazuli"</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coros</span><span class="p">)</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"wavelength"</span><span class="p">:</span> <span class="n">AUTO</span> <span class="k">if</span> <span class="n">image_source</span> <span class="k">else</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="s2">"diameter"</span><span class="p">:</span> <span class="mf">2.4</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">lazuli</span><span class="p">:</span>
+        <span class="n">obs</span><span class="p">[</span><span class="s2">"wavelength"</span><span class="p">]</span> <span class="o">=</span> <span class="n">LAZULI_WAVELENGTH</span>
+    <span class="n">section</span><span class="p">(</span><span class="s2">"observation"</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="s2">"the observation; the wavelength: Lazuli's design wavelength (r' band)"</span> <span class="k">if</span> <span class="n">lazuli</span> <span class="k">else</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">image_source</span><span class="p">:</span>
+        <span class="n">section</span><span class="p">(</span><span class="s2">"grid"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="n">_odd_image_size</span><span class="p">(</span><span class="n">srcs</span><span class="p">)</span> <span class="k">if</span> <span class="n">lazuli</span> <span class="k">else</span> <span class="n">AUTO</span><span class="p">,</span> <span class="s2">"pixel_scale"</span><span class="p">:</span> <span class="n">AUTO</span><span class="p">},</span>
+                <span class="s2">"the simulated image; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> = the image source's"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">section</span><span class="p">(</span><span class="s2">"grid"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"sampling"</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span> <span class="s2">"fov"</span><span class="p">:</span> <span class="n">LambdaD</span><span class="p">(</span><span class="mi">32</span><span class="p">)},</span> <span class="s2">"the simulated image; star at pixel (N-1)/2"</span><span class="p">)</span>
+    <span class="n">star</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="p">[</span><span class="s2">"star"</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="s2">"star."</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">requires</span> <span class="ow">or</span> <span class="p">(</span><span class="n">flux_needed</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"temperature"</span><span class="p">,</span> <span class="s2">"radius"</span><span class="p">,</span> <span class="s2">"distance"</span><span class="p">)):</span>
+            <span class="n">star</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">example</span>
+    <span class="k">if</span> <span class="n">star</span> <span class="ow">or</span> <span class="n">full</span><span class="p">:</span>
+        <span class="n">who</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="bp">cls</span><span class="o">.</span><span class="n">kind</span> <span class="k">for</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">srcs</span> <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">requires</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">{</span><span class="s2">"star."</span> <span class="o">+</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">star</span><span class="p">}})</span>
+        <span class="n">note</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"used by: "</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">who</span> <span class="o">+</span> <span class="p">([</span><span class="s2">"unit conversion"</span><span class="p">]</span> <span class="k">if</span> <span class="n">flux_needed</span> <span class="k">else</span> <span class="p">[])))</span> <span class="k">if</span> <span class="n">star</span> <span class="k">else</span> <span class="s2">""</span>
+        <span class="n">section</span><span class="p">(</span><span class="s2">"star"</span><span class="p">,</span> <span class="n">star</span><span class="p">,</span> <span class="n">note</span><span class="p">)</span>
+    <span class="k">for</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">srcs</span><span class="p">:</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"</span><span class="si">%-26s</span><span class="s2"> # </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"[[source]]"</span><span class="p">,</span> <span class="s2">"one table per component; enabled = false switches it off"</span><span class="p">))</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="s2">"kind"</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="mi">26</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">SOURCE_COMMON</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>  <span class="c1"># name, enabled, scale, method, module: when given (module: your own modules)</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">example</span><span class="p">,</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" (required)"</span><span class="p">,</span> <span class="mi">26</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">p</span><span class="o">.</span><span class="n">advanced</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">full</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"# "</span> <span class="o">+</span> <span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">24</span><span class="p">))</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coros</span><span class="p">:</span>
+        <span class="n">doc</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">CORONAGRAPHS</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"vortex"</span><span class="p">)]</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"</span><span class="si">%-26s</span><span class="s2"> # </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"[[coronagraph]]"</span><span class="p">,</span> <span class="s2">"one table per coronagraph; each gets its own results"</span><span class="p">))</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"vortex"</span><span class="p">),</span> <span class="n">doc</span><span class="p">,</span> <span class="mi">26</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">p</span><span class="o">.</span><span class="n">advanced</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">full</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"# "</span> <span class="o">+</span> <span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">24</span><span class="p">))</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">srcs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">full</span><span class="p">:</span>
+        <span class="n">section</span><span class="p">(</span><span class="s2">"method"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"combine"</span><span class="p">:</span> <span class="s2">"separate"</span><span class="p">}</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">srcs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">{})</span>
+    <span class="k">if</span> <span class="n">full</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"compute"</span><span class="p">,</span> <span class="s2">"checks"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"display"</span><span class="p">):</span>
+            <span class="n">section</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">schema</span><span class="p">:</span>
+            <span class="n">write_schema</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)),</span> <span class="n">SCHEMA_FILE</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">text</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_param_schema</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The JSON schema of one key.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        p (Param): the declaration.</span>
+<span class="sd">        prefix (str): text starting the description, e.g. "(wind) ".</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: the schema: the type (or enum) with its bounds, alternatives in "anyOf" ("auto", the</span>
+<span class="sd">            auto_word, a string with a unit; for a list with a unit, its items), "description" /</span>
+<span class="sd">            "markdownDescription" (doc, type, default, help) and "default" (unless there is none or</span>
+<span class="sd">            it is a LambdaD).</span>
+<span class="sd">    """</span>
+    <span class="n">desc</span> <span class="o">=</span> <span class="s2">"</span><span class="si">%s%s</span><span class="se">\n\n</span><span class="s2">**Type:** </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">+</span><span class="n">p</span><span class="o">.</span><span class="n">doc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">doc</span> <span class="k">else</span> <span class="s2">""</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">describe_type</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">desc</span> <span class="o">+=</span> <span class="s2">"  </span><span class="se">\n</span><span class="s2">**Default:** `</span><span class="si">%s</span><span class="s2">`"</span> <span class="o">%</span> <span class="n">_toml</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">help</span><span class="p">:</span>
+        <span class="n">desc</span> <span class="o">+=</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">help</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">choices</span><span class="p">:</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"enum"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">choices</span><span class="p">)}</span>
+    <span class="k">elif</span> <span class="n">p</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">"bool"</span><span class="p">:</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">}</span>
+    <span class="k">elif</span> <span class="n">p</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">"str"</span><span class="p">:</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">}</span>
+    <span class="k">elif</span> <span class="n">p</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">"table"</span><span class="p">:</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">}</span>
+    <span class="k">elif</span> <span class="n">p</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_list"</span><span class="p">):</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"array"</span><span class="p">,</span> <span class="s2">"items"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"int_list"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span> <span class="s2">"float_list"</span><span class="p">:</span> <span class="s2">"number"</span><span class="p">,</span>
+                                                    <span class="s2">"str_list"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">}[</span><span class="n">p</span><span class="o">.</span><span class="n">type</span><span class="p">]}}</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">unit</span><span class="p">:</span>  <span class="c1"># items may also be text with a unit</span>
+            <span class="n">base</span><span class="p">[</span><span class="s2">"items"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"anyOf"</span><span class="p">:</span> <span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s2">"items"</span><span class="p">],</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span> <span class="s2">"pattern"</span><span class="p">:</span> <span class="n">_QUANTITY</span><span class="o">.</span><span class="n">pattern</span><span class="p">}]}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"integer"</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">"int"</span> <span class="k">else</span> <span class="s2">"number"</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base</span><span class="p">[</span><span class="s2">"exclusiveMinimum"</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">exclusive_min</span> <span class="k">else</span> <span class="s2">"minimum"</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">min</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base</span><span class="p">[</span><span class="s2">"maximum"</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">max</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="n">base</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">auto</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">p</span><span class="o">.</span><span class="n">choices</span><span class="p">:</span>
+        <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"const"</span><span class="p">:</span> <span class="n">AUTO</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">auto_word</span><span class="p">:</span>
+        <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"const"</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">auto_word</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">unit</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">"float"</span><span class="p">:</span>
+        <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span> <span class="s2">"pattern"</span><span class="p">:</span> <span class="n">_QUANTITY</span><span class="o">.</span><span class="n">pattern</span><span class="p">,</span>
+                        <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"a value with a unit, e.g. </span><span class="se">\"</span><span class="s2">3.22 pc</span><span class="se">\"</span><span class="s2">"</span><span class="p">})</span>
+    <span class="n">schema</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">{</span><span class="s2">"anyOf"</span><span class="p">:</span> <span class="n">options</span><span class="p">}</span>
+    <span class="n">schema</span><span class="p">[</span><span class="s2">"description"</span><span class="p">]</span> <span class="o">=</span> <span class="n">desc</span>
+    <span class="n">schema</span><span class="p">[</span><span class="s2">"markdownDescription"</span><span class="p">]</span> <span class="o">=</span> <span class="n">desc</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">LambdaD</span><span class="p">):</span>
+        <span class="n">schema</span><span class="p">[</span><span class="s2">"default"</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span>
+    <span class="k">return</span> <span class="n">schema</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_either</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The schema of a key declared by several modules (or coronagraph types): any of their schemas.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        first (dict): the schema so far (from _param_schema, or an earlier _either).</span>
+<span class="sd">        second (dict): the next module's schema of the key.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: {"anyOf": [first, second]} with both descriptions.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"anyOf"</span><span class="p">:</span> <span class="p">[</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">],</span> <span class="s2">"description"</span><span class="p">:</span> <span class="n">first</span><span class="p">[</span><span class="s2">"description"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">second</span><span class="p">[</span><span class="s2">"description"</span><span class="p">],</span>
+            <span class="s2">"markdownDescription"</span><span class="p">:</span> <span class="n">first</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"markdownDescription"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">second</span><span class="p">[</span><span class="s2">"markdownDescription"</span><span class="p">]}</span>
+
+
+<div class="viewcode-block" id="json_schema">
+<a class="viewcode-back" href="../../params_docs.html#toycoronagraph.params_docs.json_schema">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">json_schema</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    JSON schema of the parameter file (editor hover, completion and checks; e.g. Even Better TOML).</span>
+
+<span class="sd">    [[source]] tables accept the keys of every kind (a key shared by several kinds: "anyOf" their</span>
+<span class="sd">    schemas), then each kind is limited to its own keys; an unknown kind needs `module`.</span>
+<span class="sd">    [[coronagraph]] tables likewise, each type also checking the values of its own keys (e.g. a</span>
+<span class="sd">    vortex charge &gt;= 2, a lazuli charge &gt;= 0).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: the schema (draft-07), ready for json.dump.</span>
+<span class="sd">    """</span>
+    <span class="n">props</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"include"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"array"</span><span class="p">,</span> <span class="s2">"items"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">},</span>
+                         <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Other parameter files to read first (e.g. a shared star description). "</span>
+                                        <span class="s2">"A key set in two files is an error."</span><span class="p">}}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">props</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span> <span class="s2">"description"</span><span class="p">:</span> <span class="n">doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">+</span><span class="n">doc</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="s2">"additionalProperties"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">_param_schema</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">}}</span>
+    <span class="n">kinds</span> <span class="o">=</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">source_kinds</span><span class="p">()</span>
+    <span class="n">common</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">SOURCE_COMMON</span><span class="p">]</span>
+    <span class="n">union</span><span class="p">,</span> <span class="n">per_kind</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>  <span class="c1"># {key: schema} of all kinds; {kind: its allowed keys}</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">SOURCE_COMMON</span><span class="p">:</span>
+        <span class="n">union</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_param_schema</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">kind_doc</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Which module. Built-in: "</span> <span class="o">+</span> <span class="s2">"; "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">"`</span><span class="si">%s</span><span class="s2">`: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">)</span>
+                <span class="o">+</span> <span class="s2">". Your own module: its kind, with `module` set."</span><span class="p">)</span>
+    <span class="n">union</span><span class="p">[</span><span class="s2">"kind"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span> <span class="s2">"description"</span><span class="p">:</span> <span class="n">kind_doc</span><span class="p">,</span> <span class="s2">"markdownDescription"</span><span class="p">:</span> <span class="n">kind_doc</span><span class="p">,</span> <span class="s2">"examples"</span><span class="p">:</span> <span class="n">kinds</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">:</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">per_kind</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">common</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+            <span class="n">entry</span> <span class="o">=</span> <span class="n">_param_schema</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">"(</span><span class="si">%s</span><span class="s2">) "</span> <span class="o">%</span> <span class="n">k</span><span class="p">)</span>
+            <span class="n">union</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_either</span><span class="p">(</span><span class="n">union</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">entry</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">union</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">common</span> <span class="k">else</span> <span class="n">entry</span>
+    <span class="n">source_item</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span> <span class="s2">"required"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"kind"</span><span class="p">],</span> <span class="s2">"properties"</span><span class="p">:</span> <span class="n">union</span><span class="p">,</span>
+                   <span class="s2">"allOf"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"if"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"kind"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"const"</span><span class="p">:</span> <span class="n">k</span><span class="p">}},</span> <span class="s2">"required"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"kind"</span><span class="p">]},</span>
+                              <span class="s2">"then"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"propertyNames"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"enum"</span><span class="p">:</span> <span class="n">per_kind</span><span class="p">[</span><span class="n">k</span><span class="p">]}}}</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">]</span> <span class="o">+</span>
+                            <span class="p">[{</span><span class="s2">"if"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"kind"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"not"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"enum"</span><span class="p">:</span> <span class="n">kinds</span><span class="p">}}},</span> <span class="s2">"required"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"kind"</span><span class="p">]},</span>
+                              <span class="s2">"then"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"required"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"module"</span><span class="p">]}}]}</span>
+    <span class="n">props</span><span class="p">[</span><span class="s2">"source"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"array"</span><span class="p">,</span> <span class="s2">"items"</span><span class="p">:</span> <span class="n">source_item</span><span class="p">,</span>
+                       <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"One table per component of the scene ([[source]]); kind picks the module."</span><span class="p">}</span>
+    <span class="n">cunion</span><span class="p">,</span> <span class="n">cper</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">_param_schema</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">CORONAGRAPH_COMMON</span><span class="p">},</span> <span class="p">{}</span>  <span class="c1"># as union, per_kind for the types</span>
+    <span class="n">cunion</span><span class="p">[</span><span class="s2">"type"</span><span class="p">][</span><span class="s2">"enum"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">CORONAGRAPHS</span><span class="p">)</span>
+    <span class="n">cown</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># {type: {key: schema}}: each type's own value schemas (a key of several types gets the type's own)</span>
+    <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">cper</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">CORONAGRAPH_COMMON</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">]</span>
+        <span class="n">cown</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">_param_schema</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">"(</span><span class="si">%s</span><span class="s2">) "</span> <span class="o">%</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">cown</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">cunion</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_either</span><span class="p">(</span><span class="n">cunion</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">entry</span><span class="p">)</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">cunion</span> <span class="k">else</span> <span class="n">entry</span>
+    <span class="c1"># a table without type matches every "if": it gets the limits of every type, the vortex's (its default) included</span>
+    <span class="n">props</span><span class="p">[</span><span class="s2">"coronagraph"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"array"</span><span class="p">,</span> <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"One table per coronagraph ([[coronagraph]])."</span><span class="p">,</span>
+                            <span class="s2">"items"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span> <span class="s2">"properties"</span><span class="p">:</span> <span class="n">cunion</span><span class="p">,</span>
+                                      <span class="s2">"allOf"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"if"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"const"</span><span class="p">:</span> <span class="n">t</span><span class="p">}}},</span>
+                                                 <span class="s2">"then"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"propertyNames"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"enum"</span><span class="p">:</span> <span class="n">cper</span><span class="p">[</span><span class="n">t</span><span class="p">]},</span> <span class="s2">"properties"</span><span class="p">:</span> <span class="n">cown</span><span class="p">[</span><span class="n">t</span><span class="p">]}}</span>
+                                                <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="p">]}}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"$schema"</span><span class="p">:</span> <span class="s2">"http://json-schema.org/draft-07/schema#"</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Toy Coronagraph parameters"</span><span class="p">,</span>
+            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span> <span class="s2">"additionalProperties"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"properties"</span><span class="p">:</span> <span class="n">props</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="write_schema">
+<a class="viewcode-back" href="../../params_docs.html#toycoronagraph.params_docs.write_schema">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_schema</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Write json_schema() to a file (indented JSON).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): the file (overwritten), normally SCHEMA_FILE next to the parameter file.</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">json_schema</span><span class="p">(),</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_md_rows</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Markdown table rows "| key | default | unit | meaning |".</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        params (iterable of Param): the declarations.</span>
+<span class="sd">        prefix (str): text before each key name.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list of str: one row per parameter.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="s2">"—"</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">"`</span><span class="si">%s</span><span class="s2">`"</span> <span class="o">%</span> <span class="n">_toml</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">)</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"| `</span><span class="si">%s%s</span><span class="s2">` | </span><span class="si">%s</span><span class="s2"> | </span><span class="si">%s</span><span class="s2"> | </span><span class="si">%s</span><span class="s2"> |"</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">unit</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">doc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">|"</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">rows</span>
+
+
+<div class="viewcode-block" id="reference_markdown">
+<a class="viewcode-back" href="../../params_docs.html#toycoronagraph.params_docs.reference_markdown">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reference_markdown</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Parameter reference tables (README / docs), generated from the declarations.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Markdown: the core sections, [[source]] (common keys, then each kind), [[coronagraph]]</span>
+<span class="sd">            types, and the rules when values disagree.</span>
+<span class="sd">    """</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"# Parameter reference"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span>
+           <span class="s2">"Generated from the declarations in `toycoronagraph/params.py` and the source modules. "</span>
+           <span class="s2">"Every key is optional unless a module needs it; each quantity is set in one place."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"| key | default | unit | meaning |"</span><span class="p">,</span> <span class="s2">"|---|---|---|---|"</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"## [</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="p">),</span> <span class="s2">""</span><span class="p">]</span> <span class="o">+</span> <span class="n">head</span> <span class="o">+</span> <span class="n">_md_rows</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">""</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"## [[source]]: the components"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"Keys every source table may have:"</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span> <span class="o">+</span> <span class="n">head</span> <span class="o">+</span> <span class="n">_md_rows</span><span class="p">(</span><span class="n">SOURCE_COMMON</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">""</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">source_kinds</span><span class="p">():</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">requires</span><span class="p">:</span>
+            <span class="n">extra</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"needs "</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">"`</span><span class="si">%s</span><span class="s2">`"</span> <span class="o">%</span> <span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">requires</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">provides</span><span class="p">:</span>
+            <span class="n">extra</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"can supply "</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">"`</span><span class="si">%s</span><span class="s2">`"</span> <span class="o">%</span> <span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">provides</span><span class="p">))</span>
+        <span class="n">fam</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"physical"</span><span class="p">:</span> <span class="s2">"physical units"</span><span class="p">,</span> <span class="s2">"relative"</span><span class="p">:</span> <span class="s2">"contrast (relative to the star)"</span><span class="p">,</span> <span class="kc">None</span><span class="p">:</span> <span class="s2">"from the input"</span><span class="p">}[</span><span class="bp">cls</span><span class="o">.</span><span class="n">family</span><span class="p">]</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"### kind = </span><span class="se">\"</span><span class="si">%s</span><span class="se">\"</span><span class="s2">: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">doc</span><span class="p">),</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"Output: </span><span class="si">%s</span><span class="s2">. </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">fam</span><span class="p">,</span> <span class="s2">"; "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"."</span> <span class="k">if</span> <span class="n">extra</span> <span class="k">else</span> <span class="s2">""</span><span class="p">),</span> <span class="s2">""</span><span class="p">]</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="n">head</span> <span class="o">+</span> <span class="n">_md_rows</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">""</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"## [[coronagraph]]"</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"### type = </span><span class="se">\"</span><span class="si">%s</span><span class="se">\"</span><span class="s2">: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">doc</span><span class="p">),</span> <span class="s2">""</span><span class="p">]</span> <span class="o">+</span> <span class="n">head</span> <span class="o">+</span> <span class="n">_md_rows</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">""</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"## When values disagree"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"| quantity | tolerance | consequence | why |"</span><span class="p">,</span> <span class="s2">"|---|---|---|---|"</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">tol</span><span class="p">,</span> <span class="n">consequence</span><span class="p">,</span> <span class="n">why</span><span class="p">)</span> <span class="ow">in</span> <span class="n">CONFLICT_RULES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"| `</span><span class="si">%s</span><span class="s2">` | </span><span class="si">%g%%</span><span class="s2"> | </span><span class="si">%s</span><span class="s2"> | </span><span class="si">%s</span><span class="s2"> |"</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">tol</span><span class="p">,</span> <span class="n">consequence</span><span class="p">,</span> <span class="n">why</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"| an image's pixel scale or size vs `[grid]` | — | resampled onto the grid (a note) | flux conserved |"</span><span class="p">,</span>
+            <span class="s2">"| `grid`: pixel_scale + sampling | 0.1% | error | over-specified |"</span><span class="p">,</span>
+            <span class="s2">"| `grid`: size x pixel_scale vs fov | 1.5 px (or 0.1%) | error | over-specified |"</span><span class="p">,</span>
+            <span class="s2">"| `star`: temperature + flux_jy | 0.1% | error | over-specified |"</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="describe">
+<a class="viewcode-back" href="../../params_docs.html#toycoronagraph.params_docs.describe">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">describe</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Where a key is set, its unit, default and allowed values, and who uses it.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        query (str): "section" or "section.key" (e.g. "grid", "star.distance"; brackets are ignored),</span>
+<span class="sd">            "kind" or "kind.key" of a source module (e.g. "wind", "wind.mdot"), "type" or "type.key" of</span>
+<span class="sd">            a coronagraph (e.g. "vortex.charge"), or a bare key name searched everywhere (e.g. "charge").</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: one block per match, separated by blank lines; if nothing matches, "Nothing called ..."</span>
+<span class="sd">            with the closest names.</span>
+<span class="sd">    """</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">"["</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"]"</span><span class="p">)</span>
+    <span class="n">head</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">tail</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">"."</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">kinds</span> <span class="o">=</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">source_kinds</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">param_text</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">users</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The description block of one key.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p (Param): the declaration.</span>
+<span class="sd">            where (str): where it is set, e.g. "[star] distance" (also used to find its CONFLICT_RULES).</span>
+<span class="sd">            users (list of str): source kinds needing it; None or [] = not shown.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: lines: where and type, doc, default, help, needed by, conflict rule.</span>
+<span class="sd">        """</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"</span><span class="si">%s</span><span class="s2">  (</span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">where</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">describe_type</span><span class="p">()),</span> <span class="s2">"  "</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">doc</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"  default: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">_toml</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">help</span><span class="p">:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"  "</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">help</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">users</span><span class="p">:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"  needed by: "</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">users</span><span class="p">))</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">where</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"[]"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"] "</span><span class="p">,</span> <span class="s2">"."</span><span class="p">)</span>  <span class="c1"># "[star] distance" -&gt; "star.distance"</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">CONFLICT_RULES</span><span class="p">:</span>
+            <span class="n">tol</span><span class="p">,</span> <span class="n">consequence</span><span class="p">,</span> <span class="n">why</span> <span class="o">=</span> <span class="n">CONFLICT_RULES</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"  if values disagree (&gt; </span><span class="si">%g%%</span><span class="s2">): </span><span class="si">%s</span><span class="s2">; </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">tol</span><span class="p">,</span> <span class="n">consequence</span><span class="p">,</span> <span class="n">why</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">head</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="p">:</span>
+        <span class="n">doc</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">SECTIONS</span><span class="p">[</span><span class="n">head</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">tail</span> <span class="ow">or</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">tail</span><span class="p">:</span>
+                <span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinds</span> <span class="k">if</span> <span class="s2">"</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="ow">in</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">requires</span><span class="p">]</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param_text</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">"[</span><span class="si">%s</span><span class="s2">] </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="n">users</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tail</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"[</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">doc</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">head</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">:</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tail</span><span class="p">:</span>
+            <span class="n">block</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'[[source]] kind = "</span><span class="si">%s</span><span class="s1">": </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">doc</span><span class="p">),</span>
+                     <span class="s2">"  output: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">{</span><span class="s2">"physical"</span><span class="p">:</span> <span class="s2">"physical units"</span><span class="p">,</span> <span class="s2">"relative"</span><span class="p">:</span> <span class="s2">"contrast"</span><span class="p">,</span> <span class="kc">None</span><span class="p">:</span> <span class="s2">"from the input"</span><span class="p">}[</span><span class="bp">cls</span><span class="o">.</span><span class="n">family</span><span class="p">]]</span>
+            <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">requires</span><span class="p">:</span>
+                <span class="n">block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"  needs: "</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">requires</span><span class="p">))</span>
+            <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">provides</span><span class="p">:</span>
+                <span class="n">block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"  can supply: "</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">provides</span><span class="p">))</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">block</span><span class="p">))</span>
+        <span class="c1"># a key: also the common keys (but kind and name); the whole kind: its own keys only</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">((</span><span class="n">SOURCE_COMMON</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">))</span> <span class="k">if</span> <span class="n">tail</span> <span class="k">else</span> <span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">tail</span> <span class="ow">or</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">tail</span><span class="p">:</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param_text</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s1">'[[source]] (kind = "</span><span class="si">%s</span><span class="s1">") </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
+    <span class="k">elif</span> <span class="n">head</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="p">:</span>
+        <span class="n">doc</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">CORONAGRAPHS</span><span class="p">[</span><span class="n">head</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tail</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'[[coronagraph]] type = "</span><span class="si">%s</span><span class="s1">": </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">doc</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">tail</span> <span class="ow">or</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">tail</span><span class="p">:</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param_text</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s1">'[[coronagraph]] (type = "</span><span class="si">%s</span><span class="s1">") </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># a bare key: search everywhere</span>
+        <span class="k">for</span> <span class="n">section</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">query</span><span class="p">:</span>
+                    <span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinds</span> <span class="k">if</span> <span class="s2">"</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="ow">in</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">requires</span><span class="p">]</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param_text</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">"[</span><span class="si">%s</span><span class="s2">] </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="n">users</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">query</span><span class="p">:</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param_text</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s1">'[[source]] (kind = "</span><span class="si">%s</span><span class="s1">") </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">query</span><span class="p">:</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param_text</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s1">'[[coronagraph]] (type = "</span><span class="si">%s</span><span class="s1">") </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">out</span><span class="p">:</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">SECTIONS</span><span class="p">)</span> <span class="o">+</span> <span class="n">kinds</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">CORONAGRAPHS</span><span class="p">)</span> <span class="o">+</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ps</span><span class="p">}</span> <span class="o">|</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinds</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_sources</span><span class="p">()</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">params</span><span class="p">}</span>
+            <span class="o">|</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ps</span><span class="p">})</span>
+        <span class="n">close</span> <span class="o">=</span> <span class="n">difflib</span><span class="o">.</span><span class="n">get_close_matches</span><span class="p">(</span><span class="n">tail</span> <span class="ow">or</span> <span class="n">head</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">"Nothing called </span><span class="si">%r</span><span class="s2">.</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="s2">" Did you mean: "</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">close</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"?"</span><span class="p">)</span> <span class="k">if</span> <span class="n">close</span> <span class="k">else</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="migrate">
+<a class="viewcode-back" href="../../params_docs.html#toycoronagraph.params_docs.migrate">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">migrate</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Rewrite an old-layout file in the new layout (only the values set there are kept).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): the old file: a .toml file, or a .py parameter file (read by config._from_legacy).</span>
+<span class="sd">        out_path (str): where to write the new file (and the JSON schema next to it); None = only return it.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: the TOML text in the new layout.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ParamError: the .toml file is already in the new layout, or the mapped parameters are not valid</span>
+<span class="sd">            (from_data()).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".py"</span><span class="p">):</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
+        <span class="n">cfg</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">_from_legacy</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"target"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"target_pixel"</span><span class="p">:</span> <span class="n">cfg</span><span class="o">.</span><span class="n">target_pixel</span><span class="p">},</span> <span class="s2">"telescope"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"wavelength"</span><span class="p">:</span> <span class="n">cfg</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span>
+                <span class="s2">"diameter"</span><span class="p">:</span> <span class="n">cfg</span><span class="o">.</span><span class="n">diameter</span><span class="p">,</span> <span class="s2">"visual_range"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">visual_range</span><span class="p">)},</span>
+                <span class="s2">"coronagraph"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="n">cfg</span><span class="o">.</span><span class="n">coronagraph_type</span><span class="p">,</span> <span class="s2">"lyot_mask_size"</span><span class="p">:</span> <span class="n">cfg</span><span class="o">.</span><span class="n">lyot_mask_size</span><span class="p">},</span>
+                <span class="s2">"method"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"rot_number"</span><span class="p">:</span> <span class="n">cfg</span><span class="o">.</span><span class="n">rot_number</span><span class="p">},</span> <span class="s2">"compute"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"num_cores"</span><span class="p">:</span> <span class="n">cfg</span><span class="o">.</span><span class="n">num_cores</span><span class="p">}}</span>
+        <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">fits_filename</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">"target"</span><span class="p">][</span><span class="s2">"fits_filename"</span><span class="p">]</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">fits_filename</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"resolved"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>  <span class="c1"># values written back by old runs: not parameters</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_legacy</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> is already in the new layout"</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">legacy_to_new</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span>
+    <span class="n">from_data</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>  <span class="c1"># check it</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"#:schema ./</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">SCHEMA_FILE</span><span class="p">,</span>
+             <span class="s2">"# Migrated from </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">) to the new layout. Only the values set there are kept;"</span>
+             <span class="o">%</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()),</span>
+             <span class="s2">"# everything else uses the defaults (python -m toycoronagraph describe KEY)."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s2">"fov"</span> <span class="ow">in</span> <span class="n">new</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"grid"</span><span class="p">,</span> <span class="p">{}):</span>  <span class="c1"># inserted before the blank line ending the header</span>
+        <span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"# Note: [grid] fov sets the simulated field. An image whose header gives its pixel scale is"</span><span class="p">,</span>
+                        <span class="s2">"# resampled onto it; the old layout stretched such an image to fit visual_range (with a warning)."</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"observation"</span><span class="p">,</span> <span class="s2">"grid"</span><span class="p">,</span> <span class="s2">"star"</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">new</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">new</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+                    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">new</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">new</span><span class="p">[</span><span class="s2">"source"</span><span class="p">]:</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="n">_source_class</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"kind"</span><span class="p">])</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"[[source]]"</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="s2">"kind"</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="s2">"kind"</span><span class="p">],</span> <span class="bp">cls</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="mi">26</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">SOURCE_COMMON</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">params</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">new</span><span class="p">[</span><span class="s2">"coronagraph"</span><span class="p">]:</span>
+        <span class="n">ctype</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"vortex"</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"[[coronagraph]]"</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="n">ctype</span><span class="p">,</span> <span class="n">CORONAGRAPHS</span><span class="p">[</span><span class="n">ctype</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">26</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">CORONAGRAPHS</span><span class="p">[</span><span class="n">ctype</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"method"</span><span class="p">,</span> <span class="s2">"compute"</span><span class="p">,</span> <span class="s2">"display"</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">new</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">SECTIONS</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">new</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+                    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_line</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">new</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">_comment</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">26</span><span class="p">))</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="n">out_path</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">write_schema</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">out_path</span><span class="p">)),</span> <span class="n">SCHEMA_FILE</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">text</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

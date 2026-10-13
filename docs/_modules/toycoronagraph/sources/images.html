@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.sources.images &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/sources/images';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../sources.html" class="nav-link">toycoronagraph.sources</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.sources.images</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.sources.images</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Image source modules: a FITS image, an MCFOST model, and the scene FITS interchange file."""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">DATADIR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">Param</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.sources</span><span class="w"> </span><span class="kn">import</span> <span class="n">Source</span><span class="p">,</span> <span class="n">register_source</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">SourceImage</span><span class="p">,</span> <span class="n">header_unit</span>
+
+<span class="n">INPUT_UNITS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"auto"</span><span class="p">,</span> <span class="s2">"W/m^2/pixel"</span><span class="p">,</span> <span class="s2">"Jy/arcsec^2"</span><span class="p">,</span> <span class="s2">"Jy/pixel"</span><span class="p">,</span> <span class="s2">"MJy/sr"</span><span class="p">,</span> <span class="s2">"contrast_pixel"</span><span class="p">)</span>
+<span class="n">MCFOST_PLANES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"disk"</span><span class="p">,</span> <span class="s2">"total"</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">,</span> <span class="s2">"Q"</span><span class="p">,</span> <span class="s2">"U"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">"direct_star"</span><span class="p">,</span> <span class="s2">"scattered_star"</span><span class="p">,</span> <span class="s2">"direct_thermal"</span><span class="p">,</span> <span class="s2">"scattered_thermal"</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="fits_path">
+<a class="viewcode-back" href="../../../sources.images.html#toycoronagraph.sources.images.fits_path">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">fits_path</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The path of a FITS file named in a parameter file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name (str): a path; "example" = the bundled example (DATADIR/example.fits).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: the path, with ".fits" added when it has no FITS extension (.fits, .fits.gz, .fit, .fts).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"example"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATADIR</span><span class="p">,</span> <span class="s2">"example.fits"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">".fits"</span><span class="p">,</span> <span class="s2">".fits.gz"</span><span class="p">,</span> <span class="s2">".fit"</span><span class="p">,</span> <span class="s2">".fts"</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">".fits"</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_header_scale_and_wavelength</span><span class="p">(</span><span class="n">header</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The pixel scale and wavelength written in a FITS header (see config._header_pixel_scale / _header_wavelength).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        header (astropy.io.fits.Header): the image's header.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: (scale, scale_key, lam, lam_key): arcsec per pixel and m, each with the keyword it</span>
+<span class="sd">            came from (e.g. "PIXSCALE", "CDELT1 (deg)", "WAVE (um)"); (None, None) for a missing one.</span>
+<span class="sd">    """</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">_header_pixel_scale</span><span class="p">,</span> <span class="n">_header_wavelength</span>
+    <span class="n">scale</span><span class="p">,</span> <span class="n">scale_key</span> <span class="o">=</span> <span class="n">_header_pixel_scale</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+    <span class="n">lam</span><span class="p">,</span> <span class="n">lam_key</span> <span class="o">=</span> <span class="n">_header_wavelength</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">scale</span><span class="p">,</span> <span class="n">scale_key</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">lam_key</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_ImageSource</span><span class="p">(</span><span class="n">Source</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Shared reading of one 2-D image from a FITS file (base of FitsImage and Mcfost).</span>
+
+<span class="sd">    Subclasses define _read_args(); the optional settings input_unit, input_pixel_scale and</span>
+<span class="sd">    input_wavelength ("auto" = from the header) override the header. The file is read once</span>
+<span class="sd">    and cached in self._cache.</span>
+<span class="sd">    """</span>
+    <span class="n">provides</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"grid.size"</span><span class="p">,</span> <span class="s2">"grid.pixel_scale"</span><span class="p">,</span> <span class="s2">"observation.wavelength"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_read_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Keyword arguments of inputs.read_plane selecting the image (defined by each subclass).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: e.g. dict(input_format="image", fits_hdu=0, fits_slice="auto").</span>
+<span class="sd">        """</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Read the image and its unit, pixel scale and wavelength (once; cached).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: image ((N, N) float64), unit (a NAMED unit, PHOTONS or an astropy unit text),</span>
+<span class="sd">                unit_from ("input_unit" or "header BUNIT"), scale (arcsec/pixel or None),</span>
+<span class="sd">                scale_key, lam (m or None), lam_key (where each came from: a header keyword or</span>
+<span class="sd">                "input_..."), name (file name), description (file name and selected plane),</span>
+<span class="sd">                index (the indices of the plane in the file).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            FileNotFoundError: the file does not exist.</span>
+<span class="sd">            ValueError: the image is not square, or its unit is unknown and input_unit is "auto".</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"_cache"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.inputs</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_plane</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">fits_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"file"</span><span class="p">])</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: file </span><span class="si">%s</span><span class="s2"> not found"</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
+            <span class="n">image</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">what</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">read_plane</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_read_args</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: the image must be square (got </span><span class="si">%s</span><span class="s2">); the star must be at its centre"</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+            <span class="n">unit</span><span class="p">,</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">header_unit</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+            <span class="c1"># the settings below exist only for FitsImage (Mcfost has none: .get with "auto")</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"input_unit"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">"auto"</span><span class="p">:</span>
+                <span class="n">unit</span><span class="p">,</span> <span class="n">unit_from</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"input_unit"</span><span class="p">],</span> <span class="s2">"input_unit"</span>
+            <span class="k">elif</span> <span class="n">unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: the unit is unknown (BUNIT = </span><span class="si">%r</span><span class="s2">); set input_unit in its [[source]] table"</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">raw</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">unit_from</span> <span class="o">=</span> <span class="s2">"header BUNIT"</span>
+            <span class="n">scale</span><span class="p">,</span> <span class="n">scale_key</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">lam_key</span> <span class="o">=</span> <span class="n">_header_scale_and_wavelength</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"input_pixel_scale"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">"auto"</span><span class="p">:</span>
+                <span class="n">scale</span><span class="p">,</span> <span class="n">scale_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"input_pixel_scale"</span><span class="p">],</span> <span class="s2">"input_pixel_scale"</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"input_wavelength"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">"auto"</span><span class="p">:</span>
+                <span class="n">lam</span><span class="p">,</span> <span class="n">lam_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"input_wavelength"</span><span class="p">],</span> <span class="s2">"input_wavelength"</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span> <span class="n">unit_from</span><span class="o">=</span><span class="n">unit_from</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">scale_key</span><span class="o">=</span><span class="n">scale_key</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="n">lam</span><span class="p">,</span>
+                               <span class="n">lam_key</span><span class="o">=</span><span class="n">lam_key</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">what</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">inspect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The grid size, and the pixel scale and wavelength when known, from the file.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list of tuple: [(key, value, origin)] for grid.size, grid.pixel_scale (arcsec) and</span>
+<span class="sd">                observation.wavelength (m).</span>
+<span class="sd">        """</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">()</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"grid.size"</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"image size of "</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">])]</span>
+        <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s2">"scale"</span><span class="p">]:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">"grid.pixel_scale"</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s2">"scale"</span><span class="p">],</span> <span class="s2">"</span><span class="si">%s</span><span class="s2"> of </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">_origin</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"scale_key"</span><span class="p">]),</span> <span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">])))</span>
+        <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s2">"lam"</span><span class="p">]:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">"observation.wavelength"</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s2">"lam"</span><span class="p">],</span> <span class="s2">"</span><span class="si">%s</span><span class="s2"> of </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">_origin</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"lam_key"</span><span class="p">]),</span> <span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">])))</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">family_of</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The family given by input_unit; with "auto" (or no input_unit), the class's `family`.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: "physical", "relative", or None (decided by the header's BUNIT).</span>
+<span class="sd">        """</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"input_unit"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s2">"auto"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">family</span>
+        <span class="k">return</span> <span class="s2">"relative"</span> <span class="k">if</span> <span class="n">unit</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"contrast"</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"physical"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The image as read, on its own grid.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            grid (toycoronagraph.scene.Grid): the scene grid (not used: the scene resamples).</span>
+<span class="sd">            star (toycoronagraph.scene.Star): not used.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            SourceImage: (N, N) image in its unit, with the file's pixel scale (arcsec; None = the</span>
+<span class="sd">                scene's) and wavelength (m; None = the scene's).</span>
+<span class="sd">        """</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">SourceImage</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"image"</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">"unit"</span><span class="p">],</span> <span class="n">pixel_scale</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s2">"scale"</span><span class="p">],</span> <span class="n">wavelength</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s2">"lam"</span><span class="p">],</span> <span class="n">origin</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s2">"description"</span><span class="p">])</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_origin</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The origin text of a value: a setting ("input_...") as it is, else "header &lt;keyword&gt;"."""</span>
+    <span class="k">return</span> <span class="n">key</span> <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"input_"</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"header "</span> <span class="o">+</span> <span class="n">key</span>
+
+
+<div class="viewcode-block" id="FitsImage">
+<a class="viewcode-back" href="../../../sources.images.html#toycoronagraph.sources.images.FitsImage">[docs]</a>
+<span class="nd">@register_source</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FitsImage</span><span class="p">(</span><span class="n">_ImageSource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A 2-D image (or a plane of a cube) from a FITS file, the star at pixel (N-1)/2.</span>
+
+<span class="sd">    family is None: the unit comes from the header's BUNIT or the input_unit setting.</span>
+<span class="sd">    """</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="s2">"fits_image"</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="s2">"a 2-D FITS image, star at the centre"</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"file"</span><span class="p">,</span> <span class="s2">"example"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">'FITS file; "example" = the bundled example disk'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"str"</span><span class="p">,</span>
+              <span class="n">help</span><span class="o">=</span><span class="s2">"Path of the FITS file (</span><span class="se">\"</span><span class="s2">.fits</span><span class="se">\"</span><span class="s2"> is added if there is no extension). The image must be "</span>
+                   <span class="s2">"square with the star at pixel (N-1)/2. </span><span class="se">\"</span><span class="s2">example</span><span class="se">\"</span><span class="s2"> uses toycoronagraph/example_data/example.fits."</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"input_unit"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"unit of the data; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> = header BUNIT"</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">INPUT_UNITS</span><span class="p">,</span>
+              <span class="n">help</span><span class="o">=</span><span class="s2">"</span><span class="se">\"</span><span class="s2">contrast_pixel</span><span class="se">\"</span><span class="s2"> means the fraction of the star's total flux in each pixel."</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"input_pixel_scale"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"arcsec"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"the file's pixel scale; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> = header PIXSCALE/CDELT"</span><span class="p">,</span>
+              <span class="n">auto</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exclusive_min</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">help</span><span class="o">=</span><span class="s2">"Only needed when the header has no PIXSCALE or CDELT. This describes the file; the "</span>
+                   <span class="s2">"simulated grid is set in [grid] (the image is resampled if they differ)."</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"input_wavelength"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"m"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"the file's wavelength; </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> = header WAVELEN/WAVE"</span><span class="p">,</span>
+              <span class="n">auto</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exclusive_min</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"hdu"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"FITS extension holding the image"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"slice"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">'indices picking a 2-D plane of a cube, e.g. [0]'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int_list"</span><span class="p">,</span> <span class="n">auto</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"symmetric"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"circularly symmetric? </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> = measure it"</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="s2">"auto"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+              <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_read_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""read_plane arguments: a plain image, from extension `hdu`, plane `slice`."""</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">input_format</span><span class="o">=</span><span class="s2">"image"</span><span class="p">,</span> <span class="n">fits_hdu</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"hdu"</span><span class="p">],</span> <span class="n">fits_slice</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"slice"</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="Mcfost">
+<a class="viewcode-back" href="../../../sources.images.html#toycoronagraph.sources.images.Mcfost">[docs]</a>
+<span class="nd">@register_source</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Mcfost</span><span class="p">(</span><span class="n">_ImageSource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""One plane of an MCFOST image cube (axes: plane, azimuth, inclination, y, x); its unit is the header's BUNIT."""</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="s2">"mcfost"</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="s2">"an MCFOST image cube (RT.fits.gz)"</span>
+    <span class="n">family</span> <span class="o">=</span> <span class="s2">"physical"</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"file"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"MCFOST image cube, e.g. data_0.6/RT.fits.gz"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"str"</span><span class="p">,</span> <span class="n">example</span><span class="o">=</span><span class="s2">"data_0.6/RT.fits.gz"</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"component"</span><span class="p">,</span> <span class="s2">"disk"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">'plane: "disk" = everything but the star'</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">MCFOST_PLANES</span><span class="p">,</span>
+              <span class="n">help</span><span class="o">=</span><span class="s2">"</span><span class="se">\"</span><span class="s2">disk</span><span class="se">\"</span><span class="s2"> is the total minus the direct starlight. </span><span class="se">\"</span><span class="s2">total</span><span class="se">\"</span><span class="s2"> includes the star itself, which "</span>
+                   <span class="s2">"the coronagraph is meant to remove, so it is rarely what you want."</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"inclination"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"index along the inclination axis"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"azimuth"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"index along the azimuth axis"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"symmetric"</span><span class="p">,</span> <span class="s2">"auto"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"circularly symmetric? </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2"> = measure it"</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="s2">"auto"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+              <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_read_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""read_plane arguments: an MCFOST cube, with the chosen component, inclination and azimuth indices."""</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">input_format</span><span class="o">=</span><span class="s2">"mcfost"</span><span class="p">,</span> <span class="n">mcfost_component</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"component"</span><span class="p">],</span>
+                    <span class="n">mcfost_inclination</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"inclination"</span><span class="p">],</span> <span class="n">mcfost_azimuth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"azimuth"</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="SceneFits">
+<a class="viewcode-back" href="../../../sources.images.html#toycoronagraph.sources.images.SceneFits">[docs]</a>
+<span class="nd">@register_source</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SceneFits</span><span class="p">(</span><span class="n">Source</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The images of a scene written by write_scene(): one component per 2-D image extension.</span>
+
+<span class="sd">    Each extension's unit, pixel scale and wavelength come from its own header (family None);</span>
+<span class="sd">    the TOTAL and FINAL_TOTAL extensions are skipped. The star's distance can come from the</span>
+<span class="sd">    primary header (DISTANCE).</span>
+<span class="sd">    """</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="s2">"scene_fits"</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="s2">"a multi-extension FITS from write_scene(), one image per component"</span>
+    <span class="n">provides</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"grid.size"</span><span class="p">,</span> <span class="s2">"grid.pixel_scale"</span><span class="p">,</span> <span class="s2">"observation.wavelength"</span><span class="p">,</span> <span class="s2">"star.distance"</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"file"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"the scene FITS file"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"str"</span><span class="p">,</span> <span class="n">example</span><span class="o">=</span><span class="s2">"my_scene.fits"</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"extensions"</span><span class="p">,</span> <span class="s2">"all"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">'"all", or a list of EXTNAMEs, e.g. ["CME"]'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"str_list"</span><span class="p">,</span> <span class="n">auto_word</span><span class="o">=</span><span class="s2">"all"</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Read the selected image extensions (once; cached).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: images ({name: (N, N) float64}, name = the EXTNAME in lower case, "image" if</span>
+<span class="sd">                none), headers ({name: header}), primary (the primary header), name (file name).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: no image extension is selected.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"_cache"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">fits_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"file"</span><span class="p">])</span>
+            <span class="n">want</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"extensions"</span><span class="p">]</span>
+            <span class="n">images</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+            <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="n">hdul</span><span class="p">:</span>
+                    <span class="n">name</span> <span class="o">=</span> <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"EXTNAME"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">hdu</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">hdu</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"TOTAL"</span><span class="p">,</span> <span class="s2">"FINAL_TOTAL"</span><span class="p">):</span>
+                        <span class="k">continue</span>
+                    <span class="k">if</span> <span class="n">want</span> <span class="o">!=</span> <span class="s2">"all"</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">want</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="n">key</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">"image"</span>
+                    <span class="n">images</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">hdu</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+                    <span class="n">headers</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">hdu</span><span class="o">.</span><span class="n">header</span>
+                <span class="n">primary</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">images</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: no image extensions (selected: </span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"extensions"</span><span class="p">]))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">images</span><span class="o">=</span><span class="n">images</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">primary</span><span class="o">=</span><span class="n">primary</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span>
+
+<div class="viewcode-block" id="SceneFits.inspect">
+<a class="viewcode-back" href="../../../sources.images.html#toycoronagraph.sources.images.SceneFits.inspect">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">inspect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The grid size, pixel scale and wavelength (from the first image's header) and the star's distance.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list of tuple: [(key, value, origin)] for grid.size, grid.pixel_scale (arcsec),</span>
+<span class="sd">                observation.wavelength (m) and star.distance (pc), those present.</span>
+<span class="sd">        """</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">()</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"headers"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"grid.size"</span><span class="p">,</span> <span class="n">first</span><span class="p">[</span><span class="s2">"NAXIS1"</span><span class="p">],</span> <span class="s2">"image size of "</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">])]</span>
+        <span class="n">scale</span><span class="p">,</span> <span class="n">scale_key</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">lam_key</span> <span class="o">=</span> <span class="n">_header_scale_and_wavelength</span><span class="p">(</span><span class="n">first</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scale</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">"grid.pixel_scale"</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="s2">"header </span><span class="si">%s</span><span class="s2"> of </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">scale_key</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">])))</span>
+        <span class="k">if</span> <span class="n">lam</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">"observation.wavelength"</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="s2">"header </span><span class="si">%s</span><span class="s2"> of </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">lam_key</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">])))</span>
+        <span class="k">if</span> <span class="s2">"DISTANCE"</span> <span class="ow">in</span> <span class="n">c</span><span class="p">[</span><span class="s2">"primary"</span><span class="p">]:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">"star.distance"</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"primary"</span><span class="p">][</span><span class="s2">"DISTANCE"</span><span class="p">]),</span> <span class="s2">"header DISTANCE of "</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+
+<div class="viewcode-block" id="SceneFits.family_of">
+<a class="viewcode-back" href="../../../sources.images.html#toycoronagraph.sources.images.SceneFits.family_of">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">family_of</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Always None: each extension's BUNIT decides."""</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="SceneFits.render">
+<a class="viewcode-back" href="../../../sources.images.html#toycoronagraph.sources.images.SceneFits.render">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        One image per extension.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            grid (toycoronagraph.scene.Grid): not used (the scene resamples).</span>
+<span class="sd">            star (toycoronagraph.scene.Star): not used.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: {extension name (lower case): SourceImage} with each header's unit, pixel scale</span>
+<span class="sd">                (arcsec) and wavelength (m).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: an extension's BUNIT is not understood.</span>
+<span class="sd">        """</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">()</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">c</span><span class="p">[</span><span class="s2">"images"</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">"headers"</span><span class="p">][</span><span class="n">name</span><span class="p">]</span>
+            <span class="n">unit</span><span class="p">,</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">header_unit</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> [</span><span class="si">%s</span><span class="s2">]: unknown BUNIT </span><span class="si">%r</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="n">name</span><span class="p">,</span> <span class="n">raw</span><span class="p">))</span>
+            <span class="n">scale</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_header_scale_and_wavelength</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+            <span class="n">out</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">SourceImage</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">pixel_scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="n">lam</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> [</span><span class="si">%s</span><span class="s2">]"</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.lazuli &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/lazuli';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.lazuli</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.lazuli</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">The Lazuli space telescope (UASAL; its configuration packages call it "Ultramarine", UM), computed with prysm.</span>
+
+<span class="sd">    [[coronagraph]]</span>
+<span class="sd">    type = "lazuli"</span>
+<span class="sd">    charge = 0                  # 0: the telescope alone; even &gt;= 2: a vortex mask and a Lyot stop</span>
+<span class="sd">    wavelengths = ["632 nm"]    # "auto": [observation] wavelength</span>
+<span class="sd">    throughput = "auto"         # weights from the mirror, filter and detector curves of the configs</span>
+
+<span class="sd">The telescope and its wide-field coronagraph camera (WCC) come from the UASAL configuration</span>
+<span class="sd">packages, read once (lazuli_parameters): config_um (focal length f_eff, mirror coatings) and</span>
+<span class="sd">config_um_wcc (pupil sampling, beam size on M1, detector, filter). The pupil (pupil()) is a circle of</span>
+<span class="sd">diameter D = the beam size on M1 (3.0 m) with an anti-aliased (gray) edge, filling pupil_samples x</span>
+<span class="sd">pupil_samples samples (x along the columns, y along the rows, centred on the array).</span>
+<span class="sd">OPD: an optional wavefront error map (opd) adds Lazuli's aberrations. Without one (the default) the</span>
+<span class="sd">optics are ideal: a perfect telescope and, with a charge, an ideal coronagraph. The mirror OPD maps</span>
+<span class="sd">of the configs ($UASAL_ARCHIVE) are not bundled.</span>
+
+<span class="sd">A point source at angle (theta_x, theta_y), one wavelength at a time (LazuliBackend.source):</span>
+<span class="sd">    pupil field   A exp(2 pi i (OPD + theta_x x + theta_y y) / lambda);</span>
+<span class="sd">    coronagraph   charge &gt;= 2: an ideal vortex (prysm's multi-resolution focal-plane propagation)</span>
+<span class="sd">                  then a circular Lyot stop of lyot_mask_size D; charge 0: nothing;</span>
+<span class="sd">    image         prysm's matrix DFT (MDFT) onto the image pixels; a pixel is pixel_scale scene</span>
+<span class="sd">                  lambda/D, i.e. pixel_scale (wavelength0 / diameter0) f_eff in the focal plane</span>
+<span class="sd">                  (only the angle matters).</span>
+<span class="sd">The image is the weighted sum over the wavelengths. The image size must be odd: the star then sits</span>
+<span class="sd">on the central pixel, which is prysm's centre n//2 as well as toycoronagraph's (n-1)/2, so the images</span>
+<span class="sd">compare with prysm's pixel by pixel. Intensities follow toycoronagraph.optics: each pixel holds</span>
+<span class="sd">|field|^2 / sum(A^2), the fraction of the source's light entering the aperture (prysm's executor</span>
+<span class="sd">is unitary), so an unocculted source sums to 1 over the whole focal plane at every wavelength.</span>
+<span class="sd">The focal field of P pupil samples repeats every P lambda/D (Lazuli's, at each wavelength): every</span>
+<span class="sd">source is repeated P lambda/D away along x and y. optics_from_table refuses a sampling whose period</span>
+<span class="sd">at the shortest wavelength does not clear the PSF frames (pupil samples are cheap; aliasing is not).</span>
+
+<span class="sd">The Lazuli team's get_psf is here too (get_psf, on prysm 0.22, its inputs from tele_data), with</span>
+<span class="sd">the wavelengths in um, prysm's unit (their version multiplies them by 1e-3, so it needs nm). It is</span>
+<span class="sd">charge 0 of the backend:</span>
+<span class="sd">    tele_data['Aperture'], ['dx'], ['fnum']   pupil(), its sample D / pupil_samples, f_eff / D</span>
+<span class="sd">    tele_data['OPD']                          opd (a map in nm)</span>
+<span class="sd">    tele_data['Pixsize'] / oversample         the image pixel: [grid] pixel_scale (detector_pixel_scale()</span>
+<span class="sd">                                              gives the WCC detector's)</span>
+<span class="sd">    tele_data['Wavelengths']                  wavelengths: um there; m here, or text ("0.632 um", "632 nm")</span>
+<span class="sd">    tele_data['Throughput']                   throughput ("auto": spectral_weights)</span>
+<span class="sd">    shift                                     moves get_psf's focal grid by +shift; here the source moves</span>
+<span class="sd">                                              instead, to -shift</span>
+<span class="sd">get_psf normalises each wavelength's PSF and the weighted sum to 1 over its own image; the backend</span>
+<span class="sd">normalises each wavelength to the light entering the aperture, which keeps the light falling outside</span>
+<span class="sd">the image (and the coronagraph's throughput).</span>
+
+<span class="sd">This is the only module importing prysm and the config packages; toycoronagraph imports it when a</span>
+<span class="sd">"lazuli" coronagraph is used (Optics.lazuli names it as its module).</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleNamespace</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">prysm.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">antialias</span><span class="p">,</span> <span class="n">circle_sdf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">prysm.propagation</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">Wavefront</span><span class="p">,</span> <span class="n">prepare_executor</span><span class="p">,</span> <span class="n">prepare_multiresolution</span><span class="p">,</span> <span class="n">unit_cell_focal_grid</span><span class="p">,</span>
+                               <span class="n">to_fpm_and_back_multiresolution</span><span class="p">,</span> <span class="n">focus_dft</span><span class="p">,</span> <span class="n">vortex_phase_mask</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">AUTO</span><span class="p">,</span> <span class="n">RAD_TO_ARCSEC</span><span class="p">,</span> <span class="n">ParamError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.optics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optics</span><span class="p">,</span> <span class="n">register_backend</span><span class="p">,</span> <span class="n">MIN_SAMPLING</span><span class="p">,</span> <span class="n">SamplingWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.psf</span><span class="w"> </span><span class="kn">import</span> <span class="n">extended_frame_size</span>
+
+<span class="c1"># Vortex propagation (prysm.propagation.prepare_multiresolution): the coarsest level spans the whole</span>
+<span class="c1"># focal plane at Nyquist (unit_cell_focal_grid), each finer level zooms 4x into the singularity. Against</span>
+<span class="c1"># finer settings (coarse level at 4 samples per lambda/D, 5 levels of 512 samples) the PSFs differ by</span>
+<span class="c1"># &lt; 5e-6 of a source's light (charges 2 and 6, pupil_samples 128 and 256), and the on-axis leak (3e-5 at</span>
+<span class="c1"># 128 samples, 2e-6 at 512: the gray pupil edge) by ~5% of itself.</span>
+<span class="n">_VORTEX_LEVELS</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">_VORTEX_FINE_SAMPLES</span> <span class="o">=</span> <span class="mi">256</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_quantity</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A "parsed" config value in a unit.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value (dict): {"value": number, "unit": astropy unit text}, as config_um's load_config_values("parsed")</span>
+<span class="sd">            gives it.</span>
+<span class="sd">        unit (str): the wanted unit, e.g. "m".</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: the value in unit.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s2">"value"</span><span class="p">],</span> <span class="n">value</span><span class="p">[</span><span class="s2">"unit"</span><span class="p">])</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_csv_curve</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">header_lines</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A transmission curve from a CSV file of wavelengths in nm and values.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): the file, e.g. config_um's coatings/NIST_1st_surface_Al.csv ("Wavelength nm,Specular Reflectance").</span>
+<span class="sd">        header_lines (int): lines to skip before the data.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: wavelengths ((n,) float64, m) and values ((n,) float64, 0-1).</span>
+<span class="sd">    """</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">","</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="n">header_lines</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_fits_curve</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A transmission curve from a FITS table with WAVELENGTH and THROUGHPUT columns (first extension).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): the file.</span>
+<span class="sd">        unit (str): the wavelength unit when the WAVELENGTH column declares none (TUNIT).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: wavelengths ((n,) float64, m) and values ((n,) float64).</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">h</span><span class="p">:</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">lam</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">"WAVELENGTH"</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="s2">"WAVELENGTH"</span><span class="p">]</span><span class="o">.</span><span class="n">unit</span> <span class="ow">or</span> <span class="n">unit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">lam</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">"THROUGHPUT"</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="lazuli_parameters">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.lazuli_parameters">[docs]</a>
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lazuli_parameters</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The Lazuli telescope and WCC parameters, read once from config_um and config_um_wcc.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SimpleNamespace:</span>
+<span class="sd">            diameter (float): pupil diameter D in m: the beam size on M1 (config_um_wcc</span>
+<span class="sd">                E2ES_default.optics.m1.beam_size; M1's clear aperture is larger, 3.065 m).</span>
+<span class="sd">            focal_length (float): effective focal length in m (config_um telescope.general.f_eff, at the</span>
+<span class="sd">                centre of the field; config_um's f_number = 15 is a provisional design requirement).</span>
+<span class="sd">            pupil_samples (int): pupil samples across D (config_um_wcc E2ES_default.simulation.beam_sampling).</span>
+<span class="sd">            pixel_size (float): WCC detector pixel size in m (config_um_wcc common_params.sensor.pixel_size).</span>
+<span class="sd">            curves (dict): {name: (wavelengths (n,) float64 in m, values (n,) float64)} for "m1" (aluminium</span>
+<span class="sd">                reflectance), "m2", "m3", "m4" (silver reflectance), "filter" (SDSS r') and "qe" (detector).</span>
+<span class="sd">    """</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">config_um</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">config_um_wcc</span>
+    <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>  <span class="c1"># the mirror OPD map paths need $UASAL_ARCHIVE, not used here</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">".*UASAL_ARCHIVE"</span><span class="p">)</span>
+        <span class="n">telescope</span> <span class="o">=</span> <span class="n">config_um</span><span class="o">.</span><span class="n">load_config_values</span><span class="p">(</span><span class="s2">"parsed"</span><span class="p">)[</span><span class="s2">"telescope"</span><span class="p">]</span>
+        <span class="n">wcc</span> <span class="o">=</span> <span class="n">config_um_wcc</span><span class="o">.</span><span class="n">load_config_values</span><span class="p">(</span><span class="s2">"parsed"</span><span class="p">)</span>
+    <span class="n">um_data</span><span class="p">,</span> <span class="n">wcc_data</span> <span class="o">=</span> <span class="n">config_um</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(),</span> <span class="n">config_um_wcc</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">()</span>
+    <span class="n">mirrors</span> <span class="o">=</span> <span class="n">telescope</span><span class="p">[</span><span class="s2">"optics"</span><span class="p">]</span>
+    <span class="n">curves</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"m1"</span><span class="p">:</span> <span class="n">_csv_curve</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">um_data</span><span class="p">,</span> <span class="n">mirrors</span><span class="p">[</span><span class="s2">"m1"</span><span class="p">][</span><span class="s2">"coating_refl"</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)}</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"m2"</span><span class="p">,</span> <span class="s2">"m3"</span><span class="p">,</span> <span class="s2">"m4"</span><span class="p">):</span>  <span class="c1"># the silver table gives no wavelength unit; its 300-2500 range is nm</span>
+        <span class="n">curves</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">_fits_curve</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">um_data</span><span class="p">,</span> <span class="n">mirrors</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="s2">"coating_refl"</span><span class="p">]),</span> <span class="s2">"nm"</span><span class="p">)</span>
+    <span class="n">curves</span><span class="p">[</span><span class="s2">"filter"</span><span class="p">]</span> <span class="o">=</span> <span class="n">_fits_curve</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wcc_data</span><span class="p">,</span> <span class="n">wcc</span><span class="p">[</span><span class="s2">"WCC_ETC"</span><span class="p">][</span><span class="s2">"filters"</span><span class="p">][</span><span class="s2">"filter"</span><span class="p">]),</span> <span class="s2">"nm"</span><span class="p">)</span>
+    <span class="c1"># the config names ..._QE_curve.fits, but the package ships the same curve as .csv (nm, QE; no header)</span>
+    <span class="n">qe</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wcc_data</span><span class="p">,</span> <span class="n">wcc</span><span class="p">[</span><span class="s2">"common_params"</span><span class="p">][</span><span class="s2">"sensor"</span><span class="p">][</span><span class="s2">"qe"</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">".csv"</span>
+    <span class="n">curves</span><span class="p">[</span><span class="s2">"qe"</span><span class="p">]</span> <span class="o">=</span> <span class="n">_csv_curve</span><span class="p">(</span><span class="n">qe</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">SimpleNamespace</span><span class="p">(</span><span class="n">diameter</span><span class="o">=</span><span class="n">_quantity</span><span class="p">(</span><span class="n">wcc</span><span class="p">[</span><span class="s2">"E2ES_default"</span><span class="p">][</span><span class="s2">"optics"</span><span class="p">][</span><span class="s2">"m1"</span><span class="p">][</span><span class="s2">"beam_size"</span><span class="p">],</span> <span class="s2">"m"</span><span class="p">),</span>
+                           <span class="n">focal_length</span><span class="o">=</span><span class="n">_quantity</span><span class="p">(</span><span class="n">telescope</span><span class="p">[</span><span class="s2">"general"</span><span class="p">][</span><span class="s2">"f_eff"</span><span class="p">],</span> <span class="s2">"m"</span><span class="p">),</span>
+                           <span class="n">pupil_samples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">wcc</span><span class="p">[</span><span class="s2">"E2ES_default"</span><span class="p">][</span><span class="s2">"simulation"</span><span class="p">][</span><span class="s2">"beam_sampling"</span><span class="p">]),</span>
+                           <span class="n">pixel_size</span><span class="o">=</span><span class="n">_quantity</span><span class="p">(</span><span class="n">wcc</span><span class="p">[</span><span class="s2">"common_params"</span><span class="p">][</span><span class="s2">"sensor"</span><span class="p">][</span><span class="s2">"pixel_size"</span><span class="p">],</span> <span class="s2">"m"</span><span class="p">),</span> <span class="n">curves</span><span class="o">=</span><span class="n">curves</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="detector_pixel_scale">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.detector_pixel_scale">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">detector_pixel_scale</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The angular size of a WCC detector pixel, pixel_size / focal_length (config_um's f_eff = 42.047 m:</span>
+<span class="sd">    0.018445 arcsec): e.g. for [grid] pixel_scale. Inside the backend the focal length cancels (only</span>
+<span class="sd">    angles matter).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: arcsec per detector pixel.</span>
+<span class="sd">    """</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">lazuli_parameters</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">pixel_size</span><span class="o">/</span><span class="n">t</span><span class="o">.</span><span class="n">focal_length</span><span class="o">*</span><span class="n">RAD_TO_ARCSEC</span></div>
+
+
+
+<div class="viewcode-block" id="spectral_weights">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.spectral_weights">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">spectral_weights</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The relative weight of each wavelength through Lazuli and the WCC: M1 aluminium x M2-M4 silver</span>
+<span class="sd">    reflectance x SDSS r' filter x detector QE, interpolated at the wavelengths (0 outside a curve),</span>
+<span class="sd">    times the width of the band each wavelength stands for (halfway to its neighbours, as far again</span>
+<span class="sd">    beyond the first and last: np.gradient of the sorted wavelengths). The weighted sum is then the</span>
+<span class="sd">    band integral however the band is sampled; evenly spaced wavelengths get the curves' product alone.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        wavelengths (sequence of float): wavelengths in m, in any order (one wavelength: weight 1).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: (n,) float64 weights, summing to 1.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: no light at any of the wavelengths (all outside the r' band, about 540-730 nm).</span>
+<span class="sd">    """</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">lazuli_parameters</span><span class="p">()</span><span class="o">.</span><span class="n">curves</span><span class="o">.</span><span class="n">values</span><span class="p">()],</span>
+                      <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lam</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
+        <span class="n">width</span><span class="p">[</span><span class="n">order</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">order</span><span class="p">])</span>
+        <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="o">*</span><span class="n">width</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">weights</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Lazuli: no light through the WCC's r' filter at </span><span class="si">%s</span><span class="s2"> nm: give wavelengths in the band "</span>
+                         <span class="s2">"(about 540-730 nm), or the throughput explicitly"</span> <span class="o">%</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">"</span><span class="si">%.4g</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mf">1e9</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lam</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">weights</span><span class="o">/</span><span class="n">weights</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="pupil">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.pupil">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pupil</span><span class="p">(</span><span class="n">samples</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The Lazuli pupil: a circle of diameter D (the beam size on M1) with an anti-aliased (gray) edge,</span>
+<span class="sd">    centred on the array (so the circle touching its edges is symmetric; prysm's grids put 0 at n//2).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        samples (int): Pupil samples across D.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: x, y ((P, P) float64 pupil coordinates in mm; x along the columns, y along the rows) and</span>
+<span class="sd">            the aperture ((P, P) float64 amplitude, 0 to 1).</span>
+<span class="sd">    """</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">lazuli_parameters</span><span class="p">()</span><span class="o">.</span><span class="n">diameter</span><span class="o">*</span><span class="mf">1e3</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">samples</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">D</span><span class="o">/</span><span class="n">samples</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">antialias</span><span class="p">(</span><span class="n">circle_sdf</span><span class="p">(</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)),</span> <span class="n">D</span><span class="o">/</span><span class="n">samples</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="read_opd">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.read_opd">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_opd</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    An OPD (wavefront error) map over the pupil diameter.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): a FITS file (primary HDU, in its BUNIT, converted with astropy; nm without BUNIT) or a</span>
+<span class="sd">            .npy file (nm). The map is square, its rows along y and its columns along x.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: (n, n) float64 OPD in nm (NaN, e.g. outside the pupil, set to 0).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: the map is not square and 2-D, or its BUNIT is not a length.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".npy"</span><span class="p">):</span>
+        <span class="n">opd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">h</span><span class="p">:</span>
+            <span class="n">opd</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"BUNIT"</span><span class="p">,</span> <span class="s2">"nm"</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">nm</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">opd</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">opd</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">opd</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: an OPD map must be a square 2-D array (got shape </span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">opd</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">opd</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="pupil_samples">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.pupil_samples">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pupil_samples</span><span class="p">(</span><span class="n">opd</span><span class="p">,</span> <span class="n">requested</span><span class="o">=</span><span class="n">AUTO</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The number of pupil samples across the aperture.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        opd (str): the OPD map file; "" for none.</span>
+<span class="sd">        requested (int or str): [[coronagraph]] pupil_samples; "auto": the OPD map's size, else the config's.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        int: the OPD map's size if there is one, else requested, else config_um_wcc's beam_sampling.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: requested differs from the OPD map's size, or the map is not valid (see read_opd).</span>
+<span class="sd">        OSError: the OPD map cannot be read.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">opd</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">read_opd</span><span class="p">(</span><span class="n">opd</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">requested</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"pupil_samples = </span><span class="si">%d</span><span class="s2"> but the OPD map </span><span class="si">%s</span><span class="s2"> is </span><span class="si">%d</span><span class="s2"> x </span><span class="si">%d</span><span class="s2">: set pupil_samples = </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"</span><span class="s2">"</span>
+                             <span class="o">%</span> <span class="p">(</span><span class="n">requested</span><span class="p">,</span> <span class="n">opd</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">lazuli_parameters</span><span class="p">()</span><span class="o">.</span><span class="n">pupil_samples</span> <span class="k">if</span> <span class="n">requested</span> <span class="o">==</span> <span class="n">AUTO</span> <span class="k">else</span> <span class="n">requested</span></div>
+
+
+
+<div class="viewcode-block" id="optics_from_table">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.optics_from_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">optics_from_table</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">img_pixel</span><span class="p">,</span> <span class="n">psf_range</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">size_fix</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The Optics of a "lazuli" [[coronagraph]] table, its "auto" settings resolved.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        values (dict): the table's values, every key of params.CORONAGRAPHS["lazuli"] present (defaults</span>
+<span class="sd">            filled in): charge, lyot_mask_size, wavelengths (list in m or "auto"), throughput (list or "auto"),</span>
+<span class="sd">            opd (str), pupil_samples (int or "auto").</span>
+<span class="sd">        img_pixel (int): Number of pixels on one edge of the image (odd).</span>
+<span class="sd">        psf_range (float): Half-width of the image, in scene lambda/D.</span>
+<span class="sd">        wavelength (float): The scene's wavelength in m ([observation] wavelength; "auto" wavelengths use it).</span>
+<span class="sd">        diameter (float): The scene's telescope diameter in m ([observation] diameter).</span>
+<span class="sd">        size_fix (str): How the user makes the image size odd, with two %d for the odd sizes around</span>
+<span class="sd">            img_pixel, e.g. "set [grid] size = %d or %d (the image is resampled onto it)".</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Optics: see Optics.lazuli.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ParamError: img_pixel is even, or the focal field's period (pupil samples x Lazuli's lambda/D at the</span>
+<span class="sd">            shortest wavelength) does not clear the PSF frames: the farthest pixel of a star-centred radial</span>
+<span class="sd">            frame (psf.extended_frame_size) from a source at the image edge, (N-1)/2 + (M-1)/2 pixels.</span>
+
+<span class="sd">    Warns:</span>
+<span class="sd">        SamplingWarning: fewer than MIN_SAMPLING x 8/3 pupil samples per lambda/D of the image's half-width</span>
+<span class="sd">            (the PSFs' far wings come out too low near the image edge; see optics.MIN_SAMPLING).</span>
+<span class="sd">        ValueError: "auto" throughput with no light at the wavelengths (spectral_weights), an OPD map that</span>
+<span class="sd">            is not square and 2-D or whose BUNIT is not a length (read_opd), or pupil_samples differing</span>
+<span class="sd">            from the OPD map's size.</span>
+<span class="sd">        OSError: the OPD map cannot be read (e.g. FileNotFoundError).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">img_pixel</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"[[coronagraph]] lazuli needs an odd image size (got </span><span class="si">%d</span><span class="s2">) so the star sits on a pixel as "</span>
+                         <span class="s2">"in prysm: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">img_pixel</span><span class="p">,</span> <span class="n">size_fix</span> <span class="o">%</span> <span class="p">(</span><span class="n">img_pixel</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">img_pixel</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="n">wavelengths</span> <span class="o">=</span> <span class="p">[</span><span class="n">wavelength</span><span class="p">]</span> <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="s2">"wavelengths"</span><span class="p">]</span> <span class="o">==</span> <span class="n">AUTO</span> <span class="k">else</span> <span class="n">values</span><span class="p">[</span><span class="s2">"wavelengths"</span><span class="p">]</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">spectral_weights</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">)</span> <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="s2">"throughput"</span><span class="p">]</span> <span class="o">==</span> <span class="n">AUTO</span> <span class="k">else</span> <span class="n">values</span><span class="p">[</span><span class="s2">"throughput"</span><span class="p">]</span>
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">pupil_samples</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="s2">"opd"</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="s2">"pupil_samples"</span><span class="p">])</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">samples</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">)</span><span class="o">/</span><span class="n">lazuli_parameters</span><span class="p">()</span><span class="o">.</span><span class="n">diameter</span><span class="o">/</span><span class="p">(</span><span class="n">wavelength</span><span class="o">/</span><span class="n">diameter</span><span class="p">)</span>  <span class="c1"># scene lambda/D</span>
+    <span class="n">reach</span> <span class="o">=</span> <span class="p">((</span><span class="n">img_pixel</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">extended_frame_size</span><span class="p">(</span><span class="n">img_pixel</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">psf_range</span><span class="o">/</span><span class="n">img_pixel</span>  <span class="c1"># scene lambda/D</span>
+    <span class="k">if</span> <span class="n">period</span> <span class="o">&lt;=</span> <span class="n">reach</span><span class="p">:</span>
+        <span class="n">needed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">samples</span><span class="o">*</span><span class="n">reach</span><span class="o">/</span><span class="n">period</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">fix</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"use an OPD map of at least </span><span class="si">%d</span><span class="s2"> x </span><span class="si">%d</span><span class="s2"> samples"</span> <span class="o">%</span> <span class="p">(</span><span class="n">needed</span><span class="p">,</span> <span class="n">needed</span><span class="p">)</span> <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="s2">"opd"</span><span class="p">]</span> <span class="k">else</span>
+               <span class="s2">"set pupil_samples &gt;= </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="n">needed</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"[[coronagraph]] lazuli: with </span><span class="si">%d</span><span class="s2"> pupil samples the focal field repeats every </span><span class="si">%.4g</span><span class="s2"> lambda/D "</span>
+                         <span class="s2">"(at </span><span class="si">%.4g</span><span class="s2"> nm), within the </span><span class="si">%.4g</span><span class="s2"> lambda/D between a source and the farthest pixel of the PSF "</span>
+                         <span class="s2">"frames, so every source would also appear that far away: </span><span class="si">%s</span><span class="s2">, or a smaller image"</span>
+                         <span class="o">%</span> <span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">)</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span> <span class="n">reach</span><span class="p">,</span> <span class="n">fix</span><span class="p">))</span>
+    <span class="n">per_lambda_d</span> <span class="o">=</span> <span class="n">period</span><span class="o">/</span><span class="n">psf_range</span>  <span class="c1"># pupil samples per lambda/D (Lazuli's, shortest wavelength) of the half-width</span>
+    <span class="k">if</span> <span class="n">per_lambda_d</span> <span class="o">&lt;</span> <span class="n">MIN_SAMPLING</span><span class="o">*</span><span class="mi">8</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">SamplingWarning</span><span class="p">(</span>
+            <span class="s2">"[[coronagraph]] lazuli: </span><span class="si">%d</span><span class="s2"> pupil samples give </span><span class="si">%.3g</span><span class="s2"> samples per lambda/D of the image's </span><span class="si">%.4g</span><span class="s2"> lambda/D "</span>
+            <span class="s2">"half-width (at </span><span class="si">%.4g</span><span class="s2"> nm): the PSFs' far wings come out a few </span><span class="si">%%</span><span class="s2"> too low near the image edge. For about "</span>
+            <span class="s2">"1</span><span class="si">%%</span><span class="s2">, set pupil_samples &gt;= </span><span class="si">%d</span><span class="s2">, or use a smaller image"</span>
+            <span class="o">%</span> <span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">per_lambda_d</span><span class="p">,</span> <span class="n">psf_range</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">)</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">samples</span><span class="o">*</span><span class="n">MIN_SAMPLING</span><span class="o">*</span><span class="mi">8</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="n">per_lambda_d</span><span class="p">)))),</span>
+            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Optics</span><span class="o">.</span><span class="n">lazuli</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="s2">"charge"</span><span class="p">],</span> <span class="n">img_pixel</span><span class="p">,</span> <span class="n">psf_range</span><span class="p">,</span> <span class="n">wavelengths</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span>
+                         <span class="n">values</span><span class="p">[</span><span class="s2">"lyot_mask_size"</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="s2">"opd"</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="LazuliBackend">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.LazuliBackend">[docs]</a>
+<span class="nd">@register_backend</span><span class="p">(</span><span class="s1">'lazuli'</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LazuliBackend</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The Lazuli telescope, alone (charge 0) or with an ideal vortex coronagraph (see the module docstring).</span>
+
+<span class="sd">    A source enters only through the tilt across the pupil, whose width is D: for a fixed image pixel</span>
+<span class="sd">    the field is a Fourier integral over the pupil, so the intensity is band-limited in the source</span>
+<span class="sd">    angle at D / lambda cycles per radian, i.e. (D / diameter0) (wavelength0 / lambda) cycles per scene</span>
+<span class="sd">    lambda/D. Without an OPD map, the pupil and the stops are circles: rotationally symmetric PSFs.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        optics (Optics): kind 'lazuli' (see Optics.lazuli).</span>
+<span class="sd">        rotationally_symmetric (bool): True without an OPD map.</span>
+<span class="sd">        bandlimit (float): (D / diameter0) (wavelength0 / shortest wavelength), cycles per scene lambda/D.</span>
+<span class="sd">        lambda_d (float): the scene's lambda/D, wavelength0 / diameter0, in radians.</span>
+<span class="sd">        pupil_dx (float): pupil sample, in mm.</span>
+<span class="sd">        efl (float): focal length (config_um's f_eff), in mm.</span>
+<span class="sd">        um_per_lambda_d (float): focal-plane microns per scene lambda/D.</span>
+<span class="sd">        x, y (np.ndarray): (P, P) float64 pupil coordinates in mm (x along the columns, y along the rows).</span>
+<span class="sd">        aperture (np.ndarray): (P, P) float64 circle of diameter D (anti-aliased edge).</span>
+<span class="sd">        opd (np.ndarray): (P, P) float64 OPD in nm (zeros without a map).</span>
+<span class="sd">        lyot_stop (np.ndarray or None): (P, P) float64 circle of diameter lyot_mask_size D; None for charge 0.</span>
+<span class="sd">        entering (float): sum(aperture^2), the light entering the aperture (the intensity unit).</span>
+<span class="sd">        lyot_light (float): sum((aperture lyot_stop)^2), a source's light after the Lyot stop without the vortex</span>
+<span class="sd">            (the throughput's reference; for charge 0, entering).</span>
+<span class="sd">        vortex (callable or None): prysm's vortex_phase_mask(charge); None for charge 0.</span>
+<span class="sd">        channels (list): per wavelength, (wavelength in um, weight, multi-resolution vortex executor or None).</span>
+<span class="sd">        frame_executors (list): per wavelength, the MDFT onto the whole image.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optics</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Args:</span>
+<span class="sd">            optics (Optics): An Optics of kind 'lazuli' (see Optics.lazuli).</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optics</span> <span class="o">=</span> <span class="n">optics</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">optics</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">telescope</span> <span class="o">=</span> <span class="n">lazuli_parameters</span><span class="p">()</span>
+        <span class="n">n</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'pupil_samples'</span><span class="p">],</span> <span class="n">telescope</span><span class="o">.</span><span class="n">diameter</span><span class="o">*</span><span class="mf">1e3</span>  <span class="c1"># samples, mm</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambda_d</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="s1">'scene_wavelength'</span><span class="p">]</span><span class="o">/</span><span class="n">p</span><span class="p">[</span><span class="s1">'scene_diameter'</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pupil_dx</span> <span class="o">=</span> <span class="n">D</span><span class="o">/</span><span class="n">n</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">efl</span> <span class="o">=</span> <span class="n">telescope</span><span class="o">.</span><span class="n">focal_length</span><span class="o">*</span><span class="mf">1e3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">um_per_lambda_d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_d</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">efl</span><span class="o">*</span><span class="mf">1e3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rotationally_symmetric</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">p</span><span class="p">[</span><span class="s1">'opd'</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bandlimit</span> <span class="o">=</span> <span class="n">telescope</span><span class="o">.</span><span class="n">diameter</span><span class="o">/</span><span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'wavelengths'</span><span class="p">])</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_d</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aperture</span> <span class="o">=</span> <span class="n">pupil</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">opd</span> <span class="o">=</span> <span class="n">read_opd</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'opd'</span><span class="p">])</span> <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="s1">'opd'</span><span class="p">]</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entering</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aperture</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lyot_light</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vortex</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">entering</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="s1">'charge'</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span> <span class="o">=</span> <span class="n">antialias</span><span class="p">(</span><span class="n">circle_sdf</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'lyot_mask_size'</span><span class="p">]</span><span class="o">*</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">r</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">pupil_dx</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lyot_light</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">aperture</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vortex</span> <span class="o">=</span> <span class="n">vortex_phase_mask</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'charge'</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[(</span><span class="n">lam</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_multiresolution</span><span class="p">(</span><span class="n">lam</span><span class="o">*</span><span class="mf">1e6</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vortex</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+                         <span class="k">for</span> <span class="n">lam</span><span class="p">,</span> <span class="n">weight</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">'wavelengths'</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">'weights'</span><span class="p">])]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frame_executors</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">executor</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="n">optics</span><span class="o">.</span><span class="n">img_pixel</span><span class="p">,</span> <span class="n">optics</span><span class="o">.</span><span class="n">img_pixel</span><span class="p">))</span>
+                                <span class="k">for</span> <span class="n">lam</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_multiresolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        prysm's multi-resolution executor for the vortex mask at one wavelength.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wavelength (float): in um.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            prysm.propagation.MultiResolutionExecutor: _VORTEX_LEVELS levels, the coarsest spanning the whole</span>
+<span class="sd">                focal plane at Nyquist, the finer ones _VORTEX_FINE_SAMPLES across.</span>
+<span class="sd">        """</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aperture</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">focal_dx</span><span class="p">,</span> <span class="n">focal_samples</span> <span class="o">=</span> <span class="n">unit_cell_focal_grid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pupil_dx</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">pupil_dx</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">efl</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">prepare_multiresolution</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pupil_dx</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">focal_dx</span><span class="p">,</span> <span class="n">focal_samples</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">efl</span><span class="p">,</span>
+                                       <span class="n">_VORTEX_LEVELS</span><span class="p">,</span> <span class="n">fine_samples</span><span class="o">=</span><span class="n">_VORTEX_FINE_SAMPLES</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LazuliBackend.executor">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.LazuliBackend.executor">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">executor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        prysm's MDFT from the pupil onto a block of image pixels.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wavelength (float): in um.</span>
+<span class="sd">            center (tuple): (x, y) of the block's centre, in scene lambda/D from the star.</span>
+<span class="sd">            shape (tuple): (ny, nx) size of the block, in pixels.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            prysm.fttools.MDFT: its output pixel (row, col) is at x = center_x + (col - (nx-1)/2) pixel_scale,</span>
+<span class="sd">                y = center_y + (row - (ny-1)/2) pixel_scale.</span>
+<span class="sd">        """</span>
+        <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">shape</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">optics</span><span class="o">.</span><span class="n">pixel_scale</span>
+        <span class="c1"># prysm puts output sample n//2 at the shift, toycoronagraph the block centre at (n-1)/2 (half a pixel</span>
+        <span class="c1"># lower for even n): shift to where sample n//2 is</span>
+        <span class="n">shift</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">((</span><span class="n">c</span><span class="o">+</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">um_per_lambda_d</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">prepare_executor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pupil_dx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aperture</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">s</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">um_per_lambda_d</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">efl</span><span class="p">,</span> <span class="n">focal_shift</span><span class="o">=</span><span class="n">shift</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LazuliBackend.source">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.LazuliBackend.source">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        A point source at (x, y) scene lambda/D, through the telescope and the coronagraph.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x, y (float): Source position, in scene lambda/D from the star (x along columns, y along rows).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            LazuliSource: Its exit fields (after the Lyot stop with a charge), their total light and the</span>
+<span class="sd">                throughput.</span>
+<span class="sd">        """</span>
+        <span class="n">tilt</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_d</span><span class="o">*</span><span class="mf">1e6</span>  <span class="c1"># nm (pupil coordinates in mm, angles in rad)</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">stack</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">:</span>
+            <span class="n">field</span> <span class="o">=</span> <span class="n">Wavefront</span><span class="o">.</span><span class="n">from_amp_and_phase</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aperture</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opd</span><span class="o">+</span><span class="n">tilt</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pupil_dx</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+            <span class="k">if</span> <span class="n">stack</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">field</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span><span class="o">*</span><span class="n">to_fpm_and_back_multiresolution</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vortex</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span>
+            <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">LazuliSource</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LazuliBackend.unocculted">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.LazuliBackend.unocculted">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unocculted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The star without the vortex (the Lyot stop kept when there is a charge): the reference of the</span>
+<span class="sd">        contrast_peak unit.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            LazuliSource: The star through the telescope (and the Lyot stop); throughput 1.</span>
+<span class="sd">        """</span>
+        <span class="n">stop</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">lyot_stop</span>
+        <span class="k">return</span> <span class="n">LazuliSource</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="n">stop</span><span class="o">*</span><span class="n">Wavefront</span><span class="o">.</span><span class="n">from_amp_and_phase</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aperture</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opd</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pupil_dx</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+                                   <span class="k">for</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">])</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LazuliSource">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.LazuliSource">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LazuliSource</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A point source through the Lazuli telescope: its fields leaving the last pupil, one per wavelength,</span>
+<span class="sd">    focused onto any block of the image pixel grid.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        total (float): Total light over the whole focal plane (Parseval: the exit fields' light, weighted</span>
+<span class="sd">            over the wavelengths), in the package's units.</span>
+<span class="sd">        throughput (float): The source's light leaving the system relative to the same source without</span>
+<span class="sd">            the vortex (1 for charge 0).</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">fields</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Args:</span>
+<span class="sd">            backend (LazuliBackend): The backend (channels, entering, lyot_light, executor()).</span>
+<span class="sd">            fields (list): Per wavelength, the (P, P) complex128 field leaving the last pupil.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">=</span> <span class="n">backend</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fields</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span><span class="p">),</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">backend</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="n">fields</span><span class="p">))</span><span class="o">/</span><span class="n">backend</span><span class="o">.</span><span class="n">entering</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">throughput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="o">*</span><span class="n">backend</span><span class="o">.</span><span class="n">entering</span><span class="o">/</span><span class="n">backend</span><span class="o">.</span><span class="n">lyot_light</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">executors</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The weighted sum over the wavelengths of |MDFT(field)|^2, in the package's units.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            executors (list): Per wavelength, the MDFT onto the wanted pixels.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: (ny, nx) float64 intensity (rows = y, columns = x).</span>
+<span class="sd">        """</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">focus_dft</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">ex</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">ex</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fields</span><span class="p">,</span> <span class="n">executors</span><span class="p">))</span><span class="o">/</span><span class="n">b</span><span class="o">.</span><span class="n">entering</span>
+
+<div class="viewcode-block" id="LazuliSource.block">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.LazuliSource.block">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Intensity on a block of the image pixel grid (pixel size optics.pixel_scale).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            center (tuple): (x, y) of the block's centre, in scene lambda/D from the star.</span>
+<span class="sd">            shape (tuple): (ny, nx) size of the block, in pixels.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: (ny, nx) float64 intensity (rows = y, columns = x), in the package's units.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">executor</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span> <span class="k">for</span> <span class="n">lam</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">channels</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="LazuliSource.frame">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.LazuliSource.frame">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">frame</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""np.ndarray: (img_pixel, img_pixel) float64 intensity on the whole image."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">frame_executors</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="tele_data">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.tele_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">tele_data</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">,</span> <span class="n">opd</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="n">AUTO</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The inputs of get_psf for Lazuli, from the same configuration values as the backend.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        wavelengths (sequence of float): Wavelengths in um (prysm's unit), e.g. [0.632].</span>
+<span class="sd">        opd (str): An OPD map file (see read_opd); "" for none (ideal optics).</span>
+<span class="sd">        samples (int or str): Pupil samples across D; "auto": the OPD map's size, else the configuration's.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Aperture ((P, P) float64 amplitude, pupil()), OPD ((P, P) float64, nm), Wavelengths (list of</span>
+<span class="sd">            float, um), dx (float, pupil sample in mm), fnum (float, f_eff / D), Pixsize (float, WCC detector</span>
+<span class="sd">            pixel in um), Throughput ((n,) float64 weights, spectral_weights).</span>
+<span class="sd">    """</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">lazuli_parameters</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">pupil_samples</span><span class="p">(</span><span class="n">opd</span><span class="p">,</span> <span class="n">samples</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"Aperture"</span><span class="p">:</span> <span class="n">pupil</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">"OPD"</span><span class="p">:</span> <span class="n">read_opd</span><span class="p">(</span><span class="n">opd</span><span class="p">)</span> <span class="k">if</span> <span class="n">opd</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)),</span>
+            <span class="s2">"Wavelengths"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">),</span> <span class="s2">"dx"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">diameter</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="n">n</span><span class="p">,</span> <span class="s2">"fnum"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">focal_length</span><span class="o">/</span><span class="n">t</span><span class="o">.</span><span class="n">diameter</span><span class="p">,</span>
+            <span class="s2">"Pixsize"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">pixel_size</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="s2">"Throughput"</span><span class="p">:</span> <span class="n">spectral_weights</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-6</span><span class="p">)}</span></div>
+
+
+
+<div class="viewcode-block" id="get_psf">
+<a class="viewcode-back" href="../../lazuli.html#toycoronagraph.lazuli.get_psf">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_psf</span><span class="p">(</span><span class="n">tele_data</span><span class="p">,</span> <span class="n">oversample</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">samples</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The Lazuli team's get_psf on prysm 0.22 (prepare_executor + focus_dft replace focus_fixed_sampling;</span>
+<span class="sd">    numpy instead of cupy), with tele_data['Wavelengths'] in um (their version multiplies the</span>
+<span class="sd">    wavelengths by 1e-3, so it needs them in nm).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tele_data (dict): Aperture ((P, P) amplitude), OPD ((P, P) nm), Wavelengths (list, um), dx (pupil</span>
+<span class="sd">            sample, mm), fnum (focal length / (dx P)), Pixsize (focal-plane pixel, um), Throughput (a</span>
+<span class="sd">            float, or one weight per wavelength); see tele_data().</span>
+<span class="sd">        oversample (int): Pixels per Pixsize.</span>
+<span class="sd">        shift (tuple): (x, y) shift of the focal grid, um.</span>
+<span class="sd">        samples (int): Pixels on one edge of the image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: (samples, samples) float64 PSF (rows y, columns x; the star, for shift (0, 0), at</span>
+<span class="sd">            pixel samples // 2): each wavelength's PSF normalised to 1 over the image, weighted by the</span>
+<span class="sd">            throughput, and the sum normalised to 1.</span>
+<span class="sd">    """</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">tele_data</span><span class="p">[</span><span class="s1">'dx'</span><span class="p">]</span><span class="o">*</span><span class="n">tele_data</span><span class="p">[</span><span class="s1">'Aperture'</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">tele_data</span><span class="p">[</span><span class="s1">'Throughput'</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">tele_data</span><span class="p">[</span><span class="s1">'Wavelengths'</span><span class="p">]))</span>
+    <span class="n">psf</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">weight</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tele_data</span><span class="p">[</span><span class="s1">'Wavelengths'</span><span class="p">],</span> <span class="n">weights</span><span class="p">):</span>
+        <span class="n">wavefront</span> <span class="o">=</span> <span class="n">Wavefront</span><span class="o">.</span><span class="n">from_amp_and_phase</span><span class="p">(</span><span class="n">tele_data</span><span class="p">[</span><span class="s1">'Aperture'</span><span class="p">],</span> <span class="n">tele_data</span><span class="p">[</span><span class="s1">'OPD'</span><span class="p">],</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">tele_data</span><span class="p">[</span><span class="s1">'dx'</span><span class="p">])</span>
+        <span class="n">executor</span> <span class="o">=</span> <span class="n">wavefront</span><span class="o">.</span><span class="n">prepare_executor</span><span class="p">(</span><span class="n">tele_data</span><span class="p">[</span><span class="s1">'fnum'</span><span class="p">]</span><span class="o">*</span><span class="n">D</span><span class="p">,</span> <span class="n">tele_data</span><span class="p">[</span><span class="s1">'Pixsize'</span><span class="p">]</span><span class="o">/</span><span class="n">oversample</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="n">shift</span><span class="p">)</span>
+        <span class="n">flux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wavefront</span><span class="o">.</span><span class="n">focus_dft</span><span class="p">(</span><span class="n">executor</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">psf</span> <span class="o">=</span> <span class="n">psf</span> <span class="o">+</span> <span class="n">weight</span><span class="o">*</span><span class="n">flux</span><span class="o">/</span><span class="n">flux</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">psf</span><span class="o">/</span><span class="n">psf</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

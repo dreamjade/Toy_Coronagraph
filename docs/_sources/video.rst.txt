@@ -1,0 +1,4 @@
+Videos
+======
+
+.. automodule:: toycoronagraph.video

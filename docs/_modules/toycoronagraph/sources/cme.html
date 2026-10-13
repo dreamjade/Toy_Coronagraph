@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.sources.cme &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/sources/cme';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../sources.html" class="nav-link">toycoronagraph.sources</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.sources.cme</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.sources.cme</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">The CME module: a coronal mass ejection seen in starlight scattered by its electrons.</span>
+
+<span class="sd">The CME's shape is the model of astro_toolbox's cme_imaging (by iveydavis,</span>
+<span class="sd">https://github.com/iveydavis/astro_toolbox; ported here with the author's agreement):</span>
+<span class="sd">cme_mass_fraction() builds the share of the CME's mass in each pixel of a dim x dim box (dim</span>
+<span class="sd">odd, the star at pixel dim // 2), a crescent-shaped shell pointing along +x. Its electrons</span>
+<span class="sd">(mass / (mu_e x atomic mass unit)) scatter the starlight they receive at their projected</span>
+<span class="sd">distance r from the star, so each pixel's contrast (a fraction of the star's flux) is</span>
+
+<span class="sd">    N_e sigma_T / (4 pi r^2),</span>
+
+<span class="sd">zero for pixels inside the star. Thomson scattering is grey: the contrast holds in any band.</span>
+
+<span class="sd">With dim and extent "auto", the box is the scene's own grid (no resampling); otherwise its</span>
+<span class="sd">dim pixels span extent au and the image is resampled onto the scene grid.</span>
+
+<span class="sd">Newer cme_imaging versions (e.g. the halo/toroidal model) can be used directly instead: set</span>
+<span class="sd">toolbox_path (the model is then built by cme_imaging with cme_args), or pass an existing</span>
+<span class="sd">cme_imaging.Star with Cme.from_object(). Its contrast is read as grid_cme_photons * pix_res^2</span>
+<span class="sd">over the star's photon output, taken from the model's own stellar flux grid (flux(r) x 4 pi r^2).</span>
+<span class="sd">(cme_imaging's luminosity is 4 pi R^2 x radiance, without the factor pi of the surface flux, so</span>
+<span class="sd">its luminosity / photon_energy is pi too small; a note says so when the two differ.)</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">contextlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">gaussian_filter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span><span class="p">,</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">ParamError</span><span class="p">,</span> <span class="n">AUTO</span><span class="p">,</span> <span class="n">_QUANTITY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.sources</span><span class="w"> </span><span class="kn">import</span> <span class="n">Source</span><span class="p">,</span> <span class="n">register_source</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">SourceImage</span>
+
+
+<span class="c1"># ---------------------------------------------------------------- the geometry (ported from cme_imaging)</span>
+
+<div class="viewcode-block" id="cme_mass_fraction">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.cme_mass_fraction">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cme_mass_fraction</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">dR_factor</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">vertical_height_factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">horizontal_height_factor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">smear</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                      <span class="n">smear_sig</span><span class="o">=</span><span class="mf">3.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The share of the CME's mass in each pixel: cme_imaging's CME.build_cme_normalized_grid,</span>
+<span class="sd">    ported line by line (the same results, including its integer rounding).</span>
+
+<span class="sd">    The CME is a shell between the radii Rmin and Rmax (in pixels; they grow with dR_factor and</span>
+<span class="sd">    shift outwards with horizontal_height_factor), spanning +-45 degrees around +x, squeezed</span>
+<span class="sd">    vertically by vertical_height_factor; its upper half is mirrored to the lower half.</span>
+
+<span class="sd">    Method (on the upper-right quarter, rc = dim // 2 + 1 pixels on a side, dr = rc dR_factor):</span>
+<span class="sd">    for each layer j &lt; int(dr / 2), the edges r(phi) = R cos(2 phi), phi in [0, 45 deg], with</span>
+<span class="sd">    R = Rmin_j = dr (1 + horizontal_height_factor) + j and Rmax_j = dr (2 + horizontal_height_factor) - j,</span>
+<span class="sd">    are rounded to integer pixels; each column x = i is filled between the inner and outer edge</span>
+<span class="sd">    (from y = 0 beyond the inner edge's reach; a column without an edge point takes the mean of</span>
+<span class="sd">    the last edge sample found and the next one), each pixel holding the column's height, and the</span>
+<span class="sd">    layer is added with the weight sqrt(|Rmin_j - Rmax_j| xmax) j (xmax: the outer edge's x</span>
+<span class="sd">    samples, broadcast along the columns, as in cme_imaging; layer 0 has weight 0). Columns</span>
+<span class="sd">    whose edges are not defined yet (or beyond the box) are skipped; y edges left from the</span>
+<span class="sd">    previous column (or layer) are reused, as in cme_imaging.</span>
+
+<span class="sd">    Do not restructure: tests/scene_stage4_cme.py checks it against cme_imaging bit for bit.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dim (int): Pixels on a side; an even dim is made odd (+1), as in cme_imaging. The box must</span>
+<span class="sd">            hold some mass: at least 2 ceil(4 / dR_factor) - 1 px (39 at dR_factor = 0.2), so that</span>
+<span class="sd">            int(dr / 2) &gt;= 2 and layer 1 exists; a thin shell (small dR_factor) can need more,</span>
+<span class="sd">            when all its filled columns get the weight 0 (xmax = 0).</span>
+<span class="sd">        dR_factor (float): Shell thickness as a fraction of the half box (0 &lt; dR_factor &lt; 1).</span>
+<span class="sd">        vertical_height_factor (float): Vertical stretch of the shell.</span>
+<span class="sd">        horizontal_height_factor (float): Outward shift of the shell, in units of its thickness.</span>
+<span class="sd">        smear (bool): Smooth the result with a Gaussian of smear_sig pixels.</span>
+<span class="sd">        smear_sig (float): The Gaussian's sigma, in pixels.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: (dim, dim) float64 array summing to 1; rows = y, columns = x, the star at</span>
+<span class="sd">            pixel (dim // 2, dim // 2).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ParamError: dR_factor is not between 0 and 1, or the box holds no mass (dim too small for</span>
+<span class="sd">            dR_factor; cme_imaging then gives NaN everywhere): the message names a lower bound</span>
+<span class="sd">            for dim (a thin shell can need more).</span>
+<span class="sd">    """</span>
+    <span class="n">dim</span> <span class="o">+=</span> <span class="n">dim</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">dR_factor</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"cme: dR_factor = </span><span class="si">%g</span><span class="s2"> must be between 0 and 1"</span> <span class="o">%</span> <span class="n">dR_factor</span><span class="p">)</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dim</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># the quarter box, star at its pixel 0</span>
+    <span class="n">dr</span> <span class="o">=</span> <span class="n">rc</span><span class="o">*</span><span class="n">dR_factor</span>                   <span class="c1"># shell thickness, pixels</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">rc</span><span class="p">,</span> <span class="n">rc</span><span class="p">))</span>           <span class="c1"># the quarter (rows y, columns x after the transpose below)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">rc</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>               <span class="c1"># r = R cos(a phi): 0 at phi = 45 deg</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">dr</span><span class="o">/</span><span class="mi">2</span><span class="p">)):</span>
+        <span class="n">rmin_j</span> <span class="o">=</span> <span class="n">dr</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dr</span><span class="o">*</span><span class="n">horizontal_height_factor</span>
+        <span class="n">rmax_j</span> <span class="o">=</span> <span class="n">dr</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dr</span><span class="o">*</span><span class="n">horizontal_height_factor</span>
+        <span class="n">rmin</span><span class="p">,</span> <span class="n">rmax</span> <span class="o">=</span> <span class="n">rmin_j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">phi</span><span class="p">),</span> <span class="n">rmax_j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+        <span class="c1"># integer pixel coordinates of the inner and outer edges, from the tip (phi = 45 deg) inwards</span>
+        <span class="n">xmin</span> <span class="o">=</span> <span class="p">(</span><span class="n">rmin</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">ymin</span> <span class="o">=</span> <span class="p">(</span><span class="n">vertical_height_factor</span><span class="o">*</span><span class="n">rmin</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">xmax</span> <span class="o">=</span> <span class="p">(</span><span class="n">rmax</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">ymax</span> <span class="o">=</span> <span class="p">(</span><span class="n">vertical_height_factor</span><span class="o">*</span><span class="n">rmax</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># indexed [x, y] (transposed when added)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">rmax_j</span><span class="p">)):</span>  <span class="c1"># each column x = i: the shell's y range [yf_min, yf_max)</span>
+            <span class="n">idxmax</span><span class="p">,</span> <span class="n">idxmin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">xmax</span> <span class="o">==</span> <span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">xmin</span> <span class="o">==</span> <span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxmax</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># the outer edge reaches this column</span>
+                <span class="n">idxmaxsave</span> <span class="o">=</span> <span class="n">idxmax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">yf_max</span> <span class="o">=</span> <span class="n">ymax</span><span class="p">[</span><span class="n">idxmax</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">xmin</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+                    <span class="n">yf_min</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxmin</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">yf_min</span> <span class="o">=</span> <span class="n">ymin</span><span class="p">[</span><span class="n">idxmin</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+                    <span class="n">idxminsave</span> <span class="o">=</span> <span class="n">idxmin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxmin</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">xmin</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+                    <span class="n">yf_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">ymin</span><span class="p">[</span><span class="n">idxminsave</span><span class="p">]</span> <span class="o">+</span> <span class="n">ymin</span><span class="p">[</span><span class="n">idxminsave</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># no outer edge in this column: interpolate between the last ones found</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxmin</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">yf_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">ymax</span><span class="p">[</span><span class="n">idxmaxsave</span><span class="p">]</span> <span class="o">+</span> <span class="n">ymax</span><span class="p">[</span><span class="n">idxmaxsave</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="n">yf_min</span> <span class="o">=</span> <span class="n">ymin</span><span class="p">[</span><span class="n">idxmin</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+                    <span class="n">idxminsave</span> <span class="o">=</span> <span class="n">idxmin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxmin</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">xmin</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+                    <span class="n">yf_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">ymax</span><span class="p">[</span><span class="n">idxmaxsave</span><span class="p">]</span> <span class="o">+</span> <span class="n">ymax</span><span class="p">[</span><span class="n">idxmaxsave</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="n">yf_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">ymin</span><span class="p">[</span><span class="n">idxminsave</span><span class="p">]</span> <span class="o">+</span> <span class="n">ymin</span><span class="p">[</span><span class="n">idxminsave</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxmin</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">xmin</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+                    <span class="n">yf_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">ymax</span><span class="p">[</span><span class="n">idxmaxsave</span><span class="p">]</span> <span class="o">+</span> <span class="n">ymax</span><span class="p">[</span><span class="n">idxmaxsave</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="n">yf_min</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">try</span><span class="p">:</span>  <span class="c1"># (cme_imaging skips columns whose edges are not defined)</span>
+                <span class="n">subset</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">yf_min</span><span class="p">:</span><span class="n">yf_max</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">yf_max</span> <span class="o">-</span> <span class="n">yf_min</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">yf_max</span> <span class="o">==</span> <span class="n">yf_min</span><span class="p">:</span>
+                    <span class="n">subset</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">yf_max</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="n">grid</span> <span class="o">+=</span> <span class="n">subset</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">rmin_j</span> <span class="o">-</span> <span class="n">rmax_j</span><span class="p">)</span><span class="o">*</span><span class="n">xmax</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="o">*</span><span class="n">j</span>   <span class="c1"># (xmax broadcast along the columns)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">grid</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>  <span class="c1"># no layer of non-zero weight: cme_imaging divides 0 by 0 below</span>
+        <span class="n">rc_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">dR_factor</span><span class="p">))</span>      <span class="c1"># the smallest rc with int(dr/2) &gt;= 2, so that layer 1 exists</span>
+        <span class="n">rc_min</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rc_min</span><span class="o">*</span><span class="n">dR_factor</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span>   <span class="c1"># (4/dR_factor may be rounded down)</span>
+        <span class="n">need</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"at least </span><span class="si">%d</span><span class="s2"> px (a thin shell can need more)"</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rc_min</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">rc</span> <span class="o">&lt;</span> <span class="n">rc_min</span>
+                <span class="k">else</span> <span class="s2">"more than </span><span class="si">%d</span><span class="s2"> px (a thin shell)"</span> <span class="o">%</span> <span class="n">dim</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s1">'cme: a model box of </span><span class="si">%d</span><span class="s1"> px (dim; "auto": the [grid] size) holds no mass of the shell at '</span>
+                         <span class="s2">"dR_factor = </span><span class="si">%g</span><span class="s2">: it needs </span><span class="si">%s</span><span class="s2">; use a larger grid (or set dim and extent) or a larger dR_factor"</span>
+                         <span class="o">%</span> <span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">dR_factor</span><span class="p">,</span> <span class="n">need</span><span class="p">))</span>
+    <span class="c1"># the quarter is the upper right (rows &gt;= rc-1); mirrored about the row of the star for the lower right</span>
+    <span class="n">full</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="n">full</span><span class="p">[</span><span class="n">rc</span><span class="o">-</span><span class="mi">1</span><span class="p">:,</span> <span class="n">rc</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">grid</span>
+    <span class="n">full</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">rc</span><span class="p">,</span> <span class="n">rc</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">smear</span><span class="p">:</span>
+        <span class="n">full</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">full</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">smear_sig</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">full</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">full</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="cme_contrast">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.cme_contrast">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cme_contrast</span><span class="p">(</span><span class="n">fraction</span><span class="p">,</span> <span class="n">mass_g</span><span class="p">,</span> <span class="n">pixel_au</span><span class="p">,</span> <span class="n">radius_au</span><span class="p">,</span> <span class="n">mu_e</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Each pixel's contrast: N_e sigma_T / (4 pi r^2), r the projected distance from the star.</span>
+
+<span class="sd">    N_e = fraction x mass_g / (mu_e m_u) electrons per pixel, all at the distance r of the pixel</span>
+<span class="sd">    centre (the electrons are taken in the plane of the sky).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fraction (np.ndarray): (n, n) share of the mass per pixel (cme_mass_fraction), n odd, the</span>
+<span class="sd">            star at pixel (n // 2, n // 2).</span>
+<span class="sd">        mass_g (float): The CME's mass in g.</span>
+<span class="sd">        pixel_au (float): Pixel size in au.</span>
+<span class="sd">        radius_au (float): The star's radius in au; pixels whose centre is inside it are 0.</span>
+<span class="sd">        mu_e (float): Mass per electron in atomic mass units (cme_imaging: 1).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: (n, n) float64 contrast per pixel (a fraction of the star's flux).</span>
+<span class="sd">    """</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">fraction</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">offsets</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">pixel_au</span>
+    <span class="n">r_cm</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">offsets</span><span class="p">,</span> <span class="n">offsets</span><span class="p">))</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">au</span><span class="p">)</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="p">)</span>
+    <span class="n">electrons</span> <span class="o">=</span> <span class="n">fraction</span><span class="o">*</span><span class="n">mass_g</span><span class="o">/</span><span class="p">(</span><span class="n">mu_e</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">r_cm</span> <span class="o">&gt;</span> <span class="n">radius_au</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">au</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="p">),</span> <span class="n">electrons</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">sigma_T</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">value</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r_cm</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># ---------------------------------------------------------------- cme_imaging itself (newer versions)</span>
+
+<div class="viewcode-block" id="load_cme_imaging">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.load_cme_imaging">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_cme_imaging</span><span class="p">(</span><span class="n">toolbox_path</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The cme_imaging module of astro_toolbox.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        toolbox_path (str): Folder holding cme_imaging.py (~ expanded; added to the front of</span>
+<span class="sd">            sys.path); "" = importable as it is.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        module: cme_imaging (imported with its warnings silenced).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        FileNotFoundError: no cme_imaging.py in toolbox_path.</span>
+<span class="sd">        ImportError: cme_imaging cannot be imported.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">toolbox_path</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">toolbox_path</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"cme_imaging.py"</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"cme: no cme_imaging.py in toolbox_path = </span><span class="si">%r</span><span class="s2">"</span> <span class="o">%</span> <span class="n">toolbox_path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">"cme_imaging"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">"cme: cannot import cme_imaging (</span><span class="si">%s</span><span class="s2">); set toolbox_path to the astro_toolbox folder"</span> <span class="o">%</span> <span class="n">err</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="model_arguments">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.model_arguments">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">model_arguments</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    cme_args for cme_imaging's make_cme.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        args (dict): {name: value}; text with a unit ("1e19 g", matched by params._QUANTITY)</span>
+<span class="sd">            becomes an astropy Quantity; other values are passed as they are.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: the arguments, ready to pass as make_cme(**arguments).</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">_QUANTITY</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">else</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+
+
+<div class="viewcode-block" id="star_photons">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.star_photons">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">star_photons</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The star's photon output (photons/s) of a cme_imaging.Star, from its stellar flux grid:</span>
+<span class="sd">    flux(r) x 4 pi r^2, the same at every r (the median of the finite values is taken).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        model: a cme_imaging.Star after particle_to_photon_flux().</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: photons per second.</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">grid_stellar_photon_fluxes</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">grid_distances</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">out</span><span class="p">),</span> <span class="n">out</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)))</span></div>
+
+
+
+<div class="viewcode-block" id="contrast_of">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.contrast_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">contrast_of</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The CME's contrast per pixel of a cme_imaging.Star.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        model: a cme_imaging.Star after particle_to_photon_flux().</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: (dim, dim) float64 contrast per pixel (grid_cme_photons x pix_res^2 / the star's</span>
+<span class="sd">            photon output); NaN where cme_imaging has no stellar flux (inside the star).</span>
+<span class="sd">    """</span>
+    <span class="n">photons</span> <span class="o">=</span> <span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">grid_cme_photons</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">pix_res</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">photons</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">star_photons</span><span class="p">(</span><span class="n">model</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># ---------------------------------------------------------------- the module</span>
+
+<span class="c1"># parameters of the ported geometry, not used when cme_imaging itself builds the CME (toolbox_path)</span>
+<span class="n">GEOMETRY</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"mass"</span><span class="p">,</span> <span class="s2">"dR_factor"</span><span class="p">,</span> <span class="s2">"vertical_height_factor"</span><span class="p">,</span> <span class="s2">"horizontal_height_factor"</span><span class="p">,</span> <span class="s2">"smear"</span><span class="p">,</span> <span class="s2">"smear_sig"</span><span class="p">,</span> <span class="s2">"mu_e"</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Cme">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.Cme">[docs]</a>
+<span class="nd">@register_source</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Cme</span><span class="p">(</span><span class="n">Source</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    A CME in Thomson-scattered starlight, as a contrast (family "relative", valid in any band).</span>
+
+<span class="sd">    Three ways to build it (see the module docstring): the ported geometry (default; uses</span>
+<span class="sd">    the GEOMETRY parameters, extent and dim), cme_imaging itself with cme_args (toolbox_path</span>
+<span class="sd">    set; then also requires the star's temperature), or an existing cme_imaging.Star</span>
+<span class="sd">    (from_object(); requires nothing, its distance, radius, temperature and grid are provided).</span>
+<span class="sd">    """</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="s2">"cme"</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="s2">"a coronal mass ejection (the cme_imaging model of astro_toolbox)"</span>
+    <span class="n">family</span> <span class="o">=</span> <span class="s2">"relative"</span>
+    <span class="n">requires</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"star.distance"</span><span class="p">,</span> <span class="s2">"star.radius"</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"mass"</span><span class="p">,</span> <span class="mf">1e19</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"g"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"CME mass"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exclusive_min</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"dR_factor"</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"shell thickness, as a fraction of the half box"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exclusive_min</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"vertical_height_factor"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"vertical stretch of the shell"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exclusive_min</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"horizontal_height_factor"</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"outward shift of the shell, in shell thicknesses"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"smear"</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"smooth the CME with a Gaussian"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"bool"</span><span class="p">,</span> <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"smear_sig"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"sigma of the smoothing, in model pixels"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exclusive_min</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"mu_e"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"mass per electron, in atomic mass units (cme_imaging: 1)"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exclusive_min</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"extent"</span><span class="p">,</span> <span class="n">AUTO</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"AU"</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">'width of the model box; "auto" = the scene field of view'</span><span class="p">,</span>
+              <span class="n">auto</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exclusive_min</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"dim"</span><span class="p">,</span> <span class="n">AUTO</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">'pixels of the model box (odd); "auto" = the scene grid size'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span>
+              <span class="n">auto</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"toolbox_path"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">'use cme_imaging from this folder instead (newer versions)'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"str"</span><span class="p">,</span>
+              <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">Param</span><span class="p">(</span><span class="s2">"cme_args"</span><span class="p">,</span> <span class="p">{},</span> <span class="n">doc</span><span class="o">=</span><span class="s1">'with toolbox_path: arguments of make_cme(), e.g. {mass = "1e19 g"}'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"table"</span><span class="p">,</span>
+              <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">help</span><span class="o">=</span><span class="s2">"Passed to cme_imaging's Star.make_cme(**cme_args), so they follow the cme_imaging version you "</span>
+                   <span class="s2">"have (e.g. toroidal_height and halo in newer versions). Values with units are written as text, "</span>
+                   <span class="s2">"e.g. mass = </span><span class="se">\"</span><span class="s2">1e19 g</span><span class="se">\"</span><span class="s2">; numbers and true/false are passed as they are."</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">settings</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Check the parameters; with toolbox_path set, also require the star's temperature.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            **settings: the module's parameters (see `params`).</span>
+<span class="sd">        """</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_object</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1"># a cme_imaging.Star given from Python</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_built</span> <span class="o">=</span> <span class="p">{}</span>      <span class="c1"># models built with cme_imaging, by (dim, extent, star)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"toolbox_path"</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">requires</span> <span class="o">=</span> <span class="n">Cme</span><span class="o">.</span><span class="n">requires</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"star.temperature"</span><span class="p">,)</span>  <span class="c1"># cme_imaging's Star is a blackbody</span>
+
+<div class="viewcode-block" id="Cme.from_object">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.Cme.from_object">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_object</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">star</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The module for an existing cme_imaging.Star (any version).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            star (cme_imaging.Star): with its CME made (particle_to_photon_flux() is called if it</span>
+<span class="sd">                was not, its output silenced).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Cme: the module, with default settings and no requirements.</span>
+<span class="sd">        """</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">star</span><span class="p">,</span> <span class="s2">"grid_cme_photons"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()),</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+                <span class="n">star</span><span class="o">.</span><span class="n">particle_to_photon_flux</span><span class="p">()</span>
+        <span class="n">source</span><span class="o">.</span><span class="n">_object</span> <span class="o">=</span> <span class="n">star</span>
+        <span class="n">source</span><span class="o">.</span><span class="n">requires</span> <span class="o">=</span> <span class="p">()</span>  <span class="c1"># everything comes from the object</span>
+        <span class="k">return</span> <span class="n">source</span></div>
+
+
+<div class="viewcode-block" id="Cme.inspect">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.Cme.inspect">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">inspect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        With a cme_imaging.Star (from_object): its distance, radius, temperature and grid.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list of tuple: [(key, value, origin)] for star.distance (pc), grid.pixel_scale (arcsec),</span>
+<span class="sd">                star.radius (R_sun) and star.temperature (K) when they are Quantities, grid.size;</span>
+<span class="sd">                [] without a cme_imaging.Star.</span>
+<span class="sd">        """</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_object</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">distance</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">)</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"star.distance"</span><span class="p">,</span> <span class="n">distance</span><span class="p">),</span> <span class="p">(</span><span class="s2">"grid.pixel_scale"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">pix_res</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">au</span><span class="p">)</span><span class="o">/</span><span class="n">distance</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">unit</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">"star.radius"</span><span class="p">,</span> <span class="s2">"radius"</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">R_sun</span><span class="p">),</span> <span class="p">(</span><span class="s2">"star.temperature"</span><span class="p">,</span> <span class="s2">"temp"</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">)]:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">):</span>
+                <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">unit</span><span class="p">)))</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">"grid.size"</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">contrast_of</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">"the cme_imaging Star"</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">found</span><span class="p">]</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The model box: "auto" = the scene grid (made odd, same pixel size).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            grid (toycoronagraph.scene.Grid): the scene grid (size, pixel_scale arcsec).</span>
+<span class="sd">            star (toycoronagraph.scene.Star): its distance (pc).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (dim (int, odd), extent (float, au): the box's width).</span>
+<span class="sd">        """</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
+        <span class="n">dim</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">size</span> <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">"dim"</span><span class="p">]</span> <span class="o">==</span> <span class="n">AUTO</span> <span class="k">else</span> <span class="n">s</span><span class="p">[</span><span class="s2">"dim"</span><span class="p">]</span>
+        <span class="n">dim</span> <span class="o">+=</span> <span class="n">dim</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="n">extent</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">pixel_scale</span><span class="o">*</span><span class="n">star</span><span class="o">.</span><span class="n">distance</span><span class="o">*</span><span class="n">dim</span> <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">"extent"</span><span class="p">]</span> <span class="o">==</span> <span class="n">AUTO</span> <span class="k">else</span> <span class="n">s</span><span class="p">[</span><span class="s2">"extent"</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dim</span><span class="p">,</span> <span class="n">extent</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_external</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        A cme_imaging.Star built with cme_args (toolbox_path set), cached per box and star.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            grid (toycoronagraph.scene.Grid): the scene grid.</span>
+<span class="sd">            star (toycoronagraph.scene.Star): temperature (K), radius (R_sun), distance (pc).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            cme_imaging.Star: after make_cme(**cme_args) and particle_to_photon_flux().</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParamError: make_cme rejects cme_args.</span>
+<span class="sd">        """</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
+        <span class="n">dim</span><span class="p">,</span> <span class="n">extent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_box</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">extent</span><span class="p">,</span> <span class="n">star</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_built</span><span class="p">:</span>
+            <span class="n">ci</span> <span class="o">=</span> <span class="n">load_cme_imaging</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"toolbox_path"</span><span class="p">])</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="n">star</span><span class="o">.</span><span class="n">temperature</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">star</span><span class="o">.</span><span class="n">radius</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">R_sun</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="n">star</span><span class="o">.</span><span class="n">distance</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span>
+                        <span class="n">linear_extent</span><span class="o">=</span><span class="n">extent</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">au</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()),</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">model</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">Star</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>                     <span class="c1"># the published version: keyword arguments</span>
+                <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                    <span class="n">model</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">Star</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>             <span class="c1"># newer versions: positional arguments</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">model</span><span class="o">.</span><span class="n">make_cme</span><span class="p">(</span><span class="o">**</span><span class="n">model_arguments</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"cme_args"</span><span class="p">]))</span>
+                <span class="k">except</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"cme: make_cme(</span><span class="si">%s</span><span class="s2">) failed (</span><span class="si">%s</span><span class="s2">); give values with units as text, e.g. "</span>
+                                     <span class="s1">'mass = "1e19 g"'</span> <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"cme_args"</span><span class="p">],</span> <span class="n">err</span><span class="p">))</span>
+                <span class="n">model</span><span class="o">.</span><span class="n">particle_to_photon_flux</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_built</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_built</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Cme.render">
+<a class="viewcode-back" href="../../../sources.cme.html#toycoronagraph.sources.cme.Cme.render">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The CME's contrast per pixel.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            grid (toycoronagraph.scene.Grid): The scene grid (size, pixel_scale in arcsec).</span>
+<span class="sd">            star (toycoronagraph.scene.Star): The star (distance pc, radius R_sun; with toolbox_path</span>
+<span class="sd">                also the temperature K); not used with from_object().</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            SourceImage: (dim, dim) contrast_pixel on the model box (pixel_scale set in arcsec;</span>
+<span class="sd">                resampled by the scene when it differs from the grid), with notes on unused</span>
+<span class="sd">                parameters, cme_imaging's luminosity and NaN pixels.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParamError: A model box too small to hold the shell's mass (dim, or the grid size with</span>
+<span class="sd">                dim "auto": &lt; 39 px at dR_factor = 0.2), with the ported geometry or cme_imaging's;</span>
+<span class="sd">                with the ported geometry, dR_factor = 1; with toolbox_path, make_cme rejects cme_args.</span>
+<span class="sd">        """</span>
+        <span class="n">s</span><span class="p">,</span> <span class="n">notes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">,</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_object</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="s2">"toolbox_path"</span><span class="p">]:</span>  <span class="c1"># the ported geometry</span>
+            <span class="n">dim</span><span class="p">,</span> <span class="n">extent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_box</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="p">)</span>
+            <span class="n">fraction</span> <span class="o">=</span> <span class="n">cme_mass_fraction</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="s2">"dR_factor"</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">"vertical_height_factor"</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">"horizontal_height_factor"</span><span class="p">],</span>
+                                         <span class="n">s</span><span class="p">[</span><span class="s2">"smear"</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">"smear_sig"</span><span class="p">])</span>
+            <span class="n">radius_au</span> <span class="o">=</span> <span class="p">(</span><span class="n">star</span><span class="o">.</span><span class="n">radius</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">R_sun</span><span class="p">)</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">au</span><span class="p">)</span>
+            <span class="n">contrast</span> <span class="o">=</span> <span class="n">cme_contrast</span><span class="p">(</span><span class="n">fraction</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="s2">"mass"</span><span class="p">],</span> <span class="n">extent</span><span class="o">/</span><span class="n">dim</span><span class="p">,</span> <span class="n">radius_au</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="s2">"mu_e"</span><span class="p">])</span>
+            <span class="n">pixel_scale</span> <span class="o">=</span> <span class="n">extent</span><span class="o">/</span><span class="n">dim</span><span class="o">/</span><span class="n">star</span><span class="o">.</span><span class="n">distance</span>
+            <span class="n">origin</span> <span class="o">=</span> <span class="s2">"CME (</span><span class="si">%d</span><span class="s2"> px, </span><span class="si">%.3g</span><span class="s2"> au, </span><span class="si">%.3g</span><span class="s2"> g)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">extent</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="s2">"mass"</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># cme_imaging itself</span>
+            <span class="n">changed</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">GEOMETRY</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">!=</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">"toolbox_path"</span><span class="p">]</span> <span class="ow">and</span> <span class="n">changed</span><span class="p">:</span>
+                <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"toolbox_path is set: the CME comes from cme_imaging with cme_args; </span><span class="si">%s</span><span class="s2"> not used"</span>
+                             <span class="o">%</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">changed</span><span class="p">))</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_object</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_external</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">star</span><span class="p">)</span>
+            <span class="n">contrast</span> <span class="o">=</span> <span class="n">contrast_of</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="n">ratio</span> <span class="o">=</span> <span class="n">star_photons</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">luminosity</span><span class="o">/</span><span class="n">model</span><span class="o">.</span><span class="n">photon_energy</span><span class="p">)</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">ratio</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">:</span>
+                <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"cme_imaging's luminosity / photon_energy is </span><span class="si">%.4g</span><span class="s2"> times smaller than the star's photon output "</span>
+                             <span class="s2">"from its flux grid (it lacks the factor pi of the surface flux); the contrast uses the "</span>
+                             <span class="s2">"latter, so it is </span><span class="si">%.4g</span><span class="s2"> times below cme_imaging's contrast cell"</span> <span class="o">%</span> <span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="n">ratio</span><span class="p">))</span>
+            <span class="n">bad</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">contrast</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">bad</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>  <span class="c1"># cme_imaging's 0/0: its box holds no mass of the shell</span>
+                <span class="k">raise</span> <span class="n">ParamError</span><span class="p">(</span><span class="s2">"cme: cme_imaging gave NaN everywhere: its model box of </span><span class="si">%d</span><span class="s2"> px holds no mass of the "</span>
+                                 <span class="s2">"shell; use a larger grid (or a larger dim, or dR_factor, in cme_args)"</span>
+                                 <span class="o">%</span> <span class="n">contrast</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">bad</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> pixel(s) inside the star (NaN in cme_imaging) set to 0"</span> <span class="o">%</span> <span class="n">bad</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+                <span class="n">contrast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">bad</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">contrast</span><span class="p">)</span>
+            <span class="n">pixel_scale</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">pix_res</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">au</span><span class="p">)</span><span class="o">/</span><span class="n">model</span><span class="o">.</span><span class="n">distance</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">)</span>
+            <span class="n">origin</span> <span class="o">=</span> <span class="s2">"cme_imaging CME (</span><span class="si">%d</span><span class="s2"> px, </span><span class="si">%.3g</span><span class="s2"> au)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">contrast</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">model</span><span class="o">.</span><span class="n">linear_extent</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">au</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">contrast</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">size</span> <span class="ow">and</span> <span class="n">grid</span><span class="o">.</span><span class="n">size</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">origin</span> <span class="o">+=</span> <span class="s2">" [the CME model has an odd number of pixels: an odd grid size avoids resampling]"</span>
+        <span class="k">return</span> <span class="n">SourceImage</span><span class="p">(</span><span class="n">contrast</span><span class="p">,</span> <span class="s2">"contrast_pixel"</span><span class="p">,</span> <span class="n">pixel_scale</span><span class="o">=</span><span class="n">pixel_scale</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+Parameters
+==========
+
+.. automodule:: toycoronagraph.params

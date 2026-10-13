@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toycoronagraph.inputs &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=79f5c508"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/toycoronagraph/inputs';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">toycoronagraph.inputs</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for toycoronagraph.inputs</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Reading the target image from a FITS file.</span>
+
+<span class="sd">read_target reads it as described by the older parameter layout (toycoronagraph.config,</span>
+<span class="sd">used by Target); read_plane, the FITS reader itself, is also used by the image sources of</span>
+<span class="sd">the scene framework (toycoronagraph.sources.images).</span>
+
+<span class="sd">Two input methods:</span>
+<span class="sd">    * "image": a square 2-D FITS image (or a cube with fits_slice), star at the array centre,</span>
+<span class="sd">      described by the header keywords BUNIT, PIXSCALE (or CDELT1/2) and WAVELEN;</span>
+<span class="sd">    * "mcfost": an MCFOST image cube (e.g. data_&lt;wavelength&gt;/RT.fits.gz) as written by</span>
+<span class="sd">      MCFOST, with axes (plane, azimuth, inclination, y, x); the plane is chosen by name</span>
+<span class="sd">      (mcfost_component; "disk" is the total minus the direct starlight) and the</span>
+<span class="sd">      inclination/azimuth by index. Its header (BUNIT, CDELT, WAVE) is understood.</span>
+<span class="sd">"input_format = auto" recognizes MCFOST cubes from their header (FLUX_1 ... FLUX_8).</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">DATADIR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toycoronagraph.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">AUTO</span><span class="p">,</span> <span class="n">MCFOST_COMPONENTS</span><span class="p">,</span> <span class="n">resolve</span>
+
+
+<div class="viewcode-block" id="target_path">
+<a class="viewcode-back" href="../../inputs.html#toycoronagraph.inputs.target_path">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">target_path</span><span class="p">(</span><span class="n">cfg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    The FITS file of the target: the example, or fits_filename (".fits" added if it has no extension).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cfg (SimpleNamespace): From config.load_config (uses cfg.fits_filename; None for the example).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Path of the FITS file (example_data/example.fits for the example).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">fits_filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATADIR</span><span class="p">,</span> <span class="s2">"example.fits"</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">fits_filename</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">".fits"</span><span class="p">,</span> <span class="s2">".fits.gz"</span><span class="p">,</span> <span class="s2">".fit"</span><span class="p">,</span> <span class="s2">".fts"</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">name</span><span class="o">+</span><span class="s2">".fits"</span></div>
+
+
+
+<div class="viewcode-block" id="is_mcfost">
+<a class="viewcode-back" href="../../inputs.html#toycoronagraph.inputs.is_mcfost">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_mcfost</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Whether the data look like an MCFOST image cube.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (np.ndarray): The HDU's data.</span>
+<span class="sd">        header: Its FITS header.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True for 5 axes with 4 or 8 planes on axis 0 and FLUX_1 in the header.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">"FLUX_1"</span> <span class="ow">in</span> <span class="n">header</span></div>
+
+
+
+<div class="viewcode-block" id="read_plane">
+<a class="viewcode-back" href="../../inputs.html#toycoronagraph.inputs.read_plane">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_plane</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">input_format</span><span class="o">=</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">fits_hdu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fits_slice</span><span class="o">=</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">mcfost_component</span><span class="o">=</span><span class="s2">"scattered_star"</span><span class="p">,</span>
+               <span class="n">mcfost_inclination</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">mcfost_azimuth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Read one 2-D image from a FITS file (a plane of a cube, or of an MCFOST cube).</span>
+
+<span class="sd">    The plane is chosen by fits_slice if given, else by the MCFOST keys for an MCFOST</span>
+<span class="sd">    cube; a plain image is read as it is. A flattened square image (1-D, n*n values) is</span>
+<span class="sd">    reshaped to (n, n).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): The FITS file.</span>
+<span class="sd">        input_format (str): "image", "mcfost", or "auto" (MCFOST if is_mcfost, else image).</span>
+<span class="sd">        fits_hdu (int): Index of the HDU holding the data.</span>
+<span class="sd">        fits_slice (list or str): Indices into the leading axes, e.g. [5, 0, 0] (overrides the</span>
+<span class="sd">            MCFOST keys), or "auto".</span>
+<span class="sd">        mcfost_component (str): MCFOST plane: a key of config.MCFOST_COMPONENTS, or "disk"</span>
+<span class="sd">            (total minus direct_star).</span>
+<span class="sd">        mcfost_inclination (int): MCFOST: index along the inclination axis.</span>
+<span class="sd">        mcfost_azimuth (int): MCFOST: index along the azimuth axis.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple:</span>
+<span class="sd">            image (np.ndarray): (ny, nx) float64 data, in the file's unit (not checked to be square).</span>
+<span class="sd">            header (astropy.io.fits.Header): The HDU's header.</span>
+<span class="sd">            fmt (str): The input format used, "image" or "mcfost".</span>
+<span class="sd">            what (str): Description of the selection, e.g. "image" or "MCFOST disk, inclination 0, azimuth 0".</span>
+<span class="sd">            index (list or str): The indices used (list of int); for "disk", a text such as</span>
+<span class="sd">                "total - direct_star at [0, 0]".</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: For a missing HDU, an MCFOST format without 5 axes, an out-of-range MCFOST</span>
+<span class="sd">            index, too many fits_slice indices, or data that are not 2-D after the selection.</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fits_hdu</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hdul</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> has </span><span class="si">%d</span><span class="s2"> HDUs; fits_hdu = </span><span class="si">%d</span><span class="s2"> does not exist"</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">hdul</span><span class="p">),</span> <span class="n">fits_hdu</span><span class="p">))</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">hdul</span><span class="p">[</span><span class="n">fits_hdu</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="n">fits_hdu</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+    <span class="n">fmt</span> <span class="o">=</span> <span class="n">input_format</span>
+    <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="n">AUTO</span><span class="p">:</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="s2">"mcfost"</span> <span class="k">if</span> <span class="n">is_mcfost</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"image"</span>
+
+    <span class="k">if</span> <span class="n">fits_slice</span> <span class="o">!=</span> <span class="n">AUTO</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fits_slice</span><span class="p">)</span>
+        <span class="n">what</span> <span class="o">=</span> <span class="s2">"fits_slice </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">index</span>
+    <span class="k">elif</span> <span class="n">fmt</span> <span class="o">==</span> <span class="s2">"mcfost"</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> is not an MCFOST image cube (expected 5 axes: plane, azimuth, inclination, y, x; got shape </span><span class="si">%s</span><span class="s2">)"</span>
+                             <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+        <span class="n">component</span> <span class="o">=</span> <span class="n">MCFOST_COMPONENTS</span><span class="p">[</span><span class="s2">"total"</span> <span class="k">if</span> <span class="n">mcfost_component</span> <span class="o">==</span> <span class="s2">"disk"</span> <span class="k">else</span> <span class="n">mcfost_component</span><span class="p">]</span>
+        <span class="c1"># Range checks; "disk" also needs plane 4 (direct_star), so that index is checked for it</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">size</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">"mcfost_component"</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="mi">4</span> <span class="k">if</span> <span class="n">mcfost_component</span> <span class="o">==</span> <span class="s2">"disk"</span> <span class="k">else</span> <span class="mi">0</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                                  <span class="p">(</span><span class="s2">"mcfost_azimuth"</span><span class="p">,</span> <span class="n">mcfost_azimuth</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                                  <span class="p">(</span><span class="s2">"mcfost_inclination"</span><span class="p">,</span> <span class="n">mcfost_inclination</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2"> is out of range: </span><span class="si">%s</span><span class="s2"> has </span><span class="si">%d</span><span class="s2"> along that axis"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">component</span><span class="p">,</span> <span class="n">mcfost_azimuth</span><span class="p">,</span> <span class="n">mcfost_inclination</span><span class="p">]</span>
+        <span class="n">what</span> <span class="o">=</span> <span class="s2">"MCFOST </span><span class="si">%s</span><span class="s2">, inclination </span><span class="si">%d</span><span class="s2">, azimuth </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">mcfost_component</span><span class="p">,</span> <span class="n">mcfost_inclination</span><span class="p">,</span> <span class="n">mcfost_azimuth</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">what</span> <span class="o">=</span> <span class="s2">"image"</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> indices for the </span><span class="si">%d</span><span class="s2">-D data in </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="s2">"mcfost"</span> <span class="ow">and</span> <span class="n">fits_slice</span> <span class="o">==</span> <span class="n">AUTO</span> <span class="ow">and</span> <span class="n">mcfost_component</span> <span class="o">==</span> <span class="s2">"disk"</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">-</span><span class="n">data</span><span class="p">[</span><span class="n">MCFOST_COMPONENTS</span><span class="p">[</span><span class="s2">"direct_star"</span><span class="p">],</span> <span class="n">mcfost_azimuth</span><span class="p">,</span> <span class="n">mcfost_inclination</span><span class="p">]</span> <span class="c1"># remove the star</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="s2">"total - direct_star at </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">:</span> <span class="c1"># a flattened square image</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">))),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: the data are </span><span class="si">%d</span><span class="s2">-D after selecting </span><span class="si">%s</span><span class="s2"> (shape </span><span class="si">%s</span><span class="s2">); set input_format = </span><span class="se">\"</span><span class="s2">mcfost</span><span class="se">\"</span><span class="s2"> for an MCFOST cube, "</span>
+                         <span class="s2">"or fits_slice to pick a 2-D plane"</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">what</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">what</span><span class="p">,</span> <span class="n">index</span></div>
+
+
+
+<div class="viewcode-block" id="read_target">
+<a class="viewcode-back" href="../../inputs.html#toycoronagraph.inputs.read_target">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_target</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Read the target image, fill the "auto" parameters from it (config.resolve), and convert</span>
+<span class="sd">    it to Jy/arcsec^2.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cfg (SimpleNamespace): From config.load_config; resolved in place (also sets</span>
+<span class="sd">            input_description and used_slice).</span>
+<span class="sd">        verbose (bool): Print the summary of the input and any warning.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: The (N, N) float64 image in Jy/arcsec^2.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: From read_plane or config.resolve (e.g. non-square image, unknown unit).</span>
+<span class="sd">    """</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">target_path</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+    <span class="n">image</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">what</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">read_plane</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">input_format</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">fits_hdu</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">fits_slice</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">mcfost_component</span><span class="p">,</span>
+                                                 <span class="n">cfg</span><span class="o">.</span><span class="n">mcfost_inclination</span><span class="p">,</span> <span class="n">cfg</span><span class="o">.</span><span class="n">mcfost_azimuth</span><span class="p">)</span>
+
+    <span class="n">cfg</span><span class="o">.</span><span class="n">input_description</span> <span class="o">=</span> <span class="s2">"</span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">what</span><span class="p">)</span>
+    <span class="n">cfg</span><span class="o">.</span><span class="n">used_slice</span> <span class="o">=</span> <span class="n">index</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="n">resolve</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">notes</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+
+    <span class="c1"># Convert to Jy/arcsec^2</span>
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">input_unit</span> <span class="o">==</span> <span class="s2">"W/m^2/pixel"</span><span class="p">:</span> <span class="c1"># nu F_nu per pixel</span>
+        <span class="k">return</span> <span class="n">image</span><span class="o">*</span><span class="n">cfg</span><span class="o">.</span><span class="n">F_transfer</span>
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">input_unit</span> <span class="o">==</span> <span class="s2">"Jy/pixel"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">image</span><span class="o">/</span><span class="n">cfg</span><span class="o">.</span><span class="n">psf_scale</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">image</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Optics backends &#8212; Toy_Coronagraph 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=79f5c508"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'optics';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lazuli telescope (prysm)" href="lazuli.html" />
+    <link rel="prev" title="Optics and PSFs" href="optics_psfs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Toy_Coronagraph 2.0.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenes.html">
+    Scenes
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="optics_psfs.html">
+    Optics and PSFs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="parameters.html">
+    Parameters
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="target.html">
+    Target
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="history.html">
+    Version History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/dreamjade/Toy_Coronagraph" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Optics backends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lazuli.html">Lazuli telescope (prysm)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psf.html">PSFs: circular and spatial methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial.html">Spatial method: grid, blending, convolution</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="optics_psfs.html" class="nav-link">Optics and PSFs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Optics backends</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-toycoronagraph.optics">
+<span id="optics-backends"></span><h1>Optics backends<a class="headerlink" href="#module-toycoronagraph.optics" title="Link to this heading">#</a></h1>
+<p>Optical systems behind one interface.</p>
+<p>The spatial PSF machinery (toycoronagraph.psf, toycoronagraph.spatial) only asks an optical
+system for the image of a point source: its throughput, its total light, and its intensity
+on blocks of the image pixel grid. So a different coronagraph, or a starshade, can be added
+as a new backend without touching that machinery:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@register_backend</span><span class="p">(</span><span class="s1">'my_system'</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MySystemBackend</span><span class="p">:</span>
+    <span class="n">rotationally_symmetric</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># True allows the fast 'rotate' mode</span>
+    <span class="n">bandlimit</span> <span class="o">=</span> <span class="kc">None</span>                <span class="c1"># cycles per lambda/D of the intensity vs. source</span>
+                                    <span class="c1"># position, if known (also needed by 'rotate')</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optics</span><span class="p">):</span> <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="o">...</span>     <span class="c1"># returns an object with .throughput, .total,</span>
+                                    <span class="c1"># .block(center, shape) and .frame()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unocculted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="o">...</span>       <span class="c1"># optional: the star without the starlight-suppression</span>
+                                    <span class="c1"># element (same kind of object; the contrast_peak unit)</span>
+</pre></div>
+</div>
+<p>and then Optics(‘my_system’, img_pixel, psf_range, ((‘name’, value), …), module=’my.package’).
+The module is imported when the kind is not registered yet (e.g. in parallel worker processes).
+Two systems come with the package: Optics.vortex (hcipy; VortexBackend below) and Optics.lazuli
+(the Lazuli space telescope computed with prysm; toycoronagraph.lazuli, imported only when used).</p>
+<p>Conventions shared by every backend:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* positions are in lambda/D, with the star at the origin; image pixel (row, col) is at
+  x = (col - c) * pixel_scale, y = (row - c) * pixel_scale with c = (img_pixel - 1) / 2;
+* intensities are in the package's units (hcipy intensity / normal_factor, as in
+  radial_psf_series): each pixel holds the fraction of the source's light entering the
+  aperture, so kernels, frames and totals are directly comparable;
+* throughput is the source's total light relative to the same source without the
+  starlight-suppression element.
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.optics.</span></span><span class="sig-name descname"><span class="pre">Optics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'toycoronagraph.optics'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#Optics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.Optics" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Description of an optical system and of the image sampling (hashable, picklable).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kind</strong> (<em>str</em>) – Name of a registered backend, e.g. ‘vortex’.</p></li>
+<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p></li>
+<li><p><strong>psf_range</strong> (<em>float</em>) – Half-width of the image in lambda/D.</p></li>
+<li><p><strong>params</strong> (<em>tuple</em>) – The backend’s parameters as sorted (name, value) pairs.</p></li>
+<li><p><strong>module</strong> (<em>str</em>) – Module that registers the backend (imported if needed).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics.vortex">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">vortex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lyot_mask_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#Optics.vortex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.Optics.vortex" title="Link to this definition">#</a></dt>
+<dd><p>An ideal vortex coronagraph with a circular aperture and a circular Lyot stop.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charge</strong> (<em>int</em>) – Vortex charge (topological charge of the focal-plane mask).</p></li>
+<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p></li>
+<li><p><strong>psf_range</strong> (<em>float</em>) – Half-width of the image, in lambda/D.</p></li>
+<li><p><strong>lyot_mask_size</strong> (<em>float</em>) – Lyot stop diameter relative to the aperture diameter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>kind ‘vortex’ with params ((‘charge’, int), (‘lyot_mask_size’, float)).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics">Optics</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics.lazuli">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">lazuli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelengths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scene_wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scene_diameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lyot_mask_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#Optics.lazuli"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.Optics.lazuli" title="Link to this definition">#</a></dt>
+<dd><p>The Lazuli space telescope, alone or with an ideal vortex coronagraph, computed with prysm
+(toycoronagraph.lazuli; observe.optics_for builds it from a [[coronagraph]] table).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charge</strong> (<em>int</em>) – 0 for the telescope alone; else the vortex charge (even).</p></li>
+<li><p><strong>img_pixel</strong> (<em>int</em>) – Number of pixels on one edge of the image.</p></li>
+<li><p><strong>psf_range</strong> (<em>float</em>) – Half-width of the image, in scene lambda/D (scene_wavelength / scene_diameter).</p></li>
+<li><p><strong>wavelengths</strong> (<em>sequence</em><em> of </em><em>float</em>) – Wavelengths of the PSF, in m.</p></li>
+<li><p><strong>weights</strong> (<em>sequence</em><em> of </em><em>float</em>) – Relative weight of each wavelength (normalised here to sum 1).</p></li>
+<li><p><strong>scene_wavelength</strong> (<em>float</em>) – The scene’s wavelength in m ([observation] wavelength); with scene_diameter it sets the lambda/D unit of source positions and of psf_range.</p></li>
+<li><p><strong>scene_diameter</strong> (<em>float</em>) – The scene’s telescope diameter in m ([observation] diameter).</p></li>
+<li><p><strong>pupil_samples</strong> (<em>int</em>) – Pupil samples across the aperture (the OPD map’s size when there is one).</p></li>
+<li><p><strong>lyot_mask_size</strong> (<em>float</em>) – Lyot stop diameter relative to the aperture (used with a charge).</p></li>
+<li><p><strong>opd</strong> (<em>str</em>) – OPD map file (see lazuli.read_opd); “” for none. Stored as an absolute path, with the SHA-1 of the file (opd_sha1), so cached PSFs follow the map’s content.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>kind ‘lazuli’ (module ‘toycoronagraph.lazuli’); the wavelengths and weights are stored as tuples (hashable).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics">Optics</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics.param">
+<span class="sig-name descname"><span class="pre">param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#Optics.param"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.Optics.param" title="Link to this definition">#</a></dt>
+<dd><p>The value of one backend parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Parameter name, e.g. ‘charge’.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value stored in params (KeyError if there is none).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics.pixel_scale">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">pixel_scale</span></span><a class="headerlink" href="#toycoronagraph.optics.Optics.pixel_scale" title="Link to this definition">#</a></dt>
+<dd><p>Image pixel size, in lambda/D per pixel (2*psf_range/img_pixel).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics.centre">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">centre</span></span><a class="headerlink" href="#toycoronagraph.optics.Optics.centre" title="Link to this definition">#</a></dt>
+<dd><p>Pixel coordinate of the star on both axes, (img_pixel-1)/2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics.backend">
+<span class="sig-name descname"><span class="pre">backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#Optics.backend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.Optics.backend" title="Link to this definition">#</a></dt>
+<dd><p>The backend object of this system (cached per process; see get_backend).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics.settings">
+<span class="sig-name descname"><span class="pre">settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#Optics.settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.Optics.settings" title="Link to this definition">#</a></dt>
+<dd><p>Flat dict of plain values (for .npz files and cache checks).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>optics_kind, optics_module, img_pixel, psf_range, and ‘optics_&lt;name&gt;’ for every backend parameter.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.Optics.from_settings">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#Optics.from_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.Optics.from_settings" title="Link to this definition">#</a></dt>
+<dd><p>Rebuild from settings() (or from a saved spatial PSF model).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>settings</strong> (<em>dict</em>) – Holds the keys of settings(); other keys are ignored. Values may be numpy arrays (as loaded from .npz): 0-d ones become Python scalars (.item()), 1-D ones tuples (e.g. the wavelengths of Optics.lazuli). optics_module defaults to ‘toycoronagraph.optics’.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The described system (params sorted by name).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics">Optics</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toycoronagraph.optics.SamplingWarning">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.optics.</span></span><span class="sig-name descname"><span class="pre">SamplingWarning</span></span><a class="reference internal" href="_modules/toycoronagraph/optics.html#SamplingWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.SamplingWarning" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></p>
+<p>The pupil is sampled too coarsely for the PSFs’ far wings near the image edge (see MIN_SAMPLING).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.optics.register_backend">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.optics.</span></span><span class="sig-name descname"><span class="pre">register_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#register_backend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.register_backend" title="Link to this definition">#</a></dt>
+<dd><p>Class decorator registering a backend under the given kind.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kind</strong> (<em>str</em>) – Name used as Optics.kind.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decorator; it returns the class unchanged.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>callable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toycoronagraph.optics.get_backend">
+<span class="sig-prename descclassname"><span class="pre">toycoronagraph.optics.</span></span><span class="sig-name descname"><span class="pre">get_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#get_backend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.get_backend" title="Link to this definition">#</a></dt>
+<dd><p>The backend of an Optics, built once per process (each parallel worker keeps its own).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>optics</strong> (<a class="reference internal" href="#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The system; its module is imported if its kind is not registered yet.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The backend instance (e.g. VortexBackend).</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the kind is still unknown after importing optics.module.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.optics.PupilPlaneSource">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.optics.</span></span><span class="sig-name descname"><span class="pre">PupilPlaneSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">throughput</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#PupilPlaneSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.PupilPlaneSource" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A point source behind a pupil-plane system: holds the field leaving the last pupil
+(e.g. after the Lyot stop) and focuses it onto any block of the image pixel grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>throughput</strong> (<em>float</em>) – The source’s light leaving the system relative to the same source without the starlight-suppression element.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>backend</strong> – The backend (needs optics, normal_factor, pupil_grid and prop).</p></li>
+<li><p><strong>exit_field</strong> (<em>hcipy.Wavefront</em>) – Field leaving the last pupil, on backend.pupil_grid.</p></li>
+<li><p><strong>throughput</strong> (<em>float</em>) – See the class attributes.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="toycoronagraph.optics.PupilPlaneSource.total">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">total</span></span><a class="headerlink" href="#toycoronagraph.optics.PupilPlaneSource.total" title="Link to this definition">#</a></dt>
+<dd><p>Total light over the whole (infinite) focal plane (Parseval), in the package’s pixel units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.PupilPlaneSource.block">
+<span class="sig-name descname"><span class="pre">block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#PupilPlaneSource.block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.PupilPlaneSource.block" title="Link to this definition">#</a></dt>
+<dd><p>Intensity on a block of the image pixel grid (pixel size optics.pixel_scale).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center</strong> (<em>tuple</em>) – (x, y) of the block’s centre, in lambda/D from the star.</p></li>
+<li><p><strong>shape</strong> (<em>tuple</em>) – (ny, nx) size of the block, in pixels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(ny, nx) float64 intensity (rows = y, columns = x), in the package’s units.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.PupilPlaneSource.frame">
+<span class="sig-name descname"><span class="pre">frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#PupilPlaneSource.frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.PupilPlaneSource.frame" title="Link to this definition">#</a></dt>
+<dd><p>np.ndarray: (img_pixel, img_pixel) float64 intensity on the whole image (= |field()|^2).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.PupilPlaneSource.field">
+<span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#PupilPlaneSource.field"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.PupilPlaneSource.field" title="Link to this definition">#</a></dt>
+<dd><p>np.ndarray: (img_pixel, img_pixel) complex field on the whole image (rows = y, columns = x).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toycoronagraph.optics.VortexBackend">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">toycoronagraph.optics.</span></span><span class="sig-name descname"><span class="pre">VortexBackend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optics</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#VortexBackend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.VortexBackend" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Ideal vortex coronagraph: circular aperture, vortex focal-plane mask, circular Lyot stop.</p>
+<p>Rotationally symmetric, and a source enters only through a tilt across the pupil, so the
+intensity is band-limited in the source position at D/lambda: ‘rotate’ mode is valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optics</strong> (<a class="reference internal" href="#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – The system (kind ‘vortex’, params charge and lyot_mask_size).</p></li>
+<li><p><strong>pupil_grid</strong> – hcipy pupil grid, 2*img_pixel samples across 1.5 aperture diameters.</p></li>
+<li><p><strong>aperture</strong> – Circular aperture of diameter 1 on pupil_grid (4x supersampled edges).</p></li>
+<li><p><strong>prop</strong> (<em>FraunhoferPropagator</em>) – Pupil to the (img_pixel, img_pixel) image grid in lambda/D.</p></li>
+<li><p><strong>lyot_stop</strong> (<em>Apodizer</em>) – Circular Lyot stop of diameter lyot_mask_size.</p></li>
+<li><p><strong>coro</strong> (<em>VortexCoronagraph</em>) – The vortex mask (with its own internal propagation).</p></li>
+<li><p><strong>normal_factor</strong> (<em>float</em>) – Divisor turning hcipy intensities into the package’s units.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>optics</strong> (<a class="reference internal" href="#toycoronagraph.optics.Optics" title="toycoronagraph.optics.Optics"><em>Optics</em></a>) – An Optics of kind ‘vortex’ (e.g. Optics.vortex(…)).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.VortexBackend.wavefront">
+<span class="sig-name descname"><span class="pre">wavefront</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#VortexBackend.wavefront"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.VortexBackend.wavefront" title="Link to this definition">#</a></dt>
+<dd><p>A point source at (x, y) lambda/D, as a tilted wavefront on the aperture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Source position, in lambda/D from the star (x along columns, y along rows).</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Source position, in lambda/D from the star (x along columns, y along rows).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The aperture field with the source’s tilt, on pupil_grid.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>hcipy.Wavefront</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.VortexBackend.source">
+<span class="sig-name descname"><span class="pre">source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#VortexBackend.source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.VortexBackend.source" title="Link to this definition">#</a></dt>
+<dd><p>A point source at (x, y) lambda/D, propagated through the vortex and the Lyot stop.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Source position, in lambda/D from the star.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Source position, in lambda/D from the star.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Its throughput is the light after the Lyot stop with the vortex relative to the light after the Lyot stop without it.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#toycoronagraph.optics.PupilPlaneSource" title="toycoronagraph.optics.PupilPlaneSource">PupilPlaneSource</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toycoronagraph.optics.VortexBackend.unocculted">
+<span class="sig-name descname"><span class="pre">unocculted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toycoronagraph/optics.html#VortexBackend.unocculted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toycoronagraph.optics.VortexBackend.unocculted" title="Link to this definition">#</a></dt>
+<dd><p>The star without the vortex (the Lyot stop kept): the reference of the contrast_peak unit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The star through the aperture and the Lyot stop (throughput 1).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#toycoronagraph.optics.PupilPlaneSource" title="toycoronagraph.optics.PupilPlaneSource">PupilPlaneSource</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="optics_psfs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Optics and PSFs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lazuli.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lazuli telescope (prysm)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics"><code class="docutils literal notranslate"><span class="pre">Optics</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics.vortex"><code class="docutils literal notranslate"><span class="pre">Optics.vortex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics.lazuli"><code class="docutils literal notranslate"><span class="pre">Optics.lazuli()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics.param"><code class="docutils literal notranslate"><span class="pre">Optics.param()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics.pixel_scale"><code class="docutils literal notranslate"><span class="pre">Optics.pixel_scale</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics.centre"><code class="docutils literal notranslate"><span class="pre">Optics.centre</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics.backend"><code class="docutils literal notranslate"><span class="pre">Optics.backend()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics.settings"><code class="docutils literal notranslate"><span class="pre">Optics.settings()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.Optics.from_settings"><code class="docutils literal notranslate"><span class="pre">Optics.from_settings()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.SamplingWarning"><code class="docutils literal notranslate"><span class="pre">SamplingWarning</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.register_backend"><code class="docutils literal notranslate"><span class="pre">register_backend()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.get_backend"><code class="docutils literal notranslate"><span class="pre">get_backend()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.PupilPlaneSource"><code class="docutils literal notranslate"><span class="pre">PupilPlaneSource</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.PupilPlaneSource.total"><code class="docutils literal notranslate"><span class="pre">PupilPlaneSource.total</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.PupilPlaneSource.block"><code class="docutils literal notranslate"><span class="pre">PupilPlaneSource.block()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.PupilPlaneSource.frame"><code class="docutils literal notranslate"><span class="pre">PupilPlaneSource.frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.PupilPlaneSource.field"><code class="docutils literal notranslate"><span class="pre">PupilPlaneSource.field()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.VortexBackend"><code class="docutils literal notranslate"><span class="pre">VortexBackend</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.VortexBackend.wavefront"><code class="docutils literal notranslate"><span class="pre">VortexBackend.wavefront()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.VortexBackend.source"><code class="docutils literal notranslate"><span class="pre">VortexBackend.source()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toycoronagraph.optics.VortexBackend.unocculted"><code class="docutils literal notranslate"><span class="pre">VortexBackend.unocculted()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023-2026, dreamjade.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
